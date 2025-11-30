@@ -214,7 +214,7 @@ Zarządzanie uprawnieniami dla osób usuniętych z roli współpracownik. W AMOD
 
   
 
-### `cross-cutting/Dostęp-tymczasowy-do-sprawy`
+### `cross-cutting/GTA - dostęp tymczasowy do sparwy`
 
 Funkcjonalność tymczasowego dostępu do sprawy ("GTA" – Grant Temporary Access). Pozwala nadać czasowy dostęp do wybranej sprawy osobie spoza AMODIT (np. kandydatowi do pracy, klientowi, zewnętrznemu kontrahentowi), która nie posiada własnego konta. Użytkownik taki może otrzymać jednorazowy, ograniczony czasowo link do formularza sprawy – umożliwia to np. wypełnienie informacji lub uzupełnienie danych, bez nadawania normalnego dostępu do systemu. GrantTemporaryAccessToCase to funkcja reguł obsługująca nadanie takiego dostępu, ale jest tylko elementem całej funkcjonalności tego typu dostępu.
 
@@ -348,13 +348,7 @@ Integracja z systemem mailowym. Wysyłka i odbieranie emaili, SMTP, IMAP.
 
 ## Klienci (`Klienci/`)
 
-  
 
-### `Klienci/LOT`
-
-Projekty dedykowane dla klienta LOT. Customizacje specyficzne dla LOT.
-
-  
 
 #### `Klienci/LOT/JRWA`
 
@@ -366,13 +360,7 @@ JRWA dla LOT. Specyficzne wymagania rejestru akt.
 
 Wielospółkowość dla LOT. Zarządzanie wieloma podmiotami w jednej instancji.
 
-  
 
-### `Klienci/Marba`
-
-Projekty dedykowane dla klienta Marba.
-
-  
 
 #### `Klienci/Marba/CallRest-wiele-plikow`
 
@@ -384,37 +372,19 @@ CallRest z obsługą wielu plików dla Marba. Wysyłka múltiple attachments prz
 
 Integracja z KSeF (Krajowy System e-Faktur) dla Marba. Wymiana faktur elektronicznych.
 
-  
 
-### `Klienci/PKF`
-
-Projekty dedykowane dla klienta PKF.
-
-  
 
 #### `Klienci/PKF/Rejestracja-czasu-pracy`
 
 Rejestracja czasu pracy dla PKF. Timesheet, rozliczanie godzin.
 
-  
 
-### `Klienci/Polpharma`
-
-Projekty dedykowane dla klienta Polpharma.
-
-  
 
 #### `Klienci/Polpharma/Import-export-procesow`
 
 Import i eksport procesów dla Polpharma. Migracja definicji procesów między środowiskami.
 
-  
 
-### `Klienci/Rossmann`
-
-Projekty dedykowane dla klienta Rossmann.
-
-  
 
 #### `Klienci/Rossmann/Komunikaty-systemowe`
 
@@ -426,13 +396,7 @@ Komunikaty systemowe dla Rossmann. Customizowane powiadomienia.
 
 Integracja Trust Center dla Rossmann. Blockchain, zarządzanie certyfikatami.
 
-  
 
-### `Klienci/WIM`
-
-Projekty dedykowane dla klienta WIM.
-
-  
 
 #### `Klienci/WIM/Call-Snippet`
 
@@ -542,11 +506,31 @@ Projekt organizacyjny działu DEV. Automatyzacja przepływów pracy dokumentacyj
 
 Dokumentacja "jak pracujemy" - procesy, narzędzia, standardy działu R&D. Zawiera 5 kategorii: Procesy (Code review, Daily, Release), Narzędzia (Azure DevOps, Git, Środowiska), Zespół (Role, Spotkania, Kanały komunikacji), Standardy (Nazewnictwo, Kodowanie, Dokumentacja), HR (Onboarding, Urlopy, Szkolenia). Notatki organizacyjne z Daily/Rady Architektów/Planowania trafiają tutaj. Format tematyczny - każde ustalenie ma swój plik który ewoluuje w czasie.
 
-  
+
+
+#### `Organizacja-DEV/Dokumentacja-organizacyjna/Narzędzia`
+
+Dokumentacja narzędzi używanych przez dział R&D. Azure DevOps, Git, środowiska deweloperskie, narzędzia do automatyzacji i testowania.
+
+
 
 ---
 
-  
+
+
+## UC moduł raportowy (`UC moduł raportowy/`)
+
+
+
+### `UC moduł raportowy`
+
+Baza wiedzy Use Cases dla nowego modułu raportowego. Szczegółowe przypadki użycia opisujące funkcjonalności, interakcje użytkowników i wymagania dla komponentów modułu raportowego. Systematyczna dokumentacja scenariuszy użytkowania wspierająca design i implementację funkcjonalności raportowych.
+
+
+
+---
+
+
 
 ## Mapowanie tematów na projekty
 

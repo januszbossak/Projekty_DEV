@@ -8,26 +8,9 @@ Ten dokument definiuje **strukturę dokumentacji projektów** w repozytorium (fo
 
 ## Struktura plików projektu
 
-Każdy projekt zawiera dwa pliki:
+Każdy projekt zawiera jeden plik:
 
-### 1. `README.md` - Mapa nawigacyjna (krótka)
-
-**Cel:** Szybki przegląd projektu bez otwierania pełnej dokumentacji.
-
-**Zawartość:**
-- Status i podstawowe info (klient, PDM, Tech Lead)
-- Link do pełnej dokumentacji używając linkowania Obsidian: `[[Nazwa-projektu]]` (nazwa bez ścieżki)
-- Szybki przegląd (Problem / Rozwiązanie / Obecna faza)
-- Kluczowe decyzje architektoniczne (tabela)
-- Zakres obecnego MVP (jeśli aplikowalne)
-- Główne ryzyka (jeśli aplikowalne)
-- Szybkie linki (repo, środowiska, dokumenty)
-
-**Długość:** ~50-100 linii (1-2 ekrany)
-
----
-
-### 2. `Nazwa-projektu.md` - Project Canvas (pełna dokumentacja)
+### `Nazwa-projektu.md` - Project Canvas (pełna dokumentacja)
 
 **Cel:** Szczegółowa, kompleksowa dokumentacja projektu w formacie **Project Canvas**.
 
@@ -369,15 +352,13 @@ Gdy aktualizujesz projekt na podstawie notatki:
 5. **Zaktualizuj Historię zmian** (Sekcja 5) - użyj linkowania Obsidian: `[[2025-08-12]]` dla daty, `[[2025-08-12 Rada architektów]]` dla źródła
 6. **Zaktualizuj "Ostatnia aktualizacja"** w nagłówku
 7. **Zaktualizuj "Powód statusu"** jeśli status zmienił się na 🟡 lub 🔴
-8. **Zaktualizuj README.md** - szybki przegląd musi być spójny z Project Canvas
-9. **Używaj linkowania Obsidian** - wszystkie linki przez `[[nazwa]]`, nie przez ścieżki
+8. **Używaj linkowania Obsidian** - wszystkie linki przez `[[nazwa]]`, nie przez ścieżki
 
 ### 2. Nowy projekt
 
 1. Skopiuj szablon z `SZABLON.md`
 2. Wypełnij wszystkie sekcje zgodnie z `STYL.md`
-3. Utwórz `README.md` na podstawie szablonu README
-4. Dodaj projekt do `projekty/README.md` (centralny indeks)
+3. Dodaj projekt do `projekty/README.md` (centralny indeks)
 
 ### 3. Nowy podprojekt
 
@@ -476,13 +457,10 @@ Utwórz podprojekt gdy element głównego projektu:
 ```
 Projekt-glowny/
 ├── Projekt-glowny.md          # Główny Project Canvas + odsyłacze
-├── README.md
 ├── Podprojekt-A/
-│   ├── Podprojekt-A.md        # Pełny Project Canvas
-│   └── README.md
+│   └── Podprojekt-A.md        # Pełny Project Canvas
 └── Podprojekt-B/
-    ├── Podprojekt-B.md
-    └── README.md
+    └── Podprojekt-B.md
 ```
 
 ---
