@@ -320,3 +320,36 @@ az boards query --wiql "SELECT * FROM WorkItems WHERE [System.WorkItemType] = 'F
 4. **Zachowuj chronologię** przy przetwarzaniu notatek
 
 5. **Linkuj, nie duplikuj** - referencje do dokumentów zamiast kopiowania treści
+
+---
+
+## 💾 Backup na GitHub
+
+### Slash command: `/backup`
+
+**Aktywacja:** Gdy użytkownik napisze:
+- `/backup`
+- "backup"
+- "zrób backup"
+- "zaktualizuj GitHub"
+- "wypchnij zmiany"
+
+**Lokalizacja workflow:** `.claude/commands/backup.md`
+
+**Zadania:**
+1. Dodaj wszystkie zmiany (`git add .`)
+2. Przeanalizuj co się zmieniło (`git status`)
+3. Utwórz commit z sensownym opisem zmian
+4. Wypchnij na GitHub (`git push origin main`)
+5. Raportuj sukces z linkiem do repozytorium
+
+**Konfiguracja:**
+- **Repozytorium:** https://github.com/januszbossak/Projekty_DEV
+- **Branch:** `main`
+- **Token:** Skonfigurowany w `.git/config` (embedded w URL)
+
+**Ważne:**
+- **NIE pytaj o potwierdzenie** - wykonaj automatycznie
+- Backup obejmuje **wszystko**, łącznie z bazą SQLite
+- Format commit message: `Backup [YYYY-MM-DD HH:MM] - [opis zmian]`
+- Zawsze dodaj `🤖 Generated with Claude Code` na końcu commit message

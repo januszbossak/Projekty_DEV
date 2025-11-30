@@ -2,6 +2,7 @@
 
 ## Metryki projektu
 
+
 | Rola | Osoba | Kontakt |
 |------|-------|---------|
 | **PDM** | | |
