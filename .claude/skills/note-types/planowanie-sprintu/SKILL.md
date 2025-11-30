@@ -47,15 +47,7 @@ Planowanie sprintu to nie tylko "kto co robi". To też:
 
 Zgrupuj wypowiedzi według tematów (np. "JRWA", "Repozytorium"), nawet jeśli są rozdzielone.
 
-### Krok 2: Identyfikacja projektów
-
-Dla każdego tematu określ **którego projektu** dotyczy:
-- `moduly/Modul-raportowy`
-- `klienci/LOT/JRWA`
-- `cross-cutting/Wydajnosc`
-- itd.
-
-### Krok 3: Weryfikacja ról (Sanity Check)
+### Krok 2: Weryfikacja ról (Sanity Check)
 
 Sprawdź zgodność zadań z rolami osób.
 
@@ -63,14 +55,14 @@ Sprawdź zgodność zadań z rolami osób.
 - "Adrian (Backend) zapoznaje się z frontendem"
 - ✅ Interpretacja: Adrian analizuje API/struktury danych dla frontendu
 
-### Krok 4: Ekstrakcja decyzji i ryzyk
+### Krok 3: Ekstrakcja decyzji i ryzyk
 
 Planowanie często zawiera **decyzje ad-hoc**:
 - "Zróbmy to najpierw" → decyzja o priorytecie
 - "Użyjmy Lucene" → decyzja architektoniczna
 - "To może się nie wyrobić" → ryzyko
 
-### Krok 5: Synteza
+### Krok 4: Synteza
 
 Zredaguj notatkę zachowując wszystkie istotne szczegóły.
 
@@ -89,11 +81,6 @@ Zredaguj notatkę zachowując wszystkie istotne szczegóły.
 ```markdown
 **Sprint:** [numer/nazwa]
 **Okres:** [daty sprintu]
-
-**Powiązane projekty:**
-- `moduly/Modul-raportowy` – tematy 1, 3
-- `klienci/LOT/JRWA` – temat 2
-- `cross-cutting/Wydajnosc` – temat 4
 ```
 
 ---
@@ -106,26 +93,21 @@ Zredaguj notatkę zachowując wszystkie istotne szczegóły.
 **Sprint:** [numer]
 **Okres:** [daty]
 
-**Powiązane projekty:**
-- [lista]
-
 ---
 
 ## 1. Status bieżący (Domykanie poprzedniego sprintu)
 
-| Temat | Projekt | Status | Uwagi |
-|-------|---------|--------|-------|
-| [Temat A] | `projekt/ścieżka` | ✅ Ukończone | |
-| [Temat B] | `projekt/ścieżka` | 🔄 W testach | Czeka na QA |
-| [Temat C] | `projekt/ścieżka` | ➡️ Przeniesione | Brak czasu |
+| Temat | Status | Uwagi |
+|-------|--------|-------|
+| [Temat A] | ✅ Ukończone | |
+| [Temat B] | 🔄 W testach | Czeka na QA |
+| [Temat C] | ➡️ Przeniesione | Brak czasu |
 
 ---
 
 ## 2. Plany na sprint
 
 ### [Nazwa tematu/projektu]
-
-**Projekt:** `[ścieżka/do/projektu]`
 
 **Kontekst i cel:**
 [2-3 zdania wyjaśniające DLACZEGO to robimy, ograniczenia biznesowe, terminy klienta. Pomiń dla trywialnych bugfixów.]
@@ -165,18 +147,18 @@ Zredaguj notatkę zachowując wszystkie istotne szczegóły.
 
 [Sekcja dla decyzji które padły podczas planowania, ale dotyczą architektury/technologii]
 
-| Decyzja | Projekt | Status | Uzasadnienie |
-|---------|---------|--------|--------------|
-| [Decyzja 1] | `projekt/ścieżka` | ✅ Zatwierdzone | [Dlaczego] |
-| [Decyzja 2] | `projekt/ścieżka` | 💡 Do weryfikacji | [Dlaczego] |
+| Decyzja | Kontekst | Status | Uzasadnienie |
+|---------|----------|--------|--------------|
+| [Decyzja 1] | [1-2 zdania] | ✅ Zatwierdzone | [Dlaczego] |
+| [Decyzja 2] | [1-2 zdania] | 💡 Do weryfikacji | [Dlaczego] |
 
 ---
 
 ## 4. Ryzyka i blokery
 
-| Ryzyko/Bloker | Projekt | Wpływ | Mitygacja | Właściciel |
-|---------------|---------|-------|-----------|------------|
-| [Opis] | `projekt` | Wysoki/Średni/Niski | [Co robimy] | [Osoba] |
+| Ryzyko/Bloker | Kontekst | Wpływ | Mitygacja | Właściciel |
+|---------------|----------|-------|-----------|------------|
+| [Opis] | [1-2 zdania] | Wysoki/Średni/Niski | [Co robimy] | [Osoba] |
 
 ---
 
@@ -196,7 +178,6 @@ Zredaguj notatkę zachowując wszystkie istotne szczegóły.
 | Nazwy systemów | **Bold** (np. **AMODIT**, **Trust Center**) |
 | Zmienne, kod, nazwy tabel | `Inline Code` (np. `CaseDefinition`) |
 | Osoby | **Pogrubione** w tabelach |
-| Projekty | `ścieżka/do/projektu` |
 
 ---
 
@@ -241,8 +222,7 @@ Backendowiec "robi frontend" → opisz jako "przygotowanie API/danych dla fronte
 
 ## Checklist przed zapisem
 
-- [ ] Każdy temat ma przypisany projekt
-- [ ] Metadane "Powiązane projekty" na początku
+- [ ] Metadane "Powiązane projekty" na początku (tylko lista tematów, bez ścieżek)
 - [ ] Status poprzedniego sprintu udokumentowany
 - [ ] Zadania z estymacjami i przypisaniami
 - [ ] Zależności między zadaniami oznaczone

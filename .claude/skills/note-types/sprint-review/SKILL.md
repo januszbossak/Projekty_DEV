@@ -34,26 +34,7 @@ Sprint Review to nie tylko "co zrobiono" – to też:
 - ❌ Źle: "Prezentacja Piotra" (grupowanie po osobie)
 - ✅ Dobrze: "Copilot", "Komunikator", "E-Doręczenia" (osobne tematy)
 
-### 2. Identyfikacja projektów
-
-Dla każdej funkcjonalności określ **którego projektu** dotyczy:
-- `moduly/Trust-Center`
-- `moduly/Modul-raportowy`
-- `klienci/WIM/Repozytorium`
-- itd.
-
-**KRYTYCZNE - Rozróżnianie list w menu głównym vs edytorach:**
-
-- **Lista raportów** w menu głównym (zakładka "Raporty") → `cross-cutting/Zakladka-Raporty`
-- **Lista procesów** w menu głównym (zakładka "Procesy") → `cross-cutting/Zakladka-Procesy`
-- **Lista procesów w edytorze procesów** (wybór procesu do edycji) → `moduly/Edytor-procesow-formularzy`
-
-**Jak rozpoznać kontekst:**
-- Jeśli mówi się o "zakładce Raporty", "menu główne", "lista raportów do wyboru" → zakładka w menu głównym
-- Jeśli mówi się o "edytorze procesów", "wyborze procesu do edycji", "listy procesów w edytorze" → edytor procesów
-- Jeśli kontekst niejasny – sprawdź czy chodzi o wyświetlanie/zarządzanie raportami/procesami (menu główne) czy o edycję definicji procesu (edytor)
-
-### 3. Ekstrakcja pełnego kontekstu
+### 2. Ekstrakcja pełnego kontekstu
 
 Dla każdej funkcjonalności wyodrębnij:
 - **Cel biznesowy** – dlaczego to zrobiono
@@ -63,7 +44,7 @@ Dla każdej funkcjonalności wyodrębnij:
 - **Feedback** – uwagi uczestników
 - **Dalsze kroki** – co będzie robione dalej
 
-### 4. Samoocena przed finalizacją
+### 3. Samoocena przed finalizacją
 
 Przed finalizacją porównaj notatkę z transkrypcją – upewnij się, że **żadna istotna informacja nie została pominięta**.
 
@@ -82,11 +63,6 @@ Przed finalizacją porównaj notatkę z transkrypcją – upewnij się, że **ż
 ```markdown
 **Sprint:** [numer/nazwa sprintu jeśli padła]
 **Okres:** [daty sprintu jeśli padły]
-
-**Powiązane projekty:**
-- `moduly/Trust-Center` – temat 1
-- `moduly/Modul-raportowy` – tematy 2, 3
-- `klienci/LOT/JRWA` – temat 4
 ```
 
 ---
@@ -97,8 +73,6 @@ Przed finalizacją porównaj notatkę z transkrypcją – upewnij się, że **ż
 ---
 
 ## [Numer]. [Nazwa Funkcjonalności/Tematu]
-
-**Projekt:** `[ścieżka/do/projektu]`
 
 ### Cel biznesowy
 
@@ -150,7 +124,6 @@ Przed finalizacją porównaj notatkę z transkrypcją – upewnij się, że **ż
 ### Nakazy
 
 - Każda funkcjonalność = osobna sekcja
-- Każda funkcjonalność ma przypisany projekt
 - Zachowaj szczegóły techniczne (nazwy, parametry, API)
 - Zachowaj feedback i uwagi uczestników
 - Zachowaj ograniczenia i known issues
@@ -192,8 +165,6 @@ Jeśli transkrypcja zawiera niejasne nazwy:
 ## Checklist przed zapisem
 
 - [ ] Każda funkcjonalność ma osobną sekcję
-- [ ] Każda funkcjonalność ma przypisany projekt
-- [ ] Metadane "Powiązane projekty" na początku dokumentu
 - [ ] Cel biznesowy opisany (nie "nie sprecyzowano")
 - [ ] Szczegóły techniczne zachowane
 - [ ] Ograniczenia/known issues zapisane (jeśli były)

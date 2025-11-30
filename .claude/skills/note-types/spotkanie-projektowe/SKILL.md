@@ -54,54 +54,13 @@ Precyzyjnie kategoryzuj zagadnienia:
 
 Przeskanuj transkrypcję i zgrupuj wypowiedzi według funkcjonalności/tematów.
 
-### Krok 2: Identyfikacja projektów
-
-Dla każdego tematu określ **którego projektu** dotyczy:
-- `moduly/Edytor-procesow-formularzy`
-- `moduly/Modul-raportowy`
-- `klienci/WIM/Repozytorium`
-- itd.
-
-**KRYTYCZNE - Rozróżnianie list w menu głównym vs edytorach:**
-
-- **Lista raportów** w menu głównym (zakładka "Raporty") → `cross-cutting/Zakladka-Raporty`
-- **Lista procesów** w menu głównym (zakładka "Procesy") → `cross-cutting/Zakladka-Procesy`
-- **Lista procesów w edytorze procesów** (wybór procesu do edycji) → `moduly/Edytor-procesow-formularzy`
-
-**Jak rozpoznać kontekst:**
-- Jeśli mówi się o "zakładce Raporty", "menu główne", "lista raportów do wyboru" → zakładka w menu głównym
-- Jeśli mówi się o "edytorze procesów", "wyborze procesu do edycji", "listy procesów w edytorze" → edytor procesów
-- Jeśli kontekst niejasny – sprawdź czy chodzi o wyświetlanie/zarządzanie raportami/procesami (menu główne) czy o edycję definicji procesu (edytor)
-
-**KRYTYCZNE - Rozróżnianie projektów SharePoint:**
-
-Tematy związane z SharePoint są klasyfikowane do dwóch różnych projektów w zależności od kontekstu:
-
-- **`moduly/Wspolna-praca-na-dokumentach-office`** - tematy związane z funkcjonalnością wspólnej pracy na dokumentach:
-  - Zarządzanie sesjami edycji dokumentów (np. automatyczne zamykanie sesji)
-  - Synchronizacja dokumentów między użytkownikami
-  - Współpraca użytkowników na dokumentach
-  - Blokowanie dokumentów podczas edycji
-  - Cache dokumentów
-
-- **`integracje/SharePoint-OAuth`** - tematy związane z technicznymi kwestiami integracji:
-  - Uwierzytelnianie OAuth do SharePoint
-  - Logowanie do SharePoint
-  - Konfiguracja połączeń z SharePoint
-  - Migracja z ACS na OAuth
-  - Techniczne aspekty integracji API
-
-**Jak rozpoznać kontekst SharePoint:**
-- Jeśli mówi się o "wspólnej pracy", "sesjach edycji", "zamykaniu dokumentów", "cache'u dokumentów", "blokowaniu dokumentów" → `moduly/Wspolna-praca-na-dokumentach-office`
-- Jeśli mówi się o "logowaniu", "uwierzytelnianiu", "OAuth", "konfiguracji połączeń", "migracji ACS", "technicznych aspektach integracji" → `integracje/SharePoint-OAuth`
-
-### Krok 3: Kategoryzacja komponentu
+### Krok 2: Kategoryzacja komponentu
 
 Przyporządkuj do właściwego komponentu systemu AMODIT.
 
 > **Uwaga:** Jeśli nie wiesz o czym mowa – oznacz "[do wyjaśnienia]". Lepiej zapytać niż błędnie sklasyfikować.
 
-### Krok 4: Ekstrakcja pełnego kontekstu
+### Krok 3: Ekstrakcja pełnego kontekstu
 
 Dla każdej funkcjonalności wyodrębnij:
 - Cel biznesowy i techniczny
@@ -111,11 +70,11 @@ Dla każdej funkcjonalności wyodrębnij:
 - Szczegóły techniczne (nazwy, parametry, formaty)
 - Punkty otwarte
 
-### Krok 5: Podział na MVP
+### Krok 4: Podział na MVP
 
 Jeśli dyskutowano priorytetyzację – zaproponuj podział na pakiety prac.
 
-### Krok 6: Weryfikacja końcowa
+### Krok 5: Weryfikacja końcowa
 
 **WAŻNE:** Przed finalizacją dokonaj powtórnego przeglądu transkrypcji. Upewnij się, że wszystkie wątki zostały prawidłowo przedstawione.
 
@@ -134,10 +93,6 @@ Jeśli dyskutowano priorytetyzację – zaproponuj podział na pakiety prac.
 ```markdown
 **Data:** RRRR-MM-DD
 **Temat główny:** [np. "Edytor Diagramu – połączenia i etapy"]
-
-**Powiązane projekty:**
-- `moduly/Edytor-procesow-formularzy` – funkcjonalności 1, 2, 3
-- `moduly/Modul-raportowy` – funkcjonalność 4
 ```
 
 ---
@@ -149,7 +104,6 @@ Jeśli dyskutowano priorytetyzację – zaproponuj podział na pakiety prac.
 
 ## [Numer]. [Nazwa Funkcjonalności]
 
-**Projekt:** `[ścieżka/do/projektu]`
 **Komponent:** [Edytor Diagramu / Edytor Formularza / Edytor Reguł / inny]
 
 ### Cel i problem

@@ -166,10 +166,10 @@ Rozpoznaj w transkrypcji:
 
 ## 4. Decyzje ad-hoc (jeśli były)
 
-| Decyzja | Projekt | Status | Uzasadnienie |
-|---------|---------|--------|--------------|
-| [Decyzja 1] | `projekt/ścieżka` | ✅ Zatwierdzone | [Dlaczego] |
-| [Decyzja 2] | `projekt/ścieżka` | 💡 Do weryfikacji | [Dlaczego] |
+| Decyzja | Kontekst | Status | Uzasadnienie |
+|---------|----------|--------|--------------|
+| [Decyzja 1] | [1-2 zdania] | ✅ Zatwierdzone | [Dlaczego] |
+| [Decyzja 2] | [1-2 zdania] | 💡 Do weryfikacji | [Dlaczego] |
 
 [Jeśli brak decyzji – pomiń sekcję]
 ```

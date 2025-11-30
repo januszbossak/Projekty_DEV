@@ -270,11 +270,6 @@ Jeśli jest mniej niż 4 transkrypcje do przetworzenia:
 - **Wszystkie sekcje** wymagane przez skill muszą być obecne
 - **Format** - dokładnie jak w przykładach ze skilla
 
-### 3. Identyfikacja projektów
-- **Zawsze wypełnij** sekcję "Powiązane projekty"
-- **Sprawdź w** `projekty/README.md` istniejące projekty
-- **Format:** `` `kategoria/Nazwa-projektu` - tematy 1, 3 ``
-
 ### 4. Język
 - **Tylko polski**
 - **Terminologia techniczna** po angielsku (jak w słowniku)

@@ -35,50 +35,7 @@ Zanim wygenerujesz notatkę, wykonaj wewnętrznie następujące kroki:
 
 Zidentyfikuj główne wątki. Pamiętaj, że dyskusja o jednym temacie (np. "Repozytorium") może być przerwana innym wątkiem i wznowiona później. **Scal te fragmenty.**
 
-### 2. Identyfikacja projektów
-
-Dla każdego tematu określ **którego projektu** dotyczy. Użyj nazewnictwa z `projekty/README.md`:
-- `moduly/Modul-raportowy`
-- `cross-cutting/Wydajnosc`
-- `klienci/LOT/JRWA`
-- itd.
-
-**KRYTYCZNE - Rozróżnianie list w menu głównym vs edytorach:**
-
-- **Lista raportów** w menu głównym (zakładka "Raporty") → `cross-cutting/Zakladka-Raporty`
-- **Lista procesów** w menu głównym (zakładka "Procesy") → `cross-cutting/Zakladka-Procesy`
-- **Lista procesów w edytorze procesów** (wybór procesu do edycji) → `moduly/Edytor-procesow-formularzy`
-
-**Jak rozpoznać kontekst:**
-- Jeśli mówi się o "zakładce Raporty", "menu główne", "lista raportów do wyboru" → zakładka w menu głównym
-- Jeśli mówi się o "edytorze procesów", "wyborze procesu do edycji", "listy procesów w edytorze" → edytor procesów
-- Jeśli kontekst niejasny – sprawdź czy chodzi o wyświetlanie/zarządzanie raportami/procesami (menu główne) czy o edycję definicji procesu (edytor)
-
-**KRYTYCZNE - Rozróżnianie projektów SharePoint:**
-
-Tematy związane z SharePoint są klasyfikowane do dwóch różnych projektów w zależności od kontekstu:
-
-- **`moduly/Wspolna-praca-na-dokumentach-office`** - tematy związane z funkcjonalnością wspólnej pracy na dokumentach:
-  - Zarządzanie sesjami edycji dokumentów (np. automatyczne zamykanie sesji)
-  - Synchronizacja dokumentów między użytkownikami
-  - Współpraca użytkowników na dokumentach
-  - Blokowanie dokumentów podczas edycji
-  - Cache dokumentów
-
-- **`integracje/SharePoint-OAuth`** - tematy związane z technicznymi kwestiami integracji:
-  - Uwierzytelnianie OAuth do SharePoint
-  - Logowanie do SharePoint
-  - Konfiguracja połączeń z SharePoint
-  - Migracja z ACS na OAuth
-  - Techniczne aspekty integracji API
-
-**Jak rozpoznać kontekst SharePoint:**
-- Jeśli mówi się o "wspólnej pracy", "sesjach edycji", "zamykaniu dokumentów", "cache'u dokumentów", "blokowaniu dokumentów" → `moduly/Wspolna-praca-na-dokumentach-office`
-- Jeśli mówi się o "logowaniu", "uwierzytelnianiu", "OAuth", "konfiguracji połączeń", "migracji ACS", "technicznych aspektach integracji" → `integracje/SharePoint-OAuth`
-
-Jeśli temat nie pasuje do żadnego projektu – zanotuj jako "Nowy temat / do sklasyfikowania".
-
-### 3. Filtracja szumu
+### 2. Filtracja szumu
 
 Odsiej dygresje, żarty i kwestie organizacyjne (np. "czy mnie słychać", "poczekajmy na Piotra").
 
@@ -111,10 +68,9 @@ Odróżnij:
 ### Metadane (na początku dokumentu)
 
 ```markdown
-**Powiązane projekty:**
-- `moduly/Modul-raportowy` – tematy 1, 3
-- `cross-cutting/Wydajnosc` – temat 2
-- `klienci/WIM/Repozytorium` – temat 4
+**Tematy:**
+- Temat 1
+- Temat 2
 ```
 
 ---
@@ -125,8 +81,6 @@ Odróżnij:
 ---
 
 ## [Numer]. [Tytuł Zagadnienia]
-
-**Projekt:** `[ścieżka/do/projektu]` lub "Nowy temat / do sklasyfikowania"
 
 ### Kontekst i Problem
 
