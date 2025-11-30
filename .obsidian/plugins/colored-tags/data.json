@@ -1,0 +1,25 @@
+{
+  "palette": {
+    "seed": 0,
+    "selected": "adaptive-soft",
+    "custom": "e12729-f37324-f8cc1b-72b043-007f4e"
+  },
+  "mixColors": true,
+  "transition": true,
+  "accessibility": {
+    "highTextContrast": false
+  },
+  "knownTags": {
+    "do_opracowania": 1,
+    "backlog": 2,
+    "azure": 3,
+    "mvp": 4,
+    "prompt": 5,
+    "JRWA": 6,
+    "UseCase": 7,
+    "amodit-dev": 8,
+    "amodit-sla": 9,
+    "amodit-infrastructure": 10
+  },
+  "_version": 3
+}
