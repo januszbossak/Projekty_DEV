@@ -304,11 +304,118 @@ def get_stats():
     
     return stats
 
+def scan_and_register_raw_files(dir_path: str = "Notatki/Transkrypcje/surowe"):
+    """
+    Skanuje katalog w poszukiwaniu nowych plików .md i dodaje je do bazy.
+    
+    Args:
+        dir_path: Ścieżka do katalogu z surowymi transkrypcjami (domyślnie 'Notatki/Transkrypcje/surowe')
+    
+    Returns:
+        Liczba nowo dodanych plików.
+    """
+    target_dir = DB_PATH.parent.parent / dir_path
+    if not target_dir.exists():
+        return 0
+        
+    added_count = 0
+    
+    # Pobierz listę plików .md (z wyłączeniem README.md)
+    files = [f for f in target_dir.glob("*.md") if f.name != "README.md"]
+    
+    for f in files:
+        # Ścieżka relatywna do Notatki/ (np. Transkrypcje/surowe/plik.md)
+        if dir_path.startswith("Notatki/"):
+            rel_path_dir = dir_path[8:] # Usuń "Notatki/"
+        else:
+            rel_path_dir = dir_path
+            
+        rel_path = f"{rel_path_dir}/{f.name}"
+        
+        # Sprawdź czy plik już istnieje w bazie (typ 'surowa')
+        existing_id = get_file_id(rel_path, 'surowa')
+        
+        if not existing_id:
+            add_file(rel_path, 'surowa', f.name)
+            added_count += 1
+            
+    return added_count
+
 
 if __name__ == "__main__":
-    # Test
-    stats = get_stats()
-    print("📊 Statystyki bazy:")
-    for key, value in stats.items():
-        print(f"  {key}: {value}")
+    import argparse
 
+    # Argument parsing
+    parser = argparse.ArgumentParser(description="Helper script to manage transcription database.")
+    subparsers = parser.add_subparsers(dest="command")
+
+    # Stats command
+    stats_parser = subparsers.add_parser("stats", help="Get database statistics.")
+
+    # Scan command
+    scan_parser = subparsers.add_parser("scan_and_register", help="Scan directory for new raw files.")
+    scan_parser.add_argument("--dir", type=str, default="Notatki/Transkrypcje/surowe", help="Directory to scan")
+
+    # Add file command
+    add_file_parser = subparsers.add_parser("add_file", help="Add a file to the database.")
+
+    add_file_parser.add_argument("sciezka", type=str, help="Relative path to Notatki/ (e.g., 'Transkrypcje/surowe/plik.md')")
+    add_file_parser.add_argument("typ", type=str, choices=['surowa', 'oczyszczona', 'notatka'], help="File type ('surowa', 'oczyszczona', 'notatka')")
+    add_file_parser.add_argument("nazwa", type=str, help="File name")
+
+    # Get unprocessed files command
+    get_unprocessed_parser = subparsers.add_parser("get_unprocessed_files", help="Get a list of files ready for processing.")
+    get_unprocessed_parser.add_argument("etap", type=str, choices=['surowa->oczyszczona', 'oczyszczona->notatka'], help="Processing stage ('surowa->oczyszczona' or 'oczyszczona->notatka')")
+    get_unprocessed_parser.add_argument("--limit", type=int, default=100, help="Maximum number of files to return.")
+
+    # Start processing command
+    start_processing_parser = subparsers.add_parser("start_processing", help="Mark processing as started.")
+    start_processing_parser.add_argument("plik_zrodlowy_id", type=int, help="Source file ID")
+    start_processing_parser.add_argument("etap", type=str, choices=['surowa->oczyszczona', 'oczyszczona->notatka'], help="Processing stage")
+
+    # Finish processing command
+    finish_processing_parser = subparsers.add_parser("finish_processing", help="Mark processing as finished.")
+    finish_processing_parser.add_argument("processing_id", type=int, help="Processing record ID")
+    finish_processing_parser.add_argument("plik_wynikowy_id", type=int, help="Generated file ID")
+    finish_processing_parser.add_argument("--uwagi", type=str, default=None, help="Optional remarks")
+
+    # Mark as archived command
+    mark_archived_parser = subparsers.add_parser("mark_as_archived", help="Mark a file as archived.")
+    mark_archived_parser.add_argument("plik_id", type=int, help="File ID to archive")
+
+    args = parser.parse_args()
+
+    if args.command == "stats":
+        stats = get_stats()
+        print("📊 Statystyki bazy:")
+        for key, value in stats.items():
+            print(f"  {key}: {value}")
+    elif args.command == "scan_and_register":
+        count = scan_and_register_raw_files(args.dir)
+        print(f"Registered {count} new files.")
+    elif args.command == "add_file":
+        file_id = add_file(args.sciezka, args.typ, args.nazwa)
+        print(f"Added file with ID: {file_id}")
+        stats = get_stats()
+        print("📊 Statystyki bazy:")
+        for key, value in stats.items():
+            print(f"  {key}: {value}")
+    elif args.command == "get_unprocessed_files":
+        files = get_unprocessed_files(args.etap, args.limit)
+        if files:
+            for file_data in files:
+                print(f"{file_data[0]}|{file_data[1]}|{file_data[2]}")
+        else:
+            print("(empty)")
+    elif args.command == "start_processing":
+        processing_id = start_processing(args.plik_zrodlowy_id, args.etap)
+        if processing_id:
+            print(f"Started processing with ID: {processing_id}")
+        else:
+            print("Processing already in progress or completed for this file.")
+    elif args.command == "finish_processing":
+        finish_processing(args.processing_id, args.plik_wynikowy_id, args.uwagi)
+        print(f"Finished processing ID: {args.processing_id}")
+    elif args.command == "mark_as_archived":
+        mark_as_archived(args.plik_id)
+        print(f"Marked file ID: {args.plik_id} as archived.")

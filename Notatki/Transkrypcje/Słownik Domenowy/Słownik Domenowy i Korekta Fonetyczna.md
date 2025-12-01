@@ -23,6 +23,7 @@
 | **Tableau**        | tablo                                              | Narzędzie BI                        |
 | **PKF**            | PKU, PK fu                                         | Klient                              |
 | **LPP**            | LP                                                 | Klient                              |
+| **DocuSign**       | DokSign                                            | Aplikacja do podpisywania z ktora AMODIT jest zintegrowany |
 
 #### 2. Technologie i Programowanie
 

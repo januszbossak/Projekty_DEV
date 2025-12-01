@@ -42,11 +42,28 @@ Użytkownik podaje nazwę: "Oczyść 2025-11-25 Design.md"
 Użytkownik mówi: "Oczyść oczekujące transkrypcje" lub "Oczyść wszystkie"
 
 **Workflow batch:**
-1. Uruchom: `python3 .claude/scripts/transkrypcje_db.py` aby sprawdzić status
-2. Pobierz pliki do przetworzenia: użyj `get_unprocessed_files('surowa->oczyszczona')`
-3. Przetwarzaj chronologicznie (najstarsze najpierw)
-4. **Limit: 5 plików na batch** (unikamy przepełnienia kontekstu)
-5. Po 5 plikach zapytaj: "Przetworzyłem 5/X transkrypcji. Kontynuować?"
+
+1. **Sprawdź oczekujące pliki w bazie:**
+   ```python
+   files = get_unprocessed_files('surowa->oczyszczona')
+   ```
+
+2. **Jeśli BRAK plików w bazie:**
+   - Uruchom skanowanie dysku w poszukiwaniu nowych plików:
+     ```python
+     count = scan_and_register_raw_files('Notatki/Transkrypcje/surowe')
+     print(f"Zarejestrowano {count} nowych plików")
+     ```
+   - Jeśli `count > 0`: Pobierz ponownie listę `files = get_unprocessed_files(...)`
+   - Jeśli `count == 0` i nadal brak plików: Zakończ z informacją "Brak transkrypcji do przetworzenia".
+
+3. **Pobierz pliki do przetworzenia:** Wybierz z listy `files` (już posortowane chronologicznie).
+
+4. **Przetwarzaj chronologicznie (najstarsze najpierw).**
+
+5. **Limit: 5 plików na batch** (unikamy przepełnienia kontekstu).
+
+6. **Po 5 plikach zapytaj:** "Przetworzyłem 5/X transkrypcji. Kontynuować?"
 
 ---
 
