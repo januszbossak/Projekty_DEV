@@ -1,6 +1,7 @@
-**Transkrypcja**
 
 27 listopada 2025, 11:33AM
+
+32min 53s
 
 **Damian Kaminski** 0:09  
 Bo ja też Jestem.  

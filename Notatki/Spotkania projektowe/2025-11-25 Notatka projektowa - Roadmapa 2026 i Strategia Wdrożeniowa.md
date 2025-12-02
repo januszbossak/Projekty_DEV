@@ -1,16 +1,16 @@
-# Notatka projektowa – 2025-11-25 – Roadmapa 2025 i Strategia Wdrożeniowa
+
 
 **Data:** 2025-11-25
-**Temat główny:** Ustalenia dotyczące Roadmapy na rok 2025, priorytetyzacja prac (Edytor, Raporty, Deploy) oraz strategia skrócenia czasu wdrożeń.
+**Temat główny:** Ustalenia dotyczące Roadmapy na rok 2026, priorytetyzacja prac (Edytor, Raporty, Deploy) oraz strategia skrócenia czasu wdrożeń.
 
 ---
 
-## 1. Roadmapa Q4 2024 (Domykanie)
+## 1. Roadmapa Q4 2025 (Domykanie)
 
 **Komponent:** Roadmapa / Zarządzanie
 
 ### Cel i problem
-Zamknięcie bieżących tematów przed końcem roku, aby w Q1 2025 móc skupić się na nowych, dużych inicjatywach.
+Zamknięcie bieżących tematów przed końcem roku, aby w Q1 2026 móc skupić się na nowych, dużych inicjatywach.
 
 ### Decyzja / Sposób realizacji
 **Status:** ✅ Zatwierdzone
@@ -22,7 +22,7 @@ Zamknięcie bieżących tematów przed końcem roku, aby w Q1 2025 móc skupić 
 
 ---
 
-## 2. Roadmapa Q1 2025 (Priorytety)
+## 2. Roadmapa Q1 2026 (Priorytety)
 
 **Komponent:** Roadmapa / Rozwój Produktu
 

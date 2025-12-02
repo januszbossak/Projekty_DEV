@@ -202,24 +202,29 @@ def is_being_processed(plik_id: int, etap: str):
 def get_unprocessed_files(etap: str, limit: int = 100):
     """
     Pobierz listę plików do przetworzenia.
-    
+
+    Dla transkrypcji wieloczęściowych (część 1, część 2, etc.) zwraca tylko część 1,
+    która reprezentuje całą transkrypcję. Agent sam znajdzie pozostałe części.
+
     Args:
         etap: 'surowa->oczyszczona' lub 'oczyszczona->notatka'
         limit: Maksymalna liczba plików
-    
+
     Returns:
         Lista (id, sciezka, nazwa) plików gotowych do przetworzenia
     """
+    import re
+
     conn = get_connection()
     cursor = conn.cursor()
-    
+
     if etap == 'surowa->oczyszczona':
         typ_zrodlowy = 'surowa'
     elif etap == 'oczyszczona->notatka':
         typ_zrodlowy = 'oczyszczona'
     else:
         return []
-    
+
     # Znajdź pliki które:
     # 1. Są odpowiedniego typu
     # 2. Nie są zarchiwizowane
@@ -233,13 +238,33 @@ def get_unprocessed_files(etap: str, limit: int = 100):
           AND p.zarchiwizowany = 0
           AND (pr.status IS NULL OR pr.status = 'oczekujace')
         ORDER BY p.nazwa ASC
-        LIMIT ?
-    """, (etap, typ_zrodlowy, limit))
-    
-    results = cursor.fetchall()
+    """, (etap, typ_zrodlowy))
+
+    all_results = cursor.fetchall()
     conn.close()
-    
-    return results
+
+    # Filtruj wieloczęściowe transkrypcje - zwracaj tylko część 1
+    filtered_results = []
+    part_pattern = re.compile(r'część (\d+)', re.IGNORECASE)
+
+    for file_id, sciezka, nazwa in all_results:
+        match = part_pattern.search(nazwa)
+
+        if match:
+            part_num = int(match.group(1))
+            if part_num == 1:
+                # Część 1 - reprezentuje całą transkrypcję wieloczęściową
+                filtered_results.append((file_id, sciezka, nazwa))
+            # Części 2, 3, 4, etc. - pomijamy (agent znajdzie je sam)
+        else:
+            # Pojedynczy plik (bez "część X") - zawsze dodajemy
+            filtered_results.append((file_id, sciezka, nazwa))
+
+        # Limit
+        if len(filtered_results) >= limit:
+            break
+
+    return filtered_results
 
 def add_project_mapping(notatka_id: int, projekt_sciezka: str, data_mapowania: str = None, uwagi: str = None):
     """
