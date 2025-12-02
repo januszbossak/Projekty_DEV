@@ -1,15 +1,11 @@
 # Rada Architektów – 2025-10-23
 
-**Powiązane projekty:**
-- `cross-cutting/Zakladka-Do-wykonania` – temat 1
-- `moduly/Modul-raportowy` – tematy 2, 3
-- `moduly/Repozytorium-plikow-DMS` – temat 4
 
 ---
 
 ## 1. Zakładka "Do wykonania" w widoku "Wszystkie procesy"
 
-**Projekt:** `cross-cutting/Zakladka-Do-wykonania`
+
 
 ### Kontekst i Problem
 
@@ -41,7 +37,6 @@ Brak.
 
 ## 2. Eksport danych do szablonów XSLT – rozszerzenie pliku
 
-**Projekt:** `moduly/Modul-raportowy`
 
 ### Kontekst i Problem
 
@@ -85,7 +80,6 @@ W nowym interfejsie React rozszerzenie pliku będzie przypisane do definicji sza
 
 ## 3. Logowanie SQL w nowych raportach
 
-**Projekt:** `moduly/Modul-raportowy`
 
 ### Kontekst i Problem
 
@@ -135,7 +129,7 @@ Anna Skupinska ma przeanalizować, dlaczego logowanie SQL nie działa w nowych r
 
 ## 4. Repozytorium plików – wymagania techniczne
 
-**Projekt:** `moduly/Repozytorium-plikow-DMS`
+
 
 ### Kontekst i Problem
 
@@ -192,8 +186,6 @@ Repozytorium plików będzie wykorzystywać:
 ---
 
 ## 5. Problem z instalacją AMODIT – błąd "Said can't build"
-
-**Projekt:** Nowy temat / do sklasyfikowania
 
 ### Kontekst i Problem
 

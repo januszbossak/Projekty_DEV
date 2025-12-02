@@ -1,0 +1,169 @@
+# Daily – 2025-10-01
+
+**Data:** 1 października 2025, 07:19
+
+**Uczestnicy:** Janusz Bossak, Lukasz Bott, Patrycja Walaszczyk, Adrian Kotowski, Anna Skupinska, Damian Kaminski, Oktawia Ostrowska, Kamil Dubaniowski, Lukasz Brocki, Mateusz Kisiel, Marek Dziakowski, Piotr Buczkowski, Przemysław Rogaś, Filip Liwiński, Barbara Michalek, Mariusz Piotrzkowski, Michal Zwierzchowski
+
+---
+
+## Status prac
+
+### Patrycja Walaszczyk
+- **Wczoraj:** Testowanie matrycy uprawnień
+- **Dzisiaj:** Kontynuacja testów matrycy, zgłoszenia na testach
+
+### Adrian Kotowski
+- **Status:** Pierwszy dzień po urlopie
+- **Plan:** Odkopanie tematów z Meistertask, wsparcie konfiguracji Azure Key Vault dla klienta
+
+### Anna Skupińska
+- **Wczoraj:** Praca nad źródłami danych
+- **Status:** Prawie skończone, pozostały pytania o skomentowane fragmenty kodu
+- **Uwaga:** Łukasz odkomentował fragmenty, błąd kopiuj-wklej
+
+### Damian Kamiński
+- **Status:** 2 dni urlopu
+- **Dzisiaj:**
+  - Poprawki w Zimbra
+  - Artykuły na wiki (zaległe z ubiegłego tygodnia)
+  - Spotkanie z Adrianem - rozbudowa integracji z Connectorem (30 min)
+  - Warsztaty z Deloitte - integracja z SAP (wsparcie wdrożeń)
+
+### Oktawia Ostrowska
+- **Wczoraj:** Testowanie modułu raportowego, TrustCenter, CAG
+- **Dzisiaj:** Regres testy internal, sprawdzanie logów systemowych na internal testach
+
+### Kamil Dubaniowski
+- **Wczoraj:**
+  - Spotkanie projektowe z Przemkiem - pokazanie logów, projektu listy pól
+  - **Rada architektów - ekspresowa** (kilka minut, edytor formularza)
+  - **Wycofanie zmian w edytorze formularza** - decyzja o przeniesieniu checkboxów na poziom globalny uznana za nieprzemyślaną, wymaga głębszej analizy
+  - Wsparcie wdrożeń Rossmann - problem z repozytorium nie pokazującym zamkniętych spraw (3000 spraw w "Do wykonania", ładowanie ~1 minuta)
+- **Dzisiaj:**
+  - Spotkanie Indy (cel nieznany, Lucyna poszła na urlop)
+  - Kontynuacja tematów z wczoraj
+  - **Design - statystyki logów** (Przemek chce rozwinąć logi o statystyki, nie tylko listę)
+- **Do ustalenia:** Czy rozwijać logi dedykowanie, czy w oparciu o moduł raportowy
+
+### Łukasz Brocki
+- **Wczoraj:** Zgłoszenie z nowej strony logowania (brak elementu zauważony przez Piotra), problem z znikającymi buforami nadawców u klienta
+- **Status:** Odtworzenie problemu na testowym, podejrzenia co do przyczyny, praca nad poprawką
+- **Plan:** Testy na własnym środowisku, kolejne bugi
+
+### Łukasz Bott
+- **Wczoraj:**
+  - Wsparcie sprzedaży - prezentacja modułu doręczeń w locie
+  - Spotkanie z LOT - konfiguracja systemu (wygląda na realizację projektu)
+  - Spotkanie PK - projekt SAP (realizuje Kamil Spyra pod nadzorem Łukasza)
+- **Dzisiaj:**
+  - Wsparcie wdrożeń - analiza procesu obiegu faktur (Streamsoft, model z REST API zamiast CERA)
+  - Aktualizacja wiki/dokumentacji (zaległości wdrożeniowe)
+- **Uwaga:** Projekt LOT - pula zadań dla działu, do zaplanowania w drugiej połowie miesiąca
+
+### Mateusz Kisiel
+- **Wczoraj:** Zmiany wizualne w komunikatorze, obsługa grup monitorowych
+- **Dzisiaj:** Kontynuacja grup monitorowych, spotkanie z Neuką o 12:00, rozwój Oceana
+
+### Marek Dziakowski
+- **Wczoraj:** Dodanie nowej opcji podpisywania do modułu raportowego (logika i czynności przygotowawcze gotowe)
+- **Dzisiaj:** Dokończenie funkcjonalności podpisywania podstrony raportowej, poprawki do fake testów
+- **Inne:** SMS API do USA/Kanady uruchomione (numer 1-888-xxx zarejestrowany)
+
+### Piotr Buczkowski
+- **Wczoraj:**
+  - Problem z podpisywaniem w Lewiatan
+  - Naprawa spartolenia next stringa do synchronizacji słowników (czasochłonne)
+  - Mechanizm zmiany typów kolumn definitions historii (text → medium text)
+- **Dzisiaj:** Zgłoszenia, Lewiatan (nadzieja na rozwiązanie problemu podpisywania)
+
+### Przemysław Rogaś
+- **Wczoraj:** Zadania z edytora formularza, dużo dyskusji z Kamilem
+- **Dzisiaj:** Kontynuacja zadań z edytora
+
+### Filip Liwiński
+- **Wczoraj:**
+  - Odświeżanie logów systemowych
+  - Akcje przy pustych tabelach
+  - Uprawnienia czyszczenia filtrów
+  - Poprawki na matrycy uprawnień (zgłaszane przez Patrycję)
+- **Dzisiaj:** Ujednolicenie wyglądu filtrów w logach systemowych
+
+### Barbara Michałek
+- **Wczoraj:** Zadania na sprawie, spotkanie z modułu raportowego (raporty systemowe, bugi)
+- **Dzisiaj:** Zadania priorytet 1 z internal testów, komunikator, filtr dla aktywności administracyjnej
+
+### Mariusz Piotrzkowski
+- **Wczoraj:**
+  - Błąd pola Odnośnik - źle wyświetlał tytuł sprawy (4-5h debugowania, banalne rozwiązanie)
+  - Rozpoczęcie zmiany logiki wyświetlania przycisków akcji (planowanie)
+  - Pull request dla Piotra do sprawdzenia
+- **Dzisiaj:** Kontynuacja logiki wyświetlania przycisków akcji
+
+### Michał Zwierzchowski
+- **Wczoraj:** Instalacja środowisk widna wiki, nowe wersje, automatyzacja wydania
+- **Dzisiaj:** Aktualizacja strefy ręce (wieczorem), planowane włączenie poprawek
+- **Pytanie:** **Kiedy wydajemy wersję?** Kwartał się skończył, grudniowa powinna być wydana jako beta
+
+---
+
+## Tematy organizacyjne
+
+### Windows 10 - koniec wsparcia (15 października)
+- **Problem:** Windows 10 Pro kończy wsparcie 15 października, niektórzy mają za słaby sprzęt na Windows 11
+- **Dotyczeni:** Kamil Dubaniowski (7-letni komputer, za słaby procesor/brak TPM), Łukasz Bott
+- **Uwaga:**
+  - Windows 10 Enterprise nadal wspierany
+  - Firma ma Windows 10 Pro
+  - Kamil musi zgłosić potrzebę wymiany sprzętu
+  - Michał oferuje oddanie nieużywanego laptopa
+- **Konkluzja:** Nie jest to totalne odcięcie, łatki nie wychodzą co godzinę, trzeba ogarnąć w ciągu roku
+
+### Spotkanie Indy
+- **Problem:** Kamil Dubaniowski zaproszony przez Lucynę (poszła na urlop), cel spotkania nieznany
+- **Brak agendy:** 7-8 osób po stronie Indy, nieznane czy będzie prezentacja
+- **Akcja:** Kamil i Janusz muszą szybko ustalić plan spotkania
+
+### Wersje systemu - harmonogram wydań
+- **Pytanie Michała:** Kiedy wydajemy wersję? Kwartał się skończył
+- **Problem:** We wrześniu wydano wersję czerwcową (opóźnienie 3 miesiące)
+- **Do dyskusji:**
+  - Czy utrzymać czerwcową, czy nazwać wrześniową?
+  - Kwestie marketingowe
+  - Spotkanie Janusz + zespół
+
+### Bug - strona logowania (2 obrazki)
+- **Problem:** Na stronie logowania wyświetlają się 2 obrazki zamiast 1
+- **Kontekst:** Tydzień temu było dobrze, po aktualizacji pojawił się duplikat
+- **Przyczyna:** Prawdopodobnie związane z logo strony + alternatywą dla tekstu
+- **Akcja:** Michał aktualizuje strefę ręce wieczorem, może włączyć poprawkę
+
+---
+
+## Blokery / Ryzyka
+
+1. **Rossmann - repozytorium nie pokazuje zamkniętych spraw**
+   - Efekt: 3000 spraw w "Do wykonania", ładowanie ~1 minuta
+   - Wymagana akcja: Przerobienie repozytorium, akcja masowego zamykania spraw
+
+2. **Lewiatan - problem z podpisywaniem**
+   - Piotr pracuje nad rozwiązaniem
+   - Spartolony next string do synchronizacji słowników (już naprawiony)
+
+3. **Edytor formularza - wycofane zmiany**
+   - Decyzja o przeniesieniu checkboxów na poziom globalny uznana za zbyt szybką
+   - Wymaga przemyślenia lub całkowitej rezygnacji
+
+4. **Windows 10 - koniec wsparcia**
+   - Część zespołu ma za słaby sprzęt na Windows 11
+   - Wymaga wymiany sprzętu
+
+---
+
+## Przydatne notatki
+
+- **Matryca uprawnień:** Aktywne testowanie przez Patrycję, Filip wprowadza poprawki na bieżąco
+- **Logi systemowe:** Filip nad ujednoliceniem filtrów, Kamil proponuje rozwinięcie o statystyki (dyskusja: dedykowane vs moduł raportowy)
+- **Komunikator:** Mateusz pracuje nad grupami monitorowymi
+- **Moduł raportowy:** Marek dodaje funkcjonalność podpisywania
+- **Wiki/dokumentacja:** Damian i Kamil rozpisują artykuły (koordynacja, żeby się nie zdublować)
+- **SMS API USA/Kanada:** Uruchomione, numer 1-888-xxx zarejestrowany

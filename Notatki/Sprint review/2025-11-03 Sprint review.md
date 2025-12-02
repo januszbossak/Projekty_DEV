@@ -2,24 +2,13 @@
 **Sprint:** [numer sprintu - do uzupełnienia]
 **Okres:** [daty sprintu - do uzupełnienia]
 
-**Powiązane projekty:**
-- `cross-cutting/Interfejs-sprawy` – tematy 1, 2
-- `moduly/Edytor-procesow-formularzy` – tematy 3, 8
-- `moduly/Repozytorium-plikow-DMS` – temat 4
-- `moduly/Copilot-Baza-wiedzy-AI` – tematy 5, 6, 7
-- `integracje/Integracje-REST-multipart` – temat 9
-- `integracje/System-mailowy` – temat 10
-- `cross-cutting/Logowanie-powiadomien` – temat 11
-- `moduly/Trust-Center` – temat 12
-- `moduly/e-Doreczenia` – temat 13
-- `moduly/SignApp` – temat 14
-- `moduly/KSeF-Connector` – temat 15
+
 
 ---
 
 ## 1. Dolny pasek nawigacji dokumentu
 
-**Projekt:** `cross-cutting/Interfejs-sprawy`
+
 
 ### Cel biznesowy
 
@@ -49,7 +38,7 @@ Klienci upomnieli się o funkcjonalność przełączania dokumentów, którą wc
 
 ## 2. Podgląd raportu na sprawie
 
-**Projekt:** `cross-cutting/Interfejs-sprawy`
+
 
 ### Cel biznesowy
 
@@ -72,7 +61,7 @@ Poprawiono podgląd raportu, żeby był jednolity z podglądem dokumentów. Jede
 
 ## 3. Sortowanie i funkcjonalności w edytorze formularza (lista pól)
 
-**Projekt:** `moduly/Edytor-procesow-formularzy`
+
 
 ### Cel biznesowy
 
@@ -102,7 +91,7 @@ Wyrównanie funkcjonalności listy pól względem starej wersji. Dodanie funkcji
 
 ## 4. Repozytorium plików - frontend
 
-**Projekt:** `moduly/Repozytorium-plikow-DMS`
+
 
 ### Cel biznesowy
 
@@ -149,7 +138,7 @@ Tworzenie zupełnie nowej funkcjonalności na potrzeby realizacji umowy dla WIM-
 
 ## 5. Copilot - eksport plików i dostęp do spraw
 
-**Projekt:** `moduly/Copilot-Baza-wiedzy-AI`
+
 
 ### Cel biznesowy
 
@@ -177,7 +166,7 @@ Rozszerzenie funkcjonalności Copilota o możliwość eksportu wyników oraz dos
 
 ## 6. Copilot - podgląd logów OCR
 
-**Projekt:** `moduly/Copilot-Baza-wiedzy-AI`
+
 
 ### Cel biznesowy
 
@@ -200,7 +189,7 @@ Umożliwienie podglądu logów z OCR-a bez konieczności wchodzenia przez bazę 
 
 ## 7. Baza wiedzy - przepisanie frontendu
 
-**Projekt:** `moduly/Copilot-Baza-wiedzy-AI`
+
 
 ### Cel biznesowy
 
@@ -228,7 +217,7 @@ Przepisanie strony bazy wiedzy na nowo, żeby było spójne z design systemem i 
 
 ## 8. Edytor formularza - drag and drop sekcji
 
-**Projekt:** `moduly/Edytor-procesow-formularzy`
+
 
 ### Cel biznesowy
 
@@ -254,7 +243,7 @@ Dodanie funkcjonalności drag and drop sekcji, której nie mieliśmy w starym ed
 
 ## 9. API do przekazywania dużych plików
 
-**Projekt:** `integracje/Integracje-REST-multipart`
+
 
 ### Cel biznesowy
 
@@ -294,7 +283,7 @@ Pojawiła się potrzeba przekazywania dużych plików z dedykowanego formularza 
 
 ## 10. Podgląd oryginalnego maila w logach
 
-**Projekt:** `integracje/System-mailowy`
+
 
 ### Cel biznesowy
 
@@ -326,7 +315,7 @@ Umożliwienie podglądu oryginalnego maila w logach, żeby serwisowi i testerkom
 
 ## 11. Historia logowania maili
 
-**Projekt:** `cross-cutting/Logowanie-powiadomien`
+
 
 ### Cel biznesowy
 
@@ -363,7 +352,7 @@ Potrzeba z WIM-u: historia maili wysłanych do sprawy. W ramach pierwszego MVP b
 
 ## 12. TrustCenter - przeniesienie blockchaina do Windows Service
 
-**Projekt:** `moduly/Trust-Center`
+
 
 ### Cel biznesowy
 
@@ -383,7 +372,7 @@ Rozwiązanie problemów z blockchainem, gdzie aktualnie pojawiają się bloki, k
 
 ## 13. e-Doręczenia - stabilizacja
 
-**Projekt:** `moduly/e-Doreczenia`
+
 
 ### Cel biznesowy
 
@@ -406,7 +395,7 @@ Ustabilizowanie problemów z e-Doręczeniami. Teraz klienci już tam były, żad
 
 ## 14. SignApp - macOS, Szafir, nowa aplikacja
 
-**Projekt:** `moduly/SignApp`
+
 
 ### Cel biznesowy
 
@@ -465,7 +454,7 @@ Prace nad rozszerzeniem konektora KSeF oraz przygotowanie do nowej integracji.
 
 ## 16. Bezpieczeństwo danych w Copilot i OCR
 
-**Projekt:** `moduly/Copilot-Baza-wiedzy-AI`
+
 
 ### Cel biznesowy
 

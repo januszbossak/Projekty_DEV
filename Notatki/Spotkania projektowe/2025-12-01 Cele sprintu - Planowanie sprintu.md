@@ -230,3 +230,4 @@
 - Historia zdarzeń w repozytorium jest opcjonalna - jeśli nie zdążymy, przechodzi do następnego sprintu
 - MCP i dokumentacja AI zostały zaparkowane jako proof of concept - wymagają dalszego planowania biznesowego
 
+

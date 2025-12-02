@@ -142,13 +142,19 @@ Próba zapewnienia w AMODIT zestawu „standardowych" raportów opartych o dane 
 
 Absolutnie kluczowy element systemu AMODIT. To właśnie na bazie skryptów realizowana jest cała logika biznesowa procesów. Silnik reguł oparty jest o własny język z określoną składnią oraz zestawem ponad 350 specjalnych funkcji, które umożliwiają realizację szerokiego wachlarza scenariuszy automatyzacji. Język ten jest stale rozwijany – regularnie dodawane są nowe dedykowane funkcje, istniejące funkcje otrzymują dodatkowe parametry lub warianty (np. z dopiskiem Ex). Intensywny rozwój odpowiada na bieżące potrzeby klientów i zmiany w architekturze systemu.
 
-  
+### `Moduly/CallRest`
+
+CallRest to funkcja silnika regul, ale to bardzo istotna funkcjonalnosc z ktora wiaze sie wiele aspektow jak autoryzacja, konfiguracja w ustawieniach systemowych.
 
 ### `Moduly/Slowniki`
 
 Obsługa słowników. Słowniki wewnętrzne, zewnętrzne, hierarchiczne, zagnieżdżone. Edge case'y dla słowników zagnieżdżonych.
 
-  
+
+### `Moduly/Proces-rejestr`
+
+Rejestr to specjalny typ procesu o specjalnych uprawnieniach dla uzytkownikow, i odmiennej widocznosci spraw na listach. Rejestry to w pewnym sensie rozbudowane slowniki, ale oparte o sprawy w AMODIT.
+
 
 ### `Moduly/Trust-Center`
 
@@ -206,6 +212,10 @@ Aktualnie rozwijany jest typ „dynamiczny" – pozwala na jeszcze elastyczniejs
 
 Kompleksowe zarządzanie bezpieczeństwem systemu AMODIT. Obejmuje wszystkie działania związane z bezpieczeństwem: wyniki pentestów i naprawa wykrytych luk, hardening systemu (w tym Security Checklist - formalna checklista bezpieczeństwa dla instalacji on-premise do podpisania przez klienta i dostawcę), usuwanie podatności (CVE, OWASP Top 10), bezpieczeństwo sesji (wylogowanie, timeout, tokeny), bezpieczeństwo komunikacji (HTTPS, certyfikaty), szyfrowanie danych, ochrona przed atakami (XSS, CSRF, SQL Injection), security compliance. Systematyczne testy penetracyjne, szybka reakcja na luki krytyczne (hotfix 24-48h), proaktywne wzmacnianie zabezpieczeń. Security Lead: Łukasz Bott.
 
+### `cross-cutting/Logowanie-do-amodit`
+
+Kompleksowe zarządzanie wszystkimi aspektami zakladania konta, logowania, logowania MFA
+
   
 
 ### `cross-cutting/Dostep-bylych-wspolpracownikow`
@@ -248,7 +258,11 @@ Historia aktywności uprawnień w prawym panelu sprawy. Ujednolicenie i uporząd
 
 Podgląd dokumentów w prawym panelu sprawy. Wyświetlanie podglądów różnych typów plików (.txt, .json, .xml, .md, .html, PDF) bezpośrednio w przeglądarce bez potrzeby pobierania. Umożliwia użytkownikowi szybki wgląd w treść załączonych dokumentów bez opuszczania interfejsu sprawy.
 
-  
+
+#### `cross-cutting/Interfejs-sprawy/Podglad-szablonow`
+
+Podgląd szablonów dokumentów  w prawym panelu sprawy. Funkcjonalność potrzebna gdy uzytkownik przed uzyxciem szablonu chce zobaczyc co ten szablon zawiera, czego dotyczy. Inny przypadek uzycja to prezentowanie uzytkownikom np tekstu instrukcji z pdf aby nie zalaczac do setek spraw tego samego dokumentu z instrukcja.
+
 
 ### `cross-cutting/Komunikaty-systemowe`
 
@@ -340,7 +354,8 @@ Integracja z SharePoint przez OAuth. Autoryzacja, synchronizacja dokumentów.
 
 Integracja z systemem mailowym. Wysyłka i odbieranie emaili, SMTP, IMAP.
 
-  
+#### `Integracje/Integracja-CAS`
+Integracja systemu AMODIT z systemem CAS (Central Authentication Service) w celu zapewnienia centralnej autoryzacji, autentykacji oraz zarządzania uprawnieniami użytkowników.
 
 ---
 
@@ -348,13 +363,26 @@ Integracja z systemem mailowym. Wysyłka i odbieranie emaili, SMTP, IMAP.
 
 ## Klienci (`Klienci/`)
 
-
+#### `klienci/Lewiatan/Comarch-HUB`
+Integracja systemu AMODIT z systemem Comarch HUB w zakresie KseF. To niezalena, wręcz w pewnym sensie konkurencyjna integracja, bo mamy własny KseF Connector, ale klient chce przez Comarch Hub
 
 #### `Klienci/LOT/JRWA`
 
 JRWA dla LOT. Specyficzne wymagania rejestru akt.
 
+#### `Klienci/LOT/ADE`
+
+INtegracja z ADE - Archiwum Dokumentów Elektoronicznych - Archiwum Państwowe. 
   
+#### `Klienci/LOT/Integracjai-SIEM`
+
+INtegracja z SIEM (Security Information and Event Management). Wykorzystuje standardy jak Syslog, JSON, CEF, LEEF, agentów własnych, API — ale sam SIEM nie definiuje formatu ani protokołu.
+
+#### `Klienci/LOT/Integracja-UPS`
+Obsluga firmy kurierskiej UPS z poziomu regul w AMODIT
+
+#### `Klienci/LOT/Integracja-Global-Express`
+Obsluga firmy kurierskiej Global-Express z poziomu regul w AMODIT
 
 #### `Klienci/LOT/Wielospolkowosc`
 
@@ -377,6 +405,9 @@ Integracja z KSeF (Krajowy System e-Faktur) dla Marba. Wymiana faktur elektronic
 #### `Klienci/PKF/Rejestracja-czasu-pracy`
 
 Rejestracja czasu pracy dla PKF. Timesheet, rozliczanie godzin.
+
+#### `Klienci/PKF/Przechowywanie-plikow`
+PKF ma wymaganie aby pliki zapisywane w sprawach bylo odpowiednio organizowane np w foldery
 
 
 
@@ -428,9 +459,9 @@ Mechanizm wyświetlania ogłoszeń i newsów na procesach WIM. Feed aktualności
 
   
 
-#### `Klienci/WIM/Podpis-kwalifikowany-macOS`
+#### `Klienci/WIM/Podpis-kwalifikowany-SignApp-macOS`
 
-Obsługa podpisu kwalifikowanego na macOS dla WIM. Integracja z certyfikatami.
+Obsługa podpisu kwalifikowanego na macOS dla WIM. Integracja z certyfikatami. Aplikacja SignApp dla macOS
 
   
 
@@ -440,9 +471,9 @@ Checkboxy w raportach osadzonych dla WIM. Zaznaczanie wielu elementów.
 
   
 
-#### `Klienci/WIM/Repozytorium`
+#### `Klienci/WIM/Repozytorium-plikow-DMS`
 
-Repozytorium Plików (DMS) dla WIM. struktury przestrzeni i folderów wraz z uprawnieniami.
+Repozytorium Plików (DMS) dla WIM. struktury przestrzeni i folderów wraz z uprawnieniami. Mozliwość tworzenia struktury "przestrzenie" -> "foldery" -> pliki 
 
   
 
