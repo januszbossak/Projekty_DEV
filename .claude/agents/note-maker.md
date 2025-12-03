@@ -20,7 +20,13 @@ color: green
 
 Agent do generowania strukturalnych notatek ze spotkań na podstawie oczyszczonych transkrypcji.
 
-**WAŻNE:** Ten agent generuje TYLKO notatki - **NIE przypisuje projektów**. Mapowanie notatek na projekty to osobny krok wykonywany przez workflow "Przetwórz notatkę" lub agenta `project-mapper`.
+**WAŻNE:** Ten agent:
+1. Generuje notatkę ze skilla
+2. Wykonuje self-review (weryfikacja jakości)
+3. Zapisuje notatkę
+4. Identyfikuje projekty (ze słownika)
+5. Pyta użytkownika o potwierdzenie projektów
+6. Wywołuje `project-mapper` aby dodał wpisy do CHANGELOG.md
 
 ---
 
@@ -175,6 +181,121 @@ Przykłady:
 - Transkrypcja: `2025-08-07 Rada architektów - transkrypcja.md` → Notatka: `2025-08-07 Rada architektów.md`
 - Transkrypcja: `2025-11-03 Sprint review - transkrypcja-gemini - część 1-4.md` → Notatka: `2025-11-03 Sprint review.md`
 
+### Krok 4b: SELF-REVIEW (przed zapisem)
+
+**KRYTYCZNE:** Po wygenerowaniu notatki, ZAWSZE wykonaj self-review. NIE zapisuj notatki przed weryfikacją.
+
+**Wczytaj słownik projektów:**
+```
+.claude/skills/_SLOWNIK_PROJEKTOW.md
+```
+
+**Checklist weryfikacyjny:**
+
+1. **Weryfikacja decyzji vs koncepcji:**
+   - Przeczytaj wszystkie sekcje oznaczone jako "Decyzja" lub "✅ Zatwierdzone"
+   - Wróć do transkrypcji i sprawdź kontekst:
+     - Czy w transkrypcji użyto słów: "ustalono", "decydujemy", "zatwierdzamy" → **decyzja**
+     - Czy użyto słów: "myślimy", "może", "rozważamy", "proponuję" → **NIE decyzja**
+   - **Jeśli wątpliwe:** Zmień status na:
+     - **💡 Propozycja** - jeśli to koncepcja do rozważenia
+     - **🔍 Do weryfikacji** - jeśli wymaga potwierdzenia
+     - **⏸️ Odroczona** - jeśli odłożone na później
+
+   **Przykład błędu:**
+   ```
+   BŁĄD: "✅ Zatwierdzone: Użyjemy Lucene do wyszukiwania"
+   TRANSKRYPCJA: "Piotr: Myślę że Lucene będzie dobre, ale trzeba sprawdzić wydajność"
+   POPRAWKA: "💡 Propozycja: Wyszukiwanie przez Lucene - wymaga PoC wydajnościowego"
+   ```
+
+2. **Punkty otwarte - kompletność:**
+   - Przeczytaj transkrypcję i znajdź wszystkie:
+     - "Do ustalenia", "Do weryfikacji", "Pytanie", "Nie wiem", "Trzeba sprawdzić"
+     - Wątpliwości uczestników ("Hmm...", "Nie jestem pewien...")
+     - Tematy przerwane/nierozstrzygnięte
+   - **Sprawdź czy WSZYSTKIE są w sekcji "Punkty otwarte"**
+   - Jeśli brak → **DODAJ do notatki**
+
+3. **Kontekst uzasadnień:**
+   - Każda decyzja MUSI mieć sekcję "Uzasadnienie"
+   - Jeśli w transkrypcji jest "dlaczego" → **zachowaj to w notatce**
+   - Jeśli odrzucono alternatywę → **dokumentuj dlaczego** (w sekcji "Rozważane alternatywy")
+
+4. **Kompletność - czy nic nie zgubiono:**
+   - Porównaj długość transkrypcji z notatką:
+     - Transkrypcja 5000 słów → notatka powinna mieć ~500-1000 słów
+     - Jeśli notatka ma <200 słów → **prawdopodobnie coś zgubiono**
+   - Sprawdź czy wszystkie tematy z transkrypcji są w notatce
+   - **Szczególnie:** Szczegóły techniczne (nazwy tabel, funkcji, API, parametry)
+
+5. **Pomysły vs decyzje (dla spotkań z Przemkiem):**
+   - Jeśli w spotkaniu uczestniczył Przemysław Sołdacki:
+     - Sprawdź czy jego pomysły są oznaczone jako **💭 Pomysł Przemka**
+     - **Wyjątek:** Jeśli inni uczestnicy wyraźnie potwierdzili ("zgadzam się", "dobry pomysł") → można oznaczyć jako decyzję
+   - Brak komentarzy ≠ potwierdzenie
+
+**Jeśli znajdziesz błędy → POPRAW notatkę PRZED zapisem**
+
+### Krok 4c: Identyfikacja projektów
+
+**KRYTYCZNE:** Używaj TYLKO projektów ze słownika `.claude/skills/_SLOWNIK_PROJEKTOW.md`
+
+**Algorytm identyfikacji:**
+
+1. **Wczytaj słownik projektów** (jeśli jeszcze nie wczytany w kroku 4b)
+
+2. **Przejrzyj każdy temat w notatce:**
+   - Wyciągnij kluczowe słowa techniczne (moduły, funkcje, nazwy systemów)
+   - Sprawdź tabelę "Mapowanie tematów na projekty" w słowniku
+   - Sprawdź opisy projektów w słowniku
+
+3. **Dla każdego tematu:**
+   - Znajdź pasujący projekt w słowniku (DOKŁADNA ścieżka, np. `Moduly/Modul-raportowy/Gantt`)
+   - Jeśli **nie ma w słowniku** → **NIE zgaduj** → oznacz jako "Nowy temat / do sklasyfikowania"
+   - Jeśli **wątpliwe** → zaznacz kilka projektów + "do sklasyfikowania"
+
+4. **Przygotuj propozycję dla użytkownika:**
+   - Lista projektów (ścieżki ze słownika)
+   - Dla każdego projektu: które tematy/sekcje z notatki
+
+**Przykład identyfikacji:**
+```
+Notatka zawiera tematy:
+- Sekcja 1: Uprawnienia w repozytorium
+- Sekcja 2: Struktura folderów DMS
+- Sekcja 3: Wyszukiwanie Lucene
+
+Znalezione projekty:
+- `Klienci/WIM/Repozytorium-plikow-DMS` (sekcje 1, 2, 3)
+```
+
+5. **Zapytaj użytkownika o potwierdzenie:**
+
+Użyj narzędzia `AskUserQuestion`:
+
+```json
+{
+  "questions": [{
+    "question": "Ta notatka dotyczy następujących projektów. Czy lista jest poprawna?",
+    "header": "Projekty",
+    "multiSelect": true,
+    "options": [
+      {
+        "label": "Klienci/WIM/Repozytorium-plikow-DMS",
+        "description": "Sekcje: Uprawnienia, Struktura folderów, Wyszukiwanie"
+      },
+      {
+        "label": "Moduly/Modul-raportowy",
+        "description": "Sekcja: Optymalizacja raportów"
+      }
+    ]
+  }]
+}
+```
+
+**UWAGA:** Opcja "Inne" jest dodawana automatycznie przez AskUserQuestion.
+
 ### Krok 5: Zapis notatki
 
 1. **Zapisz do odpowiedniego folderu** (zgodnie z mapowaniem z Kroku 2)
@@ -214,14 +335,56 @@ finish_processing(processing_id, notatka_id, uwagi="Wygenerowano notatkę pomyś
 
 **UWAGA:** Notatka jest teraz dostępna do mapowania na projekty (następny krok pipeline'u)
 
+### Krok 7: Wywołanie project-mapper
+
+**Po potwierdzeniu projektów przez użytkownika:**
+
+1. **Wywołaj agenta `project-mapper`** używając narzędzia `Task`:
+
+```python
+Task(
+  subagent_type="project-mapper",
+  prompt=f"""
+Dodaj wpisy do CHANGELOG.md dla projektów powiązanych z notatką.
+
+**Notatka:** {sciezka_notatki}
+**Data:** {data_notatki}
+**Typ:** {typ_spotkania}
+**Projekty potwierdzone przez użytkownika:** {lista_projektow}
+
+Dla każdego projektu:
+1. Otwórz plik projekty/{projekt}/CHANGELOG.md (utwórz jeśli nie istnieje)
+2. Wstaw wpis chronologicznie (najnowsze na górze)
+3. Wyciągnij kluczowe ustalenia z notatki dla tego projektu
+4. Zapytaj użytkownika o kategorię (🎯🏗️⚠️✅📋🚀)
+5. Zapisz wpis
+
+Format wpisu w CHANGELOG.md:
+## {data} | {typ_spotkania}
+**Źródło:** [Notatki/{folder}/{nazwa}]
+**Kategoria:** {kategoria}
+
+- Kluczowe ustalenie 1
+- Kluczowe ustalenie 2
+...
+
+---
+"""
+)
+```
+
+2. **Czekaj na zakończenie `project-mapper`**
+
+3. **Raportuj sukces** w sekcji "Raport postępu"
+
 ---
 
 ## Raport postępu
 
-Po wygenerowaniu notatki przedstaw:
+Po zakończeniu pełnego pipeline'u (notatka + CHANGELOG) przedstaw:
 
 ```markdown
-## ✓ Wygenerowana notatka
+## ✓ Wygenerowana notatka i zaktualizowane projekty
 
 **Źródło:** {nazwa-transkrypcji} ({liczba-części} części)
 **Typ:** {typ-spotkania}
@@ -229,9 +392,9 @@ Po wygenerowaniu notatki przedstaw:
 **Zapisana jako:** `Notatki/{folder}/{nazwa-notatki}.md`
 **Zarchiwizowane:** `oczyszczone-archiwum/{nazwa-transkrypcji}`
 
-### Powiązane projekty (zidentyfikowane)
-- `kategoria/Projekt-1` - tematy 1, 3
-- `kategoria/Projekt-2` - temat 2
+### Powiązane projekty (potwierdzone przez użytkownika)
+- ✅ `kategoria/Projekt-1` - CHANGELOG.md zaktualizowany
+- ✅ `kategoria/Projekt-2` - CHANGELOG.md zaktualizowany
 
 ### Statystyki
 **W rejestrze oczekujących:** X notatek

@@ -246,6 +246,10 @@ Kompleksowy projekt obejmujący wszystkie aspekty formularza sprawy. Wygląd i e
 
 Widok historii zmian w prawym panelu sprawy. Wyświetla timeline wydarzeń, zmiany statusów, edycje pól formularza, przekazywania sprawy. Projekt obejmuje poprawę czytelności - wyświetlanie przyjaznych nazw pól (DisplayValue) zamiast nazw technicznych (FieldName), z nazwą techniczną dostępną w tooltipie. Historia zmian na sprawie, audyt wszystkich modyfikacji.
 
+  #### `cross-cutting/Interfejs-sprawy/Historia-biznesowa`
+
+Widok historii biznesowej opartej o zdarzenia zapisywane z poziomu reguł.
+
   
 
 #### `cross-cutting/Interfejs-sprawy/Historia-aktywnosci-uprawnien`
@@ -365,6 +369,7 @@ Integracja systemu AMODIT z systemem CAS (Central Authentication Service) w celu
 
 #### `klienci/Lewiatan/Comarch-HUB`
 Integracja systemu AMODIT z systemem Comarch HUB w zakresie KseF. To niezalena, wręcz w pewnym sensie konkurencyjna integracja, bo mamy własny KseF Connector, ale klient chce przez Comarch Hub
+
 
 #### `Klienci/LOT/JRWA`
 
