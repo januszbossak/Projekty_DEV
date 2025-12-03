@@ -2,6 +2,34 @@
 
 ---
 
+## 2025-08-25 - Sprint review
+
+**Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-08-25 Sprint review|2025-08-25 Sprint review]]
+
+**Kategoria:** #Design #Feedback
+
+**Prezentacja:** Anna Kicior
+
+**Status wdrożenia:**
+Komunikator (AMODIT Talk) działa, jest gotowy do odbioru przez WIM. To MVP (wersja minimalna) pozwalająca zaliczyć wymaganie klienta.
+
+**Feedback z demo - do dopracowania:**
+- **Ujednolicenie nazewnictwa:** przejrzenie wszystkich ekranów i ujednolicenie nazw (jedna nazwa wszędzie: "komunikator" lub "AMODIT Talk")
+- **Dodanie awatarów:** implementacja awatarów użytkowników
+- **Limit znaków:** dodanie limitu znaków na pojedynczą wiadomość
+- **Ujednolicenie komponentów:** użycie standardowych komponentów AMODIT (np. search)
+- **Pełna zgodność WCAG:** dopracowanie zgodności z WCAG dla niewidomych użytkowników
+- **Integracja logów:** rozważenie przeniesienia logów do standardowych logów AMODIT lub dodanie linku/przełącznika między logami
+
+**Decyzje:**
+- Nazwij to "AMODIT Talk" dla konsystencji marketingowej (będzie używane w chwaleniu się nowym produktem)
+- MVP może iść do odbioru, dalsze upiększanie i ulepszanie po akceptacji
+
+**Kontekst biznesowy:**
+Realizowane dla WIM - minimalna wersja wystarczająca do zaliczenia wymagania klienta. Pan Piotr Murawski zaakceptował MVP.
+
+---
+
 ## 2025-08-12 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-08-12 Notatka projektowa - Komunikator (AMODIT Talk).md](../../../../Notatki/Gotowe-notatki-archiwum/2025-08-12%20Notatka%20projektowa%20-%20Komunikator%20(AMODIT%20Talk).md)
 

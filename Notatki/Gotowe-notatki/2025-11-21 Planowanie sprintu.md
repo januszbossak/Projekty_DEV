@@ -1,18 +1,4 @@
-> 🛡️ **Codex Review:** Notatka zweryfikowana i uzupełniona w dniu 2025-12-01.
-> **Korekty:**
-> 1.  Zaktualizowano listę powiązanych projektów w nagłówku.
-> 2.  Dodano kontekst rezygnacji z implementacji uprawnień do klas JRWA.
-> 3.  Uzupełniono kontekst Repozytorium Plików (WIM) o działania Ani i Filipa.
-> 4.  Dodano kontekst SignApp (MacOS) o wersję niecertyfikowaną i problem z dyrekcją.
-> 5.  Potwierdzono projekt Integracji SIEM dla LOT.
-> 6.  Dodano kontekst dyskusji UX do Edytora Formularza.
-> 7.  Przepisano "Klucz nie jest unikalny" do nowego projektu `Moduly/Proces-rejestr`.
-> 8.  Przepisano "Brak informacji o zablokowaniu karty (SignApp)" do `Klienci/WIM/Podpis-kwalifikowany-SignApp-macOS`.
-> 9.  Przepisano "Wyświetlanie sekcji na telefonie" do `cross-cutting/Interfejs-sprawy`.
-> 10. Przepisano "Nagranie Zygmuntów (paczek / wielu podpisów)" do `Moduly/Modul-raportowy/Masowe-podpisywanie`.
-> 11. Przepisano "Ukrycie kafelka w koncie systemowym" do nowego projektu `cross-cutting/Logowanie-do-amodit`.
-> 12. Dodano status "Do analizy" do "Reprezentacja sekcji w DB".
-> 13. Dodano szczegóły do "Powrót do Zespołów Zadaniowych".
+
 
 # Planowanie Sprintu – 2025-11-21
 

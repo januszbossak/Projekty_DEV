@@ -4,19 +4,21 @@
 **Okres:** [nie podano]
 
 **Powiązane projekty:**
-- `moduly/Edytor-procesow-formularzy` – temat 1
-- `moduly/Ustawienia-systemowe` – tematy 2, 3
-- `moduly/Copilot-Baza-wiedzy-AI` – temat 8
+- `Moduly/Edytor-procesow/Matryca-uprawnien` – temat 1
+- `Moduly/Ustawienia-systemowe/Zadania-jobs` – temat 2
+- `Moduly/Ustawienia-systemowe/Integracje-rozszerzenia` – temat 3
+- `cross-cutting/Interfejs-sprawy/Formularz-sprawy` – temat 4
 - `moduly/Modul-raportowy` – temat 5
 - `koncepcje/Security-Checklist` – temat 6
-- `klienci/WIM` – temat 7
+- `Klienci/WIM/Logowanie-powiadomien`, `cross-cutting/Interfejs-sprawy/Historia-sprawy` – temat 7
+- `Moduly/AMODIT Copilot` – temat 8
 - `moduly/Silnik-regul` – temat 9
 
 ---
 
 ## 1. Matryca uprawnień
 
-**Projekt:** `moduly/Edytor-procesow-formularzy`
+**Projekt:** `Moduly/Edytor-procesow/Matryca-uprawnien`
 
 ### Cel biznesowy
 
@@ -63,7 +65,7 @@ Matryca prezentuje uprawnienia w formie tabeli, gdzie wiersze reprezentują pola
 
 ## 2. Widok jobów
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe/Zadania-jobs`
 
 ### Cel biznesowy
 
@@ -96,7 +98,7 @@ Usprawnienie zarządzania i monitorowania jobów systemowych poprzez wprowadzeni
 
 ## 3. Walidacja parametrów integracji
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe/Integracje-rozszerzenia`
 
 ### Cel biznesowy
 
@@ -150,7 +152,7 @@ Grupy parametrów służą do wskazania zakładki, gdzie parametry są rozmieszc
 
 ## 4. Kolory i gradienty
 
-**Projekt:** `cross-cutting/UI-formularza-sprawy`
+**Projekt:** `cross-cutting/Interfejs-sprawy/Formularz-sprawy`
 
 ### Cel biznesowy
 
@@ -239,7 +241,7 @@ Checklista dotyczy głównie klientów z instalacją on-premise. Serwery tych kl
 
 ## 7. Logowanie wysyłanych maili ze sprawy
 
-**Projekt:** `klienci/WIM`
+**Projekt:** `Klienci/WIM/Logowanie-powiadomien`, `cross-cutting/Interfejs-sprawy/Historia-sprawy`
 
 ### Cel biznesowy
 
@@ -275,7 +277,7 @@ Rozszerzenie mechanizmu logowania aktywności użytkownika o możliwość rejest
 
 ## 8. Generowanie procesu przez Copilota z trybem konsultacyjnym
 
-**Projekt:** `moduly/Copilot-Baza-wiedzy-AI`
+**Projekt:** `Moduly/AMODIT Copilot`
 
 ### Cel biznesowy
 

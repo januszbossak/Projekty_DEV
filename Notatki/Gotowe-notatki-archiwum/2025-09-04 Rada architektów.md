@@ -2,7 +2,7 @@
 
 **Powiązane projekty:**
 - `cross-cutting/Zakladka-Do-wykonania` – temat 1
-- `moduly/Zrodla-danych` – temat 2
+- `Klienci/WIM/Zmienne-globalne`, `moduly/Zrodla-danych` – temat 2
 - `cross-cutting/Historia-aktywnosci-uprawnien` – tematy 3, 4
 - `cross-cutting/Wzmiankowanie-w-komentarzach` – tematy 5, 6, 7
 
@@ -64,7 +64,7 @@ Możliwość konfiguracji na poziomie procesu, ale wymaga weryfikacji:
 
 ## 2. Source Get/Set – przerobienie źródeł na dynamic form
 
-**Projekt:** `moduly/Zrodla-danych`
+**Projekt:** `Klienci/WIM/Zmienne-globalne`, `moduly/Zrodla-danych`
 
 ### Kontekst i Problem
 
@@ -114,7 +114,7 @@ Temat przeniesiony na przyszły sprint. Damian zaprojektuje kompleksowe rozwiąz
 
 ## 3. CaseActivity – zdarzenie "edycja sprawy" rejestrowane ale nie wyświetlane
 
-**Projekt:** `cross-cutting/Historia-aktywnosci-uprawnien`
+**Projekt:** `cross-cutting/Interfejs-sprawy/Historia-aktywnosci-uprawnien`
 
 ### Kontekst i Problem
 
@@ -162,7 +162,7 @@ Piotr sprawdzi, czy zdarzenie "edycja sprawy" jest powiązane z historią uprawn
 
 ## 4. Historia uprawnień – uwzględnienie ustawienia "administrator nie ma praw"
 
-**Projekt:** `cross-cutting/Historia-aktywnosci-uprawnien`
+**Projekt:** `cross-cutting/Interfejs-sprawy/Historia-aktywnosci-uprawnien`
 
 ### Kontekst i Problem
 
@@ -325,10 +325,9 @@ Dodanie możliwości nadania roli `Reader` z interfejsu (sidebar uprawnień). Ro
 ## 7. Uwagi techniczne
 
 ### CaseActivity – rejestrowanie maili wysłanych ze sprawy
+**Projekt:** `cross-cutting/Interfejs-sprawy/Historia-sprawy`
 
 Piotr dodał możliwość włączenia/wyłączenia rejestrowania maili wysłanych ze sprawy w `CaseActivity`. To może zajmować dużo miejsca, więc jest opcjonalne.
 
-### Hotfix – zmiana koloru interfejsu
 
-Łukasz zgłosił problem z automatyczną zmianą koloru interfejsu na czerwony po aktualizacji AMODIT. Problem może być związany z migracją ustawień systemowych do React. Łukasz sprawdzi w ustawieniach systemowych i jeśli nie znajdzie przyczyny, zgłosi jako hotfix.
 

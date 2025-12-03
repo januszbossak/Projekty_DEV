@@ -174,7 +174,10 @@ Dla każdego projektu:
    - W projekcie ogólnym: krótszy wpis z linkiem do projektu klienckiego
      **Projekt:** [Klienci/{klient}/{projekt}](../../Klienci/{klient}/{projekt}/)
 3. Jeśli BRAK wzmianki o kliencie w notatce: TYLKO ogólny projekt (nie zgaduj)
-4. Dodaj wpis (najnowsze na górze):
+4. ⚠️ CHRONOLOGIA - ZAWSZE dodawaj nowy wpis NA SAMEJ GÓRZE (zaraz po nagłówku # CHANGELOG):
+   - Najnowsze daty NAJPIERW (odwrotna chronologia)
+   - Przykład: 2025-12-03 → 2025-09-09 → 2025-08-26
+   - NIE dodawaj na końcu pliku!
 
 **WARIANT A - Jeśli notatka ma różne kategorie tematów (da się rozdzielić):**
 ```markdown

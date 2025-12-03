@@ -2,6 +2,20 @@
 
 ---
 
+## 2025-08-21 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-08-21 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-08-21%20Rada%20architektów.md)
+**Kategoria:** #Dokumentacja
+
+**Wytyczne do analizy** ⏸️
+- Otrzymano wytyczne dotyczące repozytorium - nietrywialne, wymagają szczegółowej analizy
+- **Status:** ⏸️ Odroczone na odrębne spotkanie eksperckie
+- Wytyczne przekazane Januszowi i wrzucone na kanał komunikacyjny
+- Brak czasu na spotkaniu i potrzeba eksperckiej dyskusji
+- **Punkty otwarte:** Wszystkie szczegóły wymagają analizy na odrębnym spotkaniu
+- **Zadania:** Damian Kamiński - przekazanie wytycznych Januszowi, wrzucenie na kanał
+
+---
+
 ## 2025-07-30 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-07-30 Notatka projektowa 2025-07-30 Repozytorium - nowy wzor.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-07-30%20Notatka%20projektowa%202025-07-30%20Repozytorium%20-%20nowy%20wzor.md)
 

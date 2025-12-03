@@ -1,4 +1,4 @@
-# Rada Architektów – 2025-10-23 (przegląd Codex)
+# Rada Architektów – 2025-10-23
 
 
 ---

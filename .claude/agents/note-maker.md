@@ -431,7 +431,9 @@ WAŻNE - workflow dla notatek projektowych:
    - **Jeśli NIE (brak wzmianki o kliencie):** TYLKO ogólny projekt (nie zgaduj)
 3. Dla każdego projektu:
    - Otwórz plik Projekty/{kategoria}/{projekt}/CHANGELOG.md (utwórz jeśli nie istnieje)
-   - Wstaw wpis chronologicznie (najnowsze na górze)
+   - ⚠️ **CHRONOLOGIA - ZAWSZE dodawaj nowy wpis NA SAMEJ GÓRZE** (zaraz po nagłówku # CHANGELOG):
+     - Najnowsze daty NAJPIERW (odwrotna chronologia: 2025-12-03 → 2025-09-09 → 2025-08-26)
+     - **NIE dodawaj na końcu pliku!**
    - Wyciągnij kluczowe ustalenia z notatki dla tego projektu
    - **Automatycznie dobierz kategorie** (tagi Obsidian) na podstawie treści:
      - `#Funkcjonalność` - nowe features, rozszerzenia funkcjonalne

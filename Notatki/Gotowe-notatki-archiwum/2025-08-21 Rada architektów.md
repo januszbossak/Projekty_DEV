@@ -1,15 +1,18 @@
 # Rada Architektów – 2025-08-21
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 **Powiązane projekty:**
-- `moduly/Raporty-systemowe` – tematy 1, 2
-- `cross-cutting/Logowanie-powiadomien` – temat 3
-- `cross-cutting/GTA` – temat 4
+- [[Moduly/Raporty-systemowe/README|Raporty-systemowe]] – tematy 1, 2
+- [[Klienci/WIM/Logowanie-powiadomien/README|Logowanie-powiadomien]] + [[cross-cutting/Logowanie-powiadomien/README|Logowanie-powiadomien]] – temat 3
+- [[cross-cutting/GTA - dostęp tymczasowy do sparwy/README|GTA]] – temat 4
+- [[Klienci/WIM/Repozytorium/README|Repozytorium]] – temat 5
 
 ---
 
 ## 1. Raporty systemowe – hotfix i funkcjonalność kopiowania
 
-**Projekt:** `moduly/Raporty-systemowe`
+**Projekt:** `Moduly/Raporty-systemowe`
 
 ### Kontekst i Problem
 
@@ -80,7 +83,7 @@ Ustalono następujące rozwiązania:
 
 ## 2. Prezentacja raportów systemowych na liście głównej
 
-**Projekt:** `moduly/Raporty-systemowe`
+**Projekt:** `Moduly/Raporty-systemowe`
 
 ### Kontekst i Problem
 
@@ -135,7 +138,7 @@ Ustalono odroczenie decyzji do czasu konsultacji z Przemkiem. Proponowane rozwi�
 
 ## 3. Logowanie powiadomień systemowych – szczegóły implementacji
 
-**Projekt:** `cross-cutting/Logowanie-powiadomien`
+**Projekty:** `Klienci/WIM/Logowanie-powiadomien` + `cross-cutting/Logowanie-powiadomien`
 
 ### Kontekst i Problem
 
@@ -188,7 +191,7 @@ Ustalono rejestrowanie powiadomień systemowych jako **osobne wpisy dla każdego
 
 ## 4. GTA (Grant Temporary Access) – problemy z zarządzaniem
 
-**Projekt:** `cross-cutting/GTA`
+**Projekt:** `cross-cutting/GTA - dostęp tymczasowy do sparwy`
 
 ### Kontekst i Problem
 
@@ -242,7 +245,7 @@ Ustalono, że GTA wymaga rozbudowy o interfejs zarządzania, ale nie jest to pil
 
 ## 5. Repozytorium – wytyczne do analizy
 
-**Projekt:** `klienci/WIM/Repozytorium`
+**Projekt:** `Klienci/WIM/Repozytorium`
 
 ### Kontekst i Problem
 

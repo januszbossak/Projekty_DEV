@@ -2,6 +2,21 @@
 
 ---
 
+## 2025-09-04 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-04 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-04%20Rada%20architektów.md)
+**Kategoria:** #Architektura #Planowanie
+
+**Przerobienie źródeł danych na typ `dynamic form`** ⏸️
+- **Kontekst:** Funkcja `Source Get/Set` w designie, ale wymaga kompleksowego podejścia do wszystkich źródeł
+- Brakuje interfejsu do definiowania nowego źródła `dynamic` i kolumn (automatyczne podstawianie)
+- ⏸️ **Odroczone:** Temat przeniesiony na przyszły sprint (Damian projektuje, Ania implementuje)
+- **Wymagania:**
+  - Definiowanie nowego źródła typu `dynamic`
+  - Automatyczne podstawianie kolumn
+  - Opcjonalnie: interfejs dodawania bez wgrywania pliku
+
+---
+
 ## 2025-07-07 | Dokumentacja techniczna
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-07-07 Odczyt i zapis do Źródła danych typu static.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-07-07%20Odczyt%20i%20zapis%20do%20Źródła%20danych%20typu%20static.md)
 **Kategoria:** #Dokumentacja #Architektura

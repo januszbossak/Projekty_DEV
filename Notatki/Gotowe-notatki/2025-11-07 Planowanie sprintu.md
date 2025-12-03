@@ -1,5 +1,4 @@
-> 🛡️ **Codex Review:** Notatka zweryfikowana i uzupełniona w dniu 2025-12-01.
-> **Korekty:** Zaktualizowano nagłówek o właściwe przypisanie projektu. Skorygowano błąd merytoryczny: "AD" w kontekście archiwum to ADE (Archiwum Dokumentów Elektronicznych), a nie Active Directory. Ujednolicono nazwisko Łukasza Brockiego. Przypisano tematy do nowych projektów (`Integracja-UPS`, `Global-Express`, `Przechowywanie-plikow`, `Integracja-CAS`).
+
 
 # Planowanie Sprintu – 2025-11-07
 

@@ -2,6 +2,86 @@
 
 ---
 
+## 2025-08-26 - Notatka projektowa - AMODIT UI
+
+**Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]
+
+**Kategoria:** #Design #Architektura
+
+**Cel:**
+Przepisanie frontu ustawień systemowych na nową technologię Reactową w celu poprawy nawigacji i łatwiejszego znajdowania konkretnych ustawień.
+
+### Nowy interfejs
+
+- Przepisanie frontu na React
+- Nie wszystkie ekrany są jeszcze pokryte w tym wydaniu (kluczowe poszły w pierwszej kolejności, kolejne będą uzupełniane)
+- Nawigacja po ustawieniach stała się wygodniejsza, łatwiej znaleźć konkretne ustawienie
+
+### Kompatybilność wsteczna
+
+- Zachowana pełna kompatybilność wsteczna
+- Ponieważ nie wszystko jest pokryte, zawsze można wrócić do poprzedniej wersji
+- Administratorowi najpierw wyświetlą się nowe ustawienia Reactowe
+- Jeżeli jakaś funkcjonalność nie będzie dostępna, w każdej chwili można wrócić do dotychczasowych
+- W pierwszej kolejności korzystanie z nowych, w ciągu następnych dwóch wydań pełne przejście na wersję Reactową
+
+### Szczegóły techniczne
+
+- Odbiorcy: ograniczone grono administratorów
+- Technologia: React
+
+**Ograniczenia:**
+- Nie wszystkie ekrany są jeszcze pokryte (kolejne będą uzupełniane w następnych wydaniach)
+
+---
+
+## 2025-08-25 - Sprint review
+
+**Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-25 Sprint review|2025-08-25 Sprint review]]
+
+**Kategoria:** #Funkcjonalność #Design
+
+**Prezentacja:** Kamil Dubaniowski
+
+**Cel biznesowy:**
+Usprawnienie konfiguracji zadań systemowych (Jobów) poprzez intuicyjny interfejs zamiast ręcznego wpisywania wartości w bazie danych. Obecne wartości w bazie nie są przejrzyste i nie są intuicyjne do dodawania, edytowania czy usuwania. Dodatkowo, konsultanci często nie potrafią poprawnie skonfigurować harmonogramu (np. włączają regułę co minutę, która chodzi w weekendy niepotrzebnie po północy).
+
+**Co zaimplementowano:**
+- **API do zarządzania Jobami:** dodawanie, usuwanie, edycja, wykonywanie akcji
+- **Formularz dodawania Joba:**
+  - Wybór biblioteki i klasy (z listy rozwijanej, nie ręczne wpisywanie)
+  - Nazwa klasy preferowanym serwerem
+  - Ustawienie częstotliwości działania (z podglądem godziny startu)
+  - Wybór minuty startu (jeśli dotyczy)
+- **Intuicyjna konfiguracja częstotliwości:** zamiast wpisywania wartości w minutach od północy, użytkownik wybiera:
+  - Typ częstotliwości (co ile godzin, raz dziennie, etc.)
+  - Godzinę startu
+  - Godzinę zakończenia (jeśli dotyczy)
+- **Podgląd harmonogramu:** wyświetlanie na dole, jak będzie wyliczana częstotliwość
+
+**Jak to działa:**
+System skanuje wszystkie klasy implementujące interfejs `IJob` przy starcie procesu i tworzy słownik dostępnych opcji. Użytkownik wybiera z listy rozwijanej, nie wpisuje ręcznie. Harmonogram jest przeliczany w tle na podstawie ustawień częstotliwości.
+
+**Ograniczenia prototypu:**
+- **Prototyp:** obecna wersja jest prototypem, wymaga dopracowania
+- **Format daty:** format daty nie jest spójny z resztą systemu (do poprawy)
+- **Wyświetlanie daty:** data wyświetlana w dwóch linijkach zamiast jednej (do poprawy)
+- **Brak walidacji:** na razie brak walidacji poprawności wpisanych wartości (do dodania)
+
+**Feedback z demo:**
+- **💭 Pomysł Przemka:** Dwie ikonki "Integracje" i "Rozszerzenia" wyglądają jak błąd (ta sama ikonka dwa razy). Warto zmienić jedną z ikonek lub połączyć w jedną zakładkę "Integracje".
+- **Piotr Buczkowski:** Zachować format daty spójny z resztą systemu. Data powinna być w jednej linijce, nie dwóch.
+- **Damian Kamiński:** Bardzo istotne, aby od razu zdefiniować wybór z listy (słownik), aby wyeliminować błędy wpisywania. To jest około 20-30 pozycji, więc łatwo o pomyłkę.
+- **Łukasz Bott:** Uspójnienie z częstotliwościami reguł okresowych w procesach (ale wycofano się z tego ze względu na kompatybilność wsteczną).
+
+**Dalsze kroki:**
+- Dopracowanie prototypu do wersji produkcyjnej
+- Poprawienie formatu daty (spójność z systemem)
+- Dodanie walidacji
+- Zmiana lub połączenie ikonek "Integracje" i "Rozszerzenia"
+
+---
+
 ## 2025-08-12 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-08-12 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-08-12%20Rada%20architektów.md)
 **Kategoria:** #Architektura #Problem

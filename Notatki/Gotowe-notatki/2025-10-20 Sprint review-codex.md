@@ -1,7 +1,5 @@
 # Sprint Review – 2025-10-20
 
-> 🛡️ **Codex Review:** Notatka zweryfikowana i uzupełniona w dniu 2025-12-02.
-> **Korekty:** Poprawiono nazwy projektów zgodnie ze Słownikiem Projektów (wielka litera); skorygowano status landing page w Trust Center (tylko zmiana strony, brak możliwości wyboru); przeniesiono dyskusję o harmonogramie źródeł systemowych do sekcji Feedback.
 
 **Sprint:** [nie sprecyzowano]
 **Okres:** [nie sprecyzowano]

@@ -236,6 +236,18 @@ UI sprawy. Ikonki procesów (małe, duże grafiki kafelków), pola, widoki, ogó
 
   
 
+#### `cross-cutting/Interfejs-sprawy/Zakladka-Raporty`
+
+Nowy wygląd i funkcjonalności zakładki "Raporty" w menu głównym. Przepisanie na React, nowe formaty wyświetlania (kafelki, lista, lista kompaktowa), ulepszone sortowanie i filtrowanie (moje raporty, ostatnio modyfikowane, szukanie po źródle), wizualne rozróżnianie typów raportów (ikony), zapamiętywanie filtrów per użytkownik. Metadane raportów widoczne na liście (opis, autor, typ).
+
+  
+
+#### `cross-cutting/Interfejs-sprawy/Zakladka-Procesy`
+
+Nowy wygląd i funkcjonalności zakładki "Procesy" w menu głównym. Przepisanie na React, nowy format wyświetlania (ulubione, kafelki, lista kompaktowa), opisy procesów widoczne na liście. Modal pośredni przed uruchomieniem sprawy z opisem procesu (można wyłączyć dla znanych procesów). Usprawnienie nawigacji i odnajdywania procesów.
+
+  
+
 #### `cross-cutting/Interfejs-sprawy/Formularz-sprawy`
 
 Kompleksowy projekt obejmujący wszystkie aspekty formularza sprawy. Wygląd i estetyka - modernizacja UI, gradienty, kolory. Logika renderowania (runtime) - wyświetlanie pól, tabel, walidacja, oddzielenie od edytora (design-time vs runtime). Wydajność - optymalizacja ładowania złożonych formularzy z tabelami zagnieżdżonymi. Responsywność - działanie na różnych urządzeniach. Śledzenie wszystkich decyzji, zadań i postępów dotyczących formularza sprawy.
@@ -479,6 +491,18 @@ Checkboxy w raportach osadzonych dla WIM. Zaznaczanie wielu elementów.
 #### `Klienci/WIM/Repozytorium-plikow-DMS`
 
 Repozytorium Plików (DMS) dla WIM. struktury przestrzeni i folderów wraz z uprawnieniami. Mozliwość tworzenia struktury "przestrzenie" -> "foldery" -> pliki 
+
+  
+
+#### `Klienci/WIM/Raporty-edycja-gradientow`
+
+Edycja gradientów kolorów w raportach dla WIM. Projekt wynika z wymagania Piotra Murawskiego (WIM) o możliwość dostosowania palet kolorowych w wizualizacjach raportów (Treemap, Pivot). Umożliwia użytkownikom definiowanie własnych skal kolorystycznych zamiast domyślnych gradientów, resetowanie do domyślnej palety, oraz konfigurację kolorów dla wartości dodatnich, ujemnych i środkowych. MVP obejmuje podstawową edycję gradientów w raportach agregujących dane.
+
+  
+
+#### `Klienci/WIM/WCAG`
+
+Implementacja dostępności WCAG 2.1 AA dla WIM. Tryb wysokiego kontrastu (wyczernienie treści, obramowanie elementów), tryb uproszczonego widoku sprawy dla czytników ekranowych, nawigacja klawiaturą. Deklaracja zgodności ze standardem WCAG 2.1 AA. Projekt realizowany pod wymagania WIM jako priorytetu biznesowego.
 
   
 

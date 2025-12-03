@@ -27,7 +27,20 @@
     "Decyzja": 15,
     "Dokumentacja": 16,
     "Roadmap": 17,
-    "Bezpieczeństwo": 18
+    "Bezpieczeństwo": 18,
+    "Feedback": 19,
+    "Koncepcja": 20,
+    "Organizacja": 21,
+    "Planowanie": 22,
+    "PoC": 23,
+    "Dostępność": 24,
+    "Prezentacja": 25,
+    "Wymaganie": 26,
+    "Audyt": 27,
+    "Metodologia": 28,
+    "Narzędzia": 29,
+    "Procesy": 30,
+    "Administracja": 31
   },
   "_version": 3
 }

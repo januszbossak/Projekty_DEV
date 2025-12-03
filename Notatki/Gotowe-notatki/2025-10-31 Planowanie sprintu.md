@@ -1,5 +1,4 @@
-> 🛡️ **Codex Review:** Notatka zweryfikowana i uzupełniona w dniu 2025-12-01.
-> **Korekty:** Zaktualizowano nagłówek o właściwe przypisanie projektu. Doprecyzowano statusy (Spotkanie przerwane z powodu WIM). Uzupełniono szczegóły problemów (chaos w organizacji, brak zaangażowania testerek, zadania w Excelu). Dodano kontekst metodologii "Trójki Amigos" (powrót do sprawdzonych praktyk) i tworzenia dokumentacji AI. Przypisano tematy do odpowiednich projektów ze słownika, w tym nowy projekt `cross-cutting/Interfejs-sprawy/Podglad-szablonow` oraz `Moduly/Ustawienia-systemowe` dla 4-Eyes.
+
 
 # Planowanie Sprintu – 2025-10-31
 
