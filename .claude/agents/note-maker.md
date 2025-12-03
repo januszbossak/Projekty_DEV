@@ -51,38 +51,27 @@ Agent automatycznie:
 
 ### Krok 1: Identyfikacja transkrypcji do przetworzenia
 
-1. **Pobierz nieprzetwarzane transkrypcje z bazy:**
-   ```python
-   from .claude.scripts.transkrypcje_db import *
-   pliki = get_unprocessed_files('oczyszczona->notatka', limit=1)
-   if not pliki:
-       print("✅ Wszystkie transkrypcje przetworzone!")
-       return
-   ```
+1. **Pobierz listę transkrypcji z folderu `oczyszczone/`:**
+   - Użyj `list_dir` lub `glob_file_search` na `Notatki/Transkrypcje/oczyszczone/`
+   - Jeśli folder pusty → wszystko przetworzone, koniec
 
-2. **Wybierz pierwszą (najstarszą chronologicznie):**
-   ```python
-   plik_id, sciezka, nazwa = pliki[0]
-   ```
+2. **Wybierz najstarszą chronologicznie** (po dacie w nazwie pliku: `YYYY-MM-DD`)
+   - Posortuj pliki po dacie
+   - Wybierz pierwszy
 
-3. **OZNACZ ROZPOCZĘCIE w bazie (status: w_trakcie):**
-   ```python
-   processing_id = start_processing(plik_id, 'oczyszczona->notatka')
-   if not processing_id:
-       print("⏭️ Plik już przetwarzany przez inny proces - pomijam")
-       return
-   ```
+3. **PRZENIEŚ do folderu `oczyszczone-w-trakcie/` (blokada):**
+   - Jeśli transkrypcja jest rozbita na części, przenieś **WSZYSTKIE części**
+   - Folder `Notatki/Transkrypcje/oczyszczone-w-trakcie/` sygnalizuje, że plik jest przetwarzany
+   - Jeśli przeniesienie się nie powiedzie (plik nie istnieje) → inny agent już go przenosi, pomiń
    
-   **UWAGA:** Status 'w_trakcie' zabezpiecza przed równoczesnym przetwarzaniem przez innych agentów
+   **UWAGA:** Przeniesienie do `oczyszczone-w-trakcie/` zabezpiecza przed równoczesnym przetwarzaniem przez innych agentów
 
 ### Krok 2: Rozpoznanie typu pliku i daty
 
-**Sprawdź czy plik to:**
-- **Oczyszczona transkrypcja** (z `oczyszczone/`) → użyj daty z nazwy/rejestru
-- **Gotowa notatka** (z `surowe/notatki/` lub `surowe/` z oznaczeniem) → wyciągnij datę:
-  - Z nazwy pliku (`YYYY-MM-DD`)
-  - Z zawartości (szukaj `YYYY-MM-DD` lub `**Data:** YYYY-MM-DD`)
-  - **Jeśli brak → użyj dzisiejszej daty**
+**Wyciągnij datę z nazwy pliku:**
+- Format nazwy: `YYYY-MM-DD {Typ} - transkrypcja - część X.md` lub `YYYY-MM-DD {Typ} - transkrypcja.md`
+- Wyciągnij `YYYY-MM-DD` z początku nazwy
+- **Jeśli brak daty w nazwie → użyj dzisiejszej daty**
 
 ### Krok 3: Rozpoznanie typu spotkania
 
@@ -90,15 +79,15 @@ Z nazwy pliku (dostępnej w bazie w kolumnie `nazwa`) lub zawartości zidentyfik
 
 | Typ w rejestrze | Skill do użycia | Folder docelowy |
 |-----------------|-----------------|-----------------|
-| Rada architektów | `rada-architektow` | `Notatki/Rada architektów/` |
-| Sprint review | `sprint-review` | `Notatki/Sprint review/` |
-| Planowanie sprintu | `planowanie-sprintu` | `Notatki/Planowanie sprintu/` |
+| Rada architektów | `rada-architektow` | `Notatki/Gotowe-notatki/` |
+| Sprint review | `sprint-review` | `Notatki/Gotowe-notatki/` |
+| Planowanie sprintu | `planowanie-sprintu` | `Notatki/Gotowe-notatki/` |
 | Daily | `daily` | `Notatki/Daily/` |
-| Design, Spotkanie projektowe, Notatka projektowa | `spotkanie-projektowe` | `Notatki/Spotkania projektowe/` |
-| Przegląd projektów, Przegląd wycen, Repozytorium | `spotkanie-projektowe` | `Notatki/Spotkania projektowe/` |
-| Ustalenie zakresu prac | `spotkanie-projektowe` | `Notatki/Spotkania projektowe/` |
+| Design, Spotkanie projektowe, Notatka projektowa | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
+| Przegląd projektów, Przegląd wycen, Repozytorium | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
+| Ustalenie zakresu prac | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
 
-**Uwaga:** Jeśli typ nie pasuje do żadnej kategorii, użyj `organizacyjne` i zapisz do `Notatki/Organizacja działu DEV/`
+**Uwaga:** Jeśli typ nie pasuje do żadnej kategorii, użyj `organizacyjne` i zapisz do `Notatki/Gotowe-notatki/`
 
 ### Krok 4: Przygotowanie do generowania
 
@@ -110,22 +99,19 @@ Z nazwy pliku (dostępnej w bazie w kolumnie `nazwa`) lub zawartości zidentyfik
 
 2. **Wczytaj plik źródłowy (z obsługą części):**
    
-   **Dla transkrypcji:** Wczytaj z `oczyszczone/`
-   **Dla gotowej notatki:** Wczytaj bezpośrednio z `surowe/notatki/` lub `surowe/`
-   
-   **WAŻNE:** Transkrypcje mogą być rozbite na części (część 1, część 2, ... część N) ze względu na rozmiar.
+   **Wczytaj z `oczyszczone-w-trakcie/`** (tam są teraz pliki po przeniesieniu)
    
    **WAŻNE:** Transkrypcje mogą być rozbite na części (część 1, część 2, ... część N) ze względu na rozmiar.
    
    **Algorytm wykrywania części:**
    
    a. **Sprawdź czy transkrypcja jest rozbita na części:**
-      - Wyciągnij bazową nazwę z rejestru (np. `2025-10-09 Rada developerów - transkrypcja`)
-      - Sprawdź czy istnieją pliki z wzorcem: `{bazowa-nazwa} - część 1.md`, `{bazowa-nazwa} - część 2.md`, etc.
-      - Użyj `glob_file_search` lub `list_dir` do znalezienia wszystkich części
+      - Wszystkie części są już w `oczyszczone-w-trakcie/` (przeniesione w Kroku 1)
+      - Wyciągnij bazową nazwę (np. `2025-10-09 Rada developerów - transkrypcja`)
+      - Znajdź wszystkie pliki pasujące do wzorca: `{bazowa-nazwa} - część *.md`
    
    b. **Jeśli transkrypcja jest rozbita na części:**
-      - **Znajdź wszystkie części** w folderze `Notatki/Transkrypcje/oczyszczone/`
+      - **Znajdź wszystkie części** w `Notatki/Transkrypcje/oczyszczone-w-trakcie/`
       - **Posortuj je numerycznie** (część 1, część 2, ..., część N)
       - **Strategia wczytywania:**
          - **Idealnie:** Wczytaj wszystkie części naraz (jeśli zmieszczą się w oknie kontekstowym)
@@ -135,11 +121,11 @@ Z nazwy pliku (dostępnej w bazie w kolumnie `nazwa`) lub zawartości zidentyfik
       - **Zachowaj kolejność** - część 1, potem część 2, itd.
    
    c. **Jeśli transkrypcja jest pojedyncza:**
-      - Wczytaj normalnie: `Notatki/Transkrypcje/oczyszczone/{nazwa-z-rejestru}`
+      - Wczytaj normalnie: `Notatki/Transkrypcje/oczyszczone-w-trakcie/{nazwa}`
    
    **Przykład wykrywania:**
    ```
-   Rejestr: `2025-10-09 Rada developerów - transkrypcja - część 1-4.md`
+   Folder: `oczyszczone-w-trakcie/`
    Bazowa nazwa: `2025-10-09 Rada developerów - transkrypcja`
    
    Znalezione pliki:
@@ -165,7 +151,30 @@ Zastosuj reguły ze skilla:
 5. **Rozważane alternatywy** - dokumentuj co odrzucono i dlaczego
 6. **NIE przypisuj projektów** - to jest osobny krok (agent project-mapper)
 
-**Format nazwy notatki:**
+**WAŻNE: Rozdzielanie treści mieszanej (projektowa + organizacyjna)**
+
+Jeśli transkrypcja zawiera:
+- **Część projektową** (o konkretnych projektach, technologii, architekturze)
+- **Część organizacyjną** (o organizacji pracy, procesach zespołowych, metodyce)
+
+→ **Wygeneruj DWIĘ OSOBNE NOTATKI:**
+
+1. **Notatka projektowa:**
+   - Format: `{YYYY-MM-DD} {Typ} - {temat projektowy}.md`
+   - Przykład: `2025-11-25 Design - Edytor projektów.md`
+   - Zawiera tylko tematy projektowe
+   
+2. **Notatka organizacyjna:**
+   - Format: `{YYYY-MM-DD} Organizacja pracy - {temat organizacyjny}.md`
+   - Przykład: `2025-11-25 Organizacja pracy - Nowe sposoby oznaczania zadań.md`
+   - Zawiera tylko tematy organizacyjne
+
+**W obu notatkach dodaj na początku link do transkrypcji:**
+```markdown
+**Źródło:** [Transkrypcja](../Transkrypcje/oczyszczone-archiwum/{nazwa-transkrypcji})
+```
+
+**Format nazwy notatki (standardowy - bez rozdzielania):**
 ```
 {YYYY-MM-DD} {Typ czytelny} - {dodatkowe oznaczenia z nazwy transkrypcji}.md
 ```
@@ -175,11 +184,16 @@ Zastosuj reguły ze skilla:
 - Usuń z dodatkowych oznaczeń: "- transkrypcja", "- część 1-4", "-gemini" i podobne sufixy techniczne
 - Zachowaj tylko istotne informacje biznesowe/tematyczne
 
-Przykłady:
+Przykłady (bez rozdzielania):
 - Transkrypcja: `2025-08-12 Komunikator (AMODIT Talk) - transkrypcja.md` → Notatka: `2025-08-12 Notatka projektowa - Komunikator (AMODIT Talk).md`
 - Transkrypcja: `2025-10-14 Design - transkrypcja - część 1-4.md` → Notatka: `2025-10-14 Spotkanie projektowe - Design.md`
 - Transkrypcja: `2025-08-07 Rada architektów - transkrypcja.md` → Notatka: `2025-08-07 Rada architektów.md`
 - Transkrypcja: `2025-11-03 Sprint review - transkrypcja-gemini - część 1-4.md` → Notatka: `2025-11-03 Sprint review.md`
+
+Przykłady (z rozdzielaniem):
+- Transkrypcja: `2025-11-25 Design - transkrypcja.md` → 
+  - Notatka 1: `2025-11-25 Design - Edytor projektów.md`
+  - Notatka 2: `2025-11-25 Organizacja pracy - Nowe sposoby oznaczania zadań.md`
 
 ### Krok 4b: SELF-REVIEW (przed zapisem)
 
@@ -298,71 +312,167 @@ Użyj narzędzia `AskUserQuestion`:
 
 ### Krok 5: Zapis notatki
 
-1. **Zapisz do odpowiedniego folderu** (zgodnie z mapowaniem z Kroku 2)
-2. **Nazwa pliku:** użyj formatu `YYYY-MM-DD {Typ czytelny} - {dodatkowe oznaczenia}.md`
-   - Wyciągnij dodatkowe oznaczenia z nazwy transkrypcji (patrz Krok 4)
-   - Jeśli brak dodatkowych oznaczeń, użyj formatu `YYYY-MM-DD {Typ czytelny}.md`
-   - Przykład: `2025-08-07 Rada architektów.md` lub `2025-08-12 Notatka projektowa - Komunikator (AMODIT Talk).md`
+1. **Zapisz do odpowiedniego folderu:**
+   - **Daily** → `Notatki/Daily/`
+   - **Wszystkie inne typy** (projektowe i organizacyjne) → `Notatki/Gotowe-notatki/`
+   
+2. **Nazwa pliku:** 
+   - **Notatka projektowa:** `YYYY-MM-DD {Typ czytelny} - {dodatkowe oznaczenia}.md`
+   - **Notatka organizacyjna:** `YYYY-MM-DD Organizacja pracy - {temat organizacyjny}.md`
+   
+3. **Jeśli wygenerowałeś DWA pliki z jednej transkrypcji:**
+   - Zapisz oba do `Notatki/Gotowe-notatki/`
+   - W obu dodaj link do transkrypcji na początku
+   - Każda notatka będzie osobno dodana do bazy i mapowana na projekty
+   
+Przykłady nazw:
+- Standardowa: `2025-08-07 Rada architektów.md`
+- Projektowa z tematem: `2025-08-12 Notatka projektowa - Komunikator (AMODIT Talk).md`
+- Organizacyjna: `2025-11-25 Organizacja pracy - Nowe sposoby oznaczania zadań.md`
 
-### Krok 5b: Aktualizacja bazy - dodanie notatki
+### Krok 5b: Weryfikacja zapisu
 
-**DODAJ nowo utworzoną notatkę do bazy:**
-```python
-notatka_id = add_file('{sciezka_relatywna}', 'notatka', '{nazwa_pliku}')
-```
+**Sprawdź czy notatka/notatki zostały poprawnie zapisane:**
+- Zweryfikuj istnienie pliku w `Notatki/Gotowe-notatki/` lub `Notatki/Daily/`
+- Jeśli wygenerowano 2 notatki (projektowa + organizacyjna), sprawdź obie
 
-Przykład: `add_file('Rada architektów/2025-08-07 Rada architektów.md', 'notatka', '2025-08-07 Rada architektów.md')`
+**UWAGA:** Notatki w `Gotowe-notatki/` czekają na mapowanie na projekty (następny krok pipeline'u)
 
 ### Krok 5c: Archiwizacja oczyszczonej transkrypcji
 
-**PRZENIEŚ oczyszczoną transkrypcję do archiwum:**
+**PRZENIEŚ transkrypcję do archiwum:**
 1. Jeśli transkrypcja była rozbita na części - przenieś **wszystkie części**
-2. Z `Notatki/Transkrypcje/oczyszczone/` → `Notatki/Transkrypcje/oczyszczone-archiwum/`
+2. Z `Notatki/Transkrypcje/oczyszczone-w-trakcie/` → `Notatki/Transkrypcje/oczyszczone-archiwum/`
 3. Zachowaj oryginalne nazwy plików
 4. Weryfikuj sukces przeniesienia
 
-**OZNACZ archiwizację w bazie:**
+**UWAGA:** Przeniesienie do archiwum oznacza zakończenie przetwarzania tej transkrypcji
+
+### Krok 6: Zakończenie - przygotowanie do mapowania
+
+**Notatka/notatki są gotowe:**
+- Zapisane w odpowiednich folderach
+- Transkrypcja zarchiwizowana w `oczyszczone-archiwum/`
+
+**Dalszy flow zależy od typu notatki:**
+
+1. **Daily:** 
+   - Pozostaje w `Notatki/Daily/`
+   - **KONIEC** - NIE mapujemy na projekty
+
+2. **Notatka organizacyjna:**
+   - Pozostaje w `Notatki/Gotowe-notatki/`
+   - Będzie mapowana na `Projekty/Organizacja-DEV/` (podfoldery)
+   - **NIE** mapujemy na projekty
+
+3. **Notatka projektowa:**
+   - Pozostaje w `Notatki/Gotowe-notatki/`
+   - Będzie mapowana na `Projekty/{kategoria}/{projekt}/CHANGELOG.md`
+
+**UWAGA:** Nie przenoś jeszcze notatek - to zrobi odpowiedni agent po zakończeniu mapowania
+
+### Krok 7: Wywołanie odpowiedniego mapera
+
+**Po potwierdzeniu przez użytkownika:**
+
+---
+
+### **7a. Jeśli Daily → KONIEC**
+
+Daily **NIE jest mapowane** na projekty ani Organizacja-DEV.
+- Notatka pozostaje w `Notatki/Daily/`
+- Koniec pipeline'u
+
+---
+
+### **7b. Jeśli notatka ORGANIZACYJNA → wywołaj organizacja-mapper**
+
 ```python
-mark_as_archived(plik_id)  # ID oczyszczonej transkrypcji
+Task(
+  subagent_type="organizacja-mapper",  # lub odpowiedni agent
+  prompt=f"""
+Zmapuj notatkę organizacyjną na odpowiedni podfolder w Projekty/Organizacja-DEV/.
+
+**Notatka:** {sciezka_notatki}
+**Data:** {data_notatki}
+**Typ:** Organizacja pracy
+
+WAŻNE - workflow:
+1. PRZED rozpoczęciem: Przenieś notatkę z `Gotowe-notatki/` do `Gotowe-notatki-w-trakcie/`
+2. Zidentyfikuj odpowiedni podfolder w Projekty/Organizacja-DEV/ (np. Dokumentacja-organizacyjna/)
+3. Dodaj wpis do odpowiedniego pliku (CHANGELOG.md lub inny)
+4. PO zakończeniu: Przenieś notatkę z `Gotowe-notatki-w-trakcie/` do `Gotowe-notatki-archiwum/`
+"""
+)
 ```
 
-### Krok 6: Zakończenie przetwarzania w bazie
+---
 
-**ZAKTUALIZUJ status na 'zakonczone':**
-```python
-finish_processing(processing_id, notatka_id, uwagi="Wygenerowano notatkę pomyślnie")
-```
-
-**UWAGA:** Notatka jest teraz dostępna do mapowania na projekty (następny krok pipeline'u)
-
-### Krok 7: Wywołanie project-mapper
-
-**Po potwierdzeniu projektów przez użytkownika:**
-
-1. **Wywołaj agenta `project-mapper`** używając narzędzia `Task`:
+### **7c. Jeśli notatka PROJEKTOWA → wywołaj project-mapper**
 
 ```python
 Task(
   subagent_type="project-mapper",
   prompt=f"""
-Dodaj wpisy do CHANGELOG.md dla projektów powiązanych z notatką.
+Dodaj wpisy do CHANGELOG.md dla projektów powiązanych z notatką PROJEKTOWĄ.
 
 **Notatka:** {sciezka_notatki}
 **Data:** {data_notatki}
 **Typ:** {typ_spotkania}
 **Projekty potwierdzone przez użytkownika:** {lista_projektow}
 
-Dla każdego projektu:
-1. Otwórz plik projekty/{projekt}/CHANGELOG.md (utwórz jeśli nie istnieje)
-2. Wstaw wpis chronologicznie (najnowsze na górze)
-3. Wyciągnij kluczowe ustalenia z notatki dla tego projektu
-4. Zapytaj użytkownika o kategorię (🎯🏗️⚠️✅📋🚀)
-5. Zapisz wpis
+WAŻNE - workflow dla notatek projektowych:
+1. PRZED rozpoczęciem: Przenieś notatkę z `Gotowe-notatki/` do `Gotowe-notatki-w-trakcie/`
+2. **HIERARCHIA PROJEKTÓW - TYLKO gdy notatka WYRAŹNIE wspomina klienta:**
+   - Sprawdź czy notatka zawiera kontekst: "dla WIM", "u LOT", "projekt PKF", etc.
+   - **Jeśli TAK + temat pasuje też do ogólnego projektu:**
+     - **PRIORYTET 1:** Projekt kliencki (Klienci/WIM/, etc.) - pełny wpis
+     - **DODATKOWO:** Projekt ogólny (Moduly/, etc.) - krótszy wpis z linkiem
+   - **Jeśli NIE (brak wzmianki o kliencie):** TYLKO ogólny projekt (nie zgaduj)
+3. Dla każdego projektu:
+   - Otwórz plik Projekty/{kategoria}/{projekt}/CHANGELOG.md (utwórz jeśli nie istnieje)
+   - Wstaw wpis chronologicznie (najnowsze na górze)
+   - Wyciągnij kluczowe ustalenia z notatki dla tego projektu
+   - **Automatycznie dobierz kategorie** (tagi Obsidian) na podstawie treści:
+     - `#Funkcjonalność` - nowe features, rozszerzenia funkcjonalne
+     - `#Architektura` - kwestie techniczne, struktura bazy, komunikacja komponentów (SignalR), wybór bibliotek
+     - `#Design` - UI/UX, wizualne aspekty, koncepcje interfejsu
+     - `#Problem` - blokada możliwości działania (nie bug)
+     - `#Bug` - naprawa błędów w kodzie
+     - `#Decyzja` - zatwierdzone ustalenia
+     - `#Zadanie` - task do wykonania
+     - `#Wydanie` - deployment, release, nowa wersja
+     - `#Dokumentacja` - tworzenie/aktualizacja dokumentacji, opis funkcji, artykuł wiki
+   - **Jeśli różne kategorie tematów:** Podziel wpis na sekcje z osobnymi kategoriami
+   - **Jeśli tematy się przenikają:** Użyj wielu tagów (np. `#Architektura #Design`)
+   - **Jeśli projekt ogólny (Moduly/, Integracje/, cross-cutting/):** Dodaj informację o projekcie klienckim:
+     **Projekt:** [Klienci/{klient}/{projekt}](../../Klienci/{klient}/{projekt}/)
+   - Zapisz wpis
+4. PO zakończeniu: Przenieś notatkę z `Gotowe-notatki-w-trakcie/` do `Gotowe-notatki-archiwum/`
 
 Format wpisu w CHANGELOG.md:
-## {data} | {typ_spotkania}
-**Źródło:** [Notatki/{folder}/{nazwa}]
-**Kategoria:** {kategoria}
+
+**WARIANT A - Różne kategorie (da się rozdzielić):**
+```
+## {data} | {typ}
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/{nazwa}]
+**Kategoria:** #Architektura
+
+- Tematy architektury
+
+**Kategoria:** #Design
+
+- Tematy UI/UX
+```
+
+**WARIANT B - Tematy przenikają się:**
+```
+## {data} | {typ}
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/{nazwa}]
+**Kategoria:** #Architektura #Design
+
+- Wszystkie tematy
+```
 
 - Kluczowe ustalenie 1
 - Kluczowe ustalenie 2
@@ -373,9 +483,17 @@ Format wpisu w CHANGELOG.md:
 )
 ```
 
-2. **Czekaj na zakończenie `project-mapper`**
+---
 
-3. **Raportuj sukces** w sekcji "Raport postępu"
+### **7d. Jeśli wygenerowano DWA pliki (projektowa + organizacyjna):**
+
+1. **Wywołaj `project-mapper`** dla notatki projektowej
+2. **Wywołaj `organizacja-mapper`** dla notatki organizacyjnej
+3. Każda notatka ma swój osobny cykl: `w-trakcie/` → mapowanie → `archiwum/`
+
+---
+
+**Czekaj na zakończenie odpowiednich agentów i raportuj sukces**
 
 ---
 
@@ -389,15 +507,32 @@ Po zakończeniu pełnego pipeline'u (notatka + CHANGELOG) przedstaw:
 **Źródło:** {nazwa-transkrypcji} ({liczba-części} części)
 **Typ:** {typ-spotkania}
 **Skill:** {użyty-skill}
-**Zapisana jako:** `Notatki/{folder}/{nazwa-notatki}.md`
-**Zarchiwizowane:** `oczyszczone-archiwum/{nazwa-transkrypcji}`
+**Zapisana jako:** 
+- `Notatki/Gotowe-notatki/{nazwa-notatki-projektowej}.md` (jeśli projektowa)
+- `Notatki/Gotowe-notatki/{nazwa-notatki-organizacyjnej}.md` (jeśli organizacyjna lub rozdzielona)
+**Zarchiwizowane:** 
+- Transkrypcja: `oczyszczone-archiwum/{nazwa-transkrypcji}`
+- Notatka zostanie zarchiwizowana przez `project-mapper` po zmapowaniu
 
-### Powiązane projekty (potwierdzone przez użytkownika)
+### Powiązania (potwierdzone przez użytkownika)
+
+**Jeśli notatka PROJEKTOWA:**
 - ✅ `kategoria/Projekt-1` - CHANGELOG.md zaktualizowany
 - ✅ `kategoria/Projekt-2` - CHANGELOG.md zaktualizowany
 
+**Jeśli notatka ORGANIZACYJNA:**
+- ✅ `Organizacja-DEV/{podfolder}` - zaktualizowany
+
+**Jeśli Daily:**
+- ⏭️ Bez mapowania - pozostaje w `Daily/`
+
+**UWAGA:** Jeśli wygenerowano 2 notatki (projektowa + organizacyjna):
+- Projektowa → `project-mapper` → Projekty/{projekt}/
+- Organizacyjna → `organizacja-mapper` → Organizacja-DEV/{podfolder}/
+
 ### Statystyki
-**W rejestrze oczekujących:** X notatek
+**Oczekujące transkrypcje:** X plików w `oczyszczone/`
+**W trakcie:** Y plików w `oczyszczone-w-trakcie/`
 **Następna do wygenerowania:** {YYYY-MM-DD}: {Typ}
 
 ---
@@ -427,43 +562,47 @@ Po zakończeniu pełnego pipeline'u (notatka + CHANGELOG) przedstaw:
 - Jeśli transkrypcja jest niejasna/niepełna - **zanotuj to** w notatce
 - Jeśli wykryjesz błędy w transkrypcji - **kontynuuj**, ale zanotuj do późniejszej poprawki
 
-### 6. Mechanizm blokowania współbieżnego przetwarzania (SQLite)
+### 6. Mechanizm blokowania współbieżnego przetwarzania (struktura folderów)
 
-**KRYTYCZNE:** Gdy używasz wielu agentów jednocześnie do generowania notatek, każdy agent MUSI używać bazy SQLite do oznaczania statusu przetwarzania.
+**KRYTYCZNE:** Gdy używasz wielu agentów jednocześnie do generowania notatek, każdy agent MUSI używać struktury folderów do oznaczania statusu przetwarzania.
 
-**Automatyczne blokowanie przez bazę:**
+**Automatyczne blokowanie przez przenoszenie plików:**
 
 1. **Przed rozpoczęciem przetwarzania:**
-   ```python
-   processing_id = start_processing(plik_id, 'oczyszczona->notatka')
-   if not processing_id:
-       # Plik już przetwarzany przez inny proces - POMIŃ
-       print("⏭️ Plik już w trakcie przetwarzania - pomijam")
-       return  # Zakończ agenta, plik zajęty
-   ```
-   - Funkcja `start_processing()` automatycznie:
-     - Sprawdza czy plik nie ma już statusu `w_trakcie`
-     - Ustawia status `w_trakcie` (blokada dla innych agentów)
-     - Zwraca `None` jeśli już przetwarzany → agent kończy pracę
+   - Agent próbuje przenieść plik z `oczyszczone/` → `oczyszczone-w-trakcie/`
+   - Jeśli przeniesienie się nie powiedzie (plik nie istnieje) → inny agent już go przenosi
+   - Agent pomija ten plik i szuka następnego
 
-2. **Po zakończeniu przetwarzania:**
-   ```python
-   finish_processing(processing_id, notatka_id, uwagi="Wygenerowano pomyślnie")
-   ```
-   - Funkcja `finish_processing()` automatycznie:
-     - Zmienia status na `zakonczone`
-     - Zapisuje ID wygenerowanej notatki
-     - Zwalnia blokadę (inne agenty mogą ponownie przetworzyć w razie błędu)
+2. **W trakcie przetwarzania:**
+   - Plik jest w `oczyszczone-w-trakcie/`
+   - Inne agenty nie widzą go w `oczyszczone/` → nie będą próbować przetwarzać
+
+3. **Po zakończeniu przetwarzania:**
+   - Agent przenosi plik z `oczyszczone-w-trakcie/` → `oczyszczone-archiwum/`
+   - Zwalnia blokadę (plik przetworzony)
 
 **Przykład workflow:**
-```python
-1. pliki = get_unprocessed_files('oczyszczona->notatka', limit=1)
-2. plik_id, sciezka, nazwa = pliki[0]
-3. processing_id = start_processing(plik_id, 'oczyszczona->notatka')
-4. if not processing_id: return  # Już przetwarzany
-5. # Wczytaj transkrypcję i wygeneruj notatkę
-6. notatka_id = add_file(sciezka_notatki, 'notatka', nazwa_notatki)
-7. finish_processing(processing_id, notatka_id)
+```
+1. Listuj pliki w `oczyszczone/`
+2. Wybierz najstarszy
+3. Przenieś z `oczyszczone/` → `oczyszczone-w-trakcie/`
+4. Jeśli się nie uda (plik nie istnieje) → pomiń, wybierz następny
+5. Wczytaj z `oczyszczone-w-trakcie/` i wygeneruj notatkę
+6. Zapisz notatkę do `Gotowe-notatki/`
+7. Przenieś transkrypcję z `oczyszczone-w-trakcie/` → `oczyszczone-archiwum/`
+```
+
+**Struktura folderów:**
+```
+Notatki/Transkrypcje/
+├── oczyszczone/              ← do przetworzenia
+├── oczyszczone-w-trakcie/    ← w trakcie przetwarzania (blokada)
+└── oczyszczone-archiwum/     ← przetworzone
+
+Notatki/
+├── Gotowe-notatki/            ← do zmapowania
+├── Gotowe-notatki-w-trakcie/  ← w trakcie mapowania (blokada)
+└── Gotowe-notatki-archiwum/   ← zmapowane
 ```
 
 ### 7. Pomysły Przemysława Sołdackiego (Przemka)
@@ -503,7 +642,7 @@ Po zakończeniu pełnego pipeline'u (notatka + CHANGELOG) przedstaw:
 
 Przed zapisem każdej notatki sprawdź:
 
-- [ ] **Wpis dodany do rejestru** - czy wpis bez [x] został dodany do rejestru przed rozpoczęciem przetwarzania?
+- [ ] **Plik przeniesiony do w-trakcie** - czy transkrypcja jest w `oczyszczone-w-trakcie/`?
 - [ ] **Struktura zgodna ze skillem** - wszystkie sekcje na miejscu?
 - [ ] **Powiązane projekty** - sekcja wypełniona?
 - [ ] **Zachowane niuanse** - szczegóły techniczne obecne?
@@ -511,10 +650,10 @@ Przed zapisem każdej notatki sprawdź:
 - [ ] **Brak halucynacji** - wszystko z transkrypcji lub `[DO USTALENIA]`?
 - [ ] **Wszystkie części transkrypcji** - jeśli transkrypcja była rozbita, czy wczytano wszystkie części?
 - [ ] **Pomysły Przemka** - jeśli Przemysław Sołdacki uczestniczył w spotkaniu, czy jego pomysły są wyraźnie oznaczone jako pomysły (💭), chyba że są potwierdzone przez uczestników?
-- [ ] **Nazwa pliku** - zgodna z konwencją?
+- [ ] **Nazwa pliku** - zgodna z konwencją? (projektowa vs organizacyjna)
+- [ ] **Link do transkrypcji** - dodany na początku notatki (jeśli rozdzielona)?
 - [ ] **Oczyszczona transkrypcja zarchiwizowana** - przeniesiona do `oczyszczone-archiwum/`?
-- [ ] **Rejestr zaktualizowany** - notatka dodana do kolejki?
-- [ ] **Wpis zaktualizowany** - czy wpis został zmieniony z `- [ ]` na `- [x]` po zapisaniu notatki?
+- [ ] **Notatka w odpowiednim folderze** - `Gotowe-notatki/` (czeka na mapowanie) lub `Daily/` (bez mapowania)?
 
 ---
 
@@ -526,27 +665,30 @@ Przed zapisem każdej notatki sprawdź:
 ### Spotkanie mieszane (np. Rada Architektów + Design)
 → Użyj skilla głównego typu (Rada Architektów), w treści zaznacz sekcję Design
 
-### Tematy organizacyjne w technicznym spotkaniu
-→ Wyodrębnij organizacyjne do osobnej notatki w `Organizacja działu DEV/`, techniczną przetwórz normalnie
+### Tematy mieszane: projektowe + organizacyjne
+→ **ROZDZIEL na dwie osobne notatki:**
+  - Notatka projektowa: `YYYY-MM-DD {Typ} - {temat projektowy}.md` → `Gotowe-notatki/`
+  - Notatka organizacyjna: `YYYY-MM-DD Organizacja pracy - {temat}.md` → `Gotowe-notatki/`
+  - W obu dodaj link do transkrypcji źródłowej
 
 ### Transkrypcja bardzo krótka/niepełna
-→ Wygeneruj notatkę z adnotacją `**Uwaga:** Transkrypcja niepełna/niejasna`
+→ Wygeneruj notatkę z adnotacją `**Uwaga:** Transkrypcja niepełna/niejasna`, zapisz do `Gotowe-notatki/` (lub `Daily/` jeśli Daily)
 
 ### Transkrypcja rozbita na części
 → **ZAWSZE wczytaj wszystkie części** przed generowaniem notatki. Jeśli nie zmieszczą się w kontekście, wczytuj po 2-3 części, ale zawsze zachowaj ciągłość - nie generuj notatki z niepełnej transkrypcji. Połącz wszystkie części w jedną całość przed przetwarzaniem.
 
 ### Transkrypcja już przetwarzana przez innego agenta
-→ **Sprawdź rejestr przed rozpoczęciem:**
-   - Jeśli w rejestrze istnieje wpis dla transkrypcji **BEZ [x]** (czyli `- [ ]` lub `- `) → **POMIŃ** tę transkrypcję
-   - Przejdź do następnej chronologicznie najstarszej nieprzetworzonej transkrypcji
-   - W raporcie poinformuj: "Transkrypcja {nazwa} jest już przetwarzana przez innego agenta (wpis bez [x] w rejestrze), pomijam"
+→ **Sprawdź folder przed rozpoczęciem:**
+   - Jeśli plik nie udało się przenieść z `oczyszczone/` → `oczyszczone-w-trakcie/` (już nie istnieje w `oczyszczone/`)
+   - **POMIŃ** tę transkrypcję i wybierz następną
+   - W raporcie poinformuj: "Transkrypcja {nazwa} jest już przetwarzana przez innego agenta (nie ma w oczyszczone/), pomijam"
 
 ### Błąd podczas przetwarzania
-→ **ZAWSZE zmień wpis na [x] nawet w przypadku błędu:**
-   - Jeśli wystąpi błąd podczas przetwarzania (np. błąd zapisu, brak skilla, etc.)
-   - **ZMIEŃ wpis z `- [ ]` na `- [x]`** przed zgłoszeniem błędu użytkownikowi
-   - To pozwoli innym agentom lub ponownej próbie przetworzyć transkrypcję (będzie mogła być ponownie dodana do rejestru)
-   - W raporcie błędu dodaj informację: "Wpis zaktualizowany na [x], transkrypcja dostępna do ponownego przetworzenia"
+→ **Przenieś z powrotem do oczyszczone/ w przypadku błędu:**
+   - Jeśli wystąpi błąd podczas przetwarzania (np. błąd generowania, brak skilla, etc.)
+   - **Przenieś plik z `oczyszczone-w-trakcie/` z powrotem do `oczyszczone/`**
+   - To pozwoli na ponowne przetworzenie przez tego samego lub innego agenta
+   - W raporcie błędu dodaj informację: "Transkrypcja przeniesiona z powrotem do oczyszczone/, dostępna do ponownego przetworzenia"
 
 ---
 
@@ -554,11 +696,15 @@ Przed zapisem każdej notatki sprawdź:
 
 - **Skills:** `.claude/skills/note-types/*/SKILL.md`
 - **Słownik:** `Notatki/Transkrypcje/Słownik Domenowy/Słownik Domenowy i Korekta Fonetyczna.md`
-- **Baza danych:** `Notatki/rejestr_transkrypcji.db` (SQLite)
-- **Helper script:** `.claude/scripts/transkrypcje_db.py`
-- **Transkrypcje oczyszczone:** `Notatki/Transkrypcje/oczyszczone/`
-- **Archiwum oczyszczone:** `Notatki/Transkrypcje/oczyszczone-archiwum/`
-- **Katalogi docelowe:** `Notatki/{Rada architektów|Sprint review|Planowanie sprintu|Spotkania projektowe|Organizacja działu DEV}/`
+- **Foldery transkrypcji:**
+  - `Notatki/Transkrypcje/oczyszczone/` - do przetworzenia
+  - `Notatki/Transkrypcje/oczyszczone-w-trakcie/` - w trakcie (blokada)
+  - `Notatki/Transkrypcje/oczyszczone-archiwum/` - przetworzone
+- **Foldery notatek:**
+  - `Notatki/Gotowe-notatki/` - do zmapowania
+  - `Notatki/Gotowe-notatki-w-trakcie/` - w trakcie mapowania (blokada)
+  - `Notatki/Gotowe-notatki-archiwum/` - zmapowane
+  - `Notatki/Daily/` - daily (bez mapowania na projekty)
 
 ---
 
@@ -568,17 +714,17 @@ Przed zapisem każdej notatki sprawdź:
 User: Wygeneruj kolejną notatkę
 
 Agent: 
-🔍 Szukam najstarszej nieprzetworzonej transkrypcji...
+🔍 Szukam najstarszej transkrypcji w `oczyszczone/`...
 
-Znaleziono: 2025-10-30 Rada architektów
-✓ Sprawdzam rejestr... brak wpisu bez [x], kontynuuję
-🔒 Dodaję wpis do rejestru: - [ ] [[2025-10-30 Rada architektów]]
+Znaleziono: 2025-10-30 Rada architektów (4 części)
+🔒 Przenoszę do `oczyszczone-w-trakcie/`...
+✓ Przeniesione (blokada założona)
 Typ: Rada architektów
 Skill: rada-architektow
 
 📖 Wczytuję zasoby...
 ✓ Skill wczytany
-✓ Transkrypcja wczytana (4 części: część 1-4)
+✓ Transkrypcja wczytana (4 części z `oczyszczone-w-trakcie/`)
 ✓ Słownik wczytany
 
 🔨 Generuję notatkę...
@@ -586,13 +732,14 @@ Skill: rada-architektow
 [...generowanie...]
 
 ✓ Wygenerowana notatka
-✓ Rejestry zaktualizowane
-🔓 Zmieniam wpis na: - [x] [[2025-10-30 Rada architektów]]
+✓ Zapisana w `Gotowe-notatki/`
+🔓 Przenoszę transkrypcję do `oczyszczone-archiwum/`...
+✓ Zarchiwizowane
 
 **Źródło:** 2025-10-30 Rada architektów - transkrypcja.md
 **Typ:** Rada architektów
 **Skill:** rada-architektow
-**Zapisana jako:** `Notatki/Rada architektów/2025-10-30 Rada architektów.md`
+**Zapisana jako:** `Notatki/Gotowe-notatki/2025-10-30 Rada architektów.md`
 
 ### Powiązane projekty (zidentyfikowane)
 - `moduly/Trust-Center` - tematy 1, 3

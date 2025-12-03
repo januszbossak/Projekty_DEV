@@ -34,14 +34,26 @@ Agent otrzymuje:
 - **Typ spotkania:** np. "Rada architektów", "Spotkanie projektowe"
 - **Lista projektów:** Ścieżki projektów ze słownika (potwierdzone przez użytkownika)
 
-### Krok 1: Wczytanie źródeł
+### Krok 1: Wczytanie źródeł i WERYFIKACJA
 
-1. **Wczytaj notatkę** - pełna treść
-2. **Wczytaj słownik projektów:**
+**KRYTYCZNE:** Przed jakimkolwiek przetwarzaniem, ZAWSZE wczytaj notatkę i zweryfikuj, że przetwarzasz właściwą notatkę.
+
+1. **Wczytaj notatkę** - pełna treść z ścieżki podanej w input
+   - Użyj dokładnej ścieżki: `Notatki/{folder}/{nazwa}.md`
+   - NIGDY nie używaj cache lub informacji z poprzednich sesji
+
+2. **WERYFIKUJ źródło notatki:**
+   - Sprawdź **datę** w notatce - czy zgadza się z datą podaną w input?
+   - Sprawdź **typ spotkania** w notatce - czy zgadza się z typem z input?
+   - Sprawdź **temat główny** - czy dotyczy projektów z input?
+   - **Jeśli COKOLWIEK się nie zgadza → STOP i zgłoś błąd użytkownikowi**
+
+3. **Wczytaj słownik projektów:**
    ```
    .claude/skills/_SLOWNIK_PROJEKTOW.md
    ```
-3. **Weryfikuj projekty** - czy wszystkie projekty istnieją w słowniku
+
+4. **Weryfikuj projekty** - czy wszystkie projekty istnieją w słowniku
 
 ### Krok 2: Dla każdego projektu - Ekstrakcja kluczowych ustaleń
 
@@ -207,11 +219,20 @@ Po przetworzeniu wszystkich projektów:
 
 ## Krytyczne zasady
 
+### 0. WERYFIKACJA ŹRÓDŁA (najważniejsze!)
+
+- **ZAWSZE wczytaj notatkę na początku** - użyj ścieżki z input
+- **ZWERYFIKUJ datę, typ i temat** - czy zgadza się z input?
+- **NIGDY nie używaj cache** - zawsze świeże wczytanie notatki
+- **W razie wątpliwości → STOP** - zgłoś użytkownikowi błąd weryfikacji
+- **Raportuj co przetwarzasz** - na początku wyświetl: "Przetwarzam notatkę: {nazwa} ({data}, {typ})"
+
 ### 1. Wierność notatce
 
 - **NIE halucynuj** - tylko informacje z notatki
 - **NIE interpretuj** - przepisuj dosłownie
 - **NIE streszczaj zbyt agresywnie** - zachowaj kluczowe szczegóły w bulletach
+- **NIE bierz informacji z innych notatek** - tylko ta jedna notatka podana w input
 
 ### 2. Chronologia
 
@@ -275,9 +296,11 @@ Wybrano kategorię "Inne". Podaj własną nazwę kategorii (np. "🔧 Technikali
 
 ## Weryfikacja przed zapisem
 
-- [ ] **Notatka wczytana** - pełna treść dostępna?
+- [ ] **ŹRÓDŁO ZWERYFIKOWANE** - czy notatka wczytana i zweryfikowana (data, typ, temat) przed jakimkolwiek przetwarzaniem?
+- [ ] **RAPORTOWANO CO PRZETWARZANE** - czy na początku wyświetlono nazwę, datę i typ notatki?
+- [ ] **Notatka wczytana** - pełna treść dostępna z prawidłowej ścieżki?
 - [ ] **Projekty zweryfikowane** - wszystkie w słowniku?
-- [ ] **Ustalenia wyciągnięte** - tylko dotyczące tego projektu?
+- [ ] **Ustalenia wyciągnięte** - tylko dotyczące tego projektu Z TEJ NOTATKI (nie z innych)?
 - [ ] **Kategoria potwierdzona** - użytkownik wybrał?
 - [ ] **Chronologia poprawna** - wpisane we właściwym miejscu?
 - [ ] **Format zgodny** - nagłówek, źródło, kategoria, bullety?

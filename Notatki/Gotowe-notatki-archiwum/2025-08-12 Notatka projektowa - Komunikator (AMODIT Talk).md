@@ -1,16 +1,18 @@
 # Notatka projektowa – 2025-08-12 – Komunikator (AMODIT Talk)
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 **Data:** 2025-08-12
 **Temat główny:** Architektura, uwierzytelnianie i model danych modułu Komunikator (AMODIT Talk)
 
 **Powiązane projekty:**
-- [[Projekty/Klienci/WIM/Komunikator/README|Komunikator (AMODIT Talk)]] – funkcjonalności 1, 2, 3, 4, 5, 6, 7, 8
+- [[Klienci/WIM/Komunikator/README|Komunikator (AMODIT Talk)]] – funkcjonalności 1, 2, 3, 4, 5, 6, 7, 8
 
 ---
 
 ## 1. Architektura komunikatora – osobna aplikacja vs część AMODIT
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Architektura systemu
 
 ### Cel i problem
@@ -51,7 +53,7 @@ Ustalono kontynuację projektu jako osobnej aplikacji SignalR. Komunikator pozos
 
 ## 2. Konfiguracja – Connection String i mechanizm pobierania organizacji
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Konfiguracja systemu
 
 ### Cel i problem
@@ -90,7 +92,7 @@ Ustalono, że:
 
 ## 3. Model danych – tabele i nazewnictwo
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Model danych
 
 ### Cel i problem
@@ -131,7 +133,7 @@ Ustalono, że komunikator będzie korzystał z osobnych tabel w osobnej bazie da
 
 ## 4. Szyfrowanie wiadomości – klucze szyfrowania
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Bezpieczeństwo
 
 ### Cel i problem
@@ -171,7 +173,7 @@ Ustalono, że:
 
 ## 5. Uwierzytelnianie – JWT i jednorazowe kody (OTP)
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Bezpieczeństwo / Integracja
 
 ### Cel i problem
@@ -222,7 +224,7 @@ Ustalono mechanizm uwierzytelniania przez jednorazowy kod (OTP) wymieniany na to
 
 ## 6. Problem z farmą serwerów – przechowywanie kodów jednorazowych
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Architektura / Bezpieczeństwo
 
 ### Cel i problem
@@ -258,7 +260,7 @@ Ustalono, że jednorazowe kody (OTP) muszą być przechowywane w bazie danych za
 
 ## 7. Integracja z AMODIT – pobieranie listy użytkowników
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Integracja
 
 ### Cel i problem
@@ -293,7 +295,7 @@ Obecnie komunikator pobiera listę użytkowników przez wewnętrzny kontroler AM
 
 ## 8. Proces projektowy – potrzeba akceptacji architektonicznej
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 **Komponent:** Proces projektowy
 
 ### Cel i problem

@@ -1,18 +1,20 @@
 # Rada Architektów – 2025-08-12
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 **Powiązane projekty:**
-- [[Projekty/Integracje/Integracje-REST-multipart/README|Integracje-REST-multipart]] – temat 1
-- [[Projekty/Moduly/Ustawienia-systemowe/README|Ustawienia-systemowe]] – temat 2
-- [[Projekty/cross-cutting/Testy-kompatybilnosci-API/README|Testy-kompatybilnosci-API]] – temat 3
-- [[Projekty/cross-cutting/Zastepstwa-grupy/README|Zastepstwa-grupy]] – temat 4
-- [[Projekty/Moduly/Edytor-procesow/Edytor-formularzy/README|Edytor-formularzy]] – temat 5
-- [[Projekty/Moduly/Modul-raportowy/README|Modul-raportowy]] – temat 6
+- [[Integracje/Integracje-REST-multipart/README|Integracje-REST-multipart]] – temat 1
+- [[Moduly/Ustawienia-systemowe/README|Ustawienia-systemowe]] – temat 2
+- [[cross-cutting/Testy-kompatybilnosci-API/README|Testy-kompatybilnosci-API]] – temat 3
+- [[cross-cutting/Zastepstwa-grupy/README|Zastepstwa-grupy]] – temat 4
+- [[Moduly/Edytor-procesow/Edytor-formularzy/README|Edytor-formularzy]] – temat 5
+- [[Moduly/Modul-raportowy/README|Modul-raportowy]] – temat 6
 
 ---
 
 ## 1. Usprawnienie mechanizmu przesyłania załączników przez API
 
-**Projekt:** `integracje/Integracje-REST-multipart`
+**Projekt:** `Integracje/Integracje-REST-multipart`
 
 ### Kontekst i Problem
 
@@ -63,7 +65,7 @@ Ustalono wprowadzenie usprawnień mechanizmu przesyłania załączników przez A
 
 ## 2. Problem kompatybilności wstecznej interfejsu IJob
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 
@@ -107,7 +109,7 @@ Ustalono utrzymanie rozwiązania polegającego na wykorzystaniu nowego, osobnego
 
 ## 3. Test jednostkowy do wykrywania zmian w publicznych metodach
 
-**Projekt:** Nowy temat / do sklasyfikowania
+**Projekt:** `cross-cutting/Testy-kompatybilnosci-API`
 
 ### Kontekst i Problem
 
@@ -208,7 +210,7 @@ Ustalono następujące podejście do obsługi zastępstw za grupy:
 
 ## 5. Ustawianie szerokości kolumn w formularzu
 
-**Projekt:** `moduly/Edytor-procesow-formularzy`
+**Projekt:** `Moduly/Edytor-procesow/Edytor-formularzy`
 
 ### Kontekst i Problem
 
@@ -259,7 +261,7 @@ Ustalono wprowadzenie możliwości ustawiania szerokości kolumn w formularzu:
 
 ## 6. Kolory w raportach tabelarycznych z agregacją
 
-**Projekt:** `moduly/Modul-raportowy`
+**Projekt:** `Moduly/Modul-raportowy`
 
 ### Kontekst i Problem
 

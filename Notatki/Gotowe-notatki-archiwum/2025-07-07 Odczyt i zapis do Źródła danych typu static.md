@@ -1,6 +1,8 @@
 Dokumentacja: CRUD dla Źródeł danych Static
 ===========================================
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 * * *
 
 1. Cel
@@ -310,4 +312,9 @@ Uproszczona forma zarządzania magazynami ze stanami:
 
 **Ostatnia aktualizacja:** 2025-06-30  
 **Status:** Dokumentacja projektowa  
-**Kontakt:** [Team Lead], [Architekt]
+
+---
+
+**Powiązane projekty:**
+- [[Klienci/WIM/Zmienne-globalne/README|Zmienne-globalne]] – implementacja dla WIM
+- [[Moduly/Zrodla-danych/README|Zrodla-danych]] – moduł bazowy

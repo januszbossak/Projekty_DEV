@@ -1,12 +1,13 @@
+> 🛡️ Zweryfikowano (Review) w dniu 2025-12-03
 
 **Powiązane projekty:**
-- [[Projekty/Koncepcje/Okna-dialogowe/README|Okna-dialogowe]] – tematy 1, 2, 3
+- [[Koncepcje/Okna-dialogowe/README|Okna-dialogowe]] – tematy 1, 2, 3
 
 ---
 
 ## 1. Koncepcja Uproszczonego Okna Dialogowego
 
-**Projekt:** `koncepcje/Okna-dialogowe`
+**Projekt:** `Koncepcje/Okna-dialogowe`
 
 ### Kontekst i Problem
 

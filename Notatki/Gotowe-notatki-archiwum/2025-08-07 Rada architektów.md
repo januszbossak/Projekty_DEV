@@ -1,13 +1,15 @@
 # Rada Architektów – 2025-08-07
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 **Powiązane projekty:**
-- `moduly/Ustawienia-systemowe` – tematy 1, 2, 3, 4, 5
+- [[Moduly/Ustawienia-systemowe/README|Ustawienia-systemowe]] – tematy 1, 2, 3, 4, 5, 6
 
 ---
 
 ## 1. MVP dla integracji w ustawieniach systemowych
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 
@@ -66,7 +68,7 @@ Ustalono strukturę MVP dla integracji w ustawieniach systemowych:
 
 ## 2. OAuth i tokeny – konfiguracja aplikacji
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 
@@ -108,7 +110,7 @@ Koncepcja OAuth i tokenów została zaakceptowana jako właściwy kierunek, jedn
 
 ## 3. Reorganizacja ustawień systemowych – kategorie integracji
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 
@@ -153,7 +155,7 @@ Ustalono, że kategoryzacja integracji i pełna reorganizacja ustawień systemow
 
 ## 4. Wykorzystanie AI do tworzenia integracji
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 
@@ -196,7 +198,7 @@ Funkcjonalność wykorzystania AI do tworzenia integracji została uznana za war
 
 ## 5. Eksport helpa do PDF
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 
@@ -236,7 +238,7 @@ Funkcjonalność eksportu helpa do PDF została odrzucona jako nieuzasadniona bi
 
 ## 6. Integracje vs moduły – rozróżnienie
 
-**Projekt:** `moduly/Ustawienia-systemowe`
+**Projekt:** `Moduly/Ustawienia-systemowe`
 
 ### Kontekst i Problem
 

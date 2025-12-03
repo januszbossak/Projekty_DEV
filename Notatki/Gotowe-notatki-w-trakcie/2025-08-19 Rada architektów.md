@@ -1,17 +1,19 @@
 # Rada Architektów – 2025-08-19
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 **Powiązane projekty:**
-- `moduly/Trust-Center` – temat 1
-- `koncepcje/Tablica-ogloszen` – temat 2
-- `cross-cutting/Logowanie-powiadomien` – temat 3
-- `cross-cutting/Zakladka-Do-wykonania` – temat 4
-- `cross-cutting/Dostep-bylych-wspolpracownikow` – temat 5
+- [[Moduly/Trust-Center/README|Trust-Center]] – temat 1
+- [[Klienci/WIM/News-Feed-Anonse/README|News-Feed-Anonse]] + [[Koncepcje/Tablica-ogloszen/README|Tablica-ogloszen]] – temat 2
+- [[Klienci/WIM/Logowanie-powiadomien/README|Logowanie-powiadomien]] + [[cross-cutting/Logowanie-powiadomien/README|Logowanie-powiadomien]] – temat 3
+- [[cross-cutting/Zakladka-Do-wykonania/README|Zakladka-Do-wykonania]] – temat 4
+- [[cross-cutting/Dostep-bylych-wspolpracownikow/README|Dostep-bylych-wspolpracownikow]] – temat 5
 
 ---
 
 ## 1. Trust Center – przycisk zarządzania dokumentem i automatyczne wysyłanie kodu
 
-**Projekt:** `moduly/Trust-Center`
+**Projekt:** `Moduly/Trust-Center`
 
 ### Kontekst i Problem
 
@@ -64,7 +66,7 @@ Ustalono następujące zmiany w Trust Center:
 
 ## 2. Tablica ogłoszeń / News feed – wymagania i alternatywy
 
-**Projekt:** `koncepcje/Tablica-ogloszen`
+**Projekty:** `Klienci/WIM/News-Feed-Anonse` + `Koncepcje/Tablica-ogloszen`
 
 ### Kontekst i Problem
 
@@ -126,7 +128,7 @@ Ustalono wstrzymanie prac deweloperskich nad nową funkcjonalnością do czasu p
 
 ## 3. Logowanie powiadomień systemowych – ślad audytowy
 
-**Projekt:** `cross-cutting/Logowanie-powiadomien`
+**Projekty:** `Klienci/WIM/Logowanie-powiadomien` + `cross-cutting/Logowanie-powiadomien`
 
 ### Kontekst i Problem
 

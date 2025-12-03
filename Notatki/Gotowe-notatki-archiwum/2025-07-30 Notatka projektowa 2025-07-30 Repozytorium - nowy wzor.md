@@ -1,18 +1,19 @@
 
+> 🛡️ Notatka zweryfikowana i zmapowana (Codex Review) w dniu 2025-12-03
+
 **Data:** 2025-07-30
 
 **Temat główny:** Koncepcja Repozytorium (DMS) i obsługi JRWA
 
 **Powiązane projekty:**
-- [[Projekty/Klienci/WIM/Repozytorium/README|Repozytorium]] – funkcjonalności 1, 2, 3, 4
-- [[Projekty/Klienci/WIM/Repozytorium/README|Repozytorium]] – kontekst wdrożeniowy
-- [[Projekty/Moduly/Modul-raportowy/README|Modul-raportowy]] – widoki w węzłach
+- [[Klienci/WIM/Repozytorium/README|Repozytorium]] – funkcjonalności 1, 2, 3, 4
+- [[Moduly/Modul-raportowy/README|Modul-raportowy]] – widoki w węzłach
 
 ---
 
 ## 1. Definicja i Filozofia Repozytorium
 
-**Projekt:** `klienci/WIM/Repozytorium`
+**Projekt:** `Klienci/WIM/Repozytorium`
 **Komponent:** Repozytorium
 
 ### Cel i problem
@@ -39,7 +40,7 @@ Utrzymujemy koncepcję, że **dokument = sprawa**. Repozytorium to nakładka (wi
 
 ## 2. Struktura i Uprawnienia (Działy vs Swobodne Foldery)
 
-**Projekt:** `klienci/WIM/Repozytorium`
+**Projekt:** `Klienci/WIM/Repozytorium`
 **Komponent:** Repozytorium
 
 ### Cel i problem
@@ -63,7 +64,7 @@ Obecna implementacja (z Rossmanna) sztywno wiąże strukturę z działami organi
 
 ## 3. Obsługa JRWA (Jednolity Rzeczowy Wykaz Akt)
 
-**Projekt:** `klienci/WIM/Repozytorium`
+**Projekt:** `Klienci/WIM/Repozytorium`
 **Komponent:** Repozytorium / Moduł dedykowany
 
 ### Cel i problem
@@ -94,7 +95,7 @@ JRWA nie jest rozważane w kontekście klienta WIM
 
 ## 4. Parametryzacja folderów
 
-**Projekt:** `klienci/WIM/Repozytorium`
+**Projekt:** `Klienci/WIM/Repozytorium`
 **Komponent:** Repozytorium
 
 ### Cel i problem

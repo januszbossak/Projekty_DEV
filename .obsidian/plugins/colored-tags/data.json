@@ -19,7 +19,15 @@
     "UseCase": 7,
     "amodit-dev": 8,
     "amodit-sla": 9,
-    "amodit-infrastructure": 10
+    "amodit-infrastructure": 10,
+    "Architektura": 11,
+    "Design": 12,
+    "Funkcjonalność": 13,
+    "Problem": 14,
+    "Decyzja": 15,
+    "Dokumentacja": 16,
+    "Roadmap": 17,
+    "Bezpieczeństwo": 18
   },
   "_version": 3
 }

@@ -1,19 +1,19 @@
-
+> 🛡️ Zweryfikowano (Review) w dniu 2025-12-03
 
 **Powiązane projekty:**
-- [[Projekty/Klienci/WIM/News-Feed-Anonse/README|News-Feed-Anonse]] – tematy 1
-- [[Projekty/Klienci/WIM/Komunikator/README|Komunikator]] – temat 2
-- [[Projekty/Klienci/WIM/Repozytorium/README|Repozytorium]] – temat 3
-- [[Projekty/Klienci/WIM/Call-Snippet/README|Call-Snippet]] – temat 4
-- [[Projekty/Klienci/WIM/Zmienne-globalne/README|Zmienne-globalne]] – temat 5
-- [[Projekty/Moduly/Modul-raportowy/README|Modul-raportowy]] – temat 6
-- [[Projekty/cross-cutting/WCAG/README|WCAG]] – temat 7
+- [[Klienci/WIM/News-Feed-Anonse/README|News-Feed-Anonse]] – temat 1
+- [[Klienci/WIM/Komunikator/README|Komunikator]] – temat 2
+- [[Klienci/WIM/Repozytorium/README|Repozytorium]] – temat 3
+- [[Klienci/WIM/Call-Snippet/README|Call-Snippet]] – temat 4
+- [[Klienci/WIM/Zmienne-globalne/README|Zmienne-globalne]] + [[Moduly/Zrodla-danych/README|Zrodla-danych]] – temat 5
+- [[Moduly/Modul-raportowy/README|Modul-raportowy]] – temat 6
+- [[cross-cutting/WCAG/README|WCAG]] – temat 7
 
 ---
 
 ## 1. News Feed i Anonse (dawniej Baza Wiedzy)
 
-**Projekt:** `moduly/Copilot-Baza-wiedzy-AI` (ewolucja koncepcji)
+**Projekt:** `Klienci/WIM/News-Feed-Anonse`
 
 ### Kontekst i Problem
 Dyskusja nad funkcjonalnością "News Feed" oraz "Anonsów/Ogłoszeń". Pierwotnie łączono to z "Bazą wiedzy", ale zdecydowano o rozdzieleniu pojęć. Celem jest mechanizm wyświetlania ogłoszeń (np. o awariach, zmianach) oraz newsów (np. z bloga amodit.pl) w interfejsie systemu.
@@ -44,7 +44,7 @@ Funkcjonalność Anonsów i News Feedu zostanie zrealizowana w oparciu o **proce
 
 ## 2. Komunikator systemowy (Czat)
 
-**Projekt:** `klienci/WIM/Komunikator`
+**Projekt:** `Klienci/WIM/Komunikator`
 
 ### Kontekst i Problem
 Potrzeba komunikacji w czasie rzeczywistym w kontekście sprawy (wątki, wzmiankowanie osób). Obecny mechanizm komentarzy wymaga odświeżania strony, co nie spełnia oczekiwań "czatu".
@@ -87,13 +87,13 @@ Wstrzymanie prac koncepcyjnych do czasu otrzymania jasnej definicji i wymagań o
 
 ## 4. Call Snippet (zmiana nazwy Call Function)
 
-**Projekt:** `koncepcje/CallFunctionEx`
+**Projekt:** `Klienci/WIM/Call-Snippet`
 
 ### Kontekst i Problem
 Funkcja `CallFunction` w rzeczywistości wstawia kod (snippet) w miejsce wywołania, a nie działa jak klasyczna funkcja programistyczna. Nazwa jest myląca. Dodatkowo rozważano dodanie parametrów (zmiennych).
 
 ### Decyzja
-**Status:** ✅ Zatwierdzone (koncepcyjnie)
+**Status:** 💡 Propozycja
 
 1. Zmiana nazwy z `Call Function` na **`Call Snippet`** (z zachowaniem kompatybilności wstecznej/aliasu).
 2. Rezygnacja z dodawania jawnych parametrów na tym etapie (używanie zmiennych wewnątrz snippetu).
@@ -102,7 +102,7 @@ Funkcja `CallFunction` w rzeczywistości wstawia kod (snippet) w miejsce wywoła
 
 ## 5. Zmienne globalne / Źródła danych "Static"
 
-**Projekt:** `moduly/Zrodla-danych`
+**Projekty:** `Klienci/WIM/Zmienne-globalne` + `Moduly/Zrodla-danych`
 
 ### Kontekst i Problem
 Brak w AMODIT odpowiednika "zmiennych procesowych" (globalnych dla procesu, np. pula dni urlopowych, budżet, lista sprzętu), które można łatwo edytować z poziomu reguł, a które nie są sprawami (rejestrami).
@@ -130,7 +130,7 @@ Rozbudowa **Zewnętrznych Źródeł Danych** (typ "Static" / "Local"):
 
 ## 6. Raportowanie: Heatmapa i Pivot
 
-**Projekt:** `moduly/Modul-raportowy`
+**Projekt:** `Moduly/Modul-raportowy`
 
 ### Kontekst i Problem
 Dwie potrzeby raportowe:
