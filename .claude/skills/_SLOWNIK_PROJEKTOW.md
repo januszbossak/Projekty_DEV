@@ -16,7 +16,9 @@
 
 ## Moduły (`Moduly/`)
 
-  
+### `Moduly/Repozytorium-spraw`
+
+Repozytorium to hierarchiczna struktura folderów ściśle powiązana ze strukturą organizacyjną firmy, służąca do logicznego grupowania i przechowywania spraw  pochodzących z różnych procesów. Funkcjonalność ta pozwala mapować dynamiczne instancje procesów na statyczne węzły (działy i foldery), dziedzicząc przy tym uprawnienia w dół struktury organizacyjnej. 
 
 ### `Moduly/AMODIT Copilot`
 
@@ -46,13 +48,18 @@ Zintegrowany edytor procesów biznesowych w systemie AMODIT. Definiowanie pelnej
 
 Edytor wizualny diagramu procesu. Modelowanie przepływu pracy, wizualizacja etapów i przejść.
 
-  
+#### `Moduly/Edytor-procesow/Tworzenie-spraw`
+
+Ustawienia procesu w zakresie tworzenia spraw z maila, z pliku, dzielenia dokumentu po barkodzie, pustej stronie itp.
 
 #### `Moduly/Edytor-procesow/Edytor-formularzy`
 
 Edytor formularzy dla procesów. Definiowanie sekcji, pól formularza, walidacji. Lista pól formularza.
 
-  
+#### `Moduly/Edytor-procesow/Edytor-reguł`
+
+Edytor reguł, lista reguł dla procesów. 
+
 
 #### `Moduly/Edytor-procesow/Edytor-szablonow`
 
@@ -70,7 +77,9 @@ Zunifikowane narzędzie do zarządzania wszystkimi typami uprawnień w edytorze 
 
 Eksport i import procesów w formacie XML. Walidacja definicji, rozwiązywanie konfliktów GUID, migracja procesów między środowiskami.
 
-  
+### `Moduly/Panel-klienta`
+
+Miejsce w którym klient (administrator u klienta) moze sledzic stan zuzytych tokenow, wyslanych dokumentow do OCR, liczbe dokumentow wysłanych do TrustCenter itp
 
 ### `Moduly/Modul-raportowy`
 
@@ -230,19 +239,19 @@ Funkcjonalność tymczasowego dostępu do sprawy ("GTA" – Grant Temporary Acce
 
   
 
-### `cross-cutting/Interfejs-sprawy`
+### `cross-cutting/Wyszukiwanie-Lucene`
 
-UI sprawy. Ikonki procesów (małe, duże grafiki kafelków), pola, widoki, ogólny interfejs sprawy.
+Problemy z działaniem mechanizu indeksujacego Lucene, wyszukiwarak tekstowa spraw, zarówno na listach , zakładkach typu "Do wykonania", "Wszystkie" itp. Wyszukiwanie pełnotekstowe w raportach
 
   
 
-#### `cross-cutting/Interfejs-sprawy/Zakladka-Raporty`
+#### `cross-cutting/Zakladka-Raporty`
 
 Nowy wygląd i funkcjonalności zakładki "Raporty" w menu głównym. Przepisanie na React, nowe formaty wyświetlania (kafelki, lista, lista kompaktowa), ulepszone sortowanie i filtrowanie (moje raporty, ostatnio modyfikowane, szukanie po źródle), wizualne rozróżnianie typów raportów (ikony), zapamiętywanie filtrów per użytkownik. Metadane raportów widoczne na liście (opis, autor, typ).
 
   
 
-#### `cross-cutting/Interfejs-sprawy/Zakladka-Procesy`
+#### `cross-cutting/Zakladka-Procesy`
 
 Nowy wygląd i funkcjonalności zakładki "Procesy" w menu głównym. Przepisanie na React, nowy format wyświetlania (ulubione, kafelki, lista kompaktowa), opisy procesów widoczne na liście. Modal pośredni przed uruchomieniem sprawy z opisem procesu (można wyłączyć dla znanych procesów). Usprawnienie nawigacji i odnajdywania procesów.
 
@@ -370,8 +379,12 @@ Integracja z SharePoint przez OAuth. Autoryzacja, synchronizacja dokumentów.
 
 Integracja z systemem mailowym. Wysyłka i odbieranie emaili, SMTP, IMAP.
 
-#### `Integracje/Integracja-CAS`
+### `Integracje/Integracja-CAS`
 Integracja systemu AMODIT z systemem CAS (Central Authentication Service) w celu zapewnienia centralnej autoryzacji, autentykacji oraz zarządzania uprawnieniami użytkowników.
+
+### `Integracje/Integracja-KSeF`
+Integracja systemu AMODIT z connectorem KSeF, który jest wytwarzany i utrzymymywany przez zespół Piotra Wągla.
+
 
 ---
 

@@ -1,5 +1,14 @@
 # CHANGELOG - WCAG (WIM)
 
+## 2025-10-02 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
+**Kategoria:** #Design #Bug
+
+- Zidentyfikowano krytyczne problemy z kontrastem w wizualizacjach raportów systemowych (nieczytelny szary tekst)
+- Decyzja o konieczności ujednolicenia kolorów tooltipów (czarny/biały) niezależnie od tła kafelka
+
+---
+
 ## 2025-08-26 - Notatka projektowa - AMODIT UI
 
 **Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]

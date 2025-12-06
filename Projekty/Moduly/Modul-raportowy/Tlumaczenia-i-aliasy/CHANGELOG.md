@@ -1,5 +1,25 @@
 # CHANGELOG - Tłumaczenia i aliasy
 
+---
+
+## 2025-10-02 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność #Bug
+
+- Zidentyfikowano braki w tłumaczeniach interfejsu raportów (mieszanka języków)
+- Zadanie: przetłumaczenie wszystkich elementów interfejsu, nazw filtrów i breadcrumbs na język polski
+
+---
+
+## 2025-09-23 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-23 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-23%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność
+
+- **Aliasy w źródłach zewnętrznych:** Zgłoszono i zatwierdzono dodanie możliwości nadawania aliasów kolumnom ze źródeł zewnętrznych w raportach (analogia do procesów).
+- **Tłumaczenia agregacji:** Potwierdzono implementację tłumaczeń (Count → Liczba, Sum → Suma) i poprawę wyświetlania na osiach (backend OK, frontend poprawiony).
+
+---
+
 ## 2025-09-09 - Rada architektów
 
 **Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-09-09 Rada architektów|2025-09-09 Rada architektów]]

@@ -100,6 +100,8 @@ Baza wiedzy Use Cases modułu raportowego.
 
 Gemini adoptuje model pracy oparty na **Agentach** i **Umiejętnościach (Skills)** zdefiniowany w konfiguracji `.claude/`. Zapewnia to spójność procesów między różnymi modelami AI pracującymi na repozytorium.
 
+**Ważne:** Stan przetwarzania jest śledzony w bazie SQLite `Notatki/rejestr_transkrypcji.db`.
+
 ### Struktura logiczna
 
 1.  **Agenty (`.claude/agents/`)**: Definiują **KIM** jesteś i **JAKI** proces masz wykonać (workflow, triggery, zasoby).
@@ -108,61 +110,117 @@ Gemini adoptuje model pracy oparty na **Agentach** i **Umiejętnościach (Skills
 **Workflow:**
 1.  Zidentyfikuj intencję użytkownika (trigger).
 2.  Aktywuj odpowiedniego Agenta (przeczytaj plik w `.claude/agents/`).
-3.  Wczytaj wymagane przez Agenta Skills (pliki w `.claude/skills/`) oraz zasoby pomocnicze (np. słowniki).
+3.  Wczytaj wymagane przez Agenta Skills (pliki w `.claude/skills/`) oraz zasoby pomocnicze.
 4.  Wykonaj zadanie zgodnie z procedurą.
 
-### Dostępne Agenty
+### 📋 PRZEGLĄD AGENTÓW
 
-#### 🧹 Agent: `transcript-cleaner`
-**Aktywacja:**
-- "Oczyść transkrypcje"
-- "Przetwórz transkrypcję"
-- "Oczyść oczekujące"
-
-**Zadania:**
-- Batchowe lub pojedyncze czyszczenie transkrypcji ASR.
-- Korekta fonetyczna (Słownik Domenowy).
-- Formatowanie dialogów.
-- Aktualizacja rejestru `_transkrypcje.md`.
-
+#### 🧹 Agent: `transcript-cleaner` (Niebieski)
+**Trigger:** "Oczyść transkrypcje", "Oczyść oczekujące"
+**Co robi:**
+1. Pobiera surowe transkrypcje z `surowe/` (max 5 na raz)
+2. Korekta błędów ASR wg słownika domenowego
+3. Redukcja szumu, formatowanie
+4. Zapisuje do `oczyszczone/`
+5. Archiwizuje surowe → `surowe-archiwum/`
+6. **NIE** obsługuje gotowych notatek (tylko transkrypcje)
+**Output:** Oczyszczone transkrypcje gotowe do generowania notatek.
 **Definicja:** `.claude/agents/transcript-cleaner.md`
-**Skill:** `.claude/skills/transcript-cleaning/SKILL.md`
 
 ---
 
-#### 📝 Agent: `note-maker`
-**Aktywacja:**
-- "Wygeneruj kolejną notatkę"
-- "Zrób notatkę"
-- "Przetwórz transkrypcję na notatkę"
-
-**Zadania:**
-- Tworzenie strukturalnych notatek ze spotkań.
-- Auto-detekcja typu spotkania (Rada Architektów, Sprint Review, etc.).
-- Mapowanie tematów na projekty.
-- Aktualizacja rejestru `_rejestr_przetworzonych.md`.
-- **Tryb pojedynczy** - jedna notatka na sesję.
-
+#### 📝 Agent: `note-maker` (Zielony)
+**Trigger:** "Wygeneruj kolejną notatkę"
+**Co robi:**
+1. Pobiera najstarszą oczyszczoną transkrypcję
+2. Rozpoznaje typ spotkania (6 typów)
+3. Automatycznie wykrywa i wczytuje WSZYSTKIE części (jeśli rozbita)
+4. Generuje strukturalną notatkę wg odpowiedniego skilla
+5. Self-review - weryfikacja jakości przed zapisem
+6. Identyfikuje projekty ze słownika
+7. Pyta użytkownika o potwierdzenie projektów
+8. **Wywołuje project-mapper** - dodaje wpisy do CHANGELOG.md
+9. Archiwizuje transkrypcję → `oczyszczone-archiwum/`
+**Tryb:** 1 notatka na sesję, czeka na potwierdzenie.
 **Definicja:** `.claude/agents/note-maker.md`
-**Skills (zależnie od typu):** `.claude/skills/note-types/{typ}/SKILL.md`
 
 ---
 
-#### 📝📝📝📝 Agent: `batch-note-maker`
-**Aktywacja:**
-- "Wygeneruj notatki z pozostałych transkrypcji"
-- "Przetwórz 4 kolejne transkrypcje na notatki"
-- "Batch generowanie notatek"
-
-**Zadania:**
-- Tworzenie strukturalnych notatek ze spotkań (batch 4 notatek).
-- Auto-detekcja typu spotkania (Rada Architektów, Sprint Review, etc.).
-- Mapowanie tematów na projekty.
-- Aktualizacja rejestru `_rejestr_przetworzonych.md`.
-- **Tryb batch** - 4 notatki sekwencyjnie w jednej sesji, automatyczna kontynuacja.
-
+#### 📝📝📝📝 Agent: `batch-note-maker` (Fioletowy)
+**Trigger:** "Wygeneruj notatki z pozostałych transkrypcji"
+**Co robi:**
+Dokładnie to samo co `note-maker`, ale:
+- 4 notatki sekwencyjnie w jednej sesji
+- Automatyczna kontynuacja bez czekania
+- Raportuje postęp po każdej
+- Podsumowanie batcha na końcu
+**Tryb:** Batch 4 notatek, automatyczny flow.
 **Definicja:** `.claude/agents/batch-note-maker.md`
-**Skills (zależnie od typu):** `.claude/skills/note-types/{typ}/SKILL.md`
+
+---
+
+#### 🚀 Agent: `pipeline-runner` (Fioletowy)
+**Trigger:** "Przetwórz nowe", "Przetwórz dzisiejsze", "Przetwórz z [data]"
+**Co robi - PEŁNY PIPELINE:**
+1. Wykrywa nowe surowe pliki (transkrypcje + gotowe notatki)
+2. Rozpoznaje typ: transkrypcja vs gotowa notatka
+3. Dla transkrypcji: czyszczenie → generowanie notatki
+4. Dla gotowych notatek: tylko generowanie notatki (pomija czyszczenie)
+   - Gotowe notatki powinny być w `surowe/notatki/`
+5. Filtruje po dacie (dzisiejsze/wczorajsze/konkretna data)
+6. **NIE mapuje na projekty** (to osobny krok - zazwyczaj `note-maker` robi to automatycznie, ale pipeline skupia się na generowaniu pliku)
+**Definicja:** `.claude/agents/pipeline-runner.md`
+
+---
+
+#### 🗺️ Agent: `project-mapper` (Pomarańczowy)
+**Trigger:** Wywoływany automatycznie przez `note-maker`
+**Co robi:**
+1. Otrzymuje notatkę + listę projektów (potwierdzone przez użytkownika)
+2. **WERYFIKUJE źródło** - wczytuje notatkę, sprawdza datę/typ
+3. Dla każdego projektu:
+  - Wyciąga kluczowe ustalenia (5-7 bulletów)
+  - Pyta użytkownika o kategorię (#Architektura, #Funkcjonalność, etc.)
+  - Otwiera `projekty/{projekt}/CHANGELOG.md`
+  - Znajduje właściwe miejsce chronologiczne
+  - Dodaje wpis z linkiem do notatki
+4. Zapisuje mapowania w bazie SQLite
+**Output:** Zaktualizowane CHANGELOGi, notatka zmapowana.
+**Definicja:** `.claude/agents/project-mapper.md`
+
+---
+
+#### 🛡️ Agent: `note-reviewer` (Fioletowy) - PRZEJŚCIOWY
+**Trigger:** "Przetwórz kolejną notatkę", "Zrób review notatki"
+**Co robi - QA + MAPOWANIE:**
+1. Pobiera najstarszą notatkę z `Gotowe-notatki/`
+2. Przenosi do `Gotowe-notatki-w-trakcie/` (blokada)
+3. Wczytuje transkrypcję źródłową
+4. REVIEW QA:
+  - Zgodność z transkrypcją, statusy decyzji, projekty, halucynacje
+5. Proponuje zmiany → użytkownik zatwierdza
+6. Poprawia notatkę
+7. MAPOWANIE:
+  - Daily → `Daily/` (koniec)
+  - Organizacyjna → `Organizacja-DEV/`
+  - Projektowa → `CHANGELOG.md` dla każdego projektu
+8. Archiwizuje → `Gotowe-notatki-archiwum/`
+**Kontekst:** Agent przejściowy dla starych notatek w `Gotowe-notatki/` (~60 plików).
+**Definicja:** `.claude/agents/note-reviewer.md`
+
+---
+
+### 🔄 FLOW PIPELINE
+
+**Wariant A - Automatyczny (zalecany):**
+`pipeline-runner` → czyszczenie + notatka → `project-mapper` → CHANGELOG.md
+
+**Wariant B - Manualny (kontrolowany):**
+`transcript-cleaner` → `note-maker` → `project-mapper` → CHANGELOG.md
+(lub `batch-note-maker`)
+
+**Wariant C - Stare notatki:**
+`note-reviewer` → weryfikacja + mapowanie → CHANGELOG.md
 
 ---
 

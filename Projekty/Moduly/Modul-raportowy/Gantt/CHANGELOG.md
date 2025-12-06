@@ -1,5 +1,13 @@
 # CHANGELOG - Gantt
 
+## 2025-09-18 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-18 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-18%20Rada%20architektów.md)
+**Kategoria:** #Decyzja
+
+- **Grupowanie:** Temat grupowania w Gantcie został poruszony, ale odroczony (status ⏸️).
+
+---
+
 ## 2025-09-09 - Rada architektów
 
 **Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-09-09 Rada architektów|2025-09-09 Rada architektów]]

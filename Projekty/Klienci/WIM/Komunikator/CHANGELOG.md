@@ -2,6 +2,35 @@
 
 ---
 
+## 2025-10-20 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
+**Kategoria:** #Funkcjonalność
+
+- Opcja tworzenia konwersacji opartej o grupę modów (model)
+- Automatyczna synchronizacja uprawnień w komunikatorze na podstawie zmian w grupie
+- Planowane dodanie nazwy grupy w interfejsie
+
+---
+
+## 2025-10-06 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-06 Sprint review.md]
+**Kategoria:** #Funkcjonalność #Design
+
+- Poprawki wizualne komunikatora (upodobnienie do konwersacji tekstowej, awatary)
+- Uproszczenie formy tworzenia konwersacji (prywatne/grupowe), brak ścieżki dla komunikatora
+
+---
+
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🚀 Postęp
+
+- **Poprawki wizualne:** realizacja kilkunastu zgłoszeń (stabilizacja MVP).
+- **Status:** wersja bliska ostatecznej/stabilnej, pozostało kilka kluczowych elementów wizualnych i 3-4 otwarte zgłoszenia.
+- **Plan:** prezentacja wersji stabilnej przewidziana jeszcze w tym tygodniu.
+
+---
+
 ## 2025-08-25 - Sprint review
 
 **Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-08-25 Sprint review|2025-08-25 Sprint review]]

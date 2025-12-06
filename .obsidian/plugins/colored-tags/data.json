@@ -40,7 +40,19 @@
     "Metodologia": 28,
     "Narzędzia": 29,
     "Procesy": 30,
-    "Administracja": 31
+    "Administracja": 31,
+    "AI": 32,
+    "Bug": 33,
+    "Hotfix": 34,
+    "Wydajność": 35,
+    "Optymalizacja": 36,
+    "Blockchain": 37,
+    "Proces": 38,
+    "Ryzyko": 39,
+    "HR": 40,
+    "Integracja": 41,
+    "Zadanie": 42,
+    "Zespół": 43
   },
   "_version": 3
 }

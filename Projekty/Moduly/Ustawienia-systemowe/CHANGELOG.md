@@ -2,6 +2,68 @@
 
 ---
 
+# CHANGELOG – Ustawienia-systemowe
+
+---
+
+## 2025-10-30 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
+**Kategoria:** #Funkcjonalność #Monitoring #Bezpieczenstwo
+
+- Implementacja mechanizmu powiadamiania administratorów o krytycznych zdarzeniach (limity OCR, przestrzeń na dysku, brak dostępu do dysku sieciowego) poprzez maile i powiadomienia w interfejsie.
+
+**Kategoria:** #Problem #Diagnostyka
+
+- Problem z pulą aplikacji w AMODIT u klienta Endur. Wymaga wsparcia Piotra Buczkowskiego w diagnozie.
+
+---
+
+## 2025-10-16 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-16 Notatka projektowa - Edytor procesów.md]
+**Kategoria:** #Funkcjonalność #Bezpieczeństwo
+
+- Planowane prace nad funkcjonalnością "Potwierdzenie zmian przez innego administratora" ("Four-eyes principle") w Ustawieniach systemowych
+
+---
+
+## 2025-10-09 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-09 Rada architektów.md]
+**Kategoria:** #Funkcjonalność #Bezpieczeństwo #Decyzja
+
+- Problem dodawania pól bezpośrednio na środowisku produkcyjnym (rozjechanie środowisk, konflikty importu)
+- Decyzja: Wprowadzenie parametru systemowego "produkcja" oraz mechanizmu utrudniającego dodawanie pól na produkcji
+
+---
+
+## 2025-10-06 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-06 Sprint review.md]
+**Kategoria:** #Funkcjonalność #Design #Bug
+
+- Odświeżenie interfejsu strony logów systemowych (przeniesienie do React, zachowanie funkcjonalności)
+- Wprowadzono nowe możliwości filtrowania i wyszukiwania, eksport zaznaczonych logów
+- Zidentyfikowano błędy: kopiowanie do schowka, rejestrowanie zmian null, braki w kolejce maili
+
+---
+
+## 2025-09-23 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-23 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-23%20Rada%20architektów.md)
+**Kategoria:** #Architektura #Problem
+
+- **Audyt zmian parametrów:** Odrzucono pomysł wypełniania `par_modified_by_id` dla każdej zmiany (służy do mechanizmu 4-oczu). Audyt zmian dostępny w `UserActivity`.
+- **Rejestracja zmian:** Zgłoszono brak rejestracji zmian w `UserActivity` dla 2 parametrów odpowiadających za kolory w raportach.
+
+---
+
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🚀 Postęp
+
+- **Przełączka do wersji starej:** wdrożono mechanizm powrotu do klasycznego widoku ustawień systemowych.
+- **Status:** funkcjonalność dostępna już na środowisku Astrofox.
+- **Do dopracowania:** spójność nazw (w nowych ustawieniach nazewnictwo nieco różni się od starego).
+
+---
+
 ## 2025-08-26 - Notatka projektowa - AMODIT UI
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]

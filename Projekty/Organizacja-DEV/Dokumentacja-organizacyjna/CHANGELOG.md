@@ -1,5 +1,61 @@
 # CHANGELOG - Dokumentacja organizacyjna
 
+## 2025-10-23 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-23 Notatka projektowa - Edytor procesów.md]
+**Kategoria:** #Organizacja #Decyzja #Roadmapa
+
+- Konieczność rewizji roadmapy na końcówkę roku 2025 i 2026.
+- Priorytet absolutny: Domykanie wdrożeń (WIM, Lot) w celu wystawienia faktur i zamknięcia projektów.
+- Strategia rozwoju: Skupienie na wsparciu sprzedaży (atrakcyjność systemu) i wdrożeń/serwisu (skrócenie czasu wdrożeń o 30%).
+- Termin: Propozycja nowej roadmapy (uzgodnionej z Działem Wdrożeń i Serwisu) ma zostać przedstawiona Zarządowi do 3 listopada 2025.
+
+---
+
+## 2025-10-20 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
+**Kategoria:** #Zadanie #Zespół
+
+- Statystyki sprintu: 113 zgłoszeń zamkniętych, 180 pozycji zakończonych dewelopersko
+- Uwagi: Dużo pracy nad stabilizacją wersji i błędami
+- Planowanie pracy: Pozostały fizycznie 2 miesiące do końca roku (presja czasu)
+
+---
+
+## 2025-10-06 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-06 Planowanie sprintu.md]
+**Kategoria:** #Proces #Organizacja #Ryzyko
+
+- Zidentyfikowano ryzyka: zaległości w testach, brak procesu planowania, brak zgłoszeń na prace, niejasny status zadań
+- Wdrożenie nowego modelu planowania sprintu (indywidualne sesje, szacowanie `effortu`)
+- Wprowadzenie miary `effort` (5=8h) i wymóg uzupełniania jej dla zadań sprintu
+- Dyskusja nad zmianą formuły Daily i zasad przepinania zadań na kolejny sprint
+
+---
+
+## 2025-10-09 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-09 Rada architektów.md]
+**Kategoria:** #Organizacja #Proces #HR #Ryzyko
+
+- Ustalenie procesu pracy z backlogiem i zgłoszeniami na Radę (porządkowanie tagów, statusów)
+- Dyskusja o podejściu biznesowym deweloperów, pomysł delegowania na wdrożenia wewnętrzne w celu zrozumienia potrzeb klienta
+
+---
+
+## 2025-09-16 - Rada architektów (część organizacyjna)
+
+**Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-09-16 Organizacja pracy - Zgłaszanie błędów|2025-09-16 Zgłaszanie błędów]]
+
+**Kategoria:** #Organizacja #Procesy
+
+**Decyzja: Zgłaszanie błędów – kanały komunikacji**
+
+*   **Problem:** Brak jasności gdzie zgłaszać błędy (Teams vs Backlog), duplikacja zgłoszeń, brak weryfikacji.
+*   **Decyzja:** ✅ Zatwierdzone - zgłoszenia na dedykowane kanały Teams projektu (np. "Edytor procesów", "Moduł raportowy").
+*   **Proces:** Kanały przeglądane przez "Trójkę Amigos" (DM + Dev + Tester), którzy weryfikują zgłoszenie przed wrzuceniem na Backlog.
+*   **Szczegóły:** Zobacz [[Procesy/Zglaszanie-bledow|Procedura zgłaszania błędów]]
+
+---
+
 ## 2025-09-09 - Rada architektów
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-09-09 Rada architektów|2025-09-09 Rada architektów]]

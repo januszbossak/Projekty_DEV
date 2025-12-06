@@ -2,6 +2,24 @@
 
 ---
 
+## 2025-10-27 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
+**Kategoria:** #Bug #Funkcjonalność
+
+- Wzmianki nie działają poprawnie (nie odświeżają się, problemy z działaniem).
+- Mariusz robi wzmianki jako główny cel.
+
+---
+
+## 2025-10-14 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-14 Rada architektów.md]
+**Kategoria:** #Bug #Funkcjonalność #Decyzja
+
+- Problem ze wzmiankowaniem w komentarzach gdy wyłączone DWI (nie można oznaczać osób, brak powiadomień)
+- Decyzja: Szybka poprawka umożliwiająca wzmiankowanie osób z dostępem do sprawy; docelowo rozdzielenie logiki DWI i wzmiankowania
+
+---
+
 ## 2025-09-04 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-04 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-04%20Rada%20architektów.md)
 **Kategoria:** #Decyzja #Funkcjonalność

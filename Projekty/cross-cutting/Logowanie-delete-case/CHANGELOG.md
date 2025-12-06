@@ -1,5 +1,14 @@
 # CHANGELOG - Logowanie delete case
 
+## 2025-09-25 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-25 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-25%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- **Usuwanie spraw poza obiegiem:** Wprowadzono ustawienie systemowe/procesowe do automatycznego usuwania spraw (przez Job) po określonym czasie, jeśli nie poszły w obieg (`CaseIsHidden`, potem trwałe usunięcie).
+- **Czyszczenie kosza (CaseIsHidden):** Parametr w ustawieniach systemowych do automatycznego czyszczenia kosza po określonym czasie.
+
+---
+
 ## 2025-08-28 - Rada architektów
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-28 Rada architektów|2025-08-28 Rada architektów]]

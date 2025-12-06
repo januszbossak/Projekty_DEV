@@ -1,5 +1,32 @@
 # CHANGELOG - Automatyzacja dokumentacji AI
 
+## 2025-10-20 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
+**Kategoria:** #Zadanie
+
+- Potrzeba poprawy formuły prezentacji Sprint Review (płynność, materiał do pokazania w firmie)
+
+---
+
+## 2025-10-14 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-14 Spotkanie projektowe - Design.md]
+**Kategoria:** #Organizacja #Proces #AI #Dokumentacja
+
+- Usprawnienie procesu generowania i publikacji changelog dla wersji AMODIT
+- Narzędzie do półautomatycznego generowania changelog przez AI na podstawie zgłoszeń z Azure DevOps (status Done, release version)
+- Definicja formatu changelog, częstotliwości publikacji (co najmniej raz na 2 tygodnie) i procesu redakcji
+
+---
+
+## 2025-09-18 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-18 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-18%20Rada%20architektów.md)
+**Kategoria:** #Organizacja #Narzędzia #Problem
+
+- **Azure DevOps AI Generator:** Zgłoszono problem z działaniem narzędzia (wywala się przy "regenerator work items"). Diagnoza i naprawa wymagana.
+- **Podsumowania Rad Architektów:** Zatwierdzono generowanie podsumowań AI z każdej Rady (struktura: kontekst, ryzyka, decyzje, zadania) na podstawie transkrypcji, jako lepszą alternatywę dla standardowego Copilota.
+
+---
+
 ## 2025-09-02 - Rada architektów
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-09-02 Rada architektów|2025-09-02 Rada architektów]]

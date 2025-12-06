@@ -2,6 +2,17 @@
 
 ---
 
+## 2025-09-23 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-23 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-23%20Rada%20architektów.md)
+**Kategoria:** #Problem #Decyzja
+
+- **Problem:** Klient (LPP) zgłasza potrzebę auto-forward zamiast GTA dla użytkowników wewnętrznych (pracownicy czasowi).
+- **Decyzja:** ❌ Odrzucono rozwiązanie systemowe (niebezpieczne, brak budżetu klienta).
+- **Rozwiązanie:** Przekazano klientowi funkcję pomocniczą (workaround) sprawdzającą typ użytkownika przed regułą GTA.
+- **Alternatywa:** Zmiana nazwy użytkownika systemowego (np. na "Centrum Transakcyjne") - wystarczające dla innych klientów (Orlen).
+
+---
+
 ## 2025-08-21 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-08-21 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-08-21%20Rada%20architektów.md)
 **Kategoria:** #Funkcjonalność

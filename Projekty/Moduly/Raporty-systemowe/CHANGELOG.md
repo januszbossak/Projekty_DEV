@@ -2,6 +2,55 @@
 
 ---
 
+## 2025-10-20 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
+**Kategoria:** #Funkcjonalność
+
+- Prace nad dashboardami systemowymi (Performance Monitor, System Lookup Model)
+- Dodanie nowych źródeł danych systemowych
+
+---
+
+## 2025-10-14 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-14 Rada architektów.md]
+**Kategoria:** #Architektura #Decyzja
+
+- Przejście źródeł systemowych z ujemnych ID na GUID i flagę systemową (`SystemOrigin`)
+- Decyzja: Przerwanie kompatybilności wstecznej dla użytkowników korzystających ze źródeł systemowych
+
+---
+
+## 2025-10-02 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność #Design #Decyzja
+
+- Rozdzielenie raportów systemowych na osobne dla spraw zamkniętych (z CaseDefinition) i w toku (z CaseHistory)
+- Decyzja o ograniczeniu użycia Tree Map do 3-4 wartości, przy większej liczbie użycie wykresu słupkowego
+- Link "Raporty systemowe" w menu modułów systemowych będzie wymuszał widok kafelkowy
+- Wprowadzenie opisów biznesowych raportów dostępnych pod ikoną "i" w interfejsie
+- Wymagana poprawa kontrastu kolorów (szary tekst na szarym tle) i ujednolicenie tooltipów
+
+---
+
+## 2025-09-25 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-25 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-25%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność
+
+- **Statystyki procesu:** Zostanie stworzony raport systemowy pokazujący statystyki procesu (ilość spraw, data ostatniej sprawy, data ostatniego uruchomienia). Raport będzie dostępny w kontekście ustawień procesu.
+
+---
+
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🏗️ Architektura
+
+- **Nowe podejście zakładkowe:** dashboardy dla poszczególnych grup raportów systemowych.
+- **Optymalizacja źródeł danych:** część źródeł przełączona na tryb **local** (agregaty w zapytaniu, przeliczane raz na dobę/w nocy).
+- **Wymagane filtry:** możliwość ustawienia domyślnej wartości filtra (np. "poprzednie 7 dni") jako wymaganej – raport nie pobiera danych bez wskazania ograniczenia.
+- **Feedback:** podejście odwraca logikę (najpierw filtr → potem dane) co rozwiązuje problemy wydajnościowe przy dużych wolumenach (nie wpływa na retencję, tylko prezentację).
+
+---
+
 ## 2025-08-21 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-08-21 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-08-21%20Rada%20architektów.md)
 

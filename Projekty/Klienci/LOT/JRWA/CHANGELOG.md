@@ -10,6 +10,4 @@
 - **Widok historii teczki JRWA** – filtrowany widok zdarzeń biznesowych (SQL: `WHERE BusinessSubjectType = 'jrwa_folder' AND BusinessSubjectID = <ID teczki>`). Pokazuje kto, kiedy i dlaczego przypięto/odpięto dokument.
 - **EventType słownikowy** – administrator definiuje zdarzenia "Przypięcie do teczki JRWA" i "Odpięcie z teczki JRWA" w słowniku zdarzeń biznesowych.
 - **Pole linked w message** – opcjonalnie można wrzucić link HTML do dokumentu/sprawy dla wygody użytkownika.
-- **Brak automatycznej migracji starych danych** – tylko nowe operacje po wdrożeniu będą generować zdarzenia (poza zakresem MVP).
-
 ---

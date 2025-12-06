@@ -1,5 +1,15 @@
 # CHANGELOG - Edytor szablonów
 
+## 2025-09-25 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-25 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-25%20Rada%20architektów.md)
+**Kategoria:** #Problem #Dokumentacja
+
+- **Problem CLM:** Marketing promuje AMODIT jako narzędzie CLM (Contract Lifecycle Management), co jest niezgodne z możliwościami systemu w zakresie generowania ładnie sformatowanych dokumentów z szablonów.
+- **Wyzwanie:** Szablony Word nie przenoszą dobrze danych z formularza, brak edytora tekstu prawnego.
+- **Decyzja:** Weryfikacja z marketingiem sposobu rozumienia CLM oraz poprawa obsługi szablonów.
+
+---
+
 ## 2025-09-02 - Rada architektów
 
 **Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-09-02 Rada architektów|2025-09-02 Rada architektów]]

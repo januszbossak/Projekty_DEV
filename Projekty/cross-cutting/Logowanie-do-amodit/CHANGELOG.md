@@ -1,5 +1,31 @@
 # CHANGELOG - Logowanie do AMODIT
 
+## 2025-10-30 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
+**Kategoria:** #Funkcjonalność #Bezpieczenstwo #Odroczone
+
+- Polpharma – równoległe sesje po zalogowaniu. Projekt rozpisany, ale odroczony z powodu braku zasobów.
+
+---
+
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🎨 Design
+
+- **Strona wylogowania:** dodano wyraźny przycisk/napis "Logowanie" (zastąpienie nieintuicyjnego/niewidocznego logo) umożliwiający powrót do ekranu logowania.
+- **Globalne wylogowanie:** wylogowanie w jednej zakładce skutkuje wylogowaniem we wszystkich otwartych zakładkach (synchronizacja React <-> stara technologia).
+- **Przekierowania:** zachowanie logiki przekierowań (np. przy autologowaniu providerem nie kieruje na stronę logowania, by uniknąć pętli).
+
+---
+
+## 2025-09-18 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-18 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-18%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność
+
+- **Wsparcie dla Google (OAuth):** Zatwierdzono wdrożenie interfejsu do zarządzania konfiguracją providerów OAuth (w tym Google), aby przygotować się na koniec wsparcia Azure AD (04.2026).
+
+---
+
 ## 2025-08-26 - Notatka projektowa - AMODIT UI
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]

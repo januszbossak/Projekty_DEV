@@ -1,5 +1,15 @@
 # CHANGELOG - WCAG
 
+## 2025-10-02 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
+**Projekt:** [Klienci/WIM/WCAG](../../Klienci/WIM/WCAG/)
+**Kategoria:** #Design #Bug
+
+- Problemy z kontrastem w wizualizacjach raportowych (szary tekst na szarym tle)
+- Decyzja o poprawie czytelności poprzez ujednolicenie kolorów tooltipów i poprawę kontrastu
+
+---
+
 ## 2025-08-26 - Notatka projektowa - AMODIT UI
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]

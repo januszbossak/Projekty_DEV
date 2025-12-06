@@ -1,5 +1,42 @@
 # CHANGELOG - AMODIT Copilot
 
+## 2025-10-20 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
+**Kategoria:** #Funkcjonalność #Design
+
+- Opcja przesyłania dokumentów do konwersacji (analiza treści dokumentu)
+- Poprawa wyświetlania znaczników function calling (przycisk z ogólnym opisem zamiast kodu)
+- Problem z brakiem trwałości przesłanych dokumentów (tylko na czas konwersacji)
+- Zgłoszona potrzeba wyświetlania nazwy procesu przy uruchamianiu sprawy przez AI
+
+---
+
+## 2025-09-25 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-25 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-25%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność #Architektura
+
+- **Usprawnienia bazy wiedzy:** Wprowadzenie administratorów baz wiedzy, możliwość wrzucania plików (np. PDF, Word) jako treści, zarządzanie datą ważności (od-do) dla treści oraz wersjonowanie treści (zachowanie starych wersji, filtrowanie bieżących/wygasłych).
+- **Wsparcie dla istniejących formularzy:** AI do tłumaczenia formularzy na różne języki oraz automatycznego dodawania tooltipów do pól.
+
+---
+
+## 2025-09-18 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-18 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-18%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #AI #Architektura
+
+**Baza wiedzy w Copilot – demo i wyjaśnienia** ✅
+- **Kontekst:** Demo i wyjaśnienia funkcjonalności prywatnej bazy wiedzy w Copilot (jak dodawać dokumenty, uprawnienia, funkcje w silniku reguł).
+- **Decyzje:**
+  - ✅ Dokumenty do bazy wiedzy muszą być dodawane świadomie (brak auto-dodawania).
+  - ✅ Zerwanie uprawnień do sprawy przy dodaniu dokumentu do bazy wiedzy (przejście na uprawnienia bazy wiedzy).
+  - ✅ Prywatna baza wiedzy per instancja (izolacja danych między klientami).
+- **Ryzyka:** Brak dokumentacji, optymalizacja zużycia tokenów, długi czas zapisu.
+- **Funkcje silnika reguł:** `Knowledge Base Document Insert`, `Knowledge Base Search`, `Ask AI`, `Get To Do`.
+- **Uprawnienia:** `Copilot Access` w ustawieniach systemowych, `Organization Key` (automatycznie), zarządzanie bazami wiedzy przez administratorów.
+- **Problemy techniczne:** Długi czas zapisu, brak IntelliSense, brak tytułu przy dodawaniu z reguły, Metadata jako obiekt JSON.
+
+---
+
 ## 2025-09-08 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-08 Sprint review.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-08%20Sprint%20review.md)
 **Kategoria:** #Funkcjonalność #AI

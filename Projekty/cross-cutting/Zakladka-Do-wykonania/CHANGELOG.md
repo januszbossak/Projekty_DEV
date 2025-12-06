@@ -2,6 +2,15 @@
 
 ---
 
+## 2025-10-23 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-23 Rada architektow.md]
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- Zakładka "Do wykonania" ma się w ogóle nie wyświetlać w zakładce "Wszystkie procesy", niezależnie od konfiguracji obszarów.
+- Zadanie przypisane do Piotra Buczkowskiego.
+
+---
+
 ## 2025-09-04 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-04 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-04%20Rada%20architektów.md)
 **Kategoria:** #Architektura #Decyzja

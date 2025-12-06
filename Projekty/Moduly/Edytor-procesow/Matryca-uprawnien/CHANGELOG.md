@@ -2,6 +2,32 @@
 
 ---
 
+# CHANGELOG - Matryca uprawnień
+
+---
+
+## 2025-10-16 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-16 Notatka projektowa - Edytor procesów.md]
+**Kategoria:** #Funkcjonalność #Design
+
+- Implementacja Macierzy uprawnień (realizowana przez Filipa)
+- Dyskusja nad wizualizacją ikonek "łańcuszka" (dziedziczenia) – pokazywać ikonę tylko gdy NIE ma dziedziczenia?
+
+---
+
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🚀 Postęp
+
+- **Zaimplementowano ponad MVP:** tryb kompaktowy (obrócone napisy), usunięcie selecta na rzecz ikon (optymalizacja), nowa nawigacja, ikona tarczy.
+- **Filtry:** dodano filtrowanie po etapach (min. 1 zaznaczony).
+- **Logika:** dodano "Uprawnienie domyślne" (dziedziczone przez etapy bez wyjątków).
+- **Wizualizacja:** wyjątki oznaczone gwiazdką (*), tooltipy wyjaśniające status (domyślne/wyjątek).
+- **Masowa zmiana:** zaznaczanie wielu pól + edycja wybranych etapów.
+- **Feedback:** zasugerowano odwrócenie logiki wizualizacji (wyróżniać tylko wyjątki), dodanie searcha, globalny przełącznik nazw (tech/wyświetlane), opcję "pozostaw bez zmian" w masowej edycji.
+
+---
+
 ## 2025-09-08 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-08 Sprint review.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-08%20Sprint%20review.md)
 **Kategoria:** #Funkcjonalność #Design

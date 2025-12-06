@@ -2,6 +2,16 @@
 
 ---
 
+## 2025-09-25 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-25 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-25%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność #Architektura
+
+- **Usuwanie spraw:** Wdrożenie Joba do automatycznego usuwania spraw, które nie poszły w obieg oraz czyszczenia kosza (`CaseIsHidden`) po określonym czasie.
+- **Ograniczenia Jobów:** Propozycja wprowadzenia ograniczeń częstotliwości wykonywania Jobów (np. nie częściej niż raz dziennie dla Joba czyszczącego sprawy).
+- **Zadania:** Kosztowanie i projektowanie Joba do automatycznego zamykania edycji dokumentów z Office (SharePoint).
+
+---
+
 ## 2025-09-08 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-08 Sprint review.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-08%20Sprint%20review.md)
 **Kategoria:** #Funkcjonalność #Design

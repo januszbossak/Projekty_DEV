@@ -1,5 +1,25 @@
 # CHANGELOG - Interfejs sprawy
 
+## 2025-10-30 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
+**Kategoria:** #Bug #Funkcjonalność #Design #Odroczone
+
+- **Amadeus – problem z dodaniem grupy do pola "Redaktorzy spraw":** Problem z nawiasami w nazwie systemowej grupy. Rozwiązanie: Użycie nazwy wyświetlanej; długoterminowo: blokada dziwnych znaków w nazwie systemowej.
+- **Uwspółcześnienie mechanizmu drukowania:** Mechanizm drukowania jest przestarzały. Decyzja: Odroczone, zrobić minimalną dokumentację.
+
+---
+
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🎨 Design
+
+- **Ikony grup:** wprowadzenie wizualnego rozróżnienia grup (biała ikona) od użytkowników (czarny tekst) w panelu informacji i uprawnień.
+- **Spójność kolorystyczna:** kolory grup zgodne z zakładką "Do wykonania".
+- **Znane problemy:** ikona grupy optycznie wydaje się większa od tekstu (kwestia "od krawędzi do krawędzi" vs font).
+- **Feedback:** sugestia możliwości definiowania własnej ikony per grupa (feature request na przyszłość).
+
+---
+
 ## 2025-08-26 - Notatka projektowa - AMODIT UI
 
 **Źródło:** [[../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]

@@ -1,5 +1,9 @@
 # Historia zmian - Moduł raportowy
 
+
+
+---
+
 ## 2025-12-02 | ⚠️ Problem | Spotkanie projektowe - Design
 **Źródło:** [Notatki/Spotkania projektowe/2025-12-02 Spotkanie projektowe - Design.md]
 
@@ -45,6 +49,145 @@ PKF zgłosił potrzebę edycji wierszy tabel z poziomu raportu osadzonego na spr
 
 **Powiązane projekty:**
 - [Klienci/PKF/Rejestracja-czasu-pracy](../../Klienci/PKF/Rejestracja-czasu-pracy/CHANGELOG.md) - konkretny use case PKF
+
+---
+
+## 2025-10-30 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
+**Kategoria:** #Bug #Diagnostyka
+
+- Problem z otwieraniem raportu w nowym module raportowym u klienta Niden.
+- Anna Skupińska ma zająć się tym po zakończeniu hotfixów. Potwierdzić, że logowanie błędów SQL jest zrobione we wszystkich miejscach.
+
+---
+
+## 2025-10-27 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
+**Kategoria:** #Organizacja #Decyzja
+
+- Z raportami coś się zadeklarowaliśmy w umowie, ale jak zrobimy dwa, to przymkną na to oko.
+- Janusz się tym raportom przyjrzy szczegółowo. Przemek jest od Reacta.
+- Alternatywa: Damian zrobi raporty systemowe na ich środowisku.
+
+---
+
+## 2025-10-23 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-23 Rada architektow.md]
+**Kategoria:** #Funkcjonalność #Decyzja #Problem
+
+- **Eksport danych do szablonów XSLT:** W nowym interfejsie React rozszerzenie pliku ma być przypisane do definicji szablonu XSLT i ustawiane automatycznie. W starym UI zachowana wsteczna kompatybilność. Status: Do doprecyzowania.
+
+- **Logowanie SQL w nowych raportach:** W nowych raportach React logowanie SQL nie działa poprawnie. Należy zweryfikować użycie AmodDBCommand i funkcji DatabaseError. Status: Do weryfikacji.
+
+---
+
+## 2025-10-21 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-21 Rada architektów.md]
+**Kategoria:** #Bug #Funkcjonalność
+
+- Błąd pobierania danych w nowych raportach dla użytkowników nie będących administratorem (komunikat "Inna liczba kolumn").
+- Decyzja: Zwracać pustą wartość dla kolumn niedostępnych dla użytkownika (zgodnie ze starymi raportami).
+
+---
+
+## 2025-10-20 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
+**Kategoria:** #Funkcjonalność
+
+- Obsługa wyświetlania pola typu Podpis w nowym module raportowym
+
+---
+
+## 2025-10-02 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
+**Kategoria:** #Architektura #Design
+
+- Ustalenie zasady wizualizacji: Tree Map tylko dla małej liczby wartości (3-4), w przeciwnym razie wykres słupkowy
+- Wytyczne dotyczące źródeł danych w raportach: rozdzielenie logiki dla spraw zamkniętych (CaseDefinition) i w toku (CaseHistory)
+- Wymagana poprawa kontrastu w wizualizacjach raportowych i ujednolicenie tooltipów
+
+---
+
+## 2025-10-06 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-06 Sprint review.md]
+**Kategoria:** #Funkcjonalność #Design
+
+- Umożliwiono dostosowanie szerokości kolumn w tabeli raportów (zapamiętywanie lokalne, domyślne szerokości)
+- Kwestie do dopracowania: przejście do suwaka poziomego i obsługa pól długiego tekstu
+
+---
+
+## 2025-10-06 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-06 Planowanie sprintu.md]
+**Kategoria:** #Design
+
+- Dyskusja na temat ujednolicenia sposobu wyświetlania opisów raportów na kafelkach dashboardów
+
+---
+
+## 2025-09-30 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-30 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-30%20Rada%20architektów.md)
+**Kategoria:** #Problem #Funkcjonalność
+
+- Weryfikacja funkcjonalności zawężenia raportu do pola typu Odnośnik
+- Zgłoszenie problemów z działaniem tej funkcji w nowych raportach (mimo że teoretycznie istnieje)
+- Zadanie weryfikacyjne dla Łukasza Botta
+
+---
+
+## 2025-09-23 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-23 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-23%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność
+
+- **Aliasy w źródłach zewnętrznych:** Dodanie możliwości nadawania aliasów kolumnom ze źródeł zewnętrznych w raportach (analogicznie do procesów).
+- **Cel:** Spójność mechanizmów i możliwość używania przyjaznych nazw w raportach opartych o SQL/API.
+
+---
+## 2025-09-22 | Sprint Review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-22 Sprint review.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-22%20Sprint%20review.md)
+**Kategoria:** 🚀 Postęp
+
+- **Stabilizacja:** czyszczenie wykrytych błędów w raportach.
+- **Testy:** kontynuacja intensywnych testów (szczególnie Łukasz).
+
+---
+## 2025-09-18 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-18 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-18%20Rada%20architektów.md)
+**Kategoria:** #Funkcjonalność
+
+- **Dostęp do reguł:** Zatwierdzono, że obecna kontrola dostępu do reguł wywoływanych z raportów jest wystarczająca (weryfikacja na poziomie wywołania). Usprawnienia wizualne (checkboxy) odroczone.
+
+---
+
+## 2025-09-11 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-11 Rada architektów - Multipart REST checkboxy edytor.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-11%20Rada%20architektów%20-%20Multipart%20REST%20checkboxy%20edytor.md)
+**Kategoria:** #Architektura #Funkcjonalność
+**Projekt:** [Klienci/WIM/Raporty-osadzone-checkboxy](../../Klienci/WIM/Raporty-osadzone-checkboxy/)
+
+**WIM – raport osadzony z checkboxami do zapisania stanu** 🔍
+
+Rozbudowa mechanizmu raportów osadzonych o możliwość edycji checkboxów w źródłach zewnętrznych i zapisania stanu jako części sprawy. Wymaga Proof of Concept przed pełną implementacją.
+
+**Szczegóły:**
+- **Główna implementacja dla klienta WIM** - zobacz [Klienci/WIM/Raporty-osadzone-checkboxy](../../Klienci/WIM/Raporty-osadzone-checkboxy/)
+- Raport osadzony ze źródła zewnętrznego (pozycje zamówienia na podstawie numeru)
+- Możliwość zaznaczania checkboxów przez użytkowników (które pozycje zgodne z fakturą)
+- Zapisanie stanu checkboxów jako część sprawy (nie w CaseDefinition, w źródle dynamicznym)
+
+**Kontekst:**
+- Dane pochodzą z zewnętrznego źródła (nie z CaseDefinition)
+- Rozwiązanie systemowe, spójne z raportami osadzonymi
+- Przyszłościowo: bezpośrednia edycja danych w źródłach dynamicznych z formularza (bez raportu)
+
+**Zadania:**
+- Damian Kamiński - Proof of Concept dla edytowalnych checkboxów
+- Damian Kamiński - rozpisanie wymagań i akceptacja rozwiązania
+
+**Punkty otwarte:**
+- Jak zapisać stan checkboxów w źródle dynamicznym?
+- Czy rozszerzyć na inne typy raportów?
+- Czy przyszłościowo edycja źródeł dynamicznych z formularza?
+- Jak obsłużyć zmiany danych w źródle zewnętrznym (nowe pozycje)?
 
 ---
 
