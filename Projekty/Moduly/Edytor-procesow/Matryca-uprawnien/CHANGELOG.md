@@ -2,7 +2,61 @@
 
 ---
 
-# CHANGELOG - Matryca uprawnień
+## 2025-11-27 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
+**Kategoria:** #Rozwój #Funkcjonalność #Ukończenie
+
+- Cel: Dokończenie prac nad matrycą uprawnień.
+- Status: Funkcjonalność jest praktycznie gotowa, ale wymagane są drobne usprawnienia.
+- Zakres prac: Implementacja tłumaczeń etapów, wyszukiwarki pól w matrycy, opcji "zwiń/rozwiń wszystko", edycji uprawnień sekcji oraz obsługa pustych pól (we wszystkich trzech widokach).
+- Decyzje: Cel - zamknięcie tematu matrycy uprawnień w bieżącym sprincie.
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Decyzja #Funkcjonalność #MVP
+
+- Decyzja o wyłączeniu z MVP wizualizacji powiązań między sprawami na raporcie.
+- Decyzja o wyłączeniu z MVP modyfikacji pola "odnośnik" (drzewko powiązań).
+- Priorytet: omówienie kwestii uprawnień (spotkanie 18.11).
+- Zakres projektu oceniany jako potencjalnie mały/nieznany.
+
+---
+
+## 2025-11-13 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Design #Decyzja
+
+- Usunięcie ramek z pól standardowych, pozostawienie tylko pomarańczowych ramek dla wyjątków.
+- Usunięcie łańcuchów i gwiazdek oznaczających dziedziczenie (uproszczenie wizualne).
+- Wcięcie dla ustawień pól i szare kursywy dla wartości dziedziczonych z sekcji.
+- Dropdown rozwija się po kliknięciu (bez wizualnych ramek selektorów).
+- Do rozważenia: Ramka pojawiająca się na hover (ryzyko skakania layoutu).
+
+---
+
+## 2025-11-06 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-06 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-06%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #UX/UI
+
+- Planowane uproszczenie interfejsu Matrycy Uprawnień w odpowiedzi na niezrozumienie przez użytkowników mechanizmu dziedziczenia i wyjątków.
+- Propozycje zmian:
+  - Zmiana nazewnictwa "uprawnienie domyślne" na "dziedziczy po sekcji".
+  - Zmiana nazwy modułu na "Matryca widoczności" lub "Ustawienia pól".
+  - Wizualne rozróżnienie dziedziczenia (szarości) i wyjątków (kolor).
+  - Odwrócenie logiki: pokazywanie tylko wyjątków.
+- Zgłoszony błąd: ikona użytkownika/grupy (ludzik) powinna świecić stale, gdy ustawiony jest wyjątek, a nie tylko na hover.
+
+---
+
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Zadanie #Design
+
+- Kwestia czytelności matrycy uprawnień wymaga zaopiekowania w przyszłym sprincie.
+- Filip jest odpowiedzialny za poprawę czytelności.
+- W obecnym sprincie priorytetem jest stabilizacja wersji, nie dodawanie nowych rzeczy.
 
 ---
 

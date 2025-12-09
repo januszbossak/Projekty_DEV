@@ -2,6 +2,16 @@
 
 ---
 
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Bug #Decyzja
+
+- Problem z formatowaniem linku dostępu tymczasowego w mailu.
+- Rozwiązanie: dodanie `div`-a w `before` i `after` poprawia widoczność.
+- Testować na Gmail, Outlook stacjonarny, Wirtualna Polska, Onet.
+
+---
+
 ## 2025-09-23 | Rada Architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-23 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-23%20Rada%20architektów.md)
 **Kategoria:** #Problem #Decyzja

@@ -1,5 +1,57 @@
 # CHANGELOG - AMODIT Copilot
 
+## 2025-11-27 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Notatka projektowa - AMODIT AI.md]
+**Kategoria:** #Funkcjonalność #Architektura #Decyzja
+
+- **MCP (Model Context Protocol):** Zaimplementowano stronę zarządzania MCP (/ajax/MCP) obsługującą typy stdio i remote.
+- **Hosting MCP:** Preferowane centralne serwery MCP w AMODIT (wspólne dla klientów), z opcją lokalnych serwerów u klientów.
+- **Built-in Server:** Propozycja wbudowanego serwera MCP reprezentującego natywne funkcje AMODIT (nieusuwalny, zarządzalny).
+- **Automatyczna dokumentacja:** MVP 1 generowania dokumentacji procesu przez Copilot (stały prompt, format Word).
+- **Zabezpieczenie:** Generowanie dokumentacji dostępne tylko dla administratorów systemowych i procesowych.
+- **Analiza MCP:** Zlecono analizę biznesową dostępnych serwerów MCP (Chart, Mermaid, SQL) pod kątem użyteczności.
+
+---
+
+## 2025-11-25 | Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-25 Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa.md]
+**Kategoria:** #Koncepcja #Strategia
+
+-   **Strategia Wdrożeniowa:** Wykorzystanie AI do "wywiadu" z konsultantem/klientem w celu dostosowania procesu (Wizard Wdrożeniowy).
+-   **Strategia Wdrożeniowa:** Zmiana mentalności działu wdrożeń dzięki AI.
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #Dokumentacja
+
+- Planowanie funkcjonalności generowania dokumentacji powdrożeniowej procesu przez AI.
+- Koncepcja przycisku "Generuj dokumentację" w ustawieniach procesu.
+- Wymagane przygotowanie schematu dokumentacji i promptu dla Copilota.
+
+---
+
+## 2025-11-04 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-04 Rada architektów.md]
+**Kategoria:** #Architektura #Zadanie #Problem
+
+- Mateusz dorobił moduł dla usług AI.
+- Możliwe kwestie RODO związane z modułem AI.
+- Decyzja: Spisać konkluzje i pochylić się nad tematem na dedykowanym spotkaniu.
+- Zadanie dla Damiana Kaminskiego (spisać konkluzje i rozpiąć na PBI).
+
+---
+
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Funkcjonalność #Bezpieczeństwo
+
+- POC: eksport wyników (Word/Markdown) i dostęp do spraw przez zapytania; działa na VIP, docelowo ma respektować uprawnienia via raporty tymczasowe.
+- Podgląd logów OCR w bilingu (bez wchodzenia do bazy); sygnały o konieczności przepięcia klientów na nowy OCR i doprecyzowania potrzeb na poziomie pól.
+- Przepisanie frontendu bazy wiedzy zgodnie z design systemem (szablon jak obszary/słowniki/źródła danych/klucze szyfrujące).
+- Ryzyko bezpieczeństwa danych w Copilot/OCR: potrzeba szyfrowania, retencji i ewentualnego przechowywania danych u klienta (na on-prem) – temat zaparkowany do dalszych decyzji.
+
 ## 2025-10-20 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
 **Kategoria:** #Funkcjonalność #Design
@@ -234,4 +286,3 @@ Rozbudowa funkcjonalności OCR w kontekście AI Driven Workflow, umożliwienie o
 - Post-processing: dopytanie innego modelu (np. GPT-4o mini)
 - Modele specjalizowane i ogólne LLM
 - Integracja z e-teczkami
-

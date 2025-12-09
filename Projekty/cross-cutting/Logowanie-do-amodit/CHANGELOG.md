@@ -1,5 +1,25 @@
 # CHANGELOG - Logowanie do AMODIT
 
+## 2025-11-18 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-18 Rada architektów.md]
+**Kategoria:** #Decyzja #Problem #Zadanie
+
+- Klient Dentsu zgłosił zapotrzebowanie na mechanizm hurtowego blokowania użytkowników w celu oszczędności na licencjach.
+- Firma odrzuca dynamiczne blokowanie/odblokowywanie w celu omijania opłat licencyjnych (niezgodne z modelem biznesowym i intencją licencji imiennych).
+- Przenoszenie licencji dozwolone tylko w przypadku rotacji pracowników, nie optymalizacji kosztów.
+- Zadanie: Łukasz Bott ma przekazać klientowi stanowisko firmy - brak zgody.
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #Bezpieczeństwo
+
+- Zadanie ewaluacji dodania ustawień MFA (sekcja "Bezpieczeństwo") dla użytkowników zewnętrznych.
+- Wymóg zgłoszony przez MCIT (włączone MFA dla wszystkich).
+
+---
+
 ## 2025-10-30 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
 **Kategoria:** #Funkcjonalność #Bezpieczenstwo #Odroczone

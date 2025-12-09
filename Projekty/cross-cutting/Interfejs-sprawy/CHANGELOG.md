@@ -1,5 +1,25 @@
 # CHANGELOG - Interfejs sprawy
 
+## 2025-11-20 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-20 Spotkanie projektowe - Edytor procesów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-20%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)
+**Kategoria:** #UI/UX #Design
+
+- **Ujednolicenie UI:** Decyzja o stosowaniu `border-radius: 5px` dla wszystkich elementów interfejsu.
+- Zmiany w Edytorze formularza (wydzielenie toolboxów, statyczna belka) mające na celu spójność z widokiem listy i poprawę UX.
+
+---
+
+## 2025-11-19 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-19 Spotkanie projektowe - Problem odświeżania raportu.md]
+**Kategoria:** #Design #Funkcjonalność #Problem
+
+- Dyskusja o wpływie trybów otwierania sprawy (pop-up vs zakładka) na odświeżanie raportów.
+- Pytania o zachowanie zamknięcia pop-upu vs strzałki wstecz.
+- Analiza oczekiwanego zachowania interfejsu po edycji danych w sprawie i powrocie do raportu.
+- Potrzeba konsekwentnego i intuicyjnego zachowania systemu dla użytkownika końcowego.
+
+---
+
 ## 2025-10-30 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
 **Kategoria:** #Bug #Funkcjonalność #Design #Odroczone
@@ -110,4 +130,3 @@ Seria zmian w interfejsie sprawy: menu nawigacyjne, formularz, prawy panel, tabe
 **Szczegóły techniczne:**
 - Menu kontekstowe przy przycisku "Dodaj"
 - Import z Excela
-

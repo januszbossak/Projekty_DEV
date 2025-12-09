@@ -2,6 +2,16 @@
 
 ---
 
+## 2025-11-19 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-19 Notatka projektowa - Przegląd wycen.md]
+**Kategoria:** #Funkcjonalność #Design #Zadanie #Decyzja
+
+- Klient oczekuje wyświetlania historii spraw powiązanych (Rossmann).
+- Należy ustalić, czy klient potrzebuje pełnej historii technicznej, czy dedykowanej historii biznesowej.
+- Spotkanie z klientem w celu ustalenia oczekiwań biznesowych.
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Spotkania projektowe/2025-12-03 Notatka projektowa - Historia biznesowa.md](../../../../Notatki/Spotkania%20projektowe/2025-12-03%20Notatka%20projektowa%20-%20Historia%20biznesowa.md)
 **Kategoria:** 💡 Koncepcja

@@ -1,5 +1,22 @@
 # CHANGELOG - Automatyzacja dokumentacji AI
 
+## 2025-11-25 | Design OCR i Transkrypcje
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-25 Design OCR i Transkrypcje.md]
+**Kategoria:** #Analiza #Problem #Zadanie
+
+- Zidentyfikowano problem z dostępem do pełnych transkrypcji ze spotkań (Teams/Stream).
+- Konieczność weryfikacji konfiguracji dostępu zbiorczego lub udostępniania transkrypcji (Zadanie dla Damiana i Kamila).
+
+---
+
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Dokumentacja #Decyzja
+
+- Decyzja dotycząca struktury dokumentacji projektowej: minimalnie trzy pliki (uzasadnienie biznesowe, rozbicie na MVP, plik architektoniczno-techniczny).
+
+---
+
 ## 2025-10-20 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
 **Kategoria:** #Zadanie

@@ -2,6 +2,45 @@
 
 ---
 
+## 2025-11-28 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Notatka projektowa - Połączenie z Marek Dziakowski.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Notatka%20projektowa%20-%20Połączenie%20z%20Marek%20Dziakowski.md)
+**Kategoria:** #Funkcjonalność #Decyzja #Problem
+
+- Klienci potrzebują, aby e-maile z TrustCenter wyglądały jakby pochodziły z ich domeny.
+- Odrzucono fizyczne przekierowanie przez serwer klienta ze względu na złożoność i ryzyko.
+- Wybrano opcję weryfikacji istniejącej funkcji personalizacji (aliasów) adresu nadawcy e-mail.
+- Funkcjonalność personalizacji adresu nadawcy e-mail istniała dla Adecco i Rossmanna.
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Architektura #Zadanie
+
+- Kontynuacja przenoszenia wywołań na poziom usługi.
+- Czasowe przejęcie wsparcia przez Mariusza (zastępstwo za Marka).
+
+---
+
+## 2025-11-04 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-04 Rada architektów.md]
+**Kategoria:** #Funkcjonalność #Decyzja #Zadanie #Weryfikacja
+
+- Problem z niespójnością statusów dokumentów.
+- Wprowadzone mechanizmy: job automatyczny i wywołanie ręczne.
+- Weryfikacja możliwości wysyłania dokumentów na czas nieokreślony i mechanizmu wygaszania.
+- Zadania dla Marka Dziakowskiego (opis scenariusza, job automatyczny, weryfikacja wygaszania).
+
+---
+
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Architektura #Optymalizacja
+
+- Przeniesienie obsługi blockchaina z aplikacji web do Windows Service (analogicznie jak w AMODIT) z powodu pojawiania się bloków poza łańcuchem.
+
+---
+
 ## 2025-10-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
 **Kategoria:** #Funkcjonalność #Decyzja #Bug #Architektura
@@ -91,4 +130,3 @@
 - **Zadania:** Marek Dziakowski - implementacja
 
 ---
-

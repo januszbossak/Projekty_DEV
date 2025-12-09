@@ -2,6 +2,14 @@
 
 ---
 
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Funkcjonalność #Integracja
+
+- Nowy endpoint do przekazywania dużych plików przez `multipart/form-data` (poza JSON/Base64) – obsługa uploadów rzędu setek MB/1+ GB.
+- Limit rozmiaru zależy od konfiguracji IIS (jak dotychczas); scenariusz wymaga dwóch kroków: utworzenie sprawy + upload pliku.
+- Do uzupełnienia dokumentacja parametrów systemowych (plan na kwartał) – gdzie diagnozować, gdy plik zostaje odrzucony.
+
 ## 2025-09-11 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-11 Rada architektów - Multipart REST checkboxy edytor.md](../../../Notatki/Gotowe-notatki-archiwum/2025-09-11%20Rada%20architektów%20-%20Multipart%20REST%20checkboxy%20edytor.md)
 **Kategoria:** #Architektura #Funkcjonalność #Decyzja
@@ -51,4 +59,3 @@ Implementacja obsługi wysyłania wielu plików (dynamiczna ilość, do 100) w f
 - **Zadania:** Adrian Kotowski - implementacja, Piotr Buczkowski - weryfikacja
 
 ---
-

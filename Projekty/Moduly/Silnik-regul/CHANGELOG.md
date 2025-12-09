@@ -4,6 +4,16 @@
 
 ---
 
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Bug #Problem
+
+- Problem z wyczyszczeniem wartości w radio buttonach w regule automatycznej (`setRadioValue`).
+- Niespójność w działaniu systemu w porównaniu do zwykłych list wyboru.
+- Obecne obejście to dodanie "pustej" opcji "--".
+
+---
+
 ## 2025-10-30 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
 **Kategoria:** #Bug #Funkcjonalność

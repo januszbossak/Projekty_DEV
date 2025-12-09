@@ -4,6 +4,16 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Problem #Zadanie
+
+- Wyszukiwarka w backlogu otwiera się na fullscreenie.
+- Lista przewija do góry przy otwieraniu wyszukiwarki.
+- Problem do poprawy, bez określonego priorytetu/terminu.
+
+---
+
 ## 2025-10-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
 **Kategoria:** #Organizacja #Decyzja #Proces

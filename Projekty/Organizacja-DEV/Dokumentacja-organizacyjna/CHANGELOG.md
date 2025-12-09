@@ -1,5 +1,66 @@
 # CHANGELOG - Dokumentacja organizacyjna
 
+## 2025-11-21 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
+**Kategoria:** #Organizacja #Decyzja
+
+- Powrót do koncepcji stałych zespołów zadaniowych w dziale rozwoju.
+- Struktura zespołów: 2 backendowe, 1 frontendowy, testerki przypisane do zespołów.
+- Przykłady zespołów celowych: Marek (Trust Center), Mateusz (AI/OCR).
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Metodyka #Zadanie #Decyzja
+
+- Wdrożenie planowania opartego o tablice w Teams (podział na projekty/osoby).
+- Zasada "Brak wrzutek": zadania spoza sprintu tylko jako hotfixy lub po decyzji PM.
+- Ścieżka zgłoszeń: deweloperzy nie przyjmują zadań bezpośrednio od konsultantów (samoobsługa tylko na bieżący sprint po uzgodnieniu).
+- Daily: przegląd zgłoszeń z dnia poprzedniego i decyzja o podjęciu (20 min).
+
+---
+
+## 2025-11-14 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-14 Spotkanie projektowe - Repozytorium.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-14%20Spotkanie%20projektowe%20-%20Repozytorium.md)
+**Kategoria:** #Backlog #Metodyka
+
+- **Struktura backlogu:** Zdefiniowano hierarchię: Inicjatywa (cel biznesowy) → Epik → MVP (wartość) → Ficzer → Use Case → PBI.
+- **Definicja MVP:** MVP to dostarczane wartości ("Value"), a nie zbiór funkcjonalności.
+- **Inicjatywa:** Traktowana jako wytyczna/cel biznesowy (np. "skrócenie czasu wdrożeń"), nie jako element rozliczalny statusami.
+
+---
+
+## 2025-11-13 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Zadanie #Wydanie
+
+- Priorytet do końca roku: Odbiór WIM (Komunikator, Repozytorium).
+- Priorytet do końca roku: Grudniowa paczka stabilna (Edytor formularzy, MVP Diagramu).
+- Zaplanowano testy stabilności grudniowej paczki na środowisku Astrafox.
+
+---
+
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Decyzja #Dokumentacja
+
+- Dyskusja na temat właściciela na poziomie feature'a i epica.
+- Obecnie Delivery Manager jest właścicielem, docelowo powinien być deweloper.
+- Propozycja pracy na branchach per paczka w celu uproszczenia pracy.
+
+---
+
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Dokumentacja #Decyzja
+
+- Zaproponowano rozwiązanie na kanałach w Teams dla przestrzeni dokumentacji projektowej.
+- Projekt minimalnie składa się z trzech plików: uzasadnienie biznesowe, rozbicie na MVP, plik architektoniczno-techniczny.
+- Brakuje jednego miejsca do przechowywania i edycji dokumentacji projektowej dla wszystkich.
+
+---
+
 ## 2025-10-23 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-23 Notatka projektowa - Edytor procesów.md]
 **Kategoria:** #Organizacja #Decyzja #Roadmapa

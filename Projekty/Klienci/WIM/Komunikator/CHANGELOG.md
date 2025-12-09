@@ -2,6 +2,90 @@
 
 ---
 
+## 2025-11-27 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
+**Kategoria:** #Status #Funkcjonalność
+
+- Status bieżący: Komunikator został skonfigurowany i działa bez uwag ze strony klienta.
+- Wzmianka: Funkcjonalność komunikatora jest istotna, zwłaszcza w kontekście powiadomień.
+
+---
+
+## 2025-11-21 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Postęp
+
+- Komunikator (WIM) ukończony, potwierdzone działanie u klienta.
+- Oczekujemy na uwagi od klienta.
+
+---
+
+## 2025-11-25 | Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-25 Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa.md]
+**Kategoria:** #Status
+
+-   **Roadmapa Q4 2025:** Komunikator uznany za wdrożony (do weryfikacji).
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Wydanie #Architektura #Chmura
+
+- Finalizacja wdrożenia (poprawki drobnych błędów niefunkcjonalnych).
+- Architektura: komunikator współdzieli bazę danych z AMODIT (wymóg wdrożeń chmurowych).
+- Chmura: wymagane zmiany pod obsługę chmury (pobieranie danych organizacji z osobnej bazy) - temat koncepcyjny na przyszłość.
+- Konieczność podpięcia certyfikatów i konfiguracji.
+
+---
+
+## 2025-11-14 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-14 Spotkanie projektowe - Repozytorium.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-14%20Spotkanie%20projektowe%20-%20Repozytorium.md)
+**Kategoria:** #Infrastruktura #Problem
+
+- **Certyfikaty:** Problem z certyfikatami przy komunikacji lokalnej (HTTP vs HTTPS) na serwerach klienta.
+- **Wymaganie:** Klient musi dostarczyć certyfikaty do osadzenia lokalnie.
+
+---
+
+## 2025-11-13 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Wydanie #Bug
+
+- Komunikator skutecznie zainstalowany w Zimbrze u klienta.
+- Zidentyfikowano drobny błąd (wyskakuje w jednym momencie) do naprawy przez Mateusza.
+- Zaplanowano prezentację dla klienta na dzień następny.
+
+---
+
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Bug #Zadanie
+
+- Błędy w komunikatorze wymagające poprawy w obecnym sprincie.
+- Przykład: wysłana wiadomość nie pojawia się od razu.
+
+---
+
+## 2025-11-07 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-07 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Bug
+
+- Mateusz kończy prace nad komunikatorem dla WIM.
+- Zgłoszono drobne błędy niefunkcjonalne (przesuwanie, zmiana nazwy).
+- Funkcjonalność grup działa poprawnie.
+
+---
+
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Zadanie #Ryzyko
+
+- Mateusz pracuje nad komunikatorem (oraz repozytorium).
+- Ryzyko przeładowania Mateusza pracą.
+
+---
+
 ## 2025-10-20 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
 **Kategoria:** #Funkcjonalność

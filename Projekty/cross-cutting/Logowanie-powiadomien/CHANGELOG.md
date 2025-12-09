@@ -2,6 +2,13 @@
 
 ---
 
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Funkcjonalność #Diagnoza
+
+- Historia maili wysłanych do sprawy: wpisy dodawane przy dodaniu do kolejki, plan oznaczania faktycznie wysłanych (zadanie na bieżący sprint).
+- Zgłoszenie z WIM: kluczowa informacja o mailach, które nie wczytały się (np. faktury) – konieczne lepsze opisy ustawień systemowych i propagacja wiedzy.
+
 ## 2025-10-07 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-07 Rada architektów.md]
 **Kategoria:** #Bug #Funkcjonalność #Decyzja
@@ -45,4 +52,3 @@
 - **Szczegóły:** Zobacz [Klienci/WIM/Logowanie-powiadomien](../../Klienci/WIM/Logowanie-powiadomien/CHANGELOG.md)
 
 ---
-

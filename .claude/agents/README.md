@@ -164,38 +164,66 @@ surowe/ → [czyszczenie + generowanie notatki] → Notatki/{typ}/
 **Kolor:** Pomarańczowy
 **Model:** Sonnet
 
-**Cel:** Mapowanie notatek ze spotkań na dokumentację projektów (Project Canvas).
+**Cel:** Dodawanie wpisów do CHANGELOG.md projektów na podstawie notatek ze spotkań.
 
 **Aktywacja:**
-- "Przetwórz następną notatkę"
-- "Synchronizuj rejestr notatek", "Sync notes"
-- "Reprocesing od zera", "Reset dokumentacji projektów"
+- Automatycznie wywołany przez note-reviewer po zatwierdzeniu zmian
+- Ręcznie: "Dodaj do changelog projektu X"
 
 **Workflow:**
 ```
-Notatki/{typ}/ → [analiza + mapowanie] → Projekty/*/{Projekt}.md
+Notatki/{typ}/ → [ekstrakcja ustaleń] → Projekty/*/CHANGELOG.md
 ```
 
 **Funkcje:**
 - Automatyczna identyfikacja projektów/podprojektów z notatki
-- Propozycja planu zmian do zatwierdzenia
-- Aktualizacja Project Canvas (wszystkie sekcje)
-- **Obsługa podprojektów** (np. Edytor-procesow → Edytor-formularzy)
-- **Dokumentowanie odrzuconych koncepcji** (ADR ze statusem ❌ + "Powód odrzucenia")
-- Synchronizacja rejestru notatek
-- Workflow reprocesingu od zera
-
-**Tryby pracy:**
-- `process-note` - przetwarza jedną najstarszą nieprzetworzoną notatkę (z bazy SQLite)
-- `sync-notes` - synchronizuje bazę z plikami notatek (dodaje brakujące do bazy)
-- `reprocess-all` - usuwa mapowania z bazy i przetwarza chronologicznie od zera
+- Ekstrakcja kluczowych ustaleń (max 5-7 bulletów)
+- **Automatyczne dobieranie kategorii** (#Funkcjonalność, #Decyzja, #Architektura, etc.)
+- Dodawanie wpisów do CHANGELOG.md (chronologicznie)
+- Archiwizacja notatki do `Gotowe-notatki-archiwum/`
 
 **Zasoby:**
-- Szablony: `Projekty/SZABLON.md`, `Projekty/SZABLON-PODPROJEKT.md`
+- Słownik projektów: `.claude/skills/_SLOWNIK_PROJEKTOW.md`
 - Zasady: `Projekty/ZASADY.md`, `Projekty/STYL.md`
-- Workflow: `Notatki/PROMPT.md`
-- Baza danych: `Notatki/rejestr_transkrypcji.db` (SQLite - mapowania notatek na projekty)
-- Helper: `.claude/scripts/transkrypcje_db.py`
+
+---
+
+### 6. `overview-sync` 📊
+**Kolor:** Zielony
+**Model:** Sonnet
+
+**Cel:** Synchronizacja dokumentacji projektów (PROJEKT.md, ARCHITEKTURA.md, ROADMAPA.md) z CHANGELOG.md
+
+**Aktywacja:**
+- "Synchronizuj overview projektu X"
+- "Zaktualizuj dokumentację projektu X"
+- "@overview-sync [nazwa-projektu]"
+
+**Workflow:**
+```
+CHANGELOG.md → [analiza kontekstu + inteligentna kategoryzacja] → PROJEKT.md + ARCHITEKTURA.md + ROADMAPA.md
+```
+
+**Funkcje:**
+- Automatyczna synchronizacja z CHANGELOG
+- **Inteligentna kategoryzacja** (analiza treści, nie tylko tagów!)
+  - `#Decyzja` + "OAuth2" → ARCHITEKTURA.md (tech)
+  - `#Decyzja` + "MVP2 grudzień" → ROADMAPA.md (plan)
+  - `#Decyzja` + "budżet 10 MD" → PROJEKT.md (biznes)
+- Trackowanie ostatniego przetworzonego wpisu (YAML frontmatter: `changelog_przeglad_do`)
+- Obsługa 3 poziomów projektów:
+  - Klient zbiorczy (np. WIM/) → tylko krótki dashboard
+  - Projekt zbiorczy (np. Edytor-procesow/) → 3 pliki + sekcja Podprojekty
+  - Podprojekt / prosty → standardowe 3 pliki
+- Inicjalizacja nowych projektów (3 pliki z szablonów)
+- Migracja z Project Canvas (rename → -OLD-ProjectCanvas.md)
+- **ZERO HALUCYNACJI** - używa `[DO UZUPEŁNIENIA]` gdy brak danych
+
+**Zasoby:**
+- Skill: `.claude/skills/overview-sync/SKILL.md`
+- Szablony: `Projekty/SZABLON-PROJEKT.md`, `SZABLON-ARCHITEKTURA.md`, `SZABLON-ROADMAPA.md`, `SZABLON-KLIENT-ZBIORCZY.md`
+- Zasady: `Projekty/ZASADY.md`
+- Styl: `Projekty/STYL.md`
 
 ---
 
@@ -228,9 +256,21 @@ Notatki/{typ}/ → [analiza + mapowanie] → Projekty/*/{Projekt}.md
 ├─────────────────────────────────────────────────────────────────┤
 │ Notatki/Rada architektów/                                       │
 │   └─ 2025-11-28 Rada architektów.md                            │
-│        ↓ [analiza tematów + plan zmian + zatwierdzenie]        │
+│        ↓ [ekstrakcja ustaleń + auto-kategoryzacja]             │
 │ Projekty/moduly/Trust-Center/                                   │
-│   └─ Trust-Center.md (Project Canvas)                          │
+│   └─ CHANGELOG.md (surowa historia)                            │
+└─────────────────────────────────────────────────────────────────┘
+                           ↓
+┌─────────────────────────────────────────────────────────────────┐
+│ OVERVIEW-SYNC (Etap 4 - na żądanie)                            │
+│ Trigger: "Synchronizuj overview projektu Trust-Center"         │
+├─────────────────────────────────────────────────────────────────┤
+│ Projekty/moduly/Trust-Center/                                   │
+│   └─ CHANGELOG.md                                              │
+│        ↓ [inteligentna kategoryzacja + synteza]                │
+│   ├─ PROJEKT.md (biznes)                                       │
+│   ├─ ARCHITEKTURA.md (tech)                                    │
+│   └─ ROADMAPA.md (plan)                                        │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -252,10 +292,17 @@ Notatki/{typ}/ → [analiza + mapowanie] → Projekty/*/{Projekt}.md
 └─────────────────────────────────────────────────────────────┘
                            ↓
 ┌─────────────────────────────────────────────────────────────┐
-│ Etap 3: Mapowanie na projekty                              │
+│ Etap 3: Mapowanie na projekty (CHANGELOG)                  │
 │ Agent: project-mapper                                       │
 ├─────────────────────────────────────────────────────────────┤
-│ Notatki/{typ}/ → [analiza + plan + zatwierdzenie] → Projekty/ │
+│ Notatki/{typ}/ → [ekstrakcja + kategoryzacja] → CHANGELOG.md │
+└─────────────────────────────────────────────────────────────┘
+                           ↓
+┌─────────────────────────────────────────────────────────────┐
+│ Etap 4: Synchronizacja dokumentacji (na żądanie)           │
+│ Agent: overview-sync                                        │
+├─────────────────────────────────────────────────────────────┤
+│ CHANGELOG.md → [synteza] → PROJEKT + ARCHITEKTURA + ROADMAPA │
 └─────────────────────────────────────────────────────────────┘
 ```
 

@@ -52,6 +52,14 @@ Występuje problem z wyświetlaniem plików tekstowych (.txt) w systemie AMODIT.
 
 ---
 
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Funkcjonalność #UI
+
+- Dolny pasek nawigacji dokumentu: przełączanie między dokumentami strzałkami lewo/prawo, dezaktywacja gdy brak poprzedniego/następnego.
+- Pliki bez podglądu (np. MKV) ukrywane z listy; nazw plików przycinane dla czytelności.
+- Klienci oczekują zachowania przełączania dokumentów (powrót funkcji w nowej lokalizacji interfejsu).
+
 ### 2. GetAttachmentContent – brak treści tekstowej
 
 **Problem:**
@@ -73,4 +81,3 @@ Funkcja `GetAttachmentContent` powinna zwracać treść tekstową plików teksto
 **Punkty otwarte:**
 - Czy metadane powinny być dostępne w inny sposób, czy całkowicie usunięte z odpowiedzi funkcji?
 - Jak obsłużyć przypadek, gdy plik nie jest tekstowy – czy zwracać pustą treść czy błąd?
-

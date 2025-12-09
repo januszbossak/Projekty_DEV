@@ -4,6 +4,15 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-11-25 | Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-25 Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa.md]
+**Kategoria:** #Funkcjonalność
+
+-   **Roadmapa Q1 2026:** Rozwiązanie problemu migracji procesów między środowiskami (DEV -> TEST -> PROD).
+-   **Roadmapa Q1 2026:** Funkcjonalność: Wizard, historia zmian, porównywanie różnic (diff), wsparcie AI.
+
+---
+
 ## 2025-10-21 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-21 Rada architektów.md]
 **Kategoria:** #Decyzja #Architektura

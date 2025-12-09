@@ -1,6 +1,54 @@
 # Historia zmian - Moduł raportowy
 
+---
 
+## 2025-11-28 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Notatka projektowa - Połączenie z Marek Dziakowski.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Notatka%20projektowa%20-%20Połączenie%20z%20Marek%20Dziakowski.md)
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- Umożliwienie generowania raportów, które mogą "drążyć" w głąb pól typu `Odnośnik`.
+- Użytkownik powinien mieć możliwość wyboru pola typu `Odnośnik` w raporcie, a następnie wyboru pól z procesu, na który ten `Odnośnik` wskazuje.
+- Funkcjonalność zostanie wdrożona w ramach prac nad projektem JRWA.
+
+---
+
+## 2025-11-27 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
+**Kategoria:** #Stabilizacja #Wydajność #UX #PoprawaBłędów
+
+- Cel: Stabilizacja i indeksowanie raportów tabelarycznych oraz poprawa filtrów.
+- Zakres prac: Wdrożenie mechanizmu indeksowania pól tekstowych dla poprawy wydajności, poprawienie błędów w raportach tabelarycznych i filtrach.
+- Indeksowanie: Tworzenie dodatkowej tabeli indeksowanej, konfiguracja na poziomie ustawień procesu (React), limit 10 pól tekstowych/list wyboru na proces.
+- Usprawnienia filtrów: Domyślny operator "zawiera" dla pól tekstowych, domyślne wartości dat (bieżący miesiąc, bieżący rok, bieżący dzień).
+- Błędy do poprawy: Niespodziewane przeładowania raportu przy zmianie nazwy, problemy z filtrami po podpisaniu dokumentów, sortowaniem, zaokrągleniami liczb, eksportami i filtrowaniem w drzewku.
+- Ryzyka: Duża liczba zgłoszeń od użytkowników, konieczność ścisłej współpracy backend-frontend.
+
+---
+
+## 2025-11-21 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
+**Kategoria:** #Wydajność #Funkcjonalność #Zadanie #Design
+
+- Poprawa działania i wydajności filtrów użytkownika w module raportowym.
+- Mateusz Kisiel pracuje nad indeksami w celu poprawy wydajności filtrów.
+- Szymek/Przemek porządkują operatory daty w filtrach, uspójniając logikę.
+
+---
+
+## 2025-11-25 | Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-25 Notatka projektowa - Roadmapa 2026 i Strategia Wdrożeniowa.md]
+**Kategoria:** #Funkcjonalność #Architektura
+
+- **Roadmapa Q4 2025:** Podstawowa funkcjonalność tabeli raportów (masowa obsługa spraw) musi działać stabilnie.
+- **Roadmapa Q1 2026:** Głęboki refactoring architektury, wykresów, dashboardów i filtrów.
+
+---
+
+## 2025-11-20 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-20 Spotkanie projektowe - Edytor procesów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-20%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)
+**Kategoria:** #Strategia #Decyzja
+
+- Dyskusja priorytetów: Janusz naciska na naprawę Modułu raportowego dla użytkowników końcowych. Przemek sugeruje odłożenie prac do czasu zamknięcia MVP Edytora procesów (argumentując, że raporty i tak nie działają od początku).
 
 ---
 
@@ -52,6 +100,70 @@ PKF zgłosił potrzebę edycji wierszy tabel z poziomu raportu osadzonego na spr
 
 ---
 
+## 2025-11-19 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-19 Spotkanie projektowe - Problem odświeżania raportu.md]
+**Kategoria:** #Bug #Problem #Decyzja #Funkcjonalność
+
+- Problem z odświeżaniem raportów po akcjach na sprawie, szczególnie w dashboardach.
+- Przycisk "Odśwież" w dashboardzie nie działa; w raportach standalone działa.
+- Ustalono priorytet (hotfix): naprawa przycisku "Odśwież" w dashboardzie.
+- Potrzeba spisania przypadków użycia dla automatycznego odświeżania raportów.
+- Istniejące zgłoszenie D123 (v122) dotyczące odświeżania raportu w dashboardzie, oznaczone jako "Done", faktycznie nie działa.
+
+---
+
+## 2025-11-19 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-19 Notatka projektowa - Przegląd wycen.md]
+**Kategoria:** #Bug #Funkcjonalność #Design #Decyzja
+
+- Doraźnie należy naprawić działanie przycisku "Odśwież" na dashboardzie.
+- Docelowo należy przeanalizować i opisać przypadki użycia dla automatycznego odświeżania raportu.
+- Rekord nadal spełniający kryteria: czy ma zostać w tym samym miejscu, a dane odświeżone?
+- Rekord przestający spełniać kryteria: czy ma zniknąć natychmiast, czy po ręcznym odświeżeniu?
+- Decyzja: Nie wdrażać pochopnych zmian w automatyzacji bez spójnych zasad UX.
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Bug #Problem #Decyzja
+
+- Wstrzymanie zadań rozwojowych na rzecz stabilizacji i naprawy błędów.
+- Decyzja o przeprowadzeniu refaktoryzacji (planowane spotkanie zespołu).
+- Agregacja i priorytetyzacja błędów z backlogu.
+
+---
+
+## 2025-11-13 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Rada architektów.md]
+**Kategoria:** #Architektura #Zadanie
+
+- Sprawdzenie, czy w nowych raportach jest obsługa Oracle dla `LIMIT`.
+- Przejrzenie kodu do generowania zapytań dla zewnętrznych źródeł ODBC.
+- Wymagana współpraca z konsultantami Rossmanna i dostęp do środowiska testowego.
+
+---
+
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Bug #Zadanie
+
+- Problem z źródłami Oracle w nowych raportach: `INVALID_CHARACTER` i `LIMIT ?` w zapytaniu.
+- Stare raporty działają, problem specyficzny dla nowych.
+- Do weryfikacji przez deweloperów, z włączeniem logowania zapytań SQL.
+- `LIMIT ?` to składnia MySQL-owa, oczekiwana konkretna liczba.
+
+---
+
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Funkcjonalność #UI
+
+- Podgląd raportu na sprawie ujednolicony z podglądem dokumentów: paginacja, widok pełnoekranowy, te same akcje co na sprawie, ładowanie kolejnych stron.
+- Do rozważenia: przełączanie między raportami w kontekście wyszukiwania zaawansowanego (odtworzenie funkcji ze starego komponentu).
+
+---
+
 ## 2025-10-30 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
 **Kategoria:** #Bug #Diagnostyka
@@ -98,16 +210,6 @@ PKF zgłosił potrzebę edycji wierszy tabel z poziomu raportu osadzonego na spr
 
 ---
 
-## 2025-10-02 | Rada architektów
-**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
-**Kategoria:** #Architektura #Design
-
-- Ustalenie zasady wizualizacji: Tree Map tylko dla małej liczby wartości (3-4), w przeciwnym razie wykres słupkowy
-- Wytyczne dotyczące źródeł danych w raportach: rozdzielenie logiki dla spraw zamkniętych (CaseDefinition) i w toku (CaseHistory)
-- Wymagana poprawa kontrastu w wizualizacjach raportowych i ujednolicenie tooltipów
-
----
-
 ## 2025-10-06 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-06 Sprint review.md]
 **Kategoria:** #Funkcjonalność #Design
@@ -122,6 +224,16 @@ PKF zgłosił potrzebę edycji wierszy tabel z poziomu raportu osadzonego na spr
 **Kategoria:** #Design
 
 - Dyskusja na temat ujednolicenia sposobu wyświetlania opisów raportów na kafelkach dashboardów
+
+---
+
+## 2025-10-02 | Rada architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-02 Rada architektów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-10-02%20Rada%20architektów.md)
+**Kategoria:** #Architektura #Design
+
+- Ustalenie zasady wizualizacji: Tree Map tylko dla małej liczby wartości (3-4), w przeciwnym razie wykres słupkowy
+- Wytyczne dotyczące źródeł danych w raportach: rozdzielenie logiki dla spraw zamkniętych (CaseDefinition) i w toku (CaseHistory)
+- Wymagana poprawa kontrastu w wizualizacjach raportowych i ujednolicenie tooltipów
 
 ---
 
@@ -160,7 +272,7 @@ PKF zgłosił potrzebę edycji wierszy tabel z poziomu raportu osadzonego na spr
 ---
 
 ## 2025-09-11 | Rada architektów
-**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-11 Rada architektów - Multipart REST checkboxy edytor.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-11%20Rada%20architektów%20-%20Multipart%20REST%20checkboxy%20edytor.md)
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-11 Rada architektów - Multipart REST checkboxy edytor.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-11%20Rada%20architektów%20-%20Multipart%20REST%20checkboxy%20edytor.md)
 **Kategoria:** #Architektura #Funkcjonalność
 **Projekt:** [Klienci/WIM/Raporty-osadzone-checkboxy](../../Klienci/WIM/Raporty-osadzone-checkboxy/)
 
@@ -173,11 +285,6 @@ Rozbudowa mechanizmu raportów osadzonych o możliwość edycji checkboxów w ź
 - Raport osadzony ze źródła zewnętrznego (pozycje zamówienia na podstawie numeru)
 - Możliwość zaznaczania checkboxów przez użytkowników (które pozycje zgodne z fakturą)
 - Zapisanie stanu checkboxów jako część sprawy (nie w CaseDefinition, w źródle dynamicznym)
-
-**Kontekst:**
-- Dane pochodzą z zewnętrznego źródła (nie z CaseDefinition)
-- Rozwiązanie systemowe, spójne z raportami osadzonymi
-- Przyszłościowo: bezpośrednia edycja danych w źródłach dynamicznych z formularza (bez raportu)
 
 **Zadania:**
 - Damian Kamiński - Proof of Concept dla edytowalnych checkboxów

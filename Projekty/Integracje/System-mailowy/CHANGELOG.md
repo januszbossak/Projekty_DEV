@@ -4,6 +4,13 @@ Historia zmian i ustaleń dla projektu.
 
 ---
 
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Diagnoza #Funkcjonalność
+
+- Podgląd oryginalnego maila w logach i ręczne wczytanie tą samą metodą co job (diagnostyka problemów z wczytywaniem maili).
+- Informacja o nieudanym parsowaniu maila: przypomnienie o ustawieniu powiadomień mailowych (parametr systemowy), potrzeba lepszych opisów i propagacji wiedzy.
+
 ## 2025-10-30 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
 **Kategoria:** #Bug #Diagnostyka

@@ -1,5 +1,16 @@
 # CHANGELOG - Zakładka Procesy
 
+## 2025-11-12 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
+**Kategoria:** #Funkcjonalność #Design #Decyzja
+
+- Filtr w lupce wyszukiwania procesów/raportów zostaje na stałe, powodując niewygodę.
+- Filtr ma się czyścić po wylogowaniu/zalogowaniu oraz zamknięciu całego okna przeglądarki.
+- Nie jest to hotfix, może być w następnym wydaniu.
+- Rozważyć szerszą paczkę "poprawa zachowania systemu przy wybranych filtrach i wyszukiwaniach".
+
+---
+
 ## 2025-08-26 - Notatka projektowa - AMODIT UI
 
 **Źródło:** [[../../../../Notatki/Gotowe-notatki-archiwum/2025-08-26 Notatka projektowa - AMODIT UI|2025-08-26 AMODIT UI]]

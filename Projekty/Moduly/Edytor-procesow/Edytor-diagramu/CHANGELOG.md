@@ -4,6 +4,26 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-11-13 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Wydanie #Funkcjonalność #Architektura
+
+- MVP nowego edytora zostanie wydane w wersji Beta w paczce grudniowej.
+- Funkcjonalność MVP: Rysowanie diagramu, dodawanie etapów, połączeń, sekwencji etapów.
+- Ograniczenia: Edytor reguł i szczegółowa edycja etapów pozostają w starej technologii (nie zaimplementowane w nowym edytorze).
+- Konieczne pozostawienie przełącznika do starego edytora graficznego.
+
+---
+
+## 2025-11-06 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-06 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-06%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Inne
+
+- Status: Brak postępów w pracach nad Edytorem Diagramu.
+- Priorytet obniżony na rzecz rozwiązywania błędów w Edytorze Formularza i prac nad Modułem Raportowym.
+
+---
+
 ## 2025-10-23 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-23 Notatka projektowa - Edytor procesów.md]
 **Kategoria:** #Funkcjonalność #Design #Decyzja

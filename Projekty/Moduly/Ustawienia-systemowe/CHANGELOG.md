@@ -6,6 +6,25 @@
 
 ---
 
+## 2025-11-20 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-20 Spotkanie projektowe - Edytor procesów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-20%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)
+**Kategoria:** #Status #Decyzja
+
+- **MVP Zamknięte:** Potwierdzono przeniesienie 100% funkcjonalności ze starej technologii (Wiki, integracje, four-eyes, REST API, autentykacja).
+- Możliwość wyłączenia komunikatu o przełączeniu do nowego widoku (zachowanie opcji powrotu dla kompatybilności).
+
+---
+
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Zadanie
+
+- Zamknięcie tematu 4-eyes w ustawieniach systemowych, odtwarzając poprzednią funkcjonalność.
+- Wymagany backend dla tej implementacji.
+- Przemek odpowiedzialny za implementację.
+
+---
+
 ## 2025-10-30 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-30 Rada architektów.md]
 **Kategoria:** #Funkcjonalność #Monitoring #Bezpieczenstwo

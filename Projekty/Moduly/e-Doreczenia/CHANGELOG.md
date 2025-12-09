@@ -2,6 +2,12 @@
 
 ---
 
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Stabilizacja
+
+- Stabilizacja e-Doręczeń zgłoszona na review – brak bieżących błędów u klientów; dalsze poprawki raczkowania w e-Nadawcy przekazane do analizy.
+
 ## 2025-10-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
 **Kategoria:** #Funkcjonalność #Decyzja #Organizacja

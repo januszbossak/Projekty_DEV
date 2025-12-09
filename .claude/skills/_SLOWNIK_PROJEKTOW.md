@@ -24,7 +24,13 @@ Repozytorium to hierarchiczna struktura folderów ściśle powiązana ze struktu
 
 Asystent AI dla twórców procesów jak i dla uzytkowników systemu AMODIT. Ma wiedzę o AMODIT, o procesach i raportch zaimplementowanych w AMODIT. Ma tez "Baza wiedzy" typu RAG opartą o dane wprowadzane przez uzytkowników. Zarządzanie kontekstem, źródłami wiedzy, integracja z AI. Obsługa dokumentów przez Copilot (pliki, opisy raportów, reguł). Wspiera generowanie procesów, skryptów regul bizneoswych.
 
-  
+### `Moduly/AMODIT AI OCR`
+
+Dla modułu AI — jeśli podczas automatycznej klasyfikacji  wykryjesz dokument lub zadanie związane z przetwarzaniem faktycznego dokumentu (skan, PDF, zdjęcie itp.) — traktuj je, jako należące do projektu AMODIT AI OCR.
+
+AMODIT AI OCR to system, który automatycznie: rozpoznaje tekst ze skanów/zdjęć/PDF-ów, wyciąga kluczowe informacje (np. dane faktury, paragony, dokumentów kadrowych), a także — w razie potrzeby — stosuje modele AI do dalszej analizy dokumentu (ekstrakcja danych, streszczenie, analiza umów itp.).  ￼
+
+Dlatego wszystkie zadania typu „przetwarzanie dokumentów”, „parsowanie faktury/paragonu/umowy”, „ekstrakcja danych z dokumentu” lub „OCR + analiza dokumentu” powinny być klasyfikowane pod projekt AMODIT AI OCR.
 
 ### `Moduly/e-Doreczenia`
 
@@ -85,7 +91,9 @@ Miejsce w którym klient (administrator u klienta) moze sledzic stan zuzytych to
 
 Nowy moduł raportowy. Definiowanie raportów, źródła danych, SQL queries, wizualizacje. Logowanie błędów SQL, debugowanie raportów.
 
-  
+#### `Moduly/Modul-raportowy/Wydajnosc`
+
+Wszystkie kwestie dodtyczacace poparwy wydajnosci dzialania raportow takie jak indeksowanie, optymalizacja zapytan SQL itp
 
 #### `Moduly/Modul-raportowy/Filtry-uzytkownika`
 
@@ -245,17 +253,24 @@ Problemy z działaniem mechanizu indeksujacego Lucene, wyszukiwarak tekstowa spr
 
   
 
-#### `cross-cutting/Zakladka-Raporty`
+### `cross-cutting/Zakladka-Raporty`
 
 Nowy wygląd i funkcjonalności zakładki "Raporty" w menu głównym. Przepisanie na React, nowe formaty wyświetlania (kafelki, lista, lista kompaktowa), ulepszone sortowanie i filtrowanie (moje raporty, ostatnio modyfikowane, szukanie po źródle), wizualne rozróżnianie typów raportów (ikony), zapamiętywanie filtrów per użytkownik. Metadane raportów widoczne na liście (opis, autor, typ).
 
-  
+### `cross-cutting/Design-System`
 
-#### `cross-cutting/Zakladka-Procesy`
+Zbiór ostatecznych ustaleń dotyczących wyglądu i zachowania wszystkich elementów interfejsu AMODIT – tu definiujemy spójne zasady tworzenia UI dla całego systemu. Projekt ten pełni rolę systemu design AMODIT: ustalamy tu standardy kolorystyki, odstępów, zaokrągleń rogów, typografii, ikonografii oraz innych reguł estetyki i dostępności. Wszystkie ogólne wytyczne dotyczące wyglądu, proporcji i UX (przycisków, formularzy, kart, powiadomień itp.) mają być opisane właśnie tutaj. Każdy nowy czy modyfikowany element UI powinien być zgodny z tymi wytycznymi – nie stosujemy wyjątków bez aktualizacji tego wzorca.
+
+### `cross-cutting/Zakladka-Procesy`
 
 Nowy wygląd i funkcjonalności zakładki "Procesy" w menu głównym. Przepisanie na React, nowy format wyświetlania (ulubione, kafelki, lista kompaktowa), opisy procesów widoczne na liście. Modal pośredni przed uruchomieniem sprawy z opisem procesu (można wyłączyć dla znanych procesów). Usprawnienie nawigacji i odnajdywania procesów.
 
-  
+### 
+
+### `cross-cutting/Interfejs-sprawy`
+
+Wszystko co dotyczy zachowania się sprawy (case) w AMODIT , mcase.aspx o ile nie jest to wyspecyfikowane w podprojektach, wtedy mnaley uzywac podprojektu
+
 
 #### `cross-cutting/Interfejs-sprawy/Formularz-sprawy`
 
@@ -311,7 +326,11 @@ Rejestrowanie operacji trwałego usuwania spraw. Audyt kasowania, logi bezpiecze
 
 Zarządzanie szablonami maili systemowych. Ochrona przed nadpisaniem, wersjonowanie szablonów.
 
-  
+
+### `cross-cutting/Powiadomienia-systemowe`
+
+Kwestie powiadomień systemowych o utwotrzeniu sprawy, o przesłanu sprawy, o dodaniu komentarza. Obecnie system opiera się o zalozenie ze sa dwie grupy powiadomen "główne" i "pomocnicze" 
+
 
 ### `cross-cutting/Testy-kompatybilnosci-API`
 
@@ -323,7 +342,10 @@ Testy snapshotowe do wykrywania zmian w publicznym API kluczowych bibliotek. Wer
 
 Usuwanie spraw powiązanych. Zarządzanie zależnościami, kaskadowe usuwanie.
 
-  
+
+### `cross-cutting/Zarzadzanie-licencjami`
+
+Projekt dotyczy wszystkich aspektów zarzadzania licencjami uzytkownikow, licencjami na moduly takie jak e-Nadawca, Paczka Przelewów, REST API itd. Dotyczy tez aspektu dzialania "wersji demo" (sytuacja braku licenji)
 
 ### `cross-cutting/WCAG`
 
@@ -392,6 +414,9 @@ Integracja systemu AMODIT z connectorem KSeF, który jest wytwarzany i utrzymymy
 
 ## Klienci (`Klienci/`)
 
+#### `klienci/Neuca/DocuSign`
+Rozszerzenie istniejącej integracjio z DocuSign. Glowanie o funkcjonalnosc 'envelope' ale jednoczesnie rozbudowa o mozliwosc wolania innych endpointow DocuSign. Tyle ze do tego mozna wykorzystac funcje CallRest rozbudowujac ja o odpowiedni mechanizmy logowania ktore ma DocuSign
+
 #### `klienci/Lewiatan/Comarch-HUB`
 Integracja systemu AMODIT z systemem Comarch HUB w zakresie KseF. To niezalena, wręcz w pewnym sensie konkurencyjna integracja, bo mamy własny KseF Connector, ale klient chce przez Comarch Hub
 
@@ -443,19 +468,61 @@ PKF ma wymaganie aby pliki zapisywane w sprawach bylo odpowiednio organizowane n
 
 #### `Klienci/Polpharma/Import-export-procesow`
 
+
+
+
+
+
+
 Import i eksport procesów dla Polpharma. Migracja definicji procesów między środowiskami.
+
+
+
+
 
 
 
 #### `Klienci/Rossmann/Komunikaty-systemowe`
 
+
+
+
+
+
+
 Komunikaty systemowe dla Rossmann. Customizowane powiadomienia.
 
-  
+
+
+
+
+
 
 #### `Klienci/Rossmann/Trust-Center-integracja`
 
+
+
+
+
+
+
 Integracja Trust Center dla Rossmann. Blockchain, zarządzanie certyfikatami.
+
+
+
+
+
+
+
+#### `Klienci/LOT`
+
+
+
+Projekt klienta LOT, do ogólnych tematów niezwiązanych z konkretnymi podprojektami.
+
+
+
+
 
 
 
@@ -556,6 +623,9 @@ Koncepcja wykonywania akcji w kontekście innego użytkownika. Impersonation, de
 Koncepcja tablicy ogłoszeń. Komunikacja wewnętrzna, anonsowanie zmian.
 
   
+### `Koncepcje/Open-Data`
+
+Projekt obejmuje udostepnianie danych z AMODIt przez OpenData dla takich systemów jak Tableau, Power BI, Qlick
 
 ---
 

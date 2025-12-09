@@ -2,6 +2,17 @@
 
 ---
 
+## 2025-11-13 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Planowanie sprintu.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Planowanie%20sprintu.md)
+**Kategoria:** #Decyzja #Proces
+
+- Metodologia: "przestań zaczynać, zacznij kończyć" – lepsze dowożenie przez paczki (prezenty/epiki).
+- Limit WIP: 3 (limitowany liczbą testerek, a nie deweloperów).
+- Prezent (epic) powinien być dowieziony max w 1-3 sprinty.
+- Strategia: stabilizacja, brak nowych funkcjonalności ("ściskamy hamulec"), kończenie rozpoczętych tematów (Repo, JRWA, ADE).
+
+---
+
 ## 2025-10-14 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-14 Rada architektów.md]
 **Kategoria:** #Bug #Optymalizacja #Decyzja

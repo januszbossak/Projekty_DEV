@@ -2,6 +2,17 @@
 
 ---
 
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Zadanie #Bug
+
+- Dużo zgłoszeń o niedziałających wzmiankach, konieczność przebudowy od nowa.
+- Cel sprintu: wzmianki mają działać i być stabilne.
+- Mariusz odpowiedzialny za przebudowę i napisanie testów end-to-end.
+- To jedyny cel Mariusza w tym sprincie.
+
+---
+
 ## 2025-10-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
 **Kategoria:** #Bug #Funkcjonalność

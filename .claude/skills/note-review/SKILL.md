@@ -61,6 +61,7 @@ Zamiast prosić o ogólną zgodę, przedstaw **numerowaną listę konkretnych dz
 
 2.  **Numerowana Lista Problemów i Sugestii (Actionable Items):**
     Każdy punkt musi być konkretny i zawierać propozycję zmiany. Grupuj logicznie.
+    W sekcji **Kontekst** podawaj szczegóły z transkrypcji aby uzytkownik mógł oceniec twoje **uzasadnienie**
 
     *Przykład:*
     > 1. **Błędna nazwa projektu:** "WIM/KAS" -> Zmienić na `Klienci/Allianz/Integracja-CAS`.

@@ -2,6 +2,15 @@
 
 ---
 
+## 2025-11-04 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-04 Rada architektów.md]
+**Kategoria:** #Architektura #Zadanie #Bezpieczeństwo
+
+- Przegląd jobów pod kątem bezpiecznego przerywania działania.
+- Zadanie dla Piotra Buczkowskiego (przejrzenie jobów, zgłoszenie PBI).
+
+---
+
 ## 2025-09-25 | Rada Architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-09-25 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-09-25%20Rada%20architektów.md)
 **Kategoria:** #Funkcjonalność #Architektura

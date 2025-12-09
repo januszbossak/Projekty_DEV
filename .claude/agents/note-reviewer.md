@@ -49,15 +49,17 @@ Agent operuje na statusie pliku poprzez przesuwanie go między folderami:
 Wczytaj niezbędne konteksty:
 1.  **Treść notatki** (z `Gotowe-notatki-w-trakcie/`).
 2.  **Słownik Projektów** (`.claude/skills/_SLOWNIK_PROJEKTOW.md`) - **JEDYNE ŹRÓDŁO PRAWDY**.
-3.  **Transkrypcja** (opcjonalnie):
-    *   Spróbuj znaleźć pasującą transkrypcję w `Notatki/Transkrypcje/oczyszczone-archiwum/` po dacie.
+3.  **Transkrypcja**:
+    *   Znajdź pasującą transkrypcję w `Notatki/Transkrypcje/oczyszczone-archiwum/` po dacie.
     *   Jeśli jest dostępna → użyj do weryfikacji faktów.
 
 **Wykonaj audyt:**
-1.  **Weryfikacja faktów (jeśli jest transkrypcja):** Czy notatka nie zawiera halucynacji lub nadinterpretacji?
+1.  **Weryfikacja faktów (jeśli jest transkrypcja):** 
+    * Czy notatka nie zawiera halucynacji lub nadinterpretacji?
+    * Czy notatka zawiera wszystkie istotne informacje dotyczace omawianych w transkrypcji tematów?
 2.  **Identyfikacja projektów:**
     *   Ignoruj sekcję "Powiązane projekty" w samej notatce (często jest błędna).
-    *   Przeanalizuj treść i dopasuj projekty **WYŁĄCZNIE** na podstawie `_SLOWNIK_PROJEKTOW.md`.
+    *   Przeanalizuj treść, analizuj niuanse z transkrypcji i dopasuj projekty **WYŁĄCZNIE** na podstawie `_SLOWNIK_PROJEKTOW.md`.
     *   Jeśli temat nie pasuje do żadnego → oznacz jako do wyjaśnienia.
 3.  **Formatowanie:** Czy nagłówki i struktura są poprawne?
 
@@ -65,7 +67,7 @@ Wczytaj niezbędne konteksty:
 
 ### KROK 3: Interakcja z Użytkownikiem (Pętla zmian) 🗣️
 
-Przedstaw raport w ustrukturyzowanej formie. **Musisz** uzyskać zatwierdzenie zmian. Przedstawiaj pełen raport, nawet gdy wg ciebie wszystko zgadza, bo jednak uzytkownik moze miec inne zdanie. W raporcie podaj kazdą kwestię.
+Przedstaw raport w ustrukturyzowanej formie. **Musisz** uzyskać zatwierdzenie zmian. Przedstawiaj pełen raport, nawet gdy wg ciebie wszystko się zgadza, bo jednak uzytkownik moze miec inne zdanie. W raporcie podaj kazdą kwestię.
 
 **Format Raportu:**
 
@@ -76,17 +78,15 @@ Przeanalizowałem notatkę i znalazłem [X] kwestii do weryfikacji:
 
 ---
 ### 1. [Tytuł kwestii - np. Zmiana projektu, Korekta statusu]
+**KONTEKST:** [Podawaj wyłącznie cytaty, fragmenty z transkrypcji lub notatki, pozwalające uzytkownikowi podjac decyzje do którego projektu ten temat nalezy. Tu nie podajesz "swoich" interpretacji, tu podajesz tylko cytaty pwskazujace na taka a ni inna interpretacje tematu]
+**UZASADNIENIE:** [Tu podaj twoje uzasadnienie, dlaczego Ty przedstawiasz taką a nie inną propozycję np. "W słowniku ten moduł to X", "W transkrypcji powiedziano Y"] 
 **JEST:** [Cytat z obecnej treści notatki lub "Projekt: Stara Nazwa"]
 **PROPOZYCJA:** [Twoja sugerowana zmiana]
-**KONTEKST:** [Uzasadnienie, np. "W słowniku ten moduł to X", "W transkrypcji powiedziano Y"] Kontekst jest wazny aby uzytkownik rozumial go i wiedzial o co chodzi. Czasami musisz przedstawic wiecej informacji aby to bylo zrozumiale np 1 do 3 zdan
+
 ---
 ### 2. [Kolejna kwestia]
 ...
 ---
-
-**Projekty wykryte wg Słownika:**
-- [Ścieżka/Projekt1]
-- [Ścieżka/Projekt2]
 
 **Jak odpowiedzieć?**
 - "Wszystkie tak"

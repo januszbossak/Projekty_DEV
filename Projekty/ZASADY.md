@@ -1,6 +1,6 @@
 # ZASADY: Struktura dokumentacji projektów
 
-Ten dokument definiuje **strukturę dokumentacji projektów** w repozytorium (format **Project Canvas**).
+Ten dokument definiuje **strukturę dokumentacji projektów** w repozytorium (format **3 pliki dokumentacji**).
 
 **Zasady stylu pisania:** Zobacz `STYL.md`
 
@@ -8,18 +8,174 @@ Ten dokument definiuje **strukturę dokumentacji projektów** w repozytorium (fo
 
 ## Struktura plików projektu
 
-Każdy projekt zawiera jeden plik:
+Każdy projekt zawiera **4 główne pliki**:
 
-### `Nazwa-projektu.md` - Project Canvas (pełna dokumentacja)
+### 1. `PROJEKT.md` - Przegląd biznesowy
 
-**Cel:** Szczegółowa, kompleksowa dokumentacja projektu w formacie **Project Canvas**.
+**Cel:** Odpowiedź na pytanie "Po co to robimy?" - cele biznesowe, metryki, zespół, budżet.
 
-**Format nazwy pliku:** Zgodny z nazwą katalogu projektu
-- Przykład: `projekty/klienci/WIM/Podpis-kwalifikowany-macOS/Podpis-kwalifikowany-macOS.md`
+**Częstotliwość aktualizacji:** Rzadko (raz na kwartał lub przy dużych zmianach w projekcie)
+
+**Odbiorcy:** PDM, PM, interesariusze, management
+
+**Zawartość:**
+- Problem biznesowy
+- Cele biznesowe
+- Metryki sukcesu
+- Budżet i timeline
+- Zespół
+
+**Automatyczna synchronizacja:** Agent `overview-sync` aktualizuje ten plik na podstawie CHANGELOG.md
 
 ---
 
-## Format: Project Canvas
+### 2. `ARCHITEKTURA.md` - Decyzje techniczne
+
+**Cel:** Odpowiedź na pytanie "Jak to działa?" - stack techniczny, decyzje architektoniczne, integracje.
+
+**Częstotliwość aktualizacji:** Czasami (gdy zmieniamy koncepcję, technologię lub podejmujemy kluczowe decyzje)
+
+**Odbiorcy:** Tech Lead, deweloperzy, testerzy
+
+**Zawartość:**
+- Stack techniczny (React, .NET, MSSQL, etc.)
+- Integracja z AMODIT (endpointy, tokeny, tabele)
+- Tabela kluczowych decyzji architektonicznych (ADR)
+- Historia odrzuconych koncepcji technicznych
+- Instrukcje dla developera (lokalne uruchomienie, linki do repo)
+
+**Automatyczna synchronizacja:** Agent `overview-sync` aktualizuje ten plik na podstawie CHANGELOG.md
+
+---
+
+### 3. `ROADMAPA.md` - Plan wydań
+
+**Cel:** Odpowiedź na pytanie "Co robimy i kiedy?" - funkcjonalności, MVP, status, terminy.
+
+**Częstotliwość aktualizacji:** Często (co sprint, po każdym sprint review)
+
+**Odbiorcy:** Cały zespół, PDM, PM, deweloperzy, testerzy
+
+**Zawartość:**
+- ✅ Produkcja - co jest już wydane
+- 🛠️ W trakcie - aktualny MVP w realizacji
+- 📋 Planowane - kolejne MVP
+- 🗄️ Backlog - funkcjonalności odroczone
+- Historia wydań
+
+**Dla projektów zbiorczych:** Dodatkowo sekcja "📦 Podprojekty" z tabelą podprojektów.
+
+**Automatyczna synchronizacja:** Agent `overview-sync` aktualizuje ten plik na podstawie CHANGELOG.md
+
+---
+
+### 4. `CHANGELOG.md` - Surowa historia ustaleń
+
+**Cel:** Chronologiczna lista WSZYSTKICH ustaleń z różnych spotkań (źródło prawdy).
+
+**Częstotliwość aktualizacji:** Po każdym spotkaniu (przez agenta `project-mapper`)
+
+**Format wpisu:**
+```markdown
+## YYYY-MM-DD | Typ spotkania
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/nazwa-notatki.md]
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- Ustalenie 1
+- Ustalenie 2
+
+---
+```
+
+**CHANGELOG to źródło prawdy** - pozostałe 3 pliki to jego synteza "dla człowieka".
+
+---
+
+## Workflow: CHANGELOG → 3 pliki dokumentacji
+
+```
+Spotkanie → Notatka → CHANGELOG.md (surowa historia)
+                           ↓
+                 Agent overview-sync
+                           ↓
+         PROJEKT.md + ARCHITEKTURA.md + ROADMAPA.md
+              (synteza dla człowieka)
+```
+
+**Kluczowa zasada:** Agent `overview-sync` **analizuje kontekst treści** wpisów z CHANGELOG, nie tylko tagi!
+
+**Przykłady inteligentnej kategoryzacji:**
+- `#Decyzja` + "Używamy OAuth2" → **ARCHITEKTURA.md** (decyzja techniczna)
+- `#Decyzja` + "MVP2 przesunięty na grudzień" → **ROADMAPA.md** (decyzja o planie)
+- `#Decyzja` + "Zwiększamy budżet o 10 MD" → **PROJEKT.md** (decyzja biznesowa)
+
+---
+
+## Poziomy dokumentacji
+
+### Poziom 1: Klient zbiorczy (np. Klienci/WIM/)
+
+**Struktura:**
+```
+Klienci/WIM/
+├── WIM.md                          ← krótki dashboard (tylko tabela projektów)
+├── Projekt-1/
+│   ├── PROJEKT.md                  ← pełne 3 pliki
+│   ├── ARCHITEKTURA.md
+│   ├── ROADMAPA.md
+│   └── CHANGELOG.md
+└── Projekt-2/
+    ├── PROJEKT.md
+    ├── ARCHITEKTURA.md
+    ├── ROADMAPA.md
+    └── CHANGELOG.md
+```
+
+**Na poziomie klienta:** Tylko `[Nazwa-Klienta].md` z tabelą projektów (bez pełnych 3 plików).
+
+---
+
+### Poziom 2: Projekt zbiorczy (np. Edytor-procesow/)
+
+**Struktura:**
+```
+Moduly/Edytor-procesow/
+├── PROJEKT.md                      ← pełne 3 pliki dla całego projektu
+├── ARCHITEKTURA.md
+├── ROADMAPA.md                     ← + sekcja "📦 Podprojekty" na końcu
+├── CHANGELOG.md
+├── Podprojekt-1/
+│   ├── PROJEKT.md
+│   ├── ARCHITEKTURA.md
+│   ├── ROADMAPA.md
+│   └── CHANGELOG.md
+└── Podprojekt-2/
+    ├── PROJEKT.md
+    ├── ARCHITEKTURA.md
+    ├── ROADMAPA.md
+    └── CHANGELOG.md
+```
+
+**Projekt zbiorczy:** Pełne 3 pliki + w `ROADMAPA.md` dodatkowa sekcja z tabelą podprojektów.
+
+---
+
+### Poziom 3: Podprojekt / Prosty projekt
+
+**Struktura:**
+```
+Moduly/Trust-Center/
+├── PROJEKT.md
+├── ARCHITEKTURA.md
+├── ROADMAPA.md
+└── CHANGELOG.md
+```
+
+**Standardowy projekt:** Pełne 3 pliki + CHANGELOG.
+
+---
+
+## Format: 3 pliki dokumentacji
 
 ### Nagłówek
 

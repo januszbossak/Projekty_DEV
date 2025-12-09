@@ -221,3 +221,122 @@ Przed zaktualizowaniem Project Canvas, sprawdź:
 
 ❌ **Źle:**
 > "Dodano automatyczne wykrywanie certyfikatów."
+
+---
+
+## Pisanie dla 3 plików dokumentacji
+
+Od 2025-12 projekty używają **3 oddzielnych plików** zamiast jednego Project Canvas:
+- **PROJEKT.md** - biznes (po co, cele, metryki)
+- **ARCHITEKTURA.md** - technologia (jak działa, decyzje tech)
+- **ROADMAPA.md** - plan (co robimy, MVP, terminy)
+
+Każdy plik ma **inny ton i odbiorców**.
+
+---
+
+### PROJEKT.md - Ton biznesowy
+
+**Odbiorcy:** PDM, PM, interesariusze, management
+
+**Jak pisać:**
+- Skierowany do osób biznesowych (nie tech)
+- Konkretne cele i metryki (NIE "poprawa", "optymalizacja")
+- Liczby, %, KPI - zawsze konkretnie
+- Używaj `[DO UZUPEŁNIENIA]` gdy brak danych (NIE ZMYŚLAJ!)
+
+**Przykłady:**
+
+✅ **Dobrze:**
+> **Cel biznesowy:** Obniżenie kosztów wdrożeń - konsultanci tworzą formularze 40% szybciej, co przekłada się na oszczędność 15 MD rocznie.
+
+❌ **Źle:**
+> **Cel biznesowy:** Poprawa efektywności pracy konsultantów.
+
+✅ **Dobrze:**
+> **Metryka sukcesu:** Formularz 15 pól + 2 tabelki: 15 min (było: 25 min)
+
+❌ **Źle:**
+> **Metryka sukcesu:** Szybsze tworzenie formularzy
+
+---
+
+### ARCHITEKTURA.md - Ton techniczny
+
+**Odbiorcy:** Tech Lead, deweloperzy, testerzy
+
+**Jak pisać:**
+- Skierowany do osób technicznych
+- Konkretne technologie (React, .NET 8, MSSQL, OAuth2)
+- Jasne uzasadnienia decyzji (dlaczego wybraliśmy X zamiast Y)
+- Historia odrzuconych koncepcji (czego unikamy i dlaczego)
+- Używaj `[DO UZUPEŁNIENIA]` gdy brak danych
+
+**Przykłady:**
+
+✅ **Dobrze (tabela decyzji):**
+| [[2025-10-16]] | Wydzielenie blockchain do microservice Docker (Azure Container Instances) | Rozwiązanie problemu wiszących dokumentów poprzez sekwencyjne przetwarzanie przez worker | ✅ Wdrożone | [[2025-10-16 Rada]] |
+
+❌ **Źle:**
+| 2025-10-16 | Blockchain w Dockerze | Lepsze | Wdrożone | Rada |
+
+✅ **Dobrze (odrzucona koncepcja):**
+| [[2025-09-16]] | Puste pola - nowa logika backendu | Zbyt ryzykowne dla setek istniejących wdrożeń, wymagałoby migracji wszystkich formularzy | [[2025-09-16 Rada]] |
+
+---
+
+### ROADMAPA.md - Ton operacyjny
+
+**Odbiorcy:** Cały zespół (PDM, PM, deweloperzy, testerzy)
+
+**Jak pisać:**
+- Praktyczny, konkretny
+- Status funkcjonalności: ✅ (ukończone), 🔄 (w trakcie), ⏳ (zaplanowane)
+- Konkretne daty, nazwiska, numery sprintów
+- **Agreguj** drobne funkcjonalności (nie lista 50 bulletów)
+- Używaj `[DO UZUPEŁNIENIA]` gdy brak danych
+
+**Przykłady:**
+
+✅ **Dobrze (agregacja):**
+> - ✅ Dodano funkcje UX edytora (wyszukiwanie po nazwie, drag & drop sekcji, przyciski Zwiń/Rozwiń, panel ustawień kolumn) - [[2025-11-13 Notatka]]
+
+❌ **Źle (ściana bulletów):**
+> - ✅ Dodano wyszukiwanie - [[2025-11-13]]
+> - ✅ Dodano drag & drop - [[2025-11-13]]
+> - ✅ Dodano przycisk Zwiń - [[2025-11-13]]
+> - ✅ Dodano przycisk Rozwiń - [[2025-11-13]]
+> - ✅ Dodano panel ustawień - [[2025-11-13]]
+
+✅ **Dobrze (status w trakcie):**
+> - 🔄 Intuicyjne dodawanie nowych sekcji - w trakcie (dev: Przemysław, sprint 24)
+
+✅ **Dobrze (Out of Scope):**
+> **Out of Scope (NIE robimy w tym MVP):**
+> - Edycja formularza w trybie tekstowym (JSON) - odroczone do przyszłych wersji
+> - Integracja z AMODIT Copilot - priorytet niski
+> - Full screen edytora - do rozważenia po zebraniu feedbacku
+
+---
+
+## Zasada ZERO HALUCYNACJI (dla wszystkich 3 plików)
+
+**NIGDY nie zmyślaj informacji!**
+
+Jeśli w CHANGELOG brak:
+- Celów biznesowych → `[DO UZUPEŁNIENIA]`
+- Metryk → `[DO UZUPEŁNIENIA]`
+- Dat → `[DO UZUPEŁNIENIA]`
+- Decyzji technicznych → `[DO UZUPEŁNIENIA]`
+- Funkcjonalności → `[DO UZUPEŁNIENIA]`
+
+**Wypełniaj TYLKO na podstawie konkretnych informacji z CHANGELOG.**
+
+✅ **Dobrze:**
+> **Metryki sukcesu:**
+> - [DO UZUPEŁNIENIA]
+
+❌ **Źle (zmyślone):**
+> **Metryki sukcesu:**
+> - Zwiększenie produktywności o 50%
+> - Redukcja błędów o 80%

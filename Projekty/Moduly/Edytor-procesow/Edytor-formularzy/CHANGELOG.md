@@ -1,5 +1,127 @@
 # CHANGELOG - Edytor formularzy
 
+## 2025-11-27 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
+**Kategoria:** #Rozwój #Funkcjonalność #Ukończenie
+
+- Cel: Dokończenie prac nad graficznym edytorem formularza oraz kontynuacja rozwoju listy pól.
+- Status: Zaawansowanie prac w edytorze i liście pól.
+- Zakres prac: Finalizacja edytora graficznego formularza, planowane zamknięcie tematu w bieżącym sprincie.
+- Decyzje: Cel - osiągnięcie stanu funkcjonalnego, nie wymagającego dalszego rozwoju, tylko ewentualnych usprawnień.
+
+## 2025-11-27 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-27%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Funkcjonalność #Design #UI/UX
+
+- **Edytor Graficzny:** Dodawanie sekcji "pomiędzy" istniejącymi sekcjami (przycisk na hover).
+- **Design:** Ujednolicenie zaokrągleń rogów sekcji (5px) i układu prawego panelu.
+- **UI:** Przycisk powiększ/zmniejsz nie zmienia pozycji przy otwarciu prawego panelu.
+- **Search:** Wyszukiwanie pól po atrybutach technicznych (ID, nazwa kolumny, GUID).
+- **Lista Pól:** Zmiana sposobu wyboru liczby kolumn (spójność z graficznym).
+- **Lista Pól:** Powrót do nawigacji "w głąb" tabeli (strzałka) zamiast zagnieżdżania.
+- **Lista Pól:** Ramka na hover dla pól klikalnych.
+- **Nawigacja:** Zmiana lewego panelu na strukturę drzewa (TreeSelect).
+- **Dyskusja:** Problem rozgraniczenia prezentacji i nawigacji w środkowym panelu.
+
+## 2025-11-27 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Notatka projektowa - Edytor procesow.md]
+**Kategoria:** #Funkcjonalność #Design #Decyzja
+
+- Poprawa użyteczności i czytelności panelu ustawień pól w Edytorze Formularza.
+- Planowane spisywanie zmian w prawym panelu ustawień pola (układ, kolejność).
+- Poprawa wizualizacji "Dodaj sekcję" / "Dodaj wiersz" (kolorystyka).
+- Ujednolicenie zaokrągleń rogów (`ósemki` na `piątki`).
+- Wyszukiwanie pól po GUID, ID, nazwie kolumny w bazie danych.
+- Zmiana nawigacji dla tabel w Edytorze Formularza (tabela jako pole, strzałka w prawo).
+- Uproszczenie i ujednolicenie nawigacji w kontekście zagnieżdżonych tabel i podformularzy.
+- Zamykanie prawego panelu po zmianie kontekstu (np. wejściu do tabeli).
+- Zmieniono nawigację lewego panelu (struktura drzewa dla relacji rodzic-dziecko).
+- Koncepcja "wizualizacja kontra nawigacja" jako podstawa projektowania interfejsu edytora.
+
+---
+
+## 2025-11-25 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-25 Notatka projektowa - Projekt listy pól.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-25%20Notatka%20projektowa%20-%20Projekt%20listy%20pól.md)
+**Kategoria:** #Design #Funkcjonalność
+
+- **Lista Pól:** Nowa ikona "Plus" (+) zawsze dodaje element kontekstowo (pod tabelą przy zwiniętej).
+- **Tabele:** Ikona rozwijania (szewron) przeniesiona na prawą stronę nazwy pola, by odróżnić od ikony typu pola.
+- **Akcje:** Ograniczenie ikon przy polu do dwóch: "Zębatka" (Prawy Panel) i "Menu" (Trzy kropki).
+- **Menu pola:** Zawiera rzadsze akcje: Widoczność/Uprawnienia, Historię pola, Reguły.
+- **Prawy Panel:** Nowy nagłówek z nazwą pola, usunięcie sekcji "Zarządzaj polem", przeniesienie kluczowych akcji do paska narzędzi.
+- **Pole Systemowe:** Wymaga wyjaśnienia działania (tooltip) i ewentualnej zmiany nazwy (niejasne działanie).
+
+---
+
+## 2025-11-21 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
+**Kategoria:** #Design #Bug #Funkcjonalność #Zadanie #Problem #Architektura
+
+- Porządkowanie błędów wizualnych i funkcjonalnych w edytorze formularzy i listy pól.
+- Mariusz będzie pracował nad uporządkowaniem pola typu Tabela.
+- Potrzeba widoku "Gdzie to pole jest używane?" (lista reguł) w prawym panelu dla edytora pól.
+- Naprawa niedostępnych reguł tabeli z nowej listy pól.
+- Problem z dodawaniem nowej sekcji z poziomu listy pól (ograniczenia tabeli Ant Design).
+- Postulat zmiany backendu: sekcje powinny mieć swoją reprezentację w bazie danych (do analizy).
+
+---
+
+## 2025-11-20 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-20 Spotkanie projektowe - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-20%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)
+**Kategoria:** #UI/UX #Design #Decyzja
+
+- **Prawy panel ustawień:** Decyzja o przeniesieniu jako osobny boks poniżej górnej belki (aby belka była statyczna i nie przesuwała się).
+- **Toolbox:** Propozycja wizualnego wydzielenia lewego toolboxa i prawego panelu jako osobne kontenery z ramką, zaokrągleniami (5px) i ewentualnym tłem, aby odróżnić je od białego formularza.
+- **MVP:** Edytor formularza bliski ukończenia (MVP), planowane zamknięcie prac w ciągu 1-2 sprintów.
+
+---
+
+## 2025-11-13 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #Funkcjonalność #Problem
+
+- Przywrócenie parzystości funkcjonalnej ze starym widokiem listy pól (np. ustawienia kolumn w sekcji).
+- Ustawienia pól (typ, wartości) dostępne w prawym panelu otwieranym kołem zębatym.
+- Dodano przyciski "Zwiń/Rozwiń wszystko" oraz ustawienia ilości kolumn przy nagłówkach sekcji.
+- Problem UX: Dodawanie nowej sekcji jest nieintuicyjne (wymaga zjechania na dół formularza).
+- Dedykowane ustawienia typów pól przeniesione do prawego panelu.
+
+---
+
+## 2025-11-06 | Notatka projektowa
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-06 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-06%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
+**Kategoria:** #UX/UI
+
+- Prace nad wizualną organizacją lewego panelu narzędzi (Toolbox): rozważane kolorowe ikony typów pól, zmiana tła panelu lub oddzielenie go ramką.
+- Zaimplementowano dodawanie nowych pól do konkretnych sekcji (przycisk "Dodaj pole" przy sekcji).
+- Zaplanowano dodanie opcji tworzenia nowych sekcji w bieżącym sprincie.
+- Wdrażanie opcji dostępnych na hover na liście pól: otwieranie prawego panelu, usuwanie, edycja, historia zmian.
+- Zidentyfikowano brak opcji "Zwiń/Rozwiń wszystko" dla sekcji (do dodania).
+- Dodano sekcję "Informacje techniczne" w prawym panelu pola (Nazwa kolumny DB, ID, edytowalny GUID) na potrzeby serwisu.
+- Zgłoszono błędy: nadmiarowy scroll w liście pól, brakujące ustawienia specyficzne dla typów pól (np. miejsca po przecinku), niejasne wyświetlanie nazwy typu pola w prawym panelu.
+- Rozważana koncepcja edycji formularza w trybie tekstowym lub integracji z Copilotem AI dla przyspieszenia pracy.
+
+---
+
+## 2025-10-31 | Planowanie Sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-31 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Design #Zadanie #UX
+
+- Główny cel sprintu to poprawa UX edytora formularza, aby konsultanci z niego korzystali.
+- Wśród usprawnień UX: szukanie po typie, zapamiętywanie ostatniej zakładki, zmiana ścieżki dodawania nowego pola.
+- Obsługa błędów przy edycji pól (np. zdublowanie nazwy) przeniesiona do wersji czerwcowej.
+- Rozważane akcje masowe (usuwanie, przenoszenie) i uwagi do drag and drop.
+- Uzupełnienie braków w liście pól (szybki odnośnik do słownika, ustawienia pola).
+
+---
+
+## 2025-11-03 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-03 Sprint review-codex.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-03%20Sprint%20review-codex.md)
+**Kategoria:** #Funkcjonalność #UI
+
+- Drag & drop sekcji w edytorze graficznym (zwijanie sekcji na czas przenoszenia, rozwijanie po upuszczeniu).
+- Kontynuacja wyrównywania funkcji vs stary edytor: przenoszenie pól między sekcjami i szybki odnośnik do słownika zaplanowane; wyszukiwanie po typie do zrobienia.
+
 ## 2025-10-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-27 Spotkanie projektowe - Przegląd projektów.md]
 **Kategoria:** #Bug #Funkcjonalność
