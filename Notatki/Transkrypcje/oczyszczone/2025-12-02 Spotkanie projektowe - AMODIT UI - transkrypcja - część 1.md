@@ -145,3 +145,4 @@ Tak to wygląda w praktyce – wszystkie akcje dodatkowe przenosimy do górnej b
 **Przemysław Sołdacki:** Tak, no to OK. No to wiemy dlaczego to robimy i musimy zrobić, żebyśmy zrobili – znaczy koszty, żeby były niższe niż 18000. No dobra, słuchajcie, ale żeby tak powiem patrząc ogólnie, czyli rozumiem te dwie rzeczy najbardziej robimy i one staną zrobione w tym roku? Ten eksport do archiwów państwowych, takie generowanie paczek, ale bez integracji to też jest w sumie dla LOTu?
 
 **Janusz Bossak:** To jest dla LOTu i to mogłoby być celem następnego sprintu – pod warunkiem, że zrobimy JRWA w pierwsze, bo to trochę dużo.
+

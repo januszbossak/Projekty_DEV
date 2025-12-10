@@ -22,6 +22,17 @@
 
 ---
 
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Design #Decyzja
+
+- Kolorystyka w menu głównym: ikony systemowe pozostają szare.
+- Koncepcja: elementy nawigacyjne szare, zawartość (pliki, foldery) może być kolorowa.
+- Zaznaczenie elementów: na całą szerokość, kwadratowe rogi (ze względu na scroll i drag-and-drop).
+- Decyzja o spójności wizualnej między różnymi częściami interfejsu.
+
+---
+
 ## 2025-11-27 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
 **Kategoria:** #Architektura #Design #Standardy #UX

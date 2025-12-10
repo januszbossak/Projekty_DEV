@@ -4,6 +4,18 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #Zadanie #Wdrożenie
+
+- Dostarczenie funkcjonalności repozytorium plików do klienta do końca sprintu (kluczowy projekt).
+- Frontend: wdrożenie endpointów, poprawki wizualne (tabelki, kafelki) - Filip Liwiński.
+- Backend: historia zmian (audyt trail) - Adrian Kotowski.
+- Celujemy w wdrożenie grudniowej wersji funkcjonalności repozytorium.
+- Skupiamy się na minimalnym MVP, aby dowieźć do klienta.
+
+---
+
 ## 2025-12-01 | Planowanie sprintu (Szczegóły)
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
 **Kategoria:** #Architektura #Funkcjonalność #Decyzja
@@ -25,6 +37,17 @@ Historia ustaleń i zmian dla projektu.
 - Obsługa wgrywania, pobierania, podglądu plików.
 - Zarządzanie uprawnieniami.
 - Historia zdarzeń jako opcja (przesunięta na kolejny sprint jeśli brak czasu).
+
+---
+
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Funkcjonalność #Feedback
+
+- Zaimplementowano: tworzenie przestrzeni, renaming/usuwanie folderów, wgrywanie plików.
+- Podgląd plików i podstawowe wyszukiwanie działają.
+- Feedback: pozytywny (WIM), MVP jest OK, przyszła potrzeba granularnych uprawnień.
+- Known issues: pliki wyświetlają się wielokrotnie, wyszukiwanie tylko po widocznych.
 
 ---
 

@@ -2,6 +2,21 @@
 
 ---
 
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #Architektura #Decyzja
+
+**Rozszerzenie okna dialogowego dla akcji masowych:**
+- Umożliwienie interaktywnego zbierania danych od użytkownika podczas masowego uruchamiania reguł z poziomu raportu.
+- Kluczowe dla funkcjonalności: masowe przesunięcie terminu o N dni, masowe podpisywanie.
+- **MVP 0:** Umożliwienie działania funkcji "Wykonaj przed wykonaniem reguły" w akcjach masowych z raportu (obsługa istniejących typów: Użytkownik, Komentarz) - Kamil Dubaniowski.
+- **MVP 1:** Rozszerzenie o nowe typy pól (liczbowe, data, lista wyboru) - do wyceny.
+- Pierwsze okno dialogowe z danymi z pierwszej sprawy będzie wyświetlane i jego wartości będą używane dla wszystkich kolejnych spraw.
+- Błędy wykonania reguły muszą być obsługiwane i wyświetlane (np. czerwony wiersz).
+- Reguły z warunkiem "Wykonaj przed wykonaniem reguły" powinny być domyślnie ukryte w opcjach akcji masowych.
+
+---
+
 ## 2025-12-01 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
 **Kategoria:** #Bug
@@ -63,8 +78,9 @@
 
 ---
 
-## 2025-12-02 | ⚠️ Problem | Spotkanie projektowe - Design
-**Źródło:** [Notatki/Spotkania projektowe/2025-12-02 Spotkanie projektowe - Design.md]
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - Design.md]
+**Kategoria:** #Problem #Architektura
 
 **Edge case: edycja wierszy tabel w raportach (zgłoszenie PKF)**
 

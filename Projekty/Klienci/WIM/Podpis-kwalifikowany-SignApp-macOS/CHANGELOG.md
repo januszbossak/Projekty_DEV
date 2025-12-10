@@ -24,6 +24,18 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Funkcjonalność #Wydanie
+
+- Wdrożono masowe podpisywanie z poziomu raportu.
+- Usprawniono UX: podpisywanie jednorazowym kodem (zamiast dwa razy).
+- Wizualne informacje zwrotne (SignalR) i zerowanie certyfikatów.
+- Feedback: sugestia zmiany nazwy przycisku "Podpisz SignApp" na bardziej opisowy.
+- Status: Temat MVP1 zamknięty, oczekiwanie na Apple Developer ID.
+
+---
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Problem #Ryzyko #Decyzja

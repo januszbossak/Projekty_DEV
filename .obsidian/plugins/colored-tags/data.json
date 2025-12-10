@@ -87,7 +87,9 @@
     "Kompatybilność": 73,
     "PoprawaBłędów": 74,
     "Wydajnosc": 75,
-    "DevOps": 76
+    "DevOps": 76,
+    "Prototyp": 77,
+    "Automatyzacja": 78
   },
   "_version": 3
 }

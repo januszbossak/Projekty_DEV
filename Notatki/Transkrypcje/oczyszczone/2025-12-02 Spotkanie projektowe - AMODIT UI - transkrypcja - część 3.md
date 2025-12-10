@@ -129,3 +129,4 @@
 **Przemysław Sołdacki:** Ale to rozumiem, Janusz – to jakby jest uzasadnienie, chcemy utrzymać tego klienta. Jesteśmy w stanie przeliczyć to na złotówki. Jesteśmy w stanie, bo mamy jakiś przychód roczny od tego klienta – kilkadziesiąt 1000 rocznie. Chcemy, żeby klient pozostał, jeszcze nawet chętnie, żeby więcej płacił. Więc no tak, trzeba – zrobimy i zróbmy. Jeśli musi być na Google'u, to niech będzie na Google'u. Google się cieszy, może jeszcze coś tam mieli z Google'em. No a zawsze będziemy też się chwalić. Współpracujemy z różnymi modelami, łącznie z Google'owymi, OpenAI.
 
 **Janusz Bossak:** Nie. Dokładnie, że to akurat uważam za dobry kierunek, żebyśmy poszli w tego Google'a i bardziej, że ten model Gemini jest naprawdę fajny i czemu nie. Tak, no skoro.
+

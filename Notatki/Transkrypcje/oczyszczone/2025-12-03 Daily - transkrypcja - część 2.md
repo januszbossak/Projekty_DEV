@@ -202,3 +202,4 @@
 
 **Łukasz Bott:** Nie, ale jest przypisana specyfikację, tak, no.
 
+

@@ -14,6 +14,15 @@
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Wydanie #DevOps
+
+- Joby przetestowane i gotowe do wdrożenia na produkcję.
+- Wdrożenie na środowisko deweloperskie ("domówka") planowane "jutro".
+
+---
+
 ## 2025-11-28 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Notatka projektowa - Połączenie z Marek Dziakowski.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Notatka%20projektowa%20-%20Połączenie%20z%20Marek%20Dziakowski.md)
 **Kategoria:** #Funkcjonalność #Decyzja #Problem
@@ -31,6 +40,17 @@
 
 - Kontynuacja przenoszenia wywołań na poziom usługi.
 - Czasowe przejęcie wsparcia przez Mariusza (zastępstwo za Marka).
+
+---
+
+## 2025-11-06 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-06 Rada architektów.md]
+**Kategoria:** #Architektura #Decyzja
+
+- Brak ram czasowych dla dokumentów bez określonej daty podpisania (dokument wisi w nieskończoność)
+- Wymaga analizy danych: najdłuższe terminy, faktyczny czas zamknięcia procesu
+- Rozważana monetyzacja dłuższych terminów przechowywania (14 dni standard, 30/180 dni za dopłatą)
+- Zadanie dla Marka Dziakowskiego: zestawienie danych do następnej rady
 
 ---
 

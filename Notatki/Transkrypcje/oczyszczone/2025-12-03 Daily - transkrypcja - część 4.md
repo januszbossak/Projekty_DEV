@@ -202,3 +202,4 @@
 
 **Damian Kamiński:** P2 static i tutaj.
 
+

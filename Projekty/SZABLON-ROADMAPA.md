@@ -141,3 +141,4 @@ Zamiast listować wszystkie 50 wpisów, syntetyzuj:
 
 **NIE ZMYŚLAJ:** Jeśli w CHANGELOG brak informacji o MVP/funkcjach → zostaw `[DO UZUPEŁNIENIA]`
 
+

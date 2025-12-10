@@ -119,3 +119,4 @@ Agent MUSI analizować **treść wpisu** z CHANGELOG, nie tylko tag!
 
 **NIE ZMYŚLAJ:** Jeśli w CHANGELOG brak decyzji technicznych → zostaw tabele puste lub z `[DO UZUPEŁNIENIA]`
 
+

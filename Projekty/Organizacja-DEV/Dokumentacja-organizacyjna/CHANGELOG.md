@@ -11,6 +11,19 @@
 
 
 
+---
+
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Organizacja #Decyzja #Urlopy
+
+- Zmiana struktury Daily: skupienie na postępach w kluczowych projektach (np. Repozytorium, Moduł raportowy) zamiast indywidualnych zadań.
+- Urlopy: Piotr Buczkowski nieobecny przez następny tydzień.
+- Zakaz instalacji/aktualizacji: Przez tydzień brak instalacji AMODIT, aby uniknąć problemów bez monitoringu Piotra.
+- Zastępstwo w nagłych wypadkach: Adrian lub Mateusz.
+
+---
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Organizacja #Decyzja

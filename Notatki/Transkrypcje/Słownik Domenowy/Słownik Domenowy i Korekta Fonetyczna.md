@@ -25,6 +25,8 @@
 | **LPP**            | LP                                                 | Klient                              |
 | **DocuSign**       | DokSign                                            | Aplikacja do podpisywania z ktora AMODIT jest zintegrowany |
 | **EarlyStage**.    | elli stage                                         | klient                              |
+| **WinBiuro**       | win biuro, w in biuro, w im biuro                  | System wewnętrzny (Neuca)           |
+| **MSIT**           | m sit, mcit, emcitem           | Klient      (Ministerstwo Sportu i Turystyki)     |                    |
 
 #### 2. Technologie i Programowanie
 
@@ -46,11 +48,12 @@
 |**CaseID**|kasa i di, ikei said|ID sprawy|
 |**CallRest**|kolor jest, kolo rest|Funkcja integracji|
 |**Multipart**|multi form, multi part|Format przesyłania danych|
-|**Tooltip**|tulip, tul i po, pod clipem|Dymek z podpowiedzią|
+|**Tooltip**|tulip, tul i po, pod clipem, tu tif|Dymek z podpowiedzią|
 |**JSON**|i sonie, dżejson|Format danych|
 |**Connector**|f connector|Moduł łączący (np. KSeF Connector)|
 |**Header**|hdr, h 2, heather|Nagłówek HTTP|
 |**On-Premise**|on premise sowe|Model wdrożenia|
+|**AddEvent**|ad ivent, a event, a d event|Funkcja reguł (historia biznesowa)|
 
 #### 3. Akronimy i Żargon Biznesowy
 

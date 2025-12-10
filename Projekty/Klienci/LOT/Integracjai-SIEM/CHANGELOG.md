@@ -23,6 +23,15 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Planowanie #Integracja
+
+- Status: Wytyczne do opracowania.
+- Cel: Monitorowanie zdarzeń (np. nieudane logowania) dla LOT.
+
+---
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Architektura #Decyzja #Zadanie

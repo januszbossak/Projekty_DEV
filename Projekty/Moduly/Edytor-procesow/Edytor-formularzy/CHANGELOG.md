@@ -1,5 +1,20 @@
 # CHANGELOG - Edytor formularzy
 
+
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - Design.md]
+**Kategoria:** #Design
+
+- Reorganizacja prawego panelu - przeniesienie akcji (Historia, Reguły, Usuń) do górnej belki
+- Zmiana typu pola dostępna tylko z listy pół (zabezpieczenie przed destrukcyjną operacją)
+- Konsolidacja widoczności - opcje przeniesione do zakładki "Właściwości"
+- Zmiana nazwy zakładki z "Ustawienia" na "Właściwości pola"
+- Przycisk "Edytuj pola tabeli" przeniesiony ponad sekcje (pełny przycisk z tekstem)
+- Edycja GUID pola - ikona ołówka z oknem modalnym i ostrzeżeniem
+- Plan pracy Design - przegląd nazewnictwa, kolejności i tooltipów właściwości pól
+
+---
+
 ## 2025-12-01 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Design #Zadanie
@@ -108,6 +123,17 @@
 - Dodano przyciski "Zwiń/Rozwiń wszystko" oraz ustawienia ilości kolumn przy nagłówkach sekcji.
 - Problem UX: Dodawanie nowej sekcji jest nieintuicyjne (wymaga zjechania na dół formularza).
 - Dedykowane ustawienia typów pól przeniesione do prawego panelu.
+
+---
+
+## 2025-11-06 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-06 Rada architektów.md]
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- Rozszerzenie pola "Odnośnik do procesu" o obsługę pól słownikowych i listy wyboru
+- Odroczona obsługa pól numerycznych, dat i użytkownika (zbyt skomplikowane - wymagają zakresów)
+- Wymagana obsługa dwóch wariantów: z Lucene i bez Lucene dla słowników
+- Realizacja zatwierdzona, termin: po pierwszym kwartale 2026 roku
 
 ---
 

@@ -76,3 +76,4 @@ Natomiast SIEM to są takie systemy, które monitorują na bieżąco, co tam si�
 
 **Janusz Bossak:** Kamil.
 
+

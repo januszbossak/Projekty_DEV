@@ -1,13 +1,14 @@
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-10
+
 # Notatka projektowa – 2025-12-02 – Edytor formularzy (prawy panel)
 
-**Data:** 2025-12-02
-**Temat główny:** Edytor formularzy - reorganizacja prawego panelu edycji pola
+**Data:** 2025-12-02  
+**Temat główny:** Edytor formularzy - reorganizacja prawego panelu edycji pola  
 **Uczestnicy:** Janusz Bossak, Kamil Dubaniowski, Łukasz Bott
 
 **Powiązane projekty:**
 - `Moduly/Edytor-procesow/Edytor-formularzy`
-- `Klienci/PKF/Rejestracja-czasu-pracy` (edge case: edycja wierszy z raportów)
-- `Moduly/Modul-raportowy` (problem przekrojowy dotyczący edycji danych w raportach)
+- `Moduly/Modul-raportowy`
 
 ---
 

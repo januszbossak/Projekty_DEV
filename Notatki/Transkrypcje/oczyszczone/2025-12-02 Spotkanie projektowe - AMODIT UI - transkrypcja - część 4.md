@@ -205,3 +205,4 @@
 **Przemysław Sołdacki:** No to. A wiesz tam czasami jest podane na przykład, bo to jest też w tej strategii, że w takich takich przypadkach zapytaj zarząd. No to czasami będzie od nas pytanie, no i OK, ale nam podpowie – słuchaj, to jest podejrzane, ale zapytaj zarząd. I tam jest na przykład też promptu – zastanów się, czy to nie jest badanie konkurencji, czy to jest realne zapytanie. I LLM nawet w miarę sensownie to sugeruje, bo mówi: to jest firma i to może oni tylko się wypytują, a to jest – wiesz, ja wiem. To zwracać uwagę handlowcom, nie wiedzieć – beznami ętnie wysłał naszą ofertę. No po co? Więc to jest fajne takie standaryzacji. Dobra, przeciągnęliśmy. I tak, dobra dzięki, hej.
 
 **Przemysław Sołdacki zatrzymano transkrypcję**
+

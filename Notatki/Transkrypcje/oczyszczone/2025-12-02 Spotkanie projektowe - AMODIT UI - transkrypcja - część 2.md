@@ -149,3 +149,4 @@
 **Przemysław Sołdacki:** No to słuchajcie, to jest w kontekście tych zadań nawet, co tam Janusz menedżerskie. Tak, jeśli znaczy – generalnie cała roadmapa na ten rok, tak? Bo możemy sobie napisać – oszczędność nie wiem 50000 rocznie, 100000 rocznie. To jest spoko dla mnie, bo to zwiększanie rentowności. Jeśli dodatkowo dodajemy to i znajdziemy 10 klientów, którzy kupią licencję tam 4000 z hakiem miesięcznie, czyli 50000 rocznie, to mam pół miliona rocznie i to jakby ten sposób myślenia – powinniśmy każdą rzecz... MCP to nakłoni klienta, żeby kupił wersję advanced – 100000 rocznie u dużego klienta, mniejszego tam jest proporcjonalnie mniej, bo mamy kilka poziomów.
 
 **Janusz Bossak:** Czy w sumie – ja bym był naprawdę jeszcze bardzo, ale to bardzo ostrożny. Tak? Kwestia wydajności – znaczy pierwsza kwestia oczywiście security, druga kwestia wydajność, żebyśmy nie zabili AMODIT'a po prostu takimi rzeczami, bo AI będzie pytało się może nie optymalnie różne rzeczy.
+

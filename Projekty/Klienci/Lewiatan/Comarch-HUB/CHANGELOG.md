@@ -24,6 +24,24 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Wydanie #Integracja
+
+- Dokończono integrację (klient Lewiatan).
+- Testy prowadzone bezpośrednio u klienta (brak środowiska testowego).
+
+---
+
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Problem #Zadanie
+
+- Temat przeniesiony na kolejny sprint - Łukasz Brodzkiego dopiero dziś dostał odpowiedzi na pytania.
+- Problemy z podpisem w Orlenie: Piotr bada konflikt bibliotek GdPicture/ITX oraz proxy.
+
+---
+
 ## 2025-11-17 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
 **Kategoria:** #Zadanie #Priorytet

@@ -1,3 +1,5 @@
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-10
+
 # Sprint Review – 2025-12-01
 
 **Sprint:** (do ustalenia)
@@ -5,7 +7,7 @@
 
 ---
 
-## 1. Repozytorium plików
+## 1. Klienci/WIM/Repozytorium-plikow-DMS
 
 ### Cel biznesowy
 
@@ -39,7 +41,7 @@ Zapewnienie funkcjonalnego systemu do zarządzania plikami dla klienta WIM, z mo
 
 ---
 
-## 2. SignApp (dla macOS)
+## 2. Klienci/WIM/Podpis-kwalifikowany-SignApp-macOS
 
 ### Cel biznesowy
 
@@ -71,7 +73,7 @@ Dostarczenie aplikacji do podpisywania dokumentów na systemie macOS, rozszerzaj
 
 ---
 
-## 3. Edytor Procesów (Style i Design)
+## 3. Moduly/Edytor-procesow
 
 ### Cel biznesowy
 
@@ -119,7 +121,7 @@ Poprawa użyteczności i spójności wizualnej Edytora Procesów, w tym wyglądu
 
 ---
 
-## 4. AI/Copilot
+## 4. Moduly/AMODIT Copilot
 
 ### Cel biznesowy
 
@@ -166,7 +168,7 @@ Wykorzystanie AI do automatyzacji zadań, takich jak generowanie dokumentacji i 
 
 ---
 
-## 5. Trust Center
+## 5. Moduly/Trust-Center
 
 ### Cel biznesowy
 
@@ -183,7 +185,7 @@ Zapewnienie stabilnego działania usług Trust Center i szybkie reagowanie na ew
 
 ---
 
-## 6. Comarch Hub
+## 6. klienci/Lewiatan/Comarch-HUB
 
 ### Cel biznesowy
 
@@ -204,7 +206,7 @@ Dokończenie i uruchomienie integracji z Comarch Hub u klienta.
 
 ---
 
-## 7. Global Express
+## 7. Klienci/LOT/Integracja-Global-Express
 
 ### Cel biznesowy
 
@@ -228,23 +230,26 @@ Umożliwienie wysyłki przesyłek, śledzenia statusu i innych operacji kuriersk
 
 ---
 
-## 8. Azure Database Onboarding/Deactivation
+## 8. Organizacja-DEV/Automatyzacja-dokumentacji-AI
 
 ### Cel biznesowy
 
-Poprawa procesów zarządzania bazami danych na Azure.
+Automatyzacja tworzenia Changeloga i dokumentacji zmian na podstawie zgłoszeń w Azure DevOps.
 
 ### Co zaimplementowano
 
-- Rozwój i poprawki do Azure.
+- Automatyczne generowanie Changeloga na Wiki (wewnętrzne i zewnętrzne).
+- Mechanizm zbierania danych z Azure DevOps (Backlog) i przetwarzania przez LLM.
+- Generowanie dwóch typów artykułów: podsumowanie kluczowych zmian oraz pełna lista zmian.
+- Uwzględnienie sekcji bezpieczeństwa w generowanych raportach.
 
 ### Dalsze kroki
 
-- Planowanie i dalsze prace (zgłoszone przez Łukasza Poskrobko).
+- Dalsze usprawnienia w promptach (generowanie i weryfikacja).
 
 ---
 
-## 9. SIEM Integration
+## 9. Klienci/LOT/Integracjai-SIEM
 
 ### Cel biznesowy
 

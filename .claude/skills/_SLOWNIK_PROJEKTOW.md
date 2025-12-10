@@ -36,19 +36,16 @@ Dlatego wszystkie zadania typu „przetwarzanie dokumentów”, „parsowanie fa
 
 e-Doręczenia to projekt integracji AMODIT z systemem e-Doręczeń Poczty Polskiej, który umożliwia przedsiębiorcom i instytucjom publicznym spełnienie obowiązku prawnego obsługi elektronicznych doręczeń. Celem jest zapewnienie pełnej, stabilnej integracji działającej na wszystkich środowiskach (on-premise i chmura), która automatyzuje odbieranie i wysyłanie dokumentów urzędowych bez konieczności ręcznej interwencji. Projekt zakłada budowę niezawodnej integracji z API e-Doręczeń, odpornej na problemy konfiguracyjne i sieciowe.
 
-  
 
 ### `Moduly/e-Nadawca`
 
 e-Nadawca to projekt integracji AMODIT z systemem e-Nadawca Poczty Polskiej, który automatyzuje proces nadawania przesyłek pocztowych bezpośrednio z systemu workflow. Celem jest zapewnienie stabilnej integracji z API e-Nadawca, umożliwiającej automatyczne generowanie i rejestrację przesyłek bez konieczności ręcznego wprowadzania danych w systemie Poczty Polskiej.
 
-  
 
 ### `Moduly/Edytor-procesow`
 
 Zintegrowany edytor procesów biznesowych w systemie AMODIT. Definiowanie pelnej logiki procesów, na którą skladaja sie etapy (diagram), formularz, reguly, szablony i wiele innych.
 
-  
 
 #### `Moduly/Edytor-procesow/Edytor-diagramu`
 
@@ -69,15 +66,13 @@ Edytor reguł, lista reguł dla procesów.
 
 #### `Moduly/Edytor-procesow/Edytor-szablonow`
 
-Edytor szablonów dokumentów. Tworzenie i zarządzanie szablonami generowanych dokumentów.
-
+Edytor szablonów dokumentów. Tworzenie i zarządzanie szablonami generowanych dokumentów
   
 
 #### `Moduly/Edytor-procesow/Matryca-uprawnien`
 
 Zunifikowane narzędzie do zarządzania wszystkimi typami uprawnień w edytorze procesów. Dedykowany widok w React prezentujący interaktywną matrycę: (1) uprawnienia do pól formularza - pola vs etapy, kontrola widoczności i edytowalności; (2) uprawnienia do procesów - role, dostępy, macierz uprawnień dla całych procesów. Masowa edycja, filtry, widok wyjątków, dziedziczenie uprawnień.
 
-  
 
 ### `Moduly/Eksport-import-definicji-procesow`
 
@@ -99,61 +94,51 @@ Wszystkie kwestie dodtyczacace poparwy wydajnosci dzialania raportow takie jak i
 
 Filtry dostepne dla uzytkownikow raportu. Obejmuje tez konfigurowanie tych filtrow przez tworce raportu. Definiowanie i zarządzanie filtrami danych w raportach.
 
-  
 
 #### `Moduly/Modul-raportowy/Gantt`
 
 Moduł Gantt w raportach – daje widok wykresu Gantta do wizualizacji spraw/projektów na osi czasu i zarządzania zadaniami przez drag&drop. Można zobaczyć zależności między zadaniami i przesuwać je na timeline. Hierarchię spraw da się budować na dwa sposoby: klasycznie przez pole parent-child (odnośnik do sprawy nadrzędnej) albo pokazując wielopoziomowe zagłębienie na podstawie różnych pól ze sprawy, które się wybiera do hierarchii. Chodzi o elastyczne planowanie i przegląd relacji zadań/projektów w raporcie.
 
-  
 
 #### `Moduly/Modul-raportowy/Kanban`
 
 Rozbudowany Kanban, który może funkcjonować zarówno jako tradycyjny board (przepływ etapów), jak i dwuosiowa matryca. Pozwala wizualizować i zarządzać sprawami w układzie, gdzie obie osie (pionowa i pozioma) mogą być dowolnie konfigurowane – np. jeden wymiar to projekty, drugi to uczestnicy, typy spraw, priorytety lub inne wybrane kryteria. Umożliwia to planowanie, analizę przepływu pracy i zasobów, zmiany stanów oraz szybkie przesuwanie elementów pomiędzy grupami lub etapami.
 
-  
 
 #### `Moduly/Modul-raportowy/Pivot`
 
 Raport typu Pivot – elastyczna analiza i agregacja danych w formie tabeli przestawnej. Umożliwia różne formy prezentacji, w tym wizualizację jako mapa cieplna (heatmap), pozwalając zobaczyć natężenie wartości na przecięciu wymiarów raportu. Heatmapa jest jedną z opcji prezentacji w ramach raportu Pivot, a nie samodzielnym typem raportu.
 
   
-
 #### `Moduly/Modul-raportowy/Kolorowanie-raportow`
 
 Kolorowanie wierszy i komórek w raportach. Warunkowe formatowanie, reguły kolorowania.
 
-  
 
 #### `Moduly/Modul-raportowy/Masowe-podpisywanie`
 
 Masowe podpisywanie dokumentów z raportów. Operacje zbiorcze na dokumentach. Obecnie podpisywanie odbywa się przy użyciu podpisu kwalifikowanego, ale planowana jest rozbudowa o możliwość podpisywania „zwykłym" polem podpis, które jest dostępne na formularzu sprawy.
 
-  
 
 #### `Moduly/Modul-raportowy/Masowe-akcje`
 
 Możliwość wywoływania ręcznych reguł jednocześnie dla wielu wybranych spraw w raporcie. Użytkownik zaznacza sprawy i zbiorczo uruchamia na nich wybraną akcję – oszczędza to czas i upraszcza masowe operacje.
 
-  
 
 #### `Moduly/Modul-raportowy/Tlumaczenia-i-aliasy`
 
 Tłumaczenia i aliasy w raportach. Wielojęzyczność, nazewnictwo kolumn.
 
-  
 
 ### `Moduly/Modul-raportowy-stary`
 
 Stary moduł raportowy (legacy). Utrzymanie i migracja do nowego modułu.
 
-  
 
 ### `Moduly/Raporty-systemowe`
 
 Próba zapewnienia w AMODIT zestawu „standardowych" raportów opartych o dane systemowe, dostępnych dla wszystkich użytkowników bez konieczności własnego definiowania. Chodzi np. o raporty pokazujące liczbę otwartych spraw, liczbę spraw utworzonych w ostatnim tygodniu/miesiącu, średni czas przetwarzania sprawy i tym podobne podstawowe statystyki. Celem jest szybki dostęp do kluczowych wskaźników bez konieczności manualnej konfiguracji.
 
-  
 
 ### `Moduly/Silnik-regul`
 
@@ -265,7 +250,6 @@ Zbiór ostatecznych ustaleń dotyczących wyglądu i zachowania wszystkich eleme
 
 Nowy wygląd i funkcjonalności zakładki "Procesy" w menu głównym. Przepisanie na React, nowy format wyświetlania (ulubione, kafelki, lista kompaktowa), opisy procesów widoczne na liście. Modal pośredni przed uruchomieniem sprawy z opisem procesu (można wyłączyć dla znanych procesów). Usprawnienie nawigacji i odnajdywania procesów.
 
-### 
 
 ### `cross-cutting/Interfejs-sprawy`
 
@@ -282,7 +266,7 @@ Kompleksowy projekt obejmujący wszystkie aspekty formularza sprawy. Wygląd i e
 
 Widok historii zmian w prawym panelu sprawy. Wyświetla timeline wydarzeń, zmiany statusów, edycje pól formularza, przekazywania sprawy. Projekt obejmuje poprawę czytelności - wyświetlanie przyjaznych nazw pól (DisplayValue) zamiast nazw technicznych (FieldName), z nazwą techniczną dostępną w tooltipie. Historia zmian na sprawie, audyt wszystkich modyfikacji.
 
-  #### `cross-cutting/Interfejs-sprawy/Historia-biznesowa`
+#### `cross-cutting/Interfejs-sprawy/Historia-biznesowa`
 
 Widok historii biznesowej opartej o zdarzenia zapisywane z poziomu reguł.
 
@@ -414,11 +398,24 @@ Integracja systemu AMODIT z connectorem KSeF, który jest wytwarzany i utrzymymy
 
 ## Klienci (`Klienci/`)
 
+### `klienci/Neuca/`
+
+Pod ten projekt podpinamy drobne tematy, które nie mają osobnego projektu dla Neuca
+
 #### `klienci/Neuca/DocuSign`
-Rozszerzenie istniejącej integracjio z DocuSign. Glowanie o funkcjonalnosc 'envelope' ale jednoczesnie rozbudowa o mozliwosc wolania innych endpointow DocuSign. Tyle ze do tego mozna wykorzystac funcje CallRest rozbudowujac ja o odpowiedni mechanizmy logowania ktore ma DocuSign
+Rozszerzenie istniejącej integracji z DocuSign. Glowanie o funkcjonalnosc 'envelope' ale jednoczesnie rozbudowa o mozliwosc wolania innych endpointow DocuSign. Tyle ze do tego mozna wykorzystac funcje CallRest rozbudowujac ja o odpowiedni mechanizmy logowania ktore ma DocuSign
+
+#### `klienci/Neuca/Zmiany-UI-UX`
+Projekt obejmuje szereg zmian wizualnych w AMODIT, np na zakladce Procesy, zakladce Raporty ale tez na formularzu sprawy.
+
+### `klienci/Lewiatan/`
+Pod ten projekt podpinamy drobne tematy, które nie mają osobnego projektu dla Lewiatan
 
 #### `klienci/Lewiatan/Comarch-HUB`
 Integracja systemu AMODIT z systemem Comarch HUB w zakresie KseF. To niezalena, wręcz w pewnym sensie konkurencyjna integracja, bo mamy własny KseF Connector, ale klient chce przez Comarch Hub
+
+### `Klienci/LOT/`
+Pod ten projekt podpinamy drobne tematy, które nie mają osobnego projektu dla LOT
 
 
 #### `Klienci/LOT/JRWA`
@@ -429,9 +426,9 @@ JRWA dla LOT. Specyficzne wymagania rejestru akt.
 
 INtegracja z ADE - Archiwum Dokumentów Elektoronicznych - Archiwum Państwowe. 
   
-#### `Klienci/LOT/Integracjai-SIEM`
+#### `Klienci/LOT/Integracja-SIEM`
 
-INtegracja z SIEM (Security Information and Event Management). Wykorzystuje standardy jak Syslog, JSON, CEF, LEEF, agentów własnych, API — ale sam SIEM nie definiuje formatu ani protokołu.
+Integracja z SIEM (Security Information and Event Management). Wykorzystuje standardy jak Syslog, JSON, CEF, LEEF, agentów własnych, API — ale sam SIEM nie definiuje formatu ani protokołu.
 
 #### `Klienci/LOT/Integracja-UPS`
 Obsluga firmy kurierskiej UPS z poziomu regul w AMODIT
@@ -455,7 +452,8 @@ CallRest z obsługą wielu plików dla Marba. Wysyłka múltiple attachments prz
 
 Integracja z KSeF (Krajowy System e-Faktur) dla Marba. Wymiana faktur elektronicznych.
 
-
+### `Klienci/PKF/`
+Pod ten projekt podpinamy drobne tematy, które nie mają osobnego projektu dla PKF
 
 #### `Klienci/PKF/Rejestracja-czasu-pracy`
 
@@ -464,47 +462,29 @@ Rejestracja czasu pracy dla PKF. Timesheet, rozliczanie godzin.
 #### `Klienci/PKF/Przechowywanie-plikow`
 PKF ma wymaganie aby pliki zapisywane w sprawach bylo odpowiednio organizowane np w foldery
 
+### `Klienci/Polpharma/`
 
+Pod ten projekt podpinamy drobne tematy, które nie mają osobnego projektu dla Polpharmy
 
 #### `Klienci/Polpharma/Import-export-procesow`
-
-
-
-
-
 
 
 Import i eksport procesów dla Polpharma. Migracja definicji procesów między środowiskami.
 
 
+#### `Klienci/Polpharma/Pentesty`
 
-
+Przygotowanie do przeprowadzenia i przeprowadzenie testów bezpieczeństwa w Polpharmie i obsluga zgloszen po wykonaniu pentestow.
 
 
 
 #### `Klienci/Rossmann/Komunikaty-systemowe`
 
-
-
-
-
-
-
 Komunikaty systemowe dla Rossmann. Customizowane powiadomienia.
 
 
 
-
-
-
-
 #### `Klienci/Rossmann/Trust-Center-integracja`
-
-
-
-
-
-
 
 Integracja Trust Center dla Rossmann. Blockchain, zarządzanie certyfikatami.
 
@@ -514,16 +494,9 @@ Integracja Trust Center dla Rossmann. Blockchain, zarządzanie certyfikatami.
 
 
 
-#### `Klienci/LOT`
 
-
-
-Projekt klienta LOT, do ogólnych tematów niezwiązanych z konkretnymi podprojektami.
-
-
-
-
-
+### `Klienci/WIM/`
+Ogólny projekt dla klienta WIM (Wojskowy Instytut Medyczny), które nie maja zalozonych osobnych projeków
 
 
 #### `Klienci/WIM/Call-Snippet`
@@ -626,7 +599,7 @@ Koncepcja tablicy ogłoszeń. Komunikacja wewnętrzna, anonsowanie zmian.
   
 ### `Koncepcje/Open-Data`
 
-Projekt obejmuje udostepnianie danych z AMODIt przez OpenData dla takich systemów jak Tableau, Power BI, Qlick
+Projekt obejmuje udostepnianie danych z AMODIT przez OpenData dla takich systemów jak Tableau, Power BI, Qlick
 
 ---
 

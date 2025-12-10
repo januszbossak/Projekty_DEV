@@ -15,6 +15,18 @@ Historia zmian i ustaleń dla projektu.
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Design #Funkcjonalność
+
+- Usprawnienia tabeli: przyciski, sortowanie, odstępy, kolorystyka drag&drop.
+- Edytor graficzny: kontekstowe dodawanie sekcji, nawigacja TriSelect.
+- Edytor listy: kontekstowe dodawanie pól/sekcji, ikony, obsługa języków.
+- Prawy panel: zoptymalizowany nagłówek, wyszukiwanie z GUID.
+- Feedback: pozytywny, drobne bugi wizualne zgłoszone przez klientów.
+
+---
+
 ## 2025-11-30 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-30 Spotkanie projektowe - Edytor procesow.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-30%20Spotkanie%20projektowe%20-%20Edytor%20procesow.md)
 **Kategoria:** #Strategia #Funkcjonalność #UI/UX
@@ -23,6 +35,18 @@ Historia zmian i ustaleń dla projektu.
 - Jasne definiowanie MVP dla każdego etapu (np. diagram bez prawego panelu).
 - Ikony w interfejsie: wszystkie zmienione na typ outline.
 - Optymalizacja: ograniczenie pobierania użytkowników/słowników do 50 pozycji (lazy loading).
+
+---
+
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Design #Zadanie
+
+- Prawy panel ustawień pola: ukończone częściowo (nagłówek, ikony).
+- Wyszukiwanie po atrybutach technicznych: ukończone (ID, GUID, nazwa kolumny).
+- Zamykanie prawego panelu po zmianie kontekstu: w testach (problem z tabelami).
+- Tabela i zagnieżdżone tabele: priorytet na przyszły sprint (wygląd, scrolle, marginesy).
+- Wyświetlanie tabel w tabelach (CSS): poprawki w trakcie (Mariusz).
 
 ---
 

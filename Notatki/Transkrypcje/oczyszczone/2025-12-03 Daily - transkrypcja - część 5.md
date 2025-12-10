@@ -196,3 +196,4 @@
 
 **Damian Kamiński:** Nie jest naszym celem. Tak, to prościej skasować tą jedną linijkę, niż na 20 polach, bo to tyle mniej więcej to wszystkich jest przestawiać ten checkbox. Może, ale może twoje rozwiązanie też jest skuteczne? Tego nie sprawdziliśmy. No tylko wiesz, to już zrobiłem. Tak, to pytanie, czy warto teraz iść dalej? No bo teraz kolejną rzeczą to jest ukrycie tego L1.
 
+

@@ -12,6 +12,30 @@
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Automatyzacja #Dokumentacja
+
+- Zrealizowano automatyczne generowanie Changeloga z Azure DevOps.
+- Dwa typy artykułów: podsumowanie kluczowych zmian i pełna lista.
+- Mechanizm uwzględnia sekcje bezpieczeństwa (ukrywanie wrażliwych danych).
+- Wykorzystanie LLM do redagowania treści z backloga.
+
+---
+
+---
+
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Organizacja #Zadanie #Narzędzia
+
+- Druga runda generowania notatek przez Janusza (lepsze, pełniejsze, nastawione na aktualizację projektów).
+- Wymóg nagrywania wszystkich spotkań (także szybkich ustaleń) i przekazywania transkrypcji.
+- Wykorzystanie 'Cursor' do odpytywania o stan projektu na podstawie bazy notatek (bez konieczności czytania 50 plików).
+- Naprawa niespójności ścieżek w bazie transkrypcji (skrypty Gemini).
+
+---
+
 ## 2025-11-25 | Design OCR i Transkrypcje
 
 ---

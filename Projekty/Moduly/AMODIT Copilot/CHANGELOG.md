@@ -1,5 +1,27 @@
 # CHANGELOG - AMODIT Copilot
 
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #Zadanie
+
+- Pilne wdrożenie mechanizmu JRWA w Copilocie (aby konsultanci mogli od początku korzystać z prawidłowych rejestrów).
+- Implementacja JRWA - Filip Liwiński (kilka dni).
+- Wymagane konsultacje z Markiem Dziakowskim.
+
+---
+
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Prototyp #Funkcjonalność
+
+- Prototyp generowania dokumentacji procesu (opis, etapy, pola, reguły).
+- Serwer MCP: AMODIT może łączyć się z zewnętrznymi MCP.
+- Serwer MCP: Zewnętrzne narzędzia (Cursor) mogą wywoływać funkcje AMODIT.
+- Feedback: Potrzeba roadmapy dla generowania dokumentacji.
+- UX: Użytkownicy nie wiedzą o co pytać Copilota (potrzeba helpa/sugestii).
+
+---
+
 ## 2025-11-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Notatka projektowa - AMODIT AI.md]
 **Kategoria:** #Funkcjonalność #Architektura #Decyzja

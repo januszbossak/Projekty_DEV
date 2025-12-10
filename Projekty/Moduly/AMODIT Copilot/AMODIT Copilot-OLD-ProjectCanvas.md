@@ -61,3 +61,4 @@ Rozbudowa Copilota o zaawansowane możliwości konwersacyjne (tryb konsultacyjny
 | [[2025-09-02]] | Odnotowano problemy z analizą procesów klienta PKF. Rozpoczęto dyskusję na temat modelu cenowego dla Copilota. | [[2025-09-02 Rada architektów]] |
 | [[2025-09-08]] | Demo nowej, kluczowej funkcjonalności: trybu konsultacyjnego do generowania procesów. Zebrano feedback dotyczący UX (ekran oczekiwania, sposób zadawania pytań). | [[2025-09-08 Sprint review]] |
 
+

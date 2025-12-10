@@ -208,3 +208,4 @@
 
 **Łukasz Bott:** I widać na nowym formularzu został to tak zrobione, jakoś gdzieś może tego tej opcji nie uwzględniamy.
 
+

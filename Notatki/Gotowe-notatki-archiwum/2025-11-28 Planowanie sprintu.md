@@ -1,3 +1,5 @@
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-10
+
 # Planowanie Sprintu – 2025-11-28
 
 **Sprint:** 49
@@ -17,7 +19,6 @@
 | Comarch Hub | ➡️ Przeniesione | Łukasz Brodzkiego dopiero dziś dostał odpowiedzi, przeniesiono na kolejny sprint. |
 | Moduł raportowy – Hotfixy (masowe akcje, scroll) | 🔄 W testach / W trakcie | Damian przejął zadanie. |
 | Repozytorium plików | ✅ Ukończone (min. MVP) | Backend w dużej mierze gotowy. |
-| JRWA Copilot | ➡️ Przeniesione | Filip ma to pilnie dowieźć w tym sprincie. |
 | Link do nowej sprawy (brak uprawnień) | ➡️ Przeniesione | Kamil przejął, zidentyfikowano jako bug. |
 | Błąd w parserze reguł | ✅ Ukończone | Piotr poprawił krytyczny błąd. |
 | Wyświetlanie tabel w tabelach (CSS) | 🔄 W trakcie | Mariusz pracuje nad poprawką. |
@@ -48,19 +49,6 @@ Dostarczenie funkcjonalności repozytorium plików do klienta do końca sprintu.
 **Szczegóły techniczne:**
 - Celujemy w wdrożenie grudniowej wersji funkcjonalności repozytorium.
 - Skupiamy się na minimalnym MVP, aby dowieźć do klienta.
-
----
-
-### JRWA Copilot
-
-**Kontekst i cel:**
-Pilne wdrożenie mechanizmu JRWA w Copilocie, aby konsultanci mogli od początku korzystać z prawidłowych rejestrów.
-
-**Zakres prac:**
-
-| Zadanie | Osoba | Estymacja | Zależności |
-|---------|-------|-----------|------------|
-| Implementacja JRWA | **Filip** | Kilka dni | Konsultacje z Markiem |
 
 ---
 
@@ -127,7 +115,7 @@ Uporządkowanie wyglądu i działania pola typu Tabela oraz zagnieżdżonych tab
 
 ## 3. Decyzje architektoniczne (ad-hoc)
 
-- **Zmiana struktury Daily:** Zamiast opowiadać o indywidualnych zadaniach, Daily będzie skupiać się na postępach w kluczowych projektach (np. Repozytorium, JRWA Copilot).
+- **Zmiana struktury Daily:** Zamiast opowiadać o indywidualnych zadaniach, Daily będzie skupiać się na postępach w kluczowych projektach (np. Repozytorium, Moduł raportowy).
 - **Kolorystyka w menu głównym:** Ikony menu głównego (systemowe) pozostają szare. Foldery/pliki w głównej części widoku mogą być kolorowe.
 - **Brak Piotra:** Przez następny tydzień brak instalacji i aktualizacji AMODIT, aby uniknąć problemów bez bieżącego monitoringu Piotra. Adrian lub Mateusz jako zastępstwo w nagłych przypadkach.
 
@@ -149,5 +137,19 @@ Uporządkowanie wyglądu i działania pola typu Tabela oraz zagnieżdżonych tab
 - **Urlopy:** Piotr Buczkowski nieobecny przez następny tydzień.
 - **Zmiany w harmonogramie:** Spotkanie "Design" może być przesunięte. Planowanie sprintu na 12:00.
 - **Mateusz Kołakowski:** Obecnie na uczelni, ograniczona komunikacja. Prawdopodobnie będzie dostępny po 12.
-- **Code Review z Copilotem:** Propozycja wdrożenia Code Review z wykorzystaniem Copilota, aby usprawnić proces bez angażowania czasu deweloperów.
 - **Wyceny:** Tematy wyceny "Kushina" i "rozszerzenie okna dialogowego" do ponownej analizy i aktualizacji estymacji.
+
+---
+
+## Powiązane projekty
+
+- `Klienci/WIM/Repozytorium-plikow-DMS`
+- `Moduly/Modul-raportowy/Masowe-akcje`
+- `Moduly/Edytor-procesow`
+- `Moduly/Ustawienia-systemowe`
+- `Klienci/Lewiatan/Comarch-HUB`
+- `Klienci/LOT/Integracja-Global-Express`
+- `cross-cutting/Design-System`
+- `Organizacja-DEV/Dokumentacja-organizacyjna`
+- `Organizacja-DEV/Automatyzacja-dokumentacji-AI`
+

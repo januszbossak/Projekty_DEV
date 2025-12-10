@@ -57,3 +57,4 @@
 
 **Format nazwy pliku:** `[Nazwa-Klienta].md` (np. `WIM.md`, `PKF.md`, `LOT.md`)
 
+

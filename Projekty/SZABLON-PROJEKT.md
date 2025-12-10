@@ -81,3 +81,4 @@ status: w_analizie
 
 Wypełniaj TYLKO na podstawie konkretnych informacji z CHANGELOG.
 
+

@@ -4,6 +4,28 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Sprint review
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Sprint review.md]
+**Kategoria:** #Funkcjonalność #Dokumentacja
+
+- Zaimplementowano funkcje reguł: otwarcie, wezwanie kuriera, śledzenie, anulowanie.
+- Ograniczenia: MVP bez opcjonalnych parametrów.
+- Testy u klienta (PGL LOT).
+
+---
+
+---
+
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Dokumentacja
+
+- Funkcje integracji ukończone.
+- Trwają prace nad dokumentacją i testami.
+- SM Integracja (firma kurierska) - do zrobienia przez analogię.
+
+---
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Zadanie #Postęp

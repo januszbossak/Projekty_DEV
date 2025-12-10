@@ -6,6 +6,26 @@
 
 ---
 
+## 2025-11-28 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md]
+**Kategoria:** #Architektura #Funkcjonalność
+
+- Koncepcja proxy dla modułów AMODIT: badanie rozwiązania dla Bank Pekao.
+- Obecnie proxy działa tylko w wybranych funkcjach, nie działa np. w 'Get data from GUS'.
+- Propozycja: checkbox "Używaj proxy" dla konkretnych modułów/funkcji w ustawieniach.
+- Zadanie: Wymienić które moduły dzisiaj idą przez proxy (Adrian).
+
+---
+
+## 2025-11-17 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
+**Kategoria:** #Funkcjonalność #Wydanie
+
+- Usunięcie komunikatu i opcji przełączania się na stare ustawienia systemowe (wersja grudniowa).
+- Testowanie u nas, czy wszystko zaopiekowaliśmy.
+
+---
+
 ## 2025-11-20 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-20 Spotkanie projektowe - Edytor procesów.md](../../../Notatki/Gotowe-notatki-archiwum/2025-11-20%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)
 **Kategoria:** #Status #Decyzja

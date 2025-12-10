@@ -1,15 +1,18 @@
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-10
+
 # Rada Architektów – 2025-11-06
 
 **Powiązane projekty:**
-- `moduly/Edytor-procesow-formularzy` – temat 1
-- `moduly/Trust-Center` – temat 2
-- `moduly/Modul-raportowy` – temat 3
+- `Moduly/Edytor-procesow/Edytor-formularzy` – temat 1
+- `Klienci/PKF/` – temat 1
+- `Moduly/Trust-Center` – temat 2
+- `Moduly/Modul-raportowy/Filtry-uzytkownika` – temat 3
 
 ---
 
 ## 1. Rozszerzenie funkcjonalności pola "Odnośnik do procesu" o obsługę pól słownikowych i listy wyboru
 
-**Projekt:** `moduly/Edytor-procesow-formularzy`
+**Projekt:** `Moduly/Edytor-procesow/Edytor-formularzy`, `Klienci/PKF/`
 
 ### Kontekst i Problem
 
@@ -55,7 +58,7 @@ Rozszerzona zostanie funkcjonalność pola "Odnośnik do procesu" o obsługę p�
 
 ## 2. Termin ważności dokumentów w Trust Center i wygaszanie porzuconych dokumentów
 
-**Projekt:** `moduly/Trust-Center`
+**Projekt:** `Moduly/Trust-Center`
 
 ### Kontekst i Problem
 
@@ -116,7 +119,7 @@ Na podstawie tej analizy zostaną podjęte decyzje:
 
 ## 3. Problemy z filtrami w raportach – "zaznacz wszystko" i DISTINCT
 
-**Projekt:** `moduly/Modul-raportowy`
+**Projekt:** `Moduly/Modul-raportowy/Filtry-uzytkownika`
 
 ### Kontekst i Problem
 

@@ -1,8 +1,19 @@
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-10
+
 # Rada Developerów – 2025-12-02
 
 **Tematy:**
 - Limity REST API i pobieranie danych hurtowo
 - Zachowanie filtrów i akcji masowych w raportach
+
+---
+
+## Powiązane projekty
+
+- `Koncepcje/Open-Data`
+- `cross-cutting/Zarzadzanie-licencjami`
+- `Moduly/Modul-raportowy/Filtry-uzytkownika`
+- `Moduly/Modul-raportowy/Masowe-akcje`
 
 ---
 

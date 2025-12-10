@@ -142,3 +142,4 @@ Jeśli chodzi o dzisiaj, to standardowe nasze spotkania – czyli Rada i spotkan
 
 Co jeszcze mamy? Trochę do tych wycen cofnąłem się, bo wczoraj nie robiliśmy tego przeglądu. Tego teraz to zrobiłem. Czy mamy jakieś bieżące wpływające zadania na backlogu, które trzeba mówić?
 
+

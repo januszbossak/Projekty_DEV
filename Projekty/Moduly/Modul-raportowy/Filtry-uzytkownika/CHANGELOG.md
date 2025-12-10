@@ -4,11 +4,35 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-02 | Rada developerów
+**Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-12-02 Rada developerów.md]
+**Kategoria:** #Problem
+
+- **Issue #22411 (LPP):** Problem z zachowaniem filtrów lewych (drzewko) po akcjach masowych - sprawy znikają, użytkownik traci kontekst
+- **Propozycja cząstkowa:** Przeniesienie zaznaczenia do najbliższego rodzica gdy pozycja znika z drzewka (status: odroczona)
+- **Edge case:** Kombinacja filtra drzewkowego + filtr górny - co gdy w połączeniu nie ma nic do pokazania? (wymaga przygotowania przypadku testowego)
+- **Bug "Wyczyść wszystkie":** Dla pustego filtru (domyślnie "nie zawiera" bez wartości) powoduje zniknięcie rekordów - niepożądany skutek do naprawy
+- **Kolejność implementacji:** 1) Naprawić filtr lewy (drzewko), 2) Rozwiązać edge case drzewko+górny, 3) Dołożyć popup dla akcji masowych
+- **Zadanie:** Damian Kaminski dopisze acceptance criteria do #22411
+
+---
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Zadanie #Design
 
 - Szymek/Przemek porządkują operatory daty w filtrach użytkownika, uspójniając logikę ("ostatnie 7 dni" vs "tydzień temu").
+
+---
+
+## 2025-11-06 | Rada Architektów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-06 Rada architektów.md]
+**Kategoria:** #Bug #Funkcjonalność
+
+- Dodanie DISTINCT do zapytań filtrów (eliminacja duplikatów w liście wartości)
+- Rozbicie tematu na feature z osobnymi PBI dla dalszych usprawnień
+- Dalsze tematy do omówienia: limit parametrów IN(...), przycisk "Załaduj więcej", logika "Zaznacz wszystko"
+- Refaktoryzacja: poprawianie filtrów nie może psuć legendy i na odwrót
 
 ---
 
