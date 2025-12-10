@@ -24,6 +24,7 @@
 | **PKF**            | PKU, PK fu                                         | Klient                              |
 | **LPP**            | LP                                                 | Klient                              |
 | **DocuSign**       | DokSign                                            | Aplikacja do podpisywania z ktora AMODIT jest zintegrowany |
+| **EarlyStage**.    | elli stage                                         | klient                              |
 
 #### 2. Technologie i Programowanie
 

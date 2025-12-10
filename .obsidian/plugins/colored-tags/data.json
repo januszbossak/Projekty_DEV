@@ -80,7 +80,14 @@
     "Strategia": 67,
     "UI/UX": 1,
     "Błędy": 68,
-    "Standardy": 69
+    "Standardy": 69,
+    "Wdrożenie": 70,
+    "Rozwój": 71,
+    "Ukończenie": 72,
+    "Kompatybilność": 73,
+    "PoprawaBłędów": 74,
+    "Wydajnosc": 75,
+    "DevOps": 76
   },
   "_version": 3
 }

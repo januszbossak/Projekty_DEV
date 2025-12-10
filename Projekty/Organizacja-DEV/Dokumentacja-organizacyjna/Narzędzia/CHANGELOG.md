@@ -4,6 +4,14 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Zadanie #DevOps
+
+- Zadanie: Rozwój narzędzi do onboardingu/dezaktywacji baz danych w Azure.
+
+---
+
 ## 2025-10-09 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-09 Rada architektów.md]
 **Kategoria:** #Organizacja #Narzędzia #Decyzja

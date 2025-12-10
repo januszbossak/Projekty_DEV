@@ -4,6 +4,28 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Planowanie sprintu (Szczegóły)
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Architektura
+
+- Integracja w pełni przez API (brak wymogu certyfikatów).
+- Testy niemożliwe wewnętrznie (wymagane konto z umową), tylko u klienta.
+
+---
+
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Zadanie #Dokumentacja
+
+- Zaimplementowanie integracji z UPS analogicznej do Global Express.
+- Implementacja funkcji w regułach umożliwiających wysyłkę przesyłki.
+- Implementacja sprawdzania statusu przesyłki.
+- Implementacja wydruku etykiety.
+- Przeprowadzenie testów u klienta.
+- Przygotowanie dokumentacji.
+
+---
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Zadanie #Postęp

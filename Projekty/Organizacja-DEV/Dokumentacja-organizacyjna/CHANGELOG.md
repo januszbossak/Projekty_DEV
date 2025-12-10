@@ -1,5 +1,16 @@
 # CHANGELOG - Dokumentacja organizacyjna
 
+## 2025-11-30 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-30 Spotkanie projektowe - Edytor procesow.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-30%20Spotkanie%20projektowe%20-%20Edytor%20procesow.md)
+**Kategoria:** #Organizacja #Metodyka #Decyzja
+
+- Zmiana formuły Daily: fokus na postępach w kluczowych projektach i celach sprintu.
+- Backlog: redukcja roadmapy ("połowę wyrzucić") na rzecz dowiezienia domkniętych funkcjonalności.
+- Zespoły projektowe: podział na mniejsze, skoncentrowane zespoły (np. osobno edytor, osobno repozytorium).
+- Koncepcja publicznego demo (reset co godzinę) dla zewnętrznych funkcjonalności (Repozytorium, Komunikator).
+
+
+
 ## 2025-11-21 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-21 Planowanie sprintu.md]
 **Kategoria:** #Organizacja #Decyzja

@@ -1,12 +1,15 @@
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-09
+
 # Notatka projektowa – 2025-11-30 – Edytor procesów i strategia projektowa
 
 **Data:** 2025-11-30
 **Temat główny:** Projekt WIM (Repozytorium plików), rozwój Edytora Procesów, strategia deweloperska
 **Powiązane projekty:**
-- `klienci/WIM`
-- `moduly/Edytor-procesow`
-- `moduly/Repozytorium`
-- `cross-cutting/AI`
+- `Klienci/WIM/Repozytorium-plikow-DMS`
+- `Moduly/Edytor-procesow`
+- `Moduly/Edytor-procesow/Edytor-diagramu`
+- `Moduly/Edytor-procesow/Edytor-formularzy`
+- `Organizacja-DEV/Dokumentacja-organizacyjna`
 
 ---
 

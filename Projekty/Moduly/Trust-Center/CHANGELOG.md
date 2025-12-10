@@ -2,6 +2,18 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Wydanie #Zadanie #Funkcjonalność
+
+- Joby Trust Center wdrożone na produkcji.
+- Przetestowano joby Trust Center.
+- Wgrano joby na domówkę.
+- Wdrożono joby na produkcję (po okresie testowym na domówce).
+- Opcjonalna implementacja joba do przestawiania długo nieużywanych dokumentów na wygasłe.
+
+---
+
 ## 2025-11-28 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Notatka projektowa - Połączenie z Marek Dziakowski.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Notatka%20projektowa%20-%20Połączenie%20z%20Marek%20Dziakowski.md)
 **Kategoria:** #Funkcjonalność #Decyzja #Problem

@@ -19,19 +19,49 @@ Agent przetwarza wpisy z CHANGELOG i aktualizuje odpowiednie pliki dokumentacji 
 
 ---
 
-## KRYTYCZNA zasada: ZERO HALUCYNACJI
+## Krytyczne zasady
 
-**NIGDY nie zmyślaj informacji!**
+### 0. ZERO HALUCYNACJI (najważniejsze!)
 
-Jeśli w CHANGELOG brak:
-- Celów biznesowych → zostaw `[DO UZUPEŁNIENIA]`
-- Metryk → zostaw `[DO UZUPEŁNIENIA]`
-- Dat → zostaw `[DO UZUPEŁNIENIA]`
-- Budżetu → zostaw `[DO UZUPEŁNIENIA]`
-- Decyzji technicznych → zostaw `[DO UZUPEŁNIENIA]`
-- Funkcjonalności → zostaw `[DO UZUPEŁNIENIA]`
+- **NIGDY nie zmyślaj** informacji
+- Jeśli w CHANGELOG brak danych → użyj `[DO UZUPEŁNIENIA]`
+- Wypełniaj TYLKO na podstawie konkretnych info z CHANGELOG/Notatek
 
-**Wypełniaj TYLKO na podstawie konkretnych informacji z CHANGELOG.**
+### 1. DEEP READ (Czytanie źródeł - OBOWIĄZKOWE)
+
+- **ZAWSZE czytaj notatkę źródłową** wskazaną w CHANGELOG
+- CHANGELOG to tylko spis treści - szczegóły (limity, parametry) są w notatce
+- Ignorowanie treści notatki to błąd krytyczny
+
+### 2. Inteligentna kategoryzacja
+
+- **Czytaj treść** wpisu i notatki, nie tylko tag
+- Szukaj słów kluczowych (technologia / funkcjonalność / biznes)
+- Przypisz do pliku na podstawie **dominującego** typu treści
+
+### 3. Agregacja
+
+- Grupuj drobne wpisy tego samego typu
+- Zachowaj źródło [[YYYY-MM-DD Nazwa]]
+- **NIE AGREGUJ** szczegółów technicznych w ARCHITEKTURA.md (muszą być precyzyjne)
+
+### 4. Chronologia
+
+- W tabelach: najnowsze na górze
+- Zachowuj porządek dat
+- Trackuj `changelog_przeglad_do` w YAML frontmatter
+
+### 5. Linkowanie Obsidian
+
+- Projekty: `[[Nazwa-projektu]]`
+- Notatki: `[[YYYY-MM-DD Nazwa notatki]]`
+- Daty: `[[YYYY-MM-DD]]`
+
+### 6. Poziomy projektów
+
+- **Klient zbiorczy:** tylko [Nazwa].md z tabelą (nie 3 pliki)
+- **Projekt zbiorczy:** 3 pliki + sekcja Podprojekty w ROADMAPA.md
+- **Podprojekt / prosty:** 3 pliki standardowe
 
 ---
 
@@ -71,32 +101,47 @@ changelog_przeglad_do: 2025-11-13  ← ta data jest kluczowa
 
 **KRYTYCZNE:** NIE opieraj się tylko na tagu! Musisz przeczytać treść wpisu.
 
-#### Algorytm rozpoznawania typu ustalenia:
+#### Algorytm dla każdego wpisu:
 
 ```
-1. Przeczytaj treść wpisu (bullety, opis)
-2. Szukaj słów kluczowych i kontekstu:
-   
-   TECHNOLOGIA/ARCHITEKTURA:
-   - Technologie: OAuth2, React, .NET, MSSQL, Docker, SignalR, Kubernetes
-   - Słowa: "endpoint", "API", "baza danych", "tabela", "integracja", 
-            "microservice", "architektura", "struktura"
-   - Koncepcje: "komunikacja między", "wymiana danych", "protokół"
-   
-   FUNKCJONALNOŚĆ/ROADMAPA:
-   - Akcje użytkownika: "użytkownik może", "dodano przycisk", "nowy formularz"
-   - Features: "drag & drop", "wyszukiwarka", "filtrowanie", "eksport"
-   - Status: "ukończone", "w trakcie", "zaplanowane", "odroczone", "wdrożone"
-   - Słowa: "MVP", "sprint", "wydanie", "wersja", "release"
-   - Bugi: "naprawiono", "bug", "błąd", "fix"
-   
-   BIZNES/PROJEKT:
-   - Cele: "obniżenie kosztów", "przyspieszenie", "redukcja błędów"
-   - Metryki: "40% szybciej", "KPI", "ROI", "oszczędność", "wzrost"
-   - Organizacja: "zespół", "budżet", "termin", "klient", "umowa"
+FOR każdy wpis w CHANGELOG (w zakresie do przetworzenia):
 
-3. Przypisz do pliku na podstawie DOMINUJĄCEGO typu treści (nie tagu!)
-4. Jeśli mieszane (np. tech + funkcjonalność) → wybierz dominujący aspekt
+  1. Zidentyfikuj źródło:
+     - Znajdź link do notatki: [Notatki/.../YYYY-MM-DD Nazwa.md]
+     - Jeśli brak linku → bazuj tylko na treści wpisu w CHANGELOG (fallback)
+
+  2. PRZECZYTAJ NOTATKĘ ŹRÓDŁOWĄ (Deep Read):
+     - Otwórz plik notatki wskazywany w źródle
+     - Znajdź sekcje dotyczące analizowanego projektu
+     - Wyciągnij szczegóły (limity, parametry, uzasadnienia, ryzyka), których nie ma w skrócie CHANGELOG
+     - TO JEST KROK OBOWIĄZKOWY - nie pomijaj czytania notatki!
+
+  3. Analizuj PEŁNĄ TREŚĆ (szczegóły z notatki + wpis z CHANGELOG):
+     
+     SZUKAJ słów kluczowych i szczegółów technicznych:
+     
+     TECHNOLOGIA/ARCHITEKTURA:
+     - Technologie: OAuth2, React, .NET, MSSQL, Docker, SignalR, Kubernetes
+     - Słowa: "endpoint", "API", "baza danych", "tabela", "integracja", 
+            "microservice", "architektura", "struktura"
+     - Koncepcje: "komunikacja między", "wymiana danych", "protokół"
+     
+     FUNKCJONALNOŚĆ/ROADMAPA:
+     - Akcje użytkownika: "użytkownik może", "dodano przycisk", "nowy formularz"
+     - Features: "drag & drop", "wyszukiwarka", "filtrowanie", "eksport"
+     - Status: "ukończone", "w trakcie", "zaplanowane", "odroczone", "wdrożone"
+     - Słowa: "MVP", "sprint", "wydanie", "wersja", "release"
+     - Bugi: "naprawiono", "bug", "błąd", "fix"
+     
+     BIZNES/PROJEKT:
+     - Cele: "obniżenie kosztów", "przyspieszenie", "redukcja błędów"
+     - Metryki: "40% szybciej", "KPI", "ROI", "oszczędność", "wzrost"
+     - Organizacja: "zespół", "budżet", "termin", "klient", "umowa"
+
+  4. Przypisz do kategorii na podstawie DOMINUJĄCEGO typu treści (nie tagu!)
+  5. Jeśli mieszane (np. tech + funkcjonalność) → wybierz dominujący aspekt
+
+END FOR
 ```
 
 #### Tabela przykładów kategoryzacji:
@@ -125,7 +170,8 @@ changelog_przeglad_do: 2025-11-13  ← ta data jest kluczowa
 
 #### ARCHITEKTURA.md - aktualizacje:
 
-- **Stack techniczny:** Jeśli wpis o nowej technologii → dodaj do listy stack
+- **Stack techniczny:** Jeśli wpis o nowej technologii → dodaj do listy stack. **Zachowuj szczegóły** (np. wersje, konkretne biblioteki).
+- **Główne komponenty:** Jeśli wpis definiuje komponenty (np. struktura folderów) → opisz je z uwzględnieniem **limitów i ograniczeń** (np. "max 20 poziomów", "limit 2000 obiektów"). Nie stosuj nadmiernych uproszczeń.
 - **Integracja z AMODIT:** Jeśli wpis o nowym endpoincie/integracji → dodaj do listy
 - **Tabela decyzji:** Jeśli wpis o decyzji technicznej → dodaj nowy wiersz:
   ```
@@ -220,7 +266,8 @@ Przeszukaj wszystkie wpisy i wypełnij:
 
 Przeszukaj wszystkie wpisy i wypełnij:
 
-- **Stack techniczny:** Zbierz wszystkie technologie wymienione w wpisach (React, .NET, MSSQL...)
+- **Stack techniczny:** Zbierz wszystkie technologie wymienione w wpisach (React, .NET, MSSQL...). Zachowuj szczegóły.
+- **Główne komponenty:** Opisz komponenty systemu zachowując **parametry techniczne** (limity, role, konkretne liczby). Unikaj ogólników typu "zagnieżdżona struktura" - napisz "zagnieżdżona struktura (max 20 poziomów)".
 - **Integracja z AMODIT:** Zbierz endpointy, tokeny, tabele współdzielone
 - **Tabela decyzji:** Zbuduj tabelę ze wszystkich decyzji technicznych:
   - Data: data wpisu
@@ -366,6 +413,7 @@ ROADMAPA.md (po agregacji):
 
 4. **Kiedy NIE agregować:**
    - Decyzje architektoniczne (każda osobno w tabeli)
+   - Szczegóły techniczne i limity (muszą być precyzyjne w ARCHITEKTURA.md)
    - Odrzucone koncepcje (każda osobno)
    - Kluczowe milestone (wydania MVP)
 
@@ -376,6 +424,7 @@ ROADMAPA.md (po agregacji):
 **Checklist:**
 
 - [ ] **Przeczytałem treść wpisów** (nie tylko tagi)?
+- [ ] **Zrobiłem DEEP READ** notatek źródłowych?
 - [ ] **Kategoryzacja inteligentna** (analiza kontekstu)?
 - [ ] **NIE ZMYŚLIŁEM** żadnych informacji?
 - [ ] **Użyłem `[DO UZUPEŁNIENIA]`** tam gdzie brak danych?

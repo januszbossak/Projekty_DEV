@@ -1,11 +1,18 @@
 # CHANGELOG - Automatyzacja dokumentacji AI
 
-## 2025-11-25 | Design OCR i Transkrypcje
-**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-25 Design OCR i Transkrypcje.md]
-**Kategoria:** #Analiza #Problem #Zadanie
+---
 
-- Zidentyfikowano problem z dostępem do pełnych transkrypcji ze spotkań (Teams/Stream).
-- Konieczność weryfikacji konfiguracji dostępu zbiorczego lub udostępniania transkrypcji (Zadanie dla Damiana i Kamila).
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Architektura #PoC
+
+- PoC zakończony sukcesem ("da się").
+- Konieczność zdefiniowania pełnego zakresu (procesy, ustawienia, integracje, joby).
+- Planowane wdrożenie jako dedykowany tryb Copilota (nie jeden przycisk "generuj wszystko").
+
+---
+
+## 2025-11-25 | Design OCR i Transkrypcje
 
 ---
 

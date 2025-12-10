@@ -590,8 +590,9 @@ Implementacja dostępności WCAG 2.1 AA dla WIM. Tryb wysokiego kontrastu (wycze
 
 Źródła danych Static (a w zasadzie nazywane dynamiczne) z funkcjami SourceSet SourceAdd, SourceGet dla WIM. Globalne zmienne konfiguracyjne.
 
-  
+#### `Klienci/WIM/Raporty-systemowe`
 
+Raporty systemowe dla WIM. Nie muszą byc realizowane jako typowe raporty systemowe (modul) ale moze jako zwykle rapoprty, ale realizujae wymagania WIM.
 ---
 
   

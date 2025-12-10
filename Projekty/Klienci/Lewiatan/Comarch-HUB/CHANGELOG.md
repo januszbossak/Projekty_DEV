@@ -4,6 +4,26 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Planowanie sprintu (Szczegóły)
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Wydanie #Ryzyko
+
+- Testy integracji bezpośrednio na środowisku produkcyjnym klienta (brak środowiska testowego).
+- Integracja traktowana jako konkurencyjna do KSeF Connector (wymóg klienta).
+
+---
+
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Wydanie #Zadanie #Dokumentacja
+
+- Dokończenie integracji z Comarch Hub uruchomionej u klienta Lewiatan.
+- Uruchomienie modułu u klienta Lewiatan.
+- Przeprowadzenie testów u klienta.
+- Przygotowanie dokumentacji konfiguracyjnej.
+
+---
+
 ## 2025-11-17 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-17 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-17%20Planowanie%20sprintu.md)
 **Kategoria:** #Zadanie #Priorytet

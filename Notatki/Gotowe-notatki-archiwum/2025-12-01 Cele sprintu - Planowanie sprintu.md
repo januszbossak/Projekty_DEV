@@ -230,4 +230,23 @@
 - Historia zdarzeń w repozytorium jest opcjonalna - jeśli nie zdążymy, przechodzi do następnego sprintu
 - MCP i dokumentacja AI zostały zaparkowane jako proof of concept - wymagają dalszego planowania biznesowego
 
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-09
+
+## Powiązane projekty
+- `Klienci/WIM/Repozytorium-plikow-DMS`
+- `Klienci/LOT/JRWA`
+- `cross-cutting/Design-System`
+- `Moduly/Edytor-procesow/Edytor-formularzy`
+- `cross-cutting/Interfejs-sprawy/Formularz-sprawy`
+- `Klienci/WIM/Raporty-systemowe`
+- `Moduly/Raporty-systemowe`
+- `Moduly/Modul-raportowy/Wydajnosc`
+- `Klienci/WIM/Podpis-kwalifikowany-SignApp-macOS`
+- `Klienci/LOT/Integracjai-SIEM`
+- `klienci/Lewiatan/Comarch-HUB`
+- `Klienci/LOT/Integracja-UPS`
+- `Moduly/Trust-Center`
+- `Moduly/Modul-raportowy`
+- `Organizacja-DEV`
+
 

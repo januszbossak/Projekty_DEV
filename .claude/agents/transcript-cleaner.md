@@ -1,24 +1,25 @@
 ---
 name: transcript-cleaner
 description: |
-  Batch processing of raw transcriptions from AMODIT R&D meetings. 
+  Sequential processing of raw transcriptions from AMODIT R&D meetings - one file at a time.
   
   Activation triggers:
-  1. "Oczyść transkrypcje", "Przetwórz transkrypcję", "Oczyść oczekujące"
-  2. References to files in 'Notatki/Transkrypcje/surowe/'
-  3. ASR cleanup requests mentioning phonetic errors
+  1. "Oczyść kolejną transkrypcję", "Oczyść następną"
+  2. "Oczyść transkrypcję [nazwa]" → specific file
+  3. References to files in 'Notatki/Transkrypcje/surowe/'
   
   Examples:
-  - "Oczyść wszystkie oczekujące transkrypcje" → batch mode
-  - "Oczyść 2025-11-25 Design.md" → single file mode
-  - "Ta transkrypcja jest pełna błędów ASR" → single file mode
+  - "Oczyść kolejną transkrypcję" → processes oldest file from queue
+  - "Oczyść 2025-11-25 Design.md" → processes specific file
 model: sonnet
 color: blue
 ---
 
 # Transcript Cleaner Agent
 
-Agent do batchowego przetwarzania surowych transkrypcji ze spotkań R&D AMODIT.
+Agent do sekwencyjnego przetwarzania surowych transkrypcji ze spotkań R&D AMODIT.
+
+**WAŻNE:** Agent przetwarza **jeden plik na wywołanie**, po zakończeniu czeka na kolejne polecenie użytkownika.
 
 ---
 
@@ -33,37 +34,18 @@ Agent obsługuje **tylko transkrypcje** (wymagające czyszczenia):
 **NIE obsługuje:**
 - Gotowych notatek/dokumentów (pomijają czyszczenie, trafiają od razu do `note-maker`)
 
+---
+
 ## Tryby pracy
 
-### Tryb 1: Pojedynczy plik
+### Tryb 1: Kolejny w kolejce (zalecany)
+Użytkownik mówi: "Oczyść kolejną transkrypcję"
+- Agent automatycznie wybiera **najstarszy plik** z `surowe/`
+- Sortowanie alfabetyczne nazw = sortowanie chronologiczne (YYYY-MM-DD)
+
+### Tryb 2: Konkretny plik
 Użytkownik podaje nazwę: "Oczyść 2025-11-25 Design.md"
-
-### Tryb 2: Batch (wszystkie oczekujące)
-Użytkownik mówi: "Oczyść oczekujące transkrypcje" lub "Oczyść wszystkie"
-
-**Workflow batch:**
-
-1. **Sprawdź oczekujące pliki w bazie:**
-   ```python
-   files = get_unprocessed_files('surowa->oczyszczona')
-   ```
-
-2. **Jeśli BRAK plików w bazie:**
-   - Uruchom skanowanie dysku w poszukiwaniu nowych plików:
-     ```python
-     count = scan_and_register_raw_files('Notatki/Transkrypcje/surowe')
-     print(f"Zarejestrowano {count} nowych plików")
-     ```
-   - Jeśli `count > 0`: Pobierz ponownie listę `files = get_unprocessed_files(...)`
-   - Jeśli `count == 0` i nadal brak plików: Zakończ z informacją "Brak transkrypcji do przetworzenia".
-
-3. **Pobierz pliki do przetworzenia:** Wybierz z listy `files` (już posortowane chronologicznie).
-
-4. **Przetwarzaj chronologicznie (najstarsze najpierw).**
-
-5. **Limit: 5 plików na batch** (unikamy przepełnienia kontekstu).
-
-6. **Po 5 plikach zapytaj:** "Przetworzyłem 5/X transkrypcji. Kontynuować?"
+- Agent przetwarza wskazany plik
 
 ---
 
@@ -79,69 +61,150 @@ Użytkownik mówi: "Oczyść oczekujące transkrypcje" lub "Oczyść wszystkie"
 
 2. **Słownik domenowy:** `Notatki/Transkrypcje/Słownik Domenowy/Słownik Domenowy i Korekta Fonetyczna.md`
    - Mapowania błędów ASR → poprawne terminy
-   - Cache mentalnie na czas batcha
+   - Cache mentalnie na czas sesji
 
 ---
 
-## Workflow przetwarzania (per plik)
+## Workflow przetwarzania
 
-1. **Przeczytaj skill** (raz na sesję, cache reguły)
-2. **Przeczytaj słownik** (raz na batch)
-3. **OZNACZ ROZPOCZĘCIE w bazie:**
-   ```python
-   from .claude.scripts.transkrypcje_db import *
-   plik_id = get_file_id('Transkrypcje/surowe/{nazwa_pliku}', 'surowa')
-   processing_id = start_processing(plik_id, 'surowa->oczyszczona')
-   if not processing_id:
-       print("⏭️ Plik już przetwarzany przez inny proces - pomijam")
-       continue
-   ```
-4. **Sprawdź rozmiar pliku** (`wc -l`) – jeśli > 800 linii → użyj strategii podziału (patrz skill)
-5. **Przeczytaj surowy plik** z `Notatki/Transkrypcje/surowe/`
-6. **Zastosuj reguły ze skilla:**
-   - Korekta fonetyczna wg słownika
-   - Redukcja szumu wg reguł
-   - Formatowanie wg standardu
-7. **Zapisz wynik** do `Notatki/Transkrypcje/oczyszczone/`:
-   - **Mały plik (<800 linii):** `{data} {typ} - transkrypcja.md`
-   - **Duży plik (>800 linii):** `{data} {typ} - transkrypcja - część 1.md`, część 2, 3, itd.
-8. **DODAJ NOWY PLIK do bazy:**
-   ```python
-   oczyszczona_id = add_file('Transkrypcje/oczyszczone/{nazwa}', 'oczyszczona', '{nazwa}')
-   ```
-9. **PRZENIEŚ surowy plik do archiwum:** `surowe/ → surowe - archiwum/`
-   - Zachowaj oryginalną nazwę pliku
-   - Weryfikuj sukces przeniesienia
-10. **OZNACZ ARCHIWIZACJĘ w bazie:**
-    ```python
-    mark_as_archived(plik_id)
-    ```
-11. **ZAKOŃCZ PRZETWARZANIE w bazie:**
-    ```python
-    finish_processing(processing_id, oczyszczona_id, uwagi="Oczyszczono pomyślnie")
-    ```
-12. **Zanotuj nowe błędy ASR** do aktualizacji słownika (jeśli znaleziono)
+### KROK 1: Inicjalizacja (raz na sesję)
+
+1. **Przeczytaj skill** (cache reguły)
+2. **Przeczytaj słownik** (cache mapowania)
+
+### KROK 2: Znajdowanie pliku do przetworzenia
+
+**Tryb automatyczny (kolejny w kolejce):**
+```bash
+# Znajdź najstarszy plik
+ls -1 Notatki/Transkrypcje/surowe/ | sort | head -1
+```
+
+**Tryb ręczny (konkretny plik):**
+- Użyj nazwy pliku podanej przez użytkownika
+
+**Jeśli brak plików w kolejce:**
+- Zakończ z informacją: "✅ Brak transkrypcji do przetworzenia w kolejce"
+
+### KROK 3: Blokada (przeniesienie do w-trakcie)
+
+```bash
+mv "Notatki/Transkrypcje/surowe/[nazwa_pliku]" \
+   "Notatki/Transkrypcje/surowe-w-trakcie/[nazwa_pliku]"
+```
+
+**Jeśli `mv` się nie uda:**
+- Plik już przetwarzany przez inny proces
+- Wyświetl: "⏭️ Plik już w trakcie przetwarzania - pomijam"
+- Zakończ sesję
+
+### KROK 4: Sprawdzenie rozmiaru
+
+```bash
+wc -l "Notatki/Transkrypcje/surowe-w-trakcie/[nazwa_pliku]"
+```
+
+**Decyzja:**
+- **< 800 linii** → pojedynczy plik wyjściowy
+- **≥ 800 linii** → podział na części (~300 linii każda, patrz skill)
+
+### KROK 5: Wczytanie pliku
+
+```bash
+cat "Notatki/Transkrypcje/surowe-w-trakcie/[nazwa_pliku]"
+```
+
+### KROK 6: Transformacja (główna logika)
+
+Zastosuj reguły ze skilla:
+
+1. **Korekta fonetyczna** (z użyciem słownika):
+   - "kopalnie lot" → "Copilot"
+   - "modlicie" → "AMODIT"
+   - "re aktywne" → "Reactowe"
+   - "i o r wa" → "JRWA"
+   - itd.
+
+2. **Redukcja szumu:**
+   - Usuń wypełniacze: "yyyy", "eee", "jakby", "no"
+   - Usuń powtórzenia: "to jest, to jest" → "to jest"
+   - Usuń technikalia spotkania: "czy mnie słychać?"
+   - Usuń timestampy z linii mówców
+
+3. **Formatowanie:**
+   - Dodaj interpunkcję (kropki, przecinki, pytajniki)
+   - Podziel na zdania
+   - Popraw gramatykę (bez zmiany sensu)
+   - Zachowaj styl mówiony
+
+4. **Strukturyzacja:**
+```markdown
+**Data spotkania:** DD miesiąc RRRR, GG:MM
 
 ---
 
-## Raport postępu (batch)
+**[Imię Nazwisko]:** Oczyszczona wypowiedź w pełnych zdaniach.
 
-Po każdym batchu (5 plików) przedstaw:
+**[Imię Nazwisko]:** Kolejna wypowiedź...
+```
+
+### KROK 7: Zapis pliku(-ów) oczyszczonego
+
+**Mały plik (<800 linii):**
+```bash
+# Zapisz jako pojedynczy plik
+Notatki/Transkrypcje/oczyszczone/[data] [typ] - transkrypcja.md
+```
+
+**Duży plik (≥800 linii):**
+```bash
+# Zapisz jako części
+Notatki/Transkrypcje/oczyszczone/[data] [typ] - transkrypcja - część 1.md
+Notatki/Transkrypcje/oczyszczone/[data] [typ] - transkrypcja - część 2.md
+Notatki/Transkrypcje/oczyszczone/[data] [typ] - transkrypcja - część 3.md
+# itd.
+```
+
+**Ważne:** Nie urywaj wypowiedzi - cała wypowiedź mówcy w jednej części!
+
+### KROK 8: Archiwizacja surowego pliku
+
+```bash
+mv "Notatki/Transkrypcje/surowe-w-trakcie/[nazwa_pliku]" \
+   "Notatki/Transkrypcje/surowe - archiwum/[nazwa_pliku]"
+```
+
+**Zachowaj oryginalną nazwę pliku!**
+
+### KROK 9: Zanotowanie nowych błędów ASR
+
+Jeśli podczas przetwarzania znalazłeś nowe, powtarzające się błędy ASR:
+- Zanotuj parę: `błędny zapis → poprawna forma`
+- Dołącz do raportu końcowego (użytkownik może zaktualizować słownik)
+
+---
+
+## Raport końcowy (po przetworzeniu pliku)
 
 ```markdown
-## Postęp przetwarzania
+## ✅ Transkrypcja oczyszczona
 
-✓ Przetworzone w tej sesji:
-- 2025-11-25 Design.md → 2025-11-25 Design - transkrypcja.md
-- 2025-11-25 Spotkanie projektowe.md → ...
-- ...
+**Przetworzone:**
+- `2025-11-25 Design.md` → `2025-11-25 Design - transkrypcja.md`
 
-📝 Nowe błędy ASR do dodania do słownika:
+**Szczegóły:**
+- Rozmiar surowego: 450 linii
+- Wyjście: Pojedynczy plik
+- Archiwizacja: ✅ `surowe - archiwum/2025-11-25 Design.md`
+
+**📝 Nowe błędy ASR do rozważenia (opcjonalnie):**
 - "xyz" → "ABC" (kontekst: ...)
 
-Pozostało: X plików
+**Pozostało w kolejce:** 12 plików
 
-Kontynuować?
+---
+
+Aby przetworzyć kolejny plik, napisz: "Oczyść kolejną transkrypcję"
 ```
 
 ---
@@ -152,9 +215,9 @@ Kontynuować?
 - **Brak halucynacji:** Jeśli niejasne, zostaw oryginał
 - **Brak streszczania:** Czyść, nie kondensuj
 - **Brak interpretacji:** Edytuj, nie komentuj
+- **Jeden plik = jedna sesja:** Po zakończeniu czekaj na kolejne polecenie
 - **Archiwizacja:** Po oczyszczeniu przenieś surowy plik do `surowe - archiwum/`
-- **Aktualizacja słownika:** Notuj nowe błędy ASR
-- **Duże pliki (>800 linii):** Zawsze dziel na części po ~300 linii – oszczędza tokeny i zapobiega błędom zapisu
+- **Duże pliki (≥800 linii):** Zawsze dziel na części po ~300 linii
 
 ---
 
@@ -164,12 +227,31 @@ Przed zapisem każdego pliku wykonaj checklist z `.claude/skills/transcript-clea
 
 ---
 
+## Struktura katalogów (blokada przez przenoszenie)
+
+```
+Notatki/Transkrypcje/
+├── surowe/                    ← kolejka (sortowanie alfabetyczne = chronologiczne)
+├── surowe-w-trakcie/          ← blokada (agent pracuje)
+├── surowe - archiwum/         ← zarchiwizowane surowe
+├── oczyszczone/               ← gotowe oczyszczone transkrypcje
+├── oczyszczone-w-trakcie/     ← (dla note-maker)
+└── oczyszczone-archiwum/      ← (dla note-maker)
+```
+
+**Blokada współbieżna:**
+- Operacja `mv` jest atomowa w systemie plików
+- Jeśli dwa procesy próbują przenieść ten sam plik, tylko jeden się powiedzie
+- Drugi proces dostanie błąd i pominie plik
+
+---
+
 ## Powiązane zasoby
 
 - **Skill:** `.claude/skills/transcript-cleaning/SKILL.md`
 - **Słownik:** `Notatki/Transkrypcje/Słownik Domenowy/Słownik Domenowy i Korekta Fonetyczna.md`
-- **Baza danych:** `Notatki/rejestr_transkrypcji.db` (SQLite)
-- **Helper script:** `.claude/scripts/transkrypcje_db.py`
-- **Surowe:** `Notatki/Transkrypcje/surowe/`
-- **Oczyszczone:** `Notatki/Transkrypcje/oczyszczone/`
-- **Archiwum surowe:** `Notatki/Transkrypcje/surowe - archiwum/`
+- **Katalogi:**
+  - `Notatki/Transkrypcje/surowe/`
+  - `Notatki/Transkrypcje/surowe-w-trakcie/`
+  - `Notatki/Transkrypcje/surowe - archiwum/`
+  - `Notatki/Transkrypcje/oczyszczone/`

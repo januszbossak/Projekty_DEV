@@ -2,6 +2,17 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Bug
+
+- Naprawa bugów w raportach (ogólne ustawienia i raport tabelaryczny).
+- Naprawa bugów dotyczących ogólnych ustawień raportów.
+- Naprawa bugów z raportu tabelarycznego.
+- Naprawa bugów z filtrów (ogólnych).
+
+---
+
 ## 2025-11-28 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Notatka projektowa - Połączenie z Marek Dziakowski.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Notatka%20projektowa%20-%20Połączenie%20z%20Marek%20Dziakowski.md)
 **Kategoria:** #Funkcjonalność #Decyzja

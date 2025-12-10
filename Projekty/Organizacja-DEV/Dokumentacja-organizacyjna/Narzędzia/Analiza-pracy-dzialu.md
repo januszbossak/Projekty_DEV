@@ -122,6 +122,6 @@ Nazwy projektów w Azure DevOps są pod "dotację" i nieczytelne.
 ## Powiązane tematy
 
 - [[Azure-DevOps]] – źródło danych
-- [[Daily]] – plan vs wykonanie
+- [[2025-12-08 Daily]] – plan vs wykonanie
 - [[Spotkania-cykliczne]] – kontekst spotkań
 

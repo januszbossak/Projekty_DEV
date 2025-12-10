@@ -4,6 +4,15 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-11-30 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-30 Spotkanie projektowe - Edytor procesow.md](../../../../../Notatki/Gotowe-notatki-archiwum/2025-11-30%20Spotkanie%20projektowe%20-%20Edytor%20procesow.md)
+**Kategoria:** #Status #Funkcjonalność #Problem
+
+- Status: Prace niemal zakończone, pozostaje kwestia prawego panelu.
+- Punkt otwarty: Finalne ustalenia dotyczące prawego panelu (do ustalenia z Kamilem).
+
+---
+
 ## 2025-11-13 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-13 Notatka projektowa - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-13%20Notatka%20projektowa%20-%20Edytor%20procesów.md)
 **Kategoria:** #Wydanie #Funkcjonalność #Architektura

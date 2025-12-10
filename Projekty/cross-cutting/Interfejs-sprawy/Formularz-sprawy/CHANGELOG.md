@@ -2,6 +2,19 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Bug #Design #UX
+
+- Naprawione bugi UI i poprawiony wygląd pól tabeli.
+- Poprawa wyglądu menu przy polach (odnośnik, dokument).
+- Ujednolicenie kolorów menu (usunięcie niespójności).
+- Poprawa wyglądu pola tabela z zagnieżdżeniami.
+- Naprawienie niespójności w wyświetlaniu kompaktowym.
+- Weryfikacja mobilnego interfejsu (opcjonalnie).
+
+---
+
 ## 2025-11-27 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-27%20Rada%20architektów.md)
 **Kategoria:** #Funkcjonalność #Decyzja #Zadanie

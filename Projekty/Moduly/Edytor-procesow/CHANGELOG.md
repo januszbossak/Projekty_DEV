@@ -4,6 +4,28 @@ Historia zmian i ustaleń dla projektu.
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Design #Funkcjonalność #Bug
+
+- Przegląd i optymalizacja prawego panelu ustawień pól (wyróżnienie jako konfiguracja).
+- Ujednolicenie wyglądu pola Tabela (zagnieżdżenia).
+- Naprawa bugów UI/UX (kolory, menu, widoki kompaktowe).
+- Ryzyko: Niespójność wyświetlania kompaktowego w niektórych polach.
+
+---
+
+## 2025-11-30 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-30 Spotkanie projektowe - Edytor procesow.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-30%20Spotkanie%20projektowe%20-%20Edytor%20procesow.md)
+**Kategoria:** #Strategia #Funkcjonalność #UI/UX
+
+- Strategia "Scrum-oriented": skoncentrowane cele sprintu i domykanie funkcjonalności.
+- Jasne definiowanie MVP dla każdego etapu (np. diagram bez prawego panelu).
+- Ikony w interfejsie: wszystkie zmienione na typ outline.
+- Optymalizacja: ograniczenie pobierania użytkowników/słowników do 50 pozycji (lazy loading).
+
+---
+
 ## 2025-11-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Notatka projektowa - AMODIT AI.md]
 **Kategoria:** #Funkcjonalność #Design

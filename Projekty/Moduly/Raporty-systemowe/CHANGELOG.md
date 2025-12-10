@@ -2,6 +2,16 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Projekt:** [Klienci/WIM/Raporty-systemowe](../../../Klienci/WIM/Raporty-systemowe/)
+**Kategoria:** #Funkcjonalność #Zadanie
+
+- Przygotowanie 5 raportów systemowych dla WIM.
+- Zgodność z wymaganiami WIM.
+
+---
+
 ## 2025-10-20 | Sprint review
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-10-20 Sprint review-codex.md]
 **Kategoria:** #Funkcjonalność

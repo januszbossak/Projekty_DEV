@@ -2,6 +2,29 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu (Szczegóły)
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Architektura #Funkcjonalność
+
+- Struktura JRWA implementowana jako 4-poziomowa.
+- Klasyfikacja obiektów przez pole "słownik".
+- Implementacja tylko na poziomie sprawy (brak w raportach w tym etapie).
+
+---
+
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Zadanie #Wydanie
+
+- Dostarczenie funkcjonalności JRWA do konsultantów i klienta LOT.
+- Przygotowanie struktury bazy danych.
+- Osadzenie funkcjonalności w polu odnośnik do źródła zewnętrznego.
+- Implementacja wyboru kategorii JRWA.
+- Przekazanie paczki do instalacji dla LOTu.
+- Przepisywanie danych z JRWA do pól tekstowych (na poziomie sprawy).
+
+---
+
 ## 2025-11-27 | Rada architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Rada architektów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-27%20Rada%20architektów.md)
 **Kategoria:** #Architektura #Decyzja #Zadanie

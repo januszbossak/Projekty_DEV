@@ -1,5 +1,28 @@
 # CHANGELOG - Edytor formularzy
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Design #Zadanie
+
+- Ulepszony prawy panel w edytorze graficznym i liście pól zgodnie z projektem.
+- Ustalenie gotowego projektu prawego panelu.
+- Realizacja zmian zgodnie z projektem.
+- Uporządkowanie kolejności ustawień (najczęściej używane na górze).
+- Zmiana sposobu edycji parametrów GUID w polu (okno zamiast osadzenia).
+- Zlokalizowanie akcji związanych z regułami tabeli w prawym panelu.
+
+## 2025-11-30 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-30 Spotkanie projektowe - Edytor procesow.md](../../../../../Notatki/Gotowe-notatki-archiwum/2025-11-30%20Spotkanie%20projektowe%20-%20Edytor%20procesow.md)
+**Kategoria:** #Funkcjonalność #UI/UX #Problem
+
+- Panel prawy: zmiana kolejności i układu ustawień (zadanie P. Rogaś).
+- Walidacja: dodanie komunikatu o przekroczeniu limitu pól (zamiast cichego błędu).
+- Słowniki: usprawniony interfejs edycji (bezpośrednia edycja, akceptacja ryzyka).
+- Brak wyszukiwania w oknach wyboru słowników (zgłoszona potrzeba).
+- Masowe działania na liście pól: potrzeba przenoszenia (drag & drop) w widoku listy.
+
+
+
 ## 2025-11-27 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
 **Kategoria:** #Rozwój #Funkcjonalność #Ukończenie

@@ -2,6 +2,15 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Wydanie #Funkcjonalność
+
+- Joby (monitoring, wygasanie dokumentów) przetestowane.
+- Planowane wdrożenie na domówkę, następnie produkcję.
+
+---
+
 ## 2025-11-04 | Rada Architektów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-04 Rada architektów.md]
 **Kategoria:** #Architektura #Zadanie #Bezpieczeństwo

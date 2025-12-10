@@ -2,6 +2,26 @@
 
 ---
 
+## 2025-12-01 | Planowanie sprintu (Szczegóły)
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Design #Bug
+
+- Ujednolicenie wyglądu pola Tabela (zagnieżdżenia).
+- Naprawa bugów UI/UX: kolory menu, widoki kompaktowe, mobilne.
+
+---
+
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Design #Dokumentacja
+
+- Spójny wygląd tabel w module Design zgodnie z wytycznymi.
+- Spisanie wytycznych co do wyglądu standardowych tabel w Design.
+- Poprawa obecnych tabel zgodnie z wytycznymi.
+- Ustalenie odchyleń w widokach wymagających odstępstw od standardu.
+
+---
+
 ## 2025-11-27 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
 **Kategoria:** #Architektura #Design #Standardy #UX

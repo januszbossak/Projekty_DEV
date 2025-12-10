@@ -4,6 +4,24 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-01 | Planowanie sprintu (Szczegóły)
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
+**Kategoria:** #Zadanie
+
+- Priorytet: Indeksacja dla 100% poprawności raportów tabelarycznych.
+
+---
+
+## 2025-12-01 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
+**Kategoria:** #Wydajnosc #Bug #Zadanie
+
+- Dokończenie indeksacji dla raportu tabelarycznego.
+- Zapewnienie 100% działania raportu tabelarycznego bez błędów.
+- Eliminacja błędów związanych z raportem tabelarycznym.
+
+---
+
 ## 2025-11-18 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-18 Notatka projektowa - Ulepszanie filtrów użytkownika w raportach.md]
 **Kategoria:** #Architektura #Decyzja #Zadanie

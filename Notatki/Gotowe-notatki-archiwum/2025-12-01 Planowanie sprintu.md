@@ -1,5 +1,7 @@
 # Planowanie Sprintu – 2025-12-01
 
+> 🛡️ Zweryfikowano przez Note Reviewer: 2025-12-09
+
 **Sprint:** (do ustalenia)
 **Okres:** (do ustalenia)
 
@@ -236,3 +238,21 @@ Opracowanie narzędzia do generowania kompleksowej dokumentacji powdrożeniowej 
 - **Roadmapa:** Janusz chce, aby roadmapa zawierała mniej rzeczy, ale były one dowiezione.
 - **Comarch Resto do Kirin:** Planowanie na następny lub kolejny sprint, w zależności od decyzji Neuca.
 - **Wyceny:** Wyceny "Kushina" i "rozszerzenie okna dialogowego" do ponownej analizy i aktualizacji estymacji.
+
+---
+
+## Powiązane projekty
+- `Klienci/WIM/Repozytorium-plikow-DMS`
+- `Klienci/LOT/JRWA`
+- `cross-cutting/Design-System`
+- `Moduly/Edytor-procesow`
+- `Klienci/WIM/Raporty-systemowe`
+- `Moduly/Modul-raportowy/Masowe-akcje`
+- `Klienci/LOT/Integracjai-SIEM`
+- `klienci/Lewiatan/Comarch-HUB`
+- `Klienci/LOT/Integracja-UPS`
+- `Klienci/WIM/Podpis-kwalifikowany-SignApp-macOS`
+- `Organizacja-DEV/Automatyzacja-dokumentacji-AI`
+- `Organizacja-DEV/Dokumentacja-organizacyjna/Narzędzia`
+- `Moduly/Ustawienia-systemowe/Zadania-jobs`
+- `Moduly/Modul-raportowy/Wydajnosc`
