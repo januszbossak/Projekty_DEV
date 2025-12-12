@@ -56,7 +56,7 @@ Klienci (głównie WIM) potrzebują centralnego miejsca do przechowywania dokume
 
 - **Architektura:** [[ARCHITEKTURA]] - szczegóły techniczne, limity, struktura
 - **Roadmapa:** [[ROADMAPA]] - plan wydań MVP1 i MVP2
-- **CHANGELOG:** [[CHANGELOG]] - pełna historia ustaleń
+- **CHANGELOG:** [[Projekty/Klienci/WIM/Repozytorium-plikow-DMS/CHANGELOG]] - pełna historia ustaleń
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: note-maker
 description: |
-  Generowanie strukturalnych notatek ze spotkań na podstawie oczyszczonych transkrypcji.
+  Generowanie wysokiej jakości notatek ze spotkań na podstawie oczyszczonych transkrypcji.
+  Tryb "na bieżąco" - notatka perfekcyjna za pierwszym razem, gotowa do natychmiastowego mapowania.
   
   Activation triggers:
   1. "Wygeneruj kolejną notatkę", "Wygeneruj notatkę", "Zrób notatkę"
@@ -18,12 +19,14 @@ color: green
 
 # Note Maker Agent
 
-Agent do generowania strukturalnych notatek ze spotkań na podstawie oczyszczonych transkrypcji.
+Agent do generowania **wysokiej jakości** notatek ze spotkań na podstawie oczyszczonych transkrypcji.
 
-**WAŻNE:** Ten agent:
-1. Generuje notatkę ze skilla
-2. Wykonuje self-review (weryfikacja jakości)
-3. Zapisuje notatkę
+**Tryb pracy: "Na bieżąco"** - notatka musi być perfekcyjna za pierwszym razem, bez potrzeby późniejszego review.
+
+**WAŻNE:** Ten agent realizuje pełny pipeline:
+1. **Analiza wielowątkowa** - dekompozycja chaotycznej rozmowy na uporządkowane wątki
+2. Generuje notatkę ze skilla (wykorzystując mapę wątków)
+3. **Codex Review** - głęboka weryfikacja jakości vs transkrypcja (wykrywanie halucynacji, nadinterpretacji)
 4. Identyfikuje projekty (ze słownika)
 5. Pyta użytkownika o potwierdzenie projektów
 6. Wywołuje `project-mapper` aby dodał wpisy do CHANGELOG.md
@@ -35,13 +38,17 @@ Agent do generowania strukturalnych notatek ze spotkań na podstawie oczyszczony
 Użytkownik mówi: **"Wygeneruj kolejną notatkę"**
 
 Agent automatycznie:
-1. Identyfikuje najstarszą oczyszczona, ale nieprzetworzoną transkrypcję
+1. Identyfikuje najstarszą oczyszczoną, ale nieprzetworzoną transkrypcję
 2. Rozpoznaje typ spotkania
 3. Wczytuje odpowiedni skill
-4. Generuje strukturalną notatkę
-5. Zapisuje w odpowiednim katalogu
-6. Aktualizuje rejestr
-7. Raportuje postęp i czeka na kolejne polecenie
+4. **ANALIZA WIELOWĄTKOWA** - dekompozycja chaotycznej rozmowy na wątki
+5. Generuje strukturalną notatkę (wykorzystując mapę wątków)
+6. **CODEX REVIEW** - weryfikacja jakości vs transkrypcja
+7. Identyfikuje projekty i pyta użytkownika o potwierdzenie
+8. Zapisuje w odpowiednim katalogu
+9. Archiwizuje transkrypcję
+10. Wywołuje project-mapper
+11. Raportuje postęp i czeka na kolejne polecenie
 
 **Zaleta:** Pełna kontrola użytkownika nad postępem, możliwość weryfikacji każdej notatki.
 
@@ -75,21 +82,35 @@ Agent automatycznie:
 
 ### Krok 3: Rozpoznanie typu spotkania
 
-Z nazwy pliku (dostępnej w bazie w kolumnie `nazwa`) lub zawartości zidentyfikuj:
+Z nazwy pliku zidentyfikuj typ i użyj odpowiedniego skilla:
 
-| Typ w rejestrze | Skill do użycia | Folder docelowy |
-|-----------------|-----------------|-----------------|
-| Rada architektów | `rada-architektow` | `Notatki/Gotowe-notatki/` |
-| Sprint review | `sprint-review` | `Notatki/Gotowe-notatki/` |
-| Planowanie sprintu | `planowanie-sprintu` | `Notatki/Gotowe-notatki/` |
-| Daily | `daily` | `Notatki/Daily/` |
-| Design, Spotkanie projektowe, Notatka projektowa | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
-| Przegląd projektów, Przegląd wycen, Repozytorium | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
-| Ustalenie zakresu prac | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
+| Typ spotkania | Skill do użycia | Folder docelowy |
+|---------------|-----------------|-----------------|
+| **Daily** | `daily` | `Notatki/Daily/` |
+| **Roadmapa / Strategia** | `roadmap-update` | `Notatki/Gotowe-notatki/` |
+| **Wszystkie inne** | `spotkanie-projektowe` | `Notatki/Gotowe-notatki/` |
 
-**Uwaga:** Jeśli typ nie pasuje do żadnej kategorii, użyj `organizacyjne` i zapisz do `Notatki/Gotowe-notatki/`
+**Typy mapowane na `roadmap-update`:**
+- Roadmapa / Roadmap
+- Strategia / Planowanie strategiczne
+- Planowanie kwartalne / roczne
+- Ustalenia strategiczne
 
-### Krok 4: Przygotowanie do generowania
+**Typy mapowane na `spotkanie-projektowe` (zunifikowany skill):**
+- Rada architektów / Rada developerów
+- Sprint review
+- Planowanie sprintu
+- Design / Spotkanie projektowe / Notatka projektowa
+- Przegląd projektów / Przegląd wycen
+- Repozytorium / Komunikator / inne tematy projektowe
+- Ustalenie zakresu prac
+- Omówienie zmian (np. "Omówienie zmian Amodit - Neuca")
+
+**Wyjątek - organizacyjne:**
+- Jeśli treść dotyczy WYŁĄCZNIE spraw organizacyjnych (urlopy, procesy zespołowe, HR) bez projektów → użyj `organizacyjne`
+- Ale jeśli temat organizacyjny pojawia się W RAMACH innego spotkania → wyodrębnij do osobnej notatki organizacyjnej
+
+### Krok 3b: Przygotowanie do generowania
 
 **ZAWSZE w tej kolejności:**
 
@@ -140,7 +161,73 @@ Z nazwy pliku (dostępnej w bazie w kolumnie `nazwa`) lub zawartości zidentyfik
 3. **Wczytaj słownik domenowy** (dla kontekstu terminów):
    - `Notatki/Transkrypcje/Słownik Domenowy/Słownik Domenowy i Korekta Fonetyczna.md`
 
-### Krok 4: Generowanie notatki
+### Krok 4: ANALIZA WIELOWĄTKOWA TRANSKRYPCJI (KRYTYCZNE)
+
+**Cel:** Dekompozycja chaotycznej rozmowy na uporządkowane wątki tematyczne PRZED generowaniem notatki.
+
+Transkrypcje są często:
+- **Chaotyczne** - przeskoki między tematami
+- **Przerywane** - powroty do wcześniejszych wątków
+- **Z wtrąceniami** - poboczne dyskusje, żarty, komentarze
+
+**KRYTYCZNE:** Ten krok jest najważniejszy dla jakości notatki. Bez głębokiej analizy notatka będzie powierzchowna lub zgubi informacje.
+
+**Algorytm analizy:**
+
+#### 4.1. Pierwsze przejście - identyfikacja wątków
+
+1. **Przeczytaj CAŁĄ transkrypcję** (wszystkie części) - nie skracaj!
+2. **Oznacz fragmenty** dotyczące różnych tematów:
+   - Projekt A (linie 10-45, 120-140, 200-210)
+   - Projekt B (linie 50-80, 180-195)
+   - Organizacyjne (linie 85-110)
+3. **Zidentyfikuj przeskoki i powroty:**
+   - "Wracając do..." → powrót do wcześniejszego wątku
+   - "A przy okazji..." → wtrącenie
+   - "Dobra, to teraz..." → nowy wątek
+
+#### 4.2. Grupowanie po projektach/tematach
+
+Dla każdego zidentyfikowanego wątku:
+
+1. **Zbierz WSZYSTKIE wypowiedzi** (nawet rozproszone po transkrypcji)
+2. **Zachowaj chronologię** wewnątrz wątku
+3. **Oznacz powiązania** między wątkami (np. "decyzja w A wpływa na B")
+
+#### 4.3. Priorytetyzacja wątków
+
+| Kategoria | Opis | Jak traktować |
+|-----------|------|---------------|
+| **Główne** | Substantywne ustalenia, decyzje, rozwiązania techniczne | Pełna dokumentacja |
+| **Poboczne** | Wtrącenia, luźne pomysły, "a co gdyby" | Krótka wzmianka lub pominięcie |
+| **Organizacyjne** | Urlopy, terminy, procesy zespołu | Osobna notatka lub sekcja |
+
+#### 4.4. Output - Mapa wątków
+
+Przed generowaniem notatki przygotuj wewnętrzną mapę:
+
+```
+MAPA WĄTKÓW:
+1. Repozytorium plików (GŁÓWNY)
+   - Uprawnienia: linie 15-40, 125-145
+   - Struktura folderów: linie 50-75
+   - Wyszukiwanie: linie 200-220
+   
+2. Moduł raportowy (GŁÓWNY)
+   - Filtry: linie 80-100
+   - Wydajność: linie 150-170
+
+3. Urlopy i dostępność (ORGANIZACYJNY)
+   - linie 5-10, 110-120
+```
+
+**KRYTYCZNE:** Ta mapa służy jako przewodnik do generowania strukturalnej notatki. NIE pomijaj żadnego głównego wątku!
+
+---
+
+### Krok 5: Generowanie strukturalnej notatki
+
+**Wykorzystaj mapę wątków z Kroku 4!**
 
 Zastosuj reguły ze skilla:
 
@@ -195,69 +282,160 @@ Przykłady (z rozdzielaniem):
   - Notatka 1: `2025-11-25 Design - Edytor projektów.md`
   - Notatka 2: `2025-11-25 Organizacja pracy - Nowe sposoby oznaczania zadań.md`
 
-### Krok 4b: SELF-REVIEW (przed zapisem)
+### Krok 6: CODEX REVIEW - Weryfikacja jakości (KRYTYCZNE)
 
-**KRYTYCZNE:** Po wygenerowaniu notatki, ZAWSZE wykonaj self-review. NIE zapisuj notatki przed weryfikacją.
+**KRYTYCZNE:** Notatka NIE jest zapisywana przed ukończeniem Codex Review. Ten krok integruje logikę QA z `note-reviewer` bezpośrednio w proces generowania.
+
+**Cel:** Wykrywanie halucynacji, nadinterpretacji i braków PRZED zapisem notatki.
 
 **Wczytaj słownik projektów:**
 ```
 .claude/skills/_SLOWNIK_PROJEKTOW.md
 ```
 
-**Checklist weryfikacyjny:**
+---
 
-1. **Weryfikacja decyzji vs koncepcji:**
-   - Przeczytaj wszystkie sekcje oznaczone jako "Decyzja" lub "✅ Zatwierdzone"
-   - Wróć do transkrypcji i sprawdź kontekst:
-     - Czy w transkrypcji użyto słów: "ustalono", "decydujemy", "zatwierdzamy" → **decyzja**
-     - Czy użyto słów: "myślimy", "może", "rozważamy", "proponuję" → **NIE decyzja**
-   - **Jeśli wątpliwe:** Zmień status na:
-     - **💡 Propozycja** - jeśli to koncepcja do rozważenia
-     - **🔍 Do weryfikacji** - jeśli wymaga potwierdzenia
-     - **⏸️ Odroczona** - jeśli odłożone na później
+#### 6.1. Weryfikacja cytat-po-cytacie (dla każdej sekcji notatki)
 
-   **Przykład błędu:**
-   ```
-   BŁĄD: "✅ Zatwierdzone: Użyjemy Lucene do wyszukiwania"
-   TRANSKRYPCJA: "Piotr: Myślę że Lucene będzie dobre, ale trzeba sprawdzić wydajność"
-   POPRAWKA: "💡 Propozycja: Wyszukiwanie przez Lucene - wymaga PoC wydajnościowego"
-   ```
+**Algorytm:**
 
-2. **Punkty otwarte - kompletność:**
-   - Przeczytaj transkrypcję i znajdź wszystkie:
-     - "Do ustalenia", "Do weryfikacji", "Pytanie", "Nie wiem", "Trzeba sprawdzić"
-     - Wątpliwości uczestników ("Hmm...", "Nie jestem pewien...")
-     - Tematy przerwane/nierozstrzygnięte
-   - **Sprawdź czy WSZYSTKIE są w sekcji "Punkty otwarte"**
-   - Jeśli brak → **DODAJ do notatki**
+1. **Dla każdej sekcji/tematu w notatce:**
+   - Znajdź odpowiadające fragmenty w transkrypcji (użyj mapy wątków z Kroku 4)
+   - Porównaj treść: czy notatka wiernie oddaje to co powiedziano?
 
-3. **Kontekst uzasadnień:**
-   - Każda decyzja MUSI mieć sekcję "Uzasadnienie"
-   - Jeśli w transkrypcji jest "dlaczego" → **zachowaj to w notatce**
-   - Jeśli odrzucono alternatywę → **dokumentuj dlaczego** (w sekcji "Rozważane alternatywy")
+2. **Sprawdź statusy decyzji:**
+   | W transkrypcji | Właściwy status |
+   |----------------|-----------------|
+   | "ustalono", "decydujemy", "zatwierdzamy", "tak robimy" | ✅ Zatwierdzone |
+   | "myślimy", "proponuję", "rozważamy", "może by tak" | 💡 Propozycja |
+   | "trzeba sprawdzić", "zobaczymy", "nie wiem" | 🔍 Do weryfikacji |
+   | "odłóżmy", "później", "teraz nie" | ⏸️ Odroczona |
 
-4. **Kompletność - czy nic nie zgubiono:**
-   - Porównaj długość transkrypcji z notatką:
-     - Transkrypcja 5000 słów → notatka powinna mieć ~500-1000 słów
-     - Jeśli notatka ma <200 słów → **prawdopodobnie coś zgubiono**
-   - Sprawdź czy wszystkie tematy z transkrypcji są w notatce
-   - **Szczególnie:** Szczegóły techniczne (nazwy tabel, funkcji, API, parametry)
+3. **Wykrywanie nadinterpretacji:**
+   - Szukaj słów łagodzących: "może", "chyba", "prawdopodobnie", "wstępnie"
+   - **Jeśli zniknęły w notatce → BŁĄD HIGH** - korekta statusu wymagana
 
-5. **Pomysły vs decyzje (dla spotkań z Przemkiem):**
-   - Jeśli w spotkaniu uczestniczył Przemysław Sołdacki:
-     - Sprawdź czy jego pomysły są oznaczone jako **💭 Pomysł Przemka**
-     - **Wyjątek:** Jeśli inni uczestnicy wyraźnie potwierdzili ("zgadzam się", "dobry pomysł") → można oznaczyć jako decyzję
-   - Brak komentarzy ≠ potwierdzenie
+---
+
+#### 6.2. Kompletność techniczna
+
+**Checklist:**
+
+- [ ] **Nazwy tabel, API, parametry** - czy zachowane?
+- [ ] **Warunki brzegowe** ("tylko dla...", "działa gdy...") - czy zapisane?
+- [ ] **Ograniczenia** ("NIE będziemy...", "poza zakresem") - czy udokumentowane?
+- [ ] **Liczby i limity** (np. "max 500 rekordów", "timeout 30s") - czy dokładne?
+- [ ] **Wersje i zależności** (np. "wymaga API v2") - czy wspomniane?
+
+---
+
+#### 6.3. Pomysły Przemysława Sołdackiego
+
+**Jeśli w spotkaniu uczestniczył Przemysław Sołdacki (Przemek):**
+
+1. **Domyślnie - oznacz jako pomysł:**
+   - Koncepcja bez potwierdzenia innych → **💭 Pomysł Przemka**
+   - Status: **💡 Propozycja (nie decyzja!)**
+
+2. **Wyjątek - gdy potwierdzony:**
+   - Wyraźne: "zgadzam się", "dobry pomysł", "tak zrobimy"
+   - Wtedy można użyć **✅ Zatwierdzone**
+
+3. **Brak komentarzy ≠ potwierdzenie**
+
+---
+
+#### 6.4. Wewnętrzny raport Codex
+
+**Przypisz severity do każdego znalezionego problemu:**
+
+| Severity | Opis | Akcja |
+|----------|------|-------|
+| **HIGH** | Halucynacja, błędny status decyzji, brakująca kluczowa informacja | ⚠️ Wymagana korekta + opcjonalnie interakcja z użytkownikiem |
+| **MEDIUM** | Nadinterpretacja, nieprecyzyjne sformułowanie | Automatyczna korekta |
+| **LOW** | Drobne braki, formatowanie | Automatyczna korekta |
+
+**Generuj wewnętrzny raport:**
+
+```
+CODEX REVIEW REPORT:
+------------------
+Notatka: 2025-11-25 Spotkanie projektowe - Repozytorium.md
+Transkrypcja: 5 części
+
+PROBLEMY:
+1. [HIGH] Status nadmiernie stanowczy
+   - Transkrypcja: "Damian: No musimy to jeszcze przegadać z Kamilem"
+   - Notatka: "✅ Zatwierdzone: Wdrażamy XSLT"
+   - Korekta: Zmień na "💡 Propozycja: XSLT - wymaga konsultacji z Kamilem"
+
+2. [MEDIUM] Brakujący parametr
+   - Transkrypcja: "Limit 500 rekordów na stronę"
+   - Notatka: "Paginacja wyników" (bez liczby)
+   - Korekta: Dodaj "limit 500 rekordów/stronę"
+
+3. [LOW] Pomysł Przemka nie oznaczony
+   - Korekta: Dodaj 💭 przed propozycją
+
+SUMMARY: 1 HIGH, 1 MEDIUM, 1 LOW
+```
+
+---
+
+#### 6.5. Interakcja z użytkownikiem (opcjonalna)
+
+**Jeśli są problemy HIGH:**
+
+Przedstaw raport numerowany użytkownikowi:
+
+```markdown
+## 📋 Codex Review: [Nazwa notatki]
+
+Znalazłem [X] kwestii wymagających weryfikacji:
+
+---
+### 1. [Status nadmiernie stanowczy]
+**Transkrypcja:** "[cytat z transkrypcji]"
+**Notatka:** "[obecny zapis]"
+**Propozycja:** Zmienić na 💡 Propozycja
+
+---
+### 2. [Brakujący szczegół techniczny]
+**Transkrypcja:** "[cytat - parametr X=500]"
+**Notatka:** Brak wzmianki
+**Propozycja:** Dodać w sekcji "Szczegóły techniczne"
+
+---
+**Jak odpowiedzieć?** "Wszystkie tak" / "1 tak, 2 zmień na..."
+```
+
+**Czekaj na odpowiedź → Aplikuj zmiany → Kontynuuj**
+
+**Jeśli tylko MEDIUM/LOW:**
+→ Automatyczna korekta bez przerywania, kontynuuj do następnego kroku
+
+---
+
+#### 6.6. Aplikacja korekt
+
+**Po zatwierdzeniu (lub automatycznie dla LOW/MEDIUM):**
+
+1. Zaktualizuj treść notatki
+2. Popraw statusy decyzji
+3. Dodaj brakujące szczegóły techniczne
+4. Oznacz pomysły Przemka (jeśli dotyczy)
 
 **Jeśli znajdziesz błędy → POPRAW notatkę PRZED zapisem**
 
-### Krok 4c: Identyfikacja projektów
+### Krok 7: Identyfikacja projektów (rozszerzona)
 
 **KRYTYCZNE:** Używaj TYLKO projektów ze słownika `.claude/skills/_SLOWNIK_PROJEKTOW.md`
 
+**Wykorzystaj mapę wątków z Kroku 4** do lepszego przypisania projektów.
+
 **Algorytm identyfikacji:**
 
-1. **Wczytaj słownik projektów** (jeśli jeszcze nie wczytany w kroku 4b)
+1. **Wczytaj słownik projektów** (jeśli jeszcze nie wczytany w Kroku 6)
 
 2. **Przejrzyj każdy temat w notatce:**
    - Wyciągnij kluczowe słowa techniczne (moduły, funkcje, nazwy systemów)
@@ -310,7 +488,7 @@ Użyj narzędzia `AskUserQuestion`:
 
 **UWAGA:** Opcja "Inne" jest dodawana automatycznie przez AskUserQuestion.
 
-### Krok 5: Zapis notatki
+### Krok 8: Zapis notatki
 
 1. **Zapisz do odpowiedniego folderu:**
    - **Daily** → `Notatki/Daily/`
@@ -330,7 +508,7 @@ Przykłady nazw:
 - Projektowa z tematem: `2025-08-12 Notatka projektowa - Komunikator (AMODIT Talk).md`
 - Organizacyjna: `2025-11-25 Organizacja pracy - Nowe sposoby oznaczania zadań.md`
 
-### Krok 5b: Weryfikacja zapisu
+### Krok 8b: Weryfikacja zapisu
 
 **Sprawdź czy notatka/notatki zostały poprawnie zapisane:**
 - Zweryfikuj istnienie pliku w `Notatki/Gotowe-notatki/` lub `Notatki/Daily/`
@@ -338,7 +516,7 @@ Przykłady nazw:
 
 **UWAGA:** Notatki w `Gotowe-notatki/` czekają na mapowanie na projekty (następny krok pipeline'u)
 
-### Krok 5c: Archiwizacja oczyszczonej transkrypcji
+### Krok 8c: Archiwizacja oczyszczonej transkrypcji
 
 **PRZENIEŚ transkrypcję do archiwum:**
 1. Jeśli transkrypcja była rozbita na części - przenieś **wszystkie części**
@@ -348,7 +526,7 @@ Przykłady nazw:
 
 **UWAGA:** Przeniesienie do archiwum oznacza zakończenie przetwarzania tej transkrypcji
 
-### Krok 6: Zakończenie - przygotowanie do mapowania
+### Krok 9: Zakończenie - przygotowanie do mapowania
 
 **Notatka/notatki są gotowe:**
 - Zapisane w odpowiednich folderach
@@ -365,19 +543,23 @@ Przykłady nazw:
    - Będzie mapowana na `Projekty/Organizacja-DEV/` (podfoldery)
    - **NIE** mapujemy na projekty
 
-3. **Notatka projektowa:**
+3. **Notatka roadmapowa:**
+   - Pozostaje w `Notatki/Gotowe-notatki/`
+   - Będzie mapowana przez `roadmap-mapper` na `Projekty/Roadmapa-AMODIT/CHANGELOG.md`
+
+4. **Notatka projektowa:**
    - Pozostaje w `Notatki/Gotowe-notatki/`
    - Będzie mapowana na `Projekty/{kategoria}/{projekt}/CHANGELOG.md`
 
 **UWAGA:** Nie przenoś jeszcze notatek - to zrobi odpowiedni agent po zakończeniu mapowania
 
-### Krok 7: Wywołanie odpowiedniego mapera
+### Krok 10: Wywołanie odpowiedniego mapera
 
 **Po potwierdzeniu przez użytkownika:**
 
 ---
 
-### **7a. Jeśli Daily → KONIEC**
+### **10a. Jeśli Daily → KONIEC**
 
 Daily **NIE jest mapowane** na projekty ani Organizacja-DEV.
 - Notatka pozostaje w `Notatki/Daily/`
@@ -385,7 +567,7 @@ Daily **NIE jest mapowane** na projekty ani Organizacja-DEV.
 
 ---
 
-### **7b. Jeśli notatka ORGANIZACYJNA → wywołaj organizacja-mapper**
+### **10b. Jeśli notatka ORGANIZACYJNA → wywołaj organizacja-mapper**
 
 ```python
 Task(
@@ -408,7 +590,29 @@ WAŻNE - workflow:
 
 ---
 
-### **7c. Jeśli notatka PROJEKTOWA → wywołaj project-mapper**
+### **10c. Jeśli notatka ROADMAPOWA (roadmap-update) → wywołaj roadmap-mapper**
+
+```python
+Task(
+  subagent_type="roadmap-mapper",
+  prompt=f"""
+Zaktualizuj roadmapę na podstawie notatki strategcznej.
+
+**Notatka:** {sciezka_notatki}
+**Data:** {data_notatki}
+**Typ:** Roadmapa
+
+WAŻNE - workflow:
+1. PRZED rozpoczęciem: Przenieś notatkę z `Gotowe-notatki/` do `Gotowe-notatki-w-trakcie/`
+2. Dodaj wpis do `Projekty/Roadmapa-AMODIT/CHANGELOG.md` z podziałem na kwartały
+3. PO zakończeniu: Przenieś notatkę z `Gotowe-notatki-w-trakcie/` do `Gotowe-notatki-archiwum/`
+"""
+)
+```
+
+---
+
+### **10d. Jeśli notatka PROJEKTOWA → wywołaj project-mapper**
 
 ```python
 Task(
@@ -487,7 +691,7 @@ Format wpisu w CHANGELOG.md:
 
 ---
 
-### **7d. Jeśli wygenerowano DWA pliki (projektowa + organizacyjna):**
+### **10e. Jeśli wygenerowano DWA pliki (projektowa + organizacyjna):**
 
 1. **Wywołaj `project-mapper`** dla notatki projektowej
 2. **Wywołaj `organizacja-mapper`** dla notatki organizacyjnej
@@ -556,15 +760,29 @@ Po zakończeniu pełnego pipeline'u (notatka + CHANGELOG) przedstaw:
 - **Wszystkie sekcje** wymagane przez skill muszą być obecne
 - **Format** - dokładnie jak w przykładach ze skilla
 
-### 4. Język
+### 3. Analiza wielowątkowa (NOWE)
+- **ZAWSZE wykonaj Krok 4** - przed generowaniem notatki
+- **Przeczytaj CAŁĄ transkrypcję** - nie pomijaj żadnej części
+- **Zidentyfikuj wszystkie wątki** - nawet rozproszone po całej transkrypcji
+- **Pogrupuj wypowiedzi** - zbierz wszystkie fragmenty o tym samym temacie
+- **Mapa wątków** - przygotuj ją przed generowaniem strukturalnej notatki
+
+### 4. Codex Review (NOWE)
+- **ZAWSZE wykonaj Krok 6** - notatka NIE jest zapisywana przed weryfikacją
+- **Weryfikuj cytat-po-cytacie** - każda sekcja vs transkrypcja
+- **Sprawdź statusy decyzji** - czy ✅💡🔍⏸️ odpowiadają językowi transkrypcji
+- **Wykrywaj nadinterpretacje** - słowa łagodzące ("może", "chyba") muszą być zachowane
+- **Severity** - HIGH wymaga interakcji z użytkownikiem, MEDIUM/LOW auto-korekta
+
+### 5. Język
 - **Tylko polski**
 - **Terminologia techniczna** po angielsku (jak w słowniku)
 
-### 5. Jakość
+### 6. Jakość
 - Jeśli transkrypcja jest niejasna/niepełna - **zanotuj to** w notatce
 - Jeśli wykryjesz błędy w transkrypcji - **kontynuuj**, ale zanotuj do późniejszej poprawki
 
-### 6. Mechanizm blokowania współbieżnego przetwarzania (struktura folderów)
+### 7. Mechanizm blokowania współbieżnego przetwarzania (struktura folderów)
 
 **KRYTYCZNE:** Gdy używasz wielu agentów jednocześnie do generowania notatek, każdy agent MUSI używać struktury folderów do oznaczania statusu przetwarzania.
 
@@ -607,7 +825,7 @@ Notatki/
 └── Gotowe-notatki-archiwum/   ← zmapowane
 ```
 
-### 7. Pomysły Przemysława Sołdackiego (Przemka)
+### 8. Pomysły Przemysława Sołdackiego (Przemka)
 
 **KRYTYCZNE:** Przemysław Sołdacki (Przemek) często przedstawia pomysły i koncepcje, które **NIE są ostatecznymi decyzjami**, ale raczej propozycjami do rozważenia.
 
@@ -644,18 +862,36 @@ Notatki/
 
 Przed zapisem każdej notatki sprawdź:
 
+**Analiza wielowątkowa (Krok 4):**
+- [ ] **Mapa wątków utworzona** - czy zidentyfikowano wszystkie tematy w transkrypcji?
+- [ ] **Wątki pogrupowane** - czy rozproszone wypowiedzi o tym samym temacie zostały zebrane?
+- [ ] **Priorytetyzacja** - czy wątki główne/poboczne/organizacyjne są rozróżnione?
+
+**Generowanie notatki (Krok 5):**
 - [ ] **Plik przeniesiony do w-trakcie** - czy transkrypcja jest w `oczyszczone-w-trakcie/`?
 - [ ] **Struktura zgodna ze skillem** - wszystkie sekcje na miejscu?
-- [ ] **Powiązane projekty** - sekcja wypełniona?
 - [ ] **Zachowane niuanse** - szczegóły techniczne obecne?
-- [ ] **Status decyzji** - symbole używane konsekwentnie?
-- [ ] **Brak halucynacji** - wszystko z transkrypcji lub `[DO USTALENIA]`?
 - [ ] **Wszystkie części transkrypcji** - jeśli transkrypcja była rozbita, czy wczytano wszystkie części?
-- [ ] **Pomysły Przemka** - jeśli Przemysław Sołdacki uczestniczył w spotkaniu, czy jego pomysły są wyraźnie oznaczone jako pomysły (💭), chyba że są potwierdzone przez uczestników?
+
+**Codex Review (Krok 6):**
+- [ ] **Weryfikacja cytat-po-cytacie** - każda sekcja sprawdzona vs transkrypcja?
+- [ ] **Status decyzji** - symbole (✅💡🔍⏸️) odpowiadają językowi transkrypcji?
+- [ ] **Brak halucynacji** - wszystko z transkrypcji lub `[DO USTALENIA]`?
+- [ ] **Brak nadinterpretacji** - słowa łagodzące ("może", "chyba") nie zniknęły?
+- [ ] **Kompletność techniczna** - nazwy tabel, API, parametry, limity zachowane?
+- [ ] **Pomysły Przemka** - jeśli Przemysław Sołdacki uczestniczył, czy jego pomysły są oznaczone jako 💭?
+- [ ] **Problemy HIGH rozwiązane** - jeśli były, czy użytkownik zatwierdził korekty?
+
+**Identyfikacja projektów (Krok 7):**
+- [ ] **Projekty ze słownika** - wszystkie ścieżki dokładne?
+- [ ] **Powiązane projekty** - sekcja wypełniona, każdy temat przypisany?
+- [ ] **Użytkownik potwierdził** - projekty zaakceptowane przed zapisem?
+
+**Zapis (Krok 8):**
 - [ ] **Nazwa pliku** - zgodna z konwencją? (projektowa vs organizacyjna)
 - [ ] **Link do transkrypcji** - dodany na początku notatki (jeśli rozdzielona)?
+- [ ] **Notatka w odpowiednim folderze** - `Gotowe-notatki/` lub `Daily/`?
 - [ ] **Oczyszczona transkrypcja zarchiwizowana** - przeniesiona do `oczyszczone-archiwum/`?
-- [ ] **Notatka w odpowiednim folderze** - `Gotowe-notatki/` (czeka na mapowanie) lub `Daily/` (bez mapowania)?
 
 ---
 

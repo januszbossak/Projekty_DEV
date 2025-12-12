@@ -56,7 +56,7 @@ Tworzenie procesów biznesowych od zera jest czasochłonne i wymaga specjalistyc
 
 - **Architektura:** [[ARCHITEKTURA]] - jak to działa technicznie
 - **Roadmapa:** [[ROADMAPA]] - co dostarczamy i kiedy
-- **CHANGELOG:** [[CHANGELOG]] - pełna historia ustaleń
+- **CHANGELOG:** [[Projekty/Moduly/AMODIT Copilot/CHANGELOG]] - pełna historia ustaleń
 - **Powiązany projekt:** [[AMODIT AI OCR]] - osobny projekt dla funkcjonalności OCR
 
 ---

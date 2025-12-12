@@ -106,7 +106,7 @@ wc -l "Notatki/Transkrypcje/surowe-w-trakcie/[nazwa_pliku]"
 
 **Decyzja:**
 - **< 800 linii** → pojedynczy plik wyjściowy
-- **≥ 800 linii** → podział na części (~300 linii każda, patrz skill)
+- **≥ 800 linii** → podział na części (~400 linii każda, patrz skill)
 
 ### KROK 5: Wczytanie pliku
 

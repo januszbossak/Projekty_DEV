@@ -1,5 +1,73 @@
 # CHANGELOG - Dokumentacja organizacyjna
 
+## 2025-12-03 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
+**Kategoria:** #Procedury #Organizacja #Decyzja
+
+**Procedury aktualizacji dla klientów chmurowych:**
+- **Problem:** Brak procedur testowania przed aktualizacją produkcji - Adecco dev i prod zaktualizowane jednocześnie, co doprowadziło do krytycznego błędu
+- **Decyzja:** Nowa procedura dla dużych klientów chmurowych z dev/test: dev → testy przez klienta (checklist) → prod (tylko po zatwierdzeniu) → support/hotline następnego dnia → rollback jeśli problemy
+- **Klienci do objęcia:** Adecco (traktować jak on-premise, ma 3 witryny), MSIT (już ma procedurę - wzorcowy), wszyscy duzi klienci z środowiskiem testowym
+- **Wzór:** Deutsche Bank (Łukasz Bott) - checklist po aktualizacji testowej, zielone światło na prod, support następnego dnia, rollback dopóki nie naprawione
+- **Ograniczenia:** Mniejsi klienci bez środowiska testowego pozostają w standardowym modelu chmurowym
+
+**Testy end-to-end - potrzeba automatyzacji:**
+- **Kontekst:** Przypadek Adecco pokazał, że testy funkcjonalne nie wystarczą - potrzebne testy na konkretnych przypadkach biznesowych
+- **Dwa rodzaje testów:** (1) funkcjonalne - czy działa, (2) przypadki biznesowe - czy działa w pokręconych scenariuszach klientów
+- **Narzędzia rozważane:** Playwright, Cypress (wymaga full-time job, nawet z AI)
+- **Kursy:** Dostępne (część darmowa, część płatna z pomocą - kilkadziesiąt tys. zł)
+- **Status:** Michał Zwierzchowski zaczął przeglądać materiały, Janusz Bossak próbował ale utknął
+- **Decyzja Przemka:** Nie zgodził się na zatrudnienie osoby do testów e2e
+- **Problem:** Trudno przewidzieć wszystkie przypadki biznesowe bez testów na żywych procesach klientów
+
+---
+
+
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
+**Kategoria:** #Metodyka #Organizacja #Automatyzacja #Strategia
+
+- **Planowanie sprintów - metodyka 2 sprintów do przodu**:
+  - Propozycja: planowanie bieżącego + kolejnego sprintu szczegółowo
+  - Cel: weryfikacja zgodności z roadmapą, lepsza komunikacja priorytetów do zespołu
+  - Roadmapa roczna z szczegółowym pierwszym kwartałem
+  - Planowanie kolejnego sprintu na początku tygodnia (poniedziałek-wtorek)
+  - Programiści wiedzą co jest najważniejsze (nie muszą zgadywać)
+  
+- **Bieżący sprint - cele i projekty klienckie**:
+  - Główne cele: MVP edytora procesów + repozytorium WIM
+  - Projekty klienckie (poza celami): LOT (JRWA, ADE, integracje UPS/Global Express), Lewiatan (Comarch Hub - 18k zł), Vasco (Google Gemini OCR)
+  - Część mocy zespołu zarezerwowana na nieprzewidywalne zlecenia klientów
+  - Nie rozpoczynać nowych rzeczy rozwojowych poza celami (chyba że zlecenie klienta)
+  
+- **Zarządzanie projektami i automatyzacja przez AI** (Janusz):
+  - Automatyczne generowanie celów sprintów z transkrypcji spotkań (AI zna kontekst, roadmapę)
+  - Klasyfikacja zgłoszeń na backlogu (inicjatywa, PBI, epic) + przeformułowanie opisów
+  - Pilnowanie roadmapy - weryfikacja czy cele sprintów są zgodne z planem
+  - Cele do mierzenia (KPI): mniejsza liczba błędów (cel: zero błędów przy przekazaniu), mniej powracania do tych samych tematów
+  - Uzasadnienie biznesowe celów sprintów (przeliczenie na pieniądze)
+  
+- **Filozofia planowania i projektowania - "więcej planowania, mniej poprawek"**:
+  - Zasada: "5 godzin rozmowy oszczędza 5 dni pracy programisty"
+  - Więcej czasu na planowanie, projektowanie, uzgodnienia = szybsza implementacja
+  - Prototypowanie po 2 godzinach pracy (szybka weryfikacja) zamiast tygodnia implementacji
+  - Filtrowanie błędów w projektowaniu zanim trafią do wytworzenia
+  - Przykład: JRWA - uproszczona koncepcja, Marek zrobi w 1-2 dni
+  
+- **Standaryzacja procesów przez AI**:
+  - Ocena zgłoszeń od klientów przez LLM (budżet, koszt, priorytet) - klasyfikacja: robimy/zastanówmy się/nie robimy
+  - Ocena leadów (marketing) - już wdrożone w marketingu (Google Drive + LLM)
+  - Wyceny dla klientów - klient ma dostęp do procesu w AMODIT, LLM ocenia kompletność wymagań
+  - Korzyści: standaryzacja (niezależnie kto ocenia, proces ten sam), nie trzeba szkolić nowych pracowników, LLM wykrywa badanie konkurencji
+  
+- **Sprzęt - MacBook Pro vs Air dla Janusza**:
+  - Rozważane: Pro (32 GB RAM, 1 TB dysk, mocniejszy GPU) vs Air (lżejszy, dłuższa bateria, cichszy)
+  - Główny cel: więcej pamięci (obecnie 16 GB, swap używany) i większy dysk (obecnie 256 GB)
+  - Decyzja: Janusz sprawdzi w iSpot jak Pro hałasuje, potem finalna decyzja
+  - Filozofia: kupować najlepszego Macka w danym momencie (służy 10 lat)
+
+---
+
 ## 2025-11-30 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-30 Spotkanie projektowe - Edytor procesow.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-30%20Spotkanie%20projektowe%20-%20Edytor%20procesow.md)
 **Kategoria:** #Organizacja #Metodyka #Decyzja

@@ -1,6 +1,23 @@
-# CHANGELOG
+# CHANGELOG - Comarch HUB (Lewiatan)
 
 Historia ustaleń i zmian dla projektu.
+
+---
+
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
+**Kategoria:** #Integracja #Zadanie
+
+- **Integracja KSeF przez Comarch Hub** - zamówienie klienta:
+  - Klient Lewiatan nie chce naszego KSeF'u, tylko chce się łączyć przez Comarch Hub
+  - Uzasadnienie: Lewiatan ma standard Comarch Hub (mimo że jest "kulawy, niewygodny")
+  - Wartość potwierdzona przez klienta: **18 000 zł**
+  - Status: W realizacji (bieżący sprint)
+  - Klient za to płaci - zlecenie zamówione
+
+**Kontekst:**
+- To nie jest stricte roadmapa, tylko zamówienie od klienta
+- Realizacja w międzyczasie (poza głównymi celami sprintu)
 
 ---
 

@@ -4,6 +4,20 @@
 
 ---
 
+## 2025-12-03 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
+**Kategoria:** #Dokumentacja  
+**Projekt:** [Moduly/AMODIT Copilot](../AMODIT%20Copilot/)
+
+- **Walidacja pól typu data - funkcje już istnieją** - zgłoszono propozycję automatycznej walidacji dat, ale funkcje `SetDateFilters` i `ValidateDateField` już istnieją w silniku reguł
+- **Problem:** Brak wiedzy o istniejących funkcjach (nawet doświadczeni developerzy nie wiedzą o `SetDateFilters`)
+- **SetDateFilters:** Blokuje wybór dat poza określonym zakresem w kalendarzyku (podajesz nazwę pola, zakres od-do)
+- **ValidateDateField:** Walidacja wprowadzonych dat
+- **Wnioski:** Potrzeba lepszego Copilota (sensowne odpowiedzi bez znajomości dokładnej nazwy funkcji), uzupełnienie artykułów Wiki (obecnie tylko techniczne opisy w specyfikacji), nakaz używania Copilota przez zespół
+- **Propozycja:** Przygotowywanie zadań z użyciem specyficznych funkcji dla podnoszenia świadomości zespołu
+
+---
+
 ## 2025-11-12 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
 **Kategoria:** #Bug #Problem

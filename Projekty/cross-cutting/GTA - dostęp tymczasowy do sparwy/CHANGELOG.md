@@ -2,6 +2,20 @@
 
 ---
 
+## 2025-12-03 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
+**Kategoria:** #Bug  
+**Projekt:** [cross-cutting/Interfejs-sprawy/Komentarze](../Interfejs-sprawy/Komentarze/)
+
+- **Nieprawidłowa widoczność komentarzy dla użytkowników GTA** - sekcja komentarzy widoczna mimo braku konfiguracji w `GrantTemporaryAccessToCase`
+- **Klient:** Neuca (wersja czerwcowa najnowsza)
+- **Do weryfikacji:** Czy dotyczy użytkowników zewnętrznych (MSIT) czy tymczasowych (GTA), czy klient zdefiniował `allowedButtons`, czy problem dotyczy tylko wyświetlania czy też edycji
+- **Domyślnie:** Komentarze ukryte dla użytkowników zewnętrznych, dla GTA wymaga weryfikacji
+- **Uwaga:** Uwzględnić funkcję `HideElement` w weryfikacji
+- **Zadanie:** Kamil Dubaniowski - przetestować na wyższej wersji, poszukać wcześniejszego zgłoszenia; Eryk - sprawdzić po swojej stronie
+
+---
+
 ## 2025-11-12 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-12 Spotkanie projektowe - Przegląd wycen.md]
 **Kategoria:** #Bug #Decyzja

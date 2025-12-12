@@ -1,5 +1,31 @@
 # CHANGELOG - Edytor formularzy
 
+## 2025-12-03 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
+**Kategoria:** #Bug
+
+- **Wyświetlanie starego interfejsu wewnątrz nowego** - po wejściu do tabeli (kliknięcie na pole typu tabela) w edytorze formularza doładowuje się całe menu jeszcze raz w starym interfejsie
+- **Kontekst:** Domyślnie widok listy pól jest w nowym interfejsie (OK), ale po wejściu do tabeli pojawia się stary
+- **Decyzja:** ⏸️ Odroczone - nie naprawiamy do wersji czerwcowej (zbyt duży koszt, wymaga pracy Przemka Rogasia lub Filipa)
+- **Alternatywa:** Wymuszenie jak najszybszego zamknięcia i wydania wersji grudniowej (nowy interfejs listy pól od grudniowej)
+
+---
+
+
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
+**Kategoria:** #Design #Funkcjonalność
+
+- **Prawy panel ustawień pól** - reorganizacja struktury:
+  - Wszystkie akcje dodatkowe przeniesione do górnej belki (usuń pole, historia, widoczność/uprawnienia)
+  - Zmiana typu pola umieszczona obok aktualnego typu (intuicyjne umiejscowienie)
+  - Ikona błyskawicy (⚡) dla każdego pola - otwiera popup z listą reguł powiązanych z polem
+  - Dla tabel: główna akcja to przejście do edycji reguł tabeli + lista reguł powiązanych
+  - Kliknięcie w konkretną regułę otwiera edytor reguły na cały ekran
+- **Reguły tabeli** - możliwość rozbicia tematycznego (nie musi być jedna zbiorcza reguła)
+- **Spójność z resztą aplikacji** - górna belka akcji zgodna z innymi częściami AMODIT
+
+---
 
 ## 2025-12-02 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - Design.md]

@@ -52,7 +52,7 @@ Użytkownicy pracujący na systemie macOS nie mogą składać podpisów kwalifik
 
 - **Architektura:** [[ARCHITEKTURA]] - jak to działa technicznie
 - **Roadmapa:** [[ROADMAPA]] - co dostarczamy i kiedy
-- **CHANGELOG:** [[CHANGELOG]] - pełna historia ustaleń
+- **CHANGELOG:** [[Projekty/Klienci/WIM/Podpis-kwalifikowany-SignApp-macOS/CHANGELOG]] - pełna historia ustaleń
 
 ---
 

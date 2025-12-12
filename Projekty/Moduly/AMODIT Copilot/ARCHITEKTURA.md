@@ -67,7 +67,7 @@ changelog_przeglad_do: 2025-11-17
 - 🔍 **Do weryfikacji** - wymaga testów/analiz
 - ❌ **Odrzucone** - propozycja odrzucona
 
-**Pełna historia decyzji:** Zobacz [[CHANGELOG#Decyzje]]
+**Pełna historia decyzji:** Zobacz [[Projekty/Moduly/AMODIT Copilot/CHANGELOG#Decyzje]]
 
 ---
 

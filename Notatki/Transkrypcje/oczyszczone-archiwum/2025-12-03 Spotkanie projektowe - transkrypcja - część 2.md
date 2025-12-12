@@ -1,5 +1,5 @@
-**Data spotkania:** 3 grudnia 2025, 08:19 - część 3
-
+**Data spotkania:** 3 grudnia 2025, 08:19 - część 2
+** Źródło**: [[Notatki/Transkrypcje/surowe - archiwum/2025-12-03 Daily|2025-12-03 Daily]]
 ---
 
 **Damian Kamiński:** Jeszcze zobaczymy co on tutaj powie, bo ja mam już wrzuciłem, że.

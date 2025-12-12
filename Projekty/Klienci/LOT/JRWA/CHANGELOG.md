@@ -2,6 +2,15 @@
 
 ---
 
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
+**Kategoria:** #Zadanie #Sprint
+
+- JRWA w bieżącym sprincie - uproszczona koncepcja, realizacja przez Marka (1-2 dni)
+- Prawdopodobnie cel następnego sprintu (pod warunkiem ukończenia w bieżącym)
+
+---
+
 ## 2025-12-01 | Planowanie sprintu (Szczegóły)
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
 **Kategoria:** #Architektura #Funkcjonalność

@@ -2,6 +2,17 @@
 
 ---
 
+## 2025-12-03 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
+**Kategoria:** #Bug  
+**Projekt:** [Klienci/Adecco/](../../../Klienci/Adecco/)
+
+- **Tabela wyświetlana jako formularz** - 6 wykrytych błędów w wersji czerwcowej: checkboxy znikły, opcja "ukryj etykietę" nie działa, nazwy pól static text się wyświetlają, tabela jednowierszowa wyświetla dodatkowy poziom, przycisk "usuń" widoczny w trybie odczytu (mobile), duplikacja kolumn z etykietami
+- **Rozwiązania długofalowe:** Opcja "ukryj etykiety w trybie formularza", mechanizm instrukcji do pól (ikona "i" z popupem zamiast umieszczania w etykietach)
+- **Zadania:** Mariusz + Damian Kamiński - naprawienie błędów
+
+---
+
 ## 2025-12-01 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Cele sprintu - Planowanie sprintu.md]
 **Kategoria:** #Bug #Design #UX

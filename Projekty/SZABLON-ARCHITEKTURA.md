@@ -50,7 +50,7 @@ changelog_przeglad_do: YYYY-MM-DD
 - 🔍 **Do weryfikacji** - wymaga testów/analiz
 - ❌ **Odrzucone** - propozycja odrzucona
 
-**Pełna historia decyzji:** Zobacz [[CHANGELOG#Decyzje]]
+**Pełna historia decyzji:** Zobacz [[Projekty/backlog/CHANGELOG#Decyzje]]
 
 ---
 

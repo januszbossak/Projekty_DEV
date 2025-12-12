@@ -285,8 +285,12 @@ Podgląd dokumentów w prawym panelu sprawy. Wyświetlanie podglądów różnych
 
 #### `cross-cutting/Interfejs-sprawy/Podglad-szablonow`
 
-Podgląd szablonów dokumentów  w prawym panelu sprawy. Funkcjonalność potrzebna gdy uzytkownik przed uzyxciem szablonu chce zobaczyc co ten szablon zawiera, czego dotyczy. Inny przypadek uzycja to prezentowanie uzytkownikom np tekstu instrukcji z pdf aby nie zalaczac do setek spraw tego samego dokumentu z instrukcja.
+Podgląd szablonów dokumentów  w prawym panelu sprawy. Funkcjonalność potrzebna gdy uzytkownik przed uzyciem szablonu chce zobaczyc co ten szablon zawiera, czego dotyczy. Inny przypadek uzycja to prezentowanie uzytkownikom np tekstu instrukcji z pdf aby nie zalaczac do setek spraw tego samego dokumentu z instrukcja.
 
+
+#### `cross-cutting/Interfejs-sprawy/Komentarze`
+
+Wprowadzanie, podgląd komentarzy w prawym panelu sprawy. Wzmiankowanie, odpowiadanie na komentarze
 
 ### `cross-cutting/Komunikaty-systemowe`
 
@@ -398,6 +402,12 @@ Integracja systemu AMODIT z connectorem KSeF, który jest wytwarzany i utrzymymy
 
 ## Klienci (`Klienci/`)
 
+### 'klienci/Vasco'
+
+#### 'klienci/Vasco/Integracja-Google-OCR'
+
+Integracja Google OCR z systemem AMODIT. Wysyłka plików do MOdeli LLM Google OCR, otrzymywanie i przetwarzanie odpowiedzi.
+
 ### `klienci/Neuca/`
 
 Pod ten projekt podpinamy drobne tematy, które nie mają osobnego projektu dla Neuca
@@ -490,9 +500,9 @@ Integracja Trust Center dla Rossmann. Blockchain, zarządzanie certyfikatami.
 
 
 
+### `Klienci/Adecco/`
 
-
-
+Tematy zwiazane z Adecco, bugi , problemy, zlecenia o ile nie ma odrebnego projektu dla tego typu zlecen dla Adecco
 
 
 ### `Klienci/WIM/`
@@ -633,7 +643,8 @@ Dokumentacja narzędzi używanych przez dział R&D. Azure DevOps, Git, środowis
 
 ---
 
-
+## `Roadmapa-AMODIT`
+To nie projekt ale miejsce w ktorym przechowujemy wyniki dyskusji na temat roadmapy rozwoju systemu AMODIT jako calosci. Tu opracowujemy i przygladamy sie realizacji roadmapy. Tu powinniśmy trzymać roadmape kwartalna na kolejne kwartaly roku
 
 ## UC moduł raportowy (`UC moduł raportowy/`)
 

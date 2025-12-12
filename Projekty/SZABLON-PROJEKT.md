@@ -65,7 +65,7 @@ status: w_analizie
 
 - **Architektura:** [[ARCHITEKTURA]] - jak to działa technicznie
 - **Roadmapa:** [[ROADMAPA]] - co dostarczamy i kiedy
-- **CHANGELOG:** [[CHANGELOG]] - pełna historia ustaleń
+- **CHANGELOG:** [[Projekty/backlog/CHANGELOG]] - pełna historia ustaleń
 - **Projekt nadrzędny:** [[Nazwa-projektu]] *(jeśli podprojekt, usuń jeśli nie dotyczy)*
 - **Podprojekty:** [[Podprojekt-1]], [[Podprojekt-2]] *(jeśli projekt zbiorczy, usuń jeśli nie dotyczy)*
 

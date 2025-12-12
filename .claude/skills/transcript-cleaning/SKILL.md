@@ -160,7 +160,7 @@ Jeśli surowa transkrypcja ma powyżej ~800 linii, **NIE przetwarzaj całego pli
 **Algorytm:**
 
 1. **Sprawdź rozmiar** pliku surowego (polecenie `wc -l`)
-2. **Jeśli > 800 linii**, podziel na części po ~300 linii
+2. **Jeśli > 800 linii**, podziel na części po ~400 linii
 3. **Ważne:** Nie urywaj w połowie wypowiedzi – cała wypowiedź mówcy musi być w jednej części
 4. **Zapisz każdą część osobno** z dopiskiem w nazwie:
    - `{data} {typ} - transkrypcja - część 1.md`
@@ -173,10 +173,9 @@ Jeśli surowa transkrypcja ma powyżej ~800 linii, **NIE przetwarzaj całego pli
 ```markdown
 Plik surowy: 2025-10-09 Rada developerów.md (1131 linii)
 
-Część 1: linie 1-300 (zakończ na pełnej wypowiedzi)
-Część 2: linie 301-600 (zakończ na pełnej wypowiedzi)
-Część 3: linie 601-900 (zakończ na pełnej wypowiedzi)
-Część 4: linie 901-1131 (reszta)
+Część 1: linie 1-400 (zakończ na pełnej wypowiedzi)
+Część 2: linie 401-800 (zakończ na pełnej wypowiedzi)
+Część 3: linie 801-1131 (reszta)
 ```
 
 **W nagłówku każdej części oprócz pierwszej dodaj:** `część 2`, `część 3`, etc.
@@ -219,7 +218,7 @@ Część 4: linie 901-1131 (reszta)
 
 - [ ] Oczyszczony plik zapisany w `Notatki/Transkrypcje/oczyszczone/`
 - [ ] Surowy plik przeniesiony do `Notatki/Transkrypcje/surowe - archiwum/` (zachowano oryginalną nazwę)
-- [ ] Status w bazie SQL zaktualizowany (`finish_processing()`)
+
 
 ---
 
@@ -236,7 +235,5 @@ Jeśli podczas przetwarzania znajdziesz nowy, powtarzający się błąd ASR:
 ## Powiązane zasoby
 
 - **Słownik domenowy:** `Notatki/Transkrypcje/Słownik Domenowy/Słownik Domenowy i Korekta Fonetyczna.md`
-- **Baza danych:** `Notatki/rejestr_transkrypcji.db` (SQLite)
-- **Helper script:** `.claude/scripts/transkrypcje_db.py`
 - **Katalog surowych:** `Notatki/Transkrypcje/surowe/`
 - **Katalog oczyszczonych:** `Notatki/Transkrypcje/oczyszczone/`

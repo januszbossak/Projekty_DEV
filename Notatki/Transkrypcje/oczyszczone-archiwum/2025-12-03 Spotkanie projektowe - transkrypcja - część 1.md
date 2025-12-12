@@ -1,4 +1,5 @@
-**Data spotkania:** 3 grudnia 2025, 08:19 - część 2
+**Data spotkania:** 3 grudnia 2025, 08:19 - część 1
+** Źródło**: [[Notatki/Transkrypcje/surowe - archiwum/2025-12-03 Daily|2025-12-03 Daily]]
 
 ---
 

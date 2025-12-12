@@ -5,28 +5,29 @@
 
 #### 1. Produkty, Systemy i Nazwy Własne
 
-| **Poprawna nazwa** | **Błędny zapis ASR (fonetyczne halucynacje)**      | **Kontekst / Uwagi**                |
-| ------------------ | -------------------------------------------------- | ----------------------------------- |
-| **SignApp**        | Sin App, synap, senat, sejm hubem, sygnap, syna na marka | Aplikacja do podpisu (np. na macOS) |
-| **AMODIT**         | a modlitw, a modlit, modlicie, amo tita, a mo dith | Nazwa głównego systemu              |
-| **Comarch Hub**    | komar hab, komarch hap, komarch kawie, komar head  | Integracja z systemem Comarch       |
-| **KSeF**           | krzew, ksw, kse fu, ksyw                           | Krajowy System e-Faktur             |
-| **Szafir**         | szafira, szatnie                                   | Podpis elektroniczny (KIR)          |
-| **Zimbra**         | zimie, w zimie, zimbrowni                          | System pocztowy / repozytorium      |
-| **Copilot**        | kopalnie lot, kopytko                              | Asystent AI                         |
-| **v0**             | fał zero, ufał zero                                | Narzędzie AI (Vercel)               |
-| **GdPicture**      | g picture, gie pikczera, pikinier, gdzie picture   | Biblioteka do obsługi PDF/Obrazów   |
-| **Gavana**         | gabana                                             | Klient                              |
-| **WIM**            | w imię, drzwi mu, sin                              | Klient                              |
-| **Neuca**          | neuki                                              | Klient                              |
-| **Marba**          | marba                                              | Klient                              |
-| **Tableau**        | tablo                                              | Narzędzie BI                        |
-| **PKF**            | PKU, PK fu                                         | Klient                              |
-| **LPP**            | LP                                                 | Klient                              |
-| **DocuSign**       | DokSign                                            | Aplikacja do podpisywania z ktora AMODIT jest zintegrowany |
-| **EarlyStage**.    | elli stage                                         | klient                              |
-| **WinBiuro**       | win biuro, w in biuro, w im biuro                  | System wewnętrzny (Neuca)           |
-| **MSIT**           | m sit, mcit, emcitem           | Klient      (Ministerstwo Sportu i Turystyki)     |                    |
+| **Poprawna nazwa** | **Błędny zapis ASR (fonetyczne halucynacje)**            | **Kontekst / Uwagi**                                       |     |
+| ------------------ | -------------------------------------------------------- | ---------------------------------------------------------- | --- |
+| **SignApp**        | Sin App, synap, senat, sejm hubem, sygnap, syna na marka | Aplikacja do podpisu (np. na macOS)                        |     |
+| **AMODIT**         | a modlitw, a modlit, modlicie, amo tita, a mo dith       | Nazwa głównego systemu                                     |     |
+| **Comarch Hub**    | komar hab, komarch hap, komarch kawie, komar head        | Integracja z systemem Comarch                              |     |
+| **KSeF**           | krzew, ksw, kse fu, ksyw                                 | Krajowy System e-Faktur                                    |     |
+| **Szafir**         | szafira, szatnie                                         | Podpis elektroniczny (KIR)                                 |     |
+| **Zimbra**         | zimie, w zimie, zimbrowni                                | System pocztowy / repozytorium                             |     |
+| **Copilot**        | kopalnie lot, kopytko                                    | Asystent AI                                                |     |
+| **v0**             | fał zero, ufał zero                                      | Narzędzie AI (Vercel)                                      |     |
+| **GdPicture**      | g picture, gie pikczera, pikinier, gdzie picture         | Biblioteka do obsługi PDF/Obrazów                          |     |
+| **Gavana**         | gabana                                                   | Klient                                                     |     |
+| **WIM**            | w imię, drzwi mu, sin                                    | Klient (Wojskowy Instytut Medyczny)                        |     |
+| **Neuca**          | neuki                                                    | Klient                                                     |     |
+| **Marba**          | marba                                                    | Klient                                                     |     |
+| **Tableau**        | tablo                                                    | Narzędzie BI                                               |     |
+| **PKF**            | PKU, PK fu                                               | Klient                                                     |     |
+| **LPP**            | LP                                                       | Klient                                                     |     |
+| **DocuSign**       | DokSign                                                  | Aplikacja do podpisywania z ktora AMODIT jest zintegrowany |     |
+| **EarlyStage**.    | elli stage                                               | klient                                                     |     |
+| **WinBiuro**       | win biuro, w in biuro, w im biuro                        | System wewnętrzny (Neuca)                                  |     |
+| **MSIT**           | m sit, mcit, emcitem                                     | Klient      (Ministerstwo Sportu i Turystyki)              |     |
+| **Vasco**          | wasko,<br> was ko                                        | klient                                                     |     |
 
 #### 2. Technologie i Programowanie
 

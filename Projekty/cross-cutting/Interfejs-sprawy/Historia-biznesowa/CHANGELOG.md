@@ -2,6 +2,30 @@
 
 ---
 
+## 2025-12-04 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Omówienie zmian Amodit - Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Omówienie%20zmian%20Amodit%20-%20Neuca.md)  
+**Kategoria:** #Funkcjonalność
+
+**Prezentacja funkcjonalności dla klienta Neuca (informacyjnie):**
+
+- Przedstawiono nową funkcjonalność "Historia Biznesowa" (AddEvent) - mechanizm zapisywania kluczowych zdarzeń biznesowych na sprawie, niezależnie od standardowej historii technicznej
+- Funkcjonalność już istnieje w regułach (`AddEvent`), ale brak GUI do wyświetlania
+- **Dwa warianty:**
+  - Historia biznesowa na sprawie - kluczowe zdarzenia w ramach jednej sprawy (np. "ostateczna akceptacja", "wysłano do księgowości")
+  - Historia międzysprawowa (Teczka sprawy) - powiązanie zdarzeń z różnych procesów dotyczących tej samej sprawy biznesowej (np. reklamacja: korespondencja przychodząca → odpowiedź wychodząca → pismo prawnika)
+- Mechanizm AddEvent już działa w wersji 2.506.30 (zapisuje do bazy), ale tylko zapisywanie - brak interfejsu
+- Możliwość integracji z zewnętrznymi systemami (np. call center) przez API
+- **Przykłady zastosowania:** Księgowość (kto ostatecznie zaakceptował fakturę), JRWA (Teczka sprawy), Klient 360° (ubezpieczenia - historia polis, rozmów, roszczeń)
+
+**Feedback Neuca:**
+- Zespół Neuca (Tomek/Artur) już pytał o historię biznesową 2-3 tygodnie temu
+- Michał Mirończuk zapytał o możliwość dodawania wpisów do standardowej historii sprawy funkcją - do przemyślenia
+- Neuca zbierze uwagi i potrzeby dotyczące historii biznesowej
+
+**Status:** Funkcjonalność w fazie kształtowania, AMODIT zbiera feedback od klientów. Rozwój GUI w trakcie.
+
+---
+
 ## 2025-11-19 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-19 Notatka projektowa - Przegląd wycen.md]
 **Kategoria:** #Funkcjonalność #Design #Zadanie #Decyzja

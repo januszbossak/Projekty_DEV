@@ -4,6 +4,66 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-04 | Rada developerów
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Rada developerów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Rada%20developerów.md)  
+**Kategoria:** #Design #Funkcjonalność
+
+### Status uploadu plików - progress bar i UX
+
+**Rozwiązanie - prawy sidebar z kolejką uploadów:**
+- ✅ Automatyczne otwarcie prawego sidebara w momencie rozpoczęcia uploadu
+- ✅ Progress bary dla każdego pliku (jak na sprawie) - zakolorowywanie na zielono w miarę postępu
+- ✅ **Wersja 1 (preferowana):** Sidebar pozostaje otwarty po zakończeniu, użytkownik ręcznie zamyka (X) - pozwala zweryfikować czy wszystkie pliki wrzucił
+- 💡 **Wersja 2 (do rozważenia):** Pliki znikają po pomyślnym załadowaniu, zostają tylko błędy
+- ✅ **Obsługa błędów:** Plik z błędem: czerwony, komunikat przyczyny (za duży, za mały, zerowy rozmiar, niedozwolony typ, przekroczenie limitu)
+- ✅ **Sesje uploadów:** Każde wrzucenie = osobna sesja, nowa sesja zastępuje poprzednią
+- ✅ **Blokowanie podczas uploadu:** Zablokowanie przycisku "Dodaj plik" i drag & drop (wyszarzenie ekranu)
+- ✅ **NIE wyświetlać** komunikatów toastowych podczas gdy sidebar jest otwarty (wzajemnie się przysłaniają)
+
+**Wzorowanie:** Progress bary jak na sprawie, logika znikania plików jak w OneDrive
+
+### Drag & drop - obszar upuszczania plików
+
+**Rozwiązanie:**
+- ✅ Usunięcie pomarańczowego prostokąta na środku
+- ✅ Obramowanie całego szarego obszaru roboczego pomarańczową ramką (jak w Claude, Teams, ChatGPT, Gemini)
+- ✅ Ikona + napis na środku: "Upuść pliki tutaj" (jak na sprawie)
+- 💡 Opcjonalnie: animacja "bounce" (powiększenie) jak na sprawie - dla spójności wizualnej
+
+**Uzasadnienie:** Nowoczesne aplikacje podświetlają całą przestrzeń, użytkownik nie musi celować w środek ekranu
+
+### Usuwanie plików - akcje masowe
+
+**Status:** 💡 Propozycja - MVP 2/3
+
+**Rozwiązanie (do implementacji w MVP 2 lub 3):**
+- Checkboxy przy każdym pliku/folderze (jak w raportach, OneDrive)
+- Checkbox "Zaznacz wszystko" na górze listy
+- Obsługa klawiatury: `Ctrl + Click` (pojedyncze), `Shift + Click` (zakres)
+- Akcje masowe: Przycisk "Usuń" pojawia się po zaznaczeniu elementów
+- Checkboxy na hover: Checkbox pojawia się dopiero po najechaniu na wiersz (czystszy widok)
+
+**Priorytet:** MVP 1 - tylko pojedyncze usuwanie, MVP 2/3 - akcje masowe (jeśli będzie przestrzeń i Filip ma czas)
+
+### Lokalizacja Repozytorium w menu
+
+**Status:** ⏸️ Odroczona - do przemyślenia w przyszłym tygodniu
+
+**Rozważane opcje:**
+- **Opcja A:** Górne menu (obok "Do wykonania", "Powiadomienia", "Komunikator") - szybki dostęp, ale obawa przed rozrostem listy
+- **Opcja B:** Obszary → Moduły (dół) - mało wygodne dla kluczowej funkcjonalności
+- **Opcja C (Janusz Bossak):** Folder "Aplikacje" - pseudo-obszar z aplikacjami: Komunikator, Repozytorium, Timesheet, e-Nadawca, moduł bankowy
+- **Opcja D (Janusz Bossak):** Przypinanie przez użytkownika - każdy sam decyduje co przypina do górnego menu
+
+**Argumenty:**
+- Górne menu miało być przestrzenią dla **zadań i powiadomień** (rzeczy wymagające uwagi), nie dla aplikacji
+- Obawa (Damian): "Jak pokażemy klientowi tutaj, to potem nie pozwolą żeby to schować"
+- Obecny stan: Repozytorium jest w górnym menu (sterowane w ustawieniach systemowych)
+
+**Punkty otwarte:** Czy górne menu ma być przestrzenią dla zadań/powiadomień czy dla aplikacji? Czy wprowadzić folder "Aplikacje"? Czy pozwolić użytkownikom na przypinanie?
+
+---
+
 ## 2025-11-28 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Planowanie%20sprintu.md)
 **Kategoria:** #Funkcjonalność #Zadanie #Wdrożenie

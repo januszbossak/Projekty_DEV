@@ -2,7 +2,7 @@
 
 ## 2025-08-25 - Sprint review
 
-**Źródło:** [[../Notatki/Gotowe-notatki-archiwum/2025-08-25 Sprint review|2025-08-25 Sprint review]]
+**Źródło:** [[Notatki/Gotowe-notatki-archiwum/2025-08-25 Sprint review|2025-08-25 Sprint review]]
 
 **Kategoria:** #Organizacja #Planowanie
 

@@ -1,5 +1,47 @@
 # CHANGELOG - AMODIT Copilot
 
+## 2025-12-03 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
+**Kategoria:** #Problem #Funkcjonalność  
+**Projekt:** [Moduly/Silnik-regul](../Silnik-regul/)
+
+- **Problem z odpowiedziami Copilota** - Copilot nie odpowiada sensownie na pytania o funkcje bez znajomości dokładnej nazwy
+- **Przykład:** Pytanie "jak ograniczyć wybór dat na formularzu" nie podpowiada funkcji `SetDateFilters` (mimo że istnieje)
+- **Oczekiwanie:** Copilot powinien sensownie odpowiadać na problemy biznesowe, nie tylko na pytania wprost o nazwę funkcji
+- **Kontekst:** Zgłoszono propozycję automatycznej walidacji dat, ale funkcje już istnieją - problem w tym, że Copilot ich nie podpowiada
+- **Nakaz:** Absolutny nakaz używania Copilota przez zespół, uzupełnianie artykułów Wiki (obecnie tylko techniczne opisy)
+- **Propozycja:** Przygotowywanie zadań z użyciem specyficznych funkcji dla podnoszenia świadomości zespołu
+
+---
+
+
+## 2025-12-02 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
+**Kategoria:** #Funkcjonalność #Strategia #Architektura
+
+- **Generowanie dokumentacji procesów przez AI** - priorytet strategiczny:
+  - PoC gotowy (Mateusz) - automatyczne generowanie opisu procesu
+  - Rozbudowa: checkboxy z wyborem typów dokumentacji (proces, ustawienia systemowe, raporty)
+  - Wartość biznesowa: ~60 dni rocznie oszczędności (2-3 osobo-miesiące), LOT: ~6 dni
+  - Licencjonowanie: funkcjonalność w ramach licencji AI (standard lub advanced - do ustalenia)
+  - Przychody: możliwość sprzedaży klientom którzy sami tworzą procesy (np. Res Invest)
+  
+- **MCP (Model Context Protocol)** - integracja z zewnętrznymi agentami AI:
+  - PoC gotowy (Mateusz, weekend) - podłączenie do AMODIT Copilot
+  - Architektura: wystawienie tych samych endpointów co Copilot (NIE pełne API AMODIT)
+  - Działanie w kontekście użytkownika, logowanie zapytań AI (audyt)
+  - Wartość biznesowa: Rossmann zamówił (PoC 3 miesiące, ~50k zł rocznie), Polpharma i AmRest zainteresowani
+  - Szacunkowo: ~200k zł rocznego przychodu z kilku dużych klientów
+  - Ryzyka: wydajność, bezpieczeństwo, długa droga do produkcji
+  
+- **AI dla konsultantów (bez licencji klienta)**:
+  - Mechanizm umożliwiający konsultantom używanie AI u klientów bez licencji
+  - Preferowane rozwiązanie: OAuth + domena firmowa (@amodit.pl, @astrafox.pl)
+  - Ewentualnie: token czasowy lub wewnętrzne hasło (dodatkowe zabezpieczenie)
+  - Cel: przyspieszenie pracy konsultantów, demonstracja wartości AI klientom
+
+---
+
 ## 2025-11-28 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-28 Planowanie sprintu.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-11-28%20Planowanie%20sprintu.md)
 **Kategoria:** #Funkcjonalność #Zadanie

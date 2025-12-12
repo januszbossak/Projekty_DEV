@@ -89,7 +89,10 @@
     "Wydajnosc": 75,
     "DevOps": 76,
     "Prototyp": 77,
-    "Automatyzacja": 78
+    "Automatyzacja": 78,
+    "Sprint": 79,
+    "Urlopy": 80,
+    "Procedury": 81
   },
   "_version": 3
 }
