@@ -4,12 +4,12 @@ description: |
   Sequential processing of raw transcriptions from AMODIT R&D meetings - one file at a time.
   
   Activation triggers:
-  1. "Oczyść kolejną transkrypcję", "Oczyść następną"
-  2. "Oczyść transkrypcję [nazwa]" → specific file
+  1. "Oczyść transkrypcję", "Czyszczenie transkrypcji"
+  2. "Oczyść [nazwa pliku]" → specific file
   3. References to files in 'Notatki/Transkrypcje/surowe/'
   
   Examples:
-  - "Oczyść kolejną transkrypcję" → processes oldest file from queue
+  - "Oczyść transkrypcję" → processes oldest file from queue
   - "Oczyść 2025-11-25 Design.md" → processes specific file
 model: sonnet
 color: blue
@@ -38,8 +38,8 @@ Agent obsługuje **tylko transkrypcje** (wymagające czyszczenia):
 
 ## Tryby pracy
 
-### Tryb 1: Kolejny w kolejce (zalecany)
-Użytkownik mówi: "Oczyść kolejną transkrypcję"
+### Tryb 1: Automatyczny wybór z kolejki (zalecany)
+Użytkownik mówi: "Oczyść transkrypcję" lub "Czyszczenie transkrypcji"
 - Agent automatycznie wybiera **najstarszy plik** z `surowe/`
 - Sortowanie alfabetyczne nazw = sortowanie chronologiczne (YYYY-MM-DD)
 
@@ -204,7 +204,7 @@ Jeśli podczas przetwarzania znalazłeś nowe, powtarzające się błędy ASR:
 
 ---
 
-Aby przetworzyć kolejny plik, napisz: "Oczyść kolejną transkrypcję"
+Aby przetworzyć kolejny plik, napisz: "Oczyść transkrypcję"
 ```
 
 ---

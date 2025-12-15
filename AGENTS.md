@@ -7,7 +7,7 @@
 - `Backlog/`, `Integracje/`, `koncepcje/`, `Roadmapa/` – repozytoria wiedzy tematycznej; zachowuj istniejące nazewnictwo katalogów (kebab-case).
 
 ## Agent-First Workflow (Claude)
-- Preferuj gotowe agenty z `.claude/agents/` zamiast ręcznych edycji: `pipeline-runner` (surowe → notatki), `transcript-cleaner` (oczyszczanie), `note-maker`/`batch-note-maker` (notatki), `note-reviewer` (weryfikacja gotowych), `project-mapper` (mapowanie na projekty).
+- Preferuj gotowe agenty z `.claude/agents/` zamiast ręcznych edycji: `pipeline-runner` (surowe → notatki), `transcript-cleaner` (oczyszczanie), `note-maker` (notatki), `note-reviewer` (weryfikacja gotowych), `project-mapper` (mapowanie na projekty).
 - Przy mapowaniu zawsze wczytuj `_SLOWNIK_PROJEKTOW.md`; ignoruj projekty wpisane w stare notatki jeśli nie ma ich w słowniku.
 - Kolejka notatek: przesuwaj pliki przez `Gotowe-notatki/` → `Gotowe-notatki-w-trakcie/` → `Gotowe-notatki-archiwum/`; nie omijaj blokady.
 - Uzupełnienia lub korekty stylu zapisuj w plikach referencyjnych (`STYL.md`, `ZASADY.md`, `PROMPT.md`) zamiast w komentarzach PR.

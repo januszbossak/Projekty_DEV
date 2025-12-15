@@ -112,6 +112,7 @@ Repozytorium wykorzystuje **agentów Claude** do automatyzacji przepływów prac
 - "Przetwórz nowe"
 - "Przetwórz dzisiejsze"
 - "Przetwórz z [data]" / "Przetwórz wczorajsze"
+- "Pipeline [nazwa pliku]"
 
 **Zadania:**
 - Automatyczny pipeline: surowe → oczyszczone → notatka
@@ -166,8 +167,8 @@ surowe/ → [korekta + redukcja] → oczyszczone/
 
 ### 📝 Agent: `note-maker`
 **Aktywacja:**
-- "Wygeneruj kolejną notatkę"
 - "Wygeneruj notatkę"
+- "Utwórz notatkę"
 - "Zrób notatkę"
 
 **Zadania:**
@@ -192,38 +193,6 @@ oczyszczone/ → [skill + struktura] → Notatki/{typ}/
 ```
 
 **Dokumentacja:** `.claude/agents/note-maker.md`
-
----
-
-### 📝📝📝📝 Agent: `batch-note-maker`
-**Aktywacja:**
-- "Wygeneruj notatki z pozostałych transkrypcji"
-- "Przetwórz 4 kolejne transkrypcje na notatki"
-- "Batch generowanie notatek"
-
-**Zadania:**
-- Automatyczne rozpoznanie typu spotkania (6 typów)
-- Wybór odpowiedniego skilla
-- Generowanie strukturalnych notatek
-- Identyfikacja powiązanych projektów
-- Przetwarzanie chronologiczne (najstarsze najpierw)
-- **Tryb batch** - 4 notatki sekwencyjnie w jednej sesji
-- Automatyczna kontynuacja bez czekania na potwierdzenie
-
-**Typy spotkań:**
-- Rada architektów → skill `rada-architektow`
-- Sprint review → skill `sprint-review`
-- Planowanie sprintu → skill `planowanie-sprintu`
-- Spotkania projektowe → skill `spotkanie-projektowe`
-- Tematy organizacyjne → skill `organizacyjne`
-
-**Pipeline:** 
-```
-oczyszczone/ → [skill + struktura] → Notatki/{typ}/
-(4 transkrypcje sekwencyjnie)
-```
-
-**Dokumentacja:** `.claude/agents/batch-note-maker.md`
 
 ---
 

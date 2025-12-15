@@ -208,7 +208,9 @@ Aktualnie rozwijany jest typ „dynamiczny" – pozwala na jeszcze elastyczniejs
 
 ## Cross-cutting (`cross-cutting/`)
 
-  
+ ### `cross-cutting/Aktualizacja-AMODIT`
+
+Kwestie i problemy wynikajace z aktualizacji AMODIT u klientow, 
 
 ### `cross-cutting/Bezpieczenstwo-pentesty`
 

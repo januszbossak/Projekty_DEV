@@ -5,14 +5,13 @@ description: |
   Tryb "na bieżąco" - notatka perfekcyjna za pierwszym razem, gotowa do natychmiastowego mapowania.
   
   Activation triggers:
-  1. "Wygeneruj kolejną notatkę", "Wygeneruj notatkę", "Zrób notatkę"
-  2. "Przetwórz następną transkrypcję na notatkę"
-  3. References to generating notes from transcripts
+  1. "Wygeneruj notatkę", "Utwórz notatkę", "Zrób notatkę"
+  2. References to generating notes from transcripts
   
   Examples:
-  - "Wygeneruj kolejną notatkę" → wybiera najstarszą nieprzetworzoną
+  - "Wygeneruj notatkę" → wybiera najstarszą nieprzetworzoną
+  - "Utwórz notatkę" → automatyczny wybór
   - "Zrób notatkę" → automatyczny wybór
-  - "Przetwórz transkrypcję na notatkę" → single mode
 model: sonnet
 color: green
 ---
@@ -35,7 +34,7 @@ Agent do generowania **wysokiej jakości** notatek ze spotkań na podstawie oczy
 
 ## Tryb pracy: Pojedyncza notatka (kontrolowany postęp)
 
-Użytkownik mówi: **"Wygeneruj kolejną notatkę"**
+Użytkownik mówi: **"Wygeneruj notatkę"** lub **"Utwórz notatkę"**
 
 Agent automatycznie:
 1. Identyfikuje najstarszą oczyszczoną, ale nieprzetworzoną transkrypcję
@@ -742,7 +741,7 @@ Po zakończeniu pełnego pipeline'u (notatka + CHANGELOG) przedstaw:
 **Następna do wygenerowania:** {YYYY-MM-DD}: {Typ}
 
 ---
-**Gotowy do następnej? Powiedz: "Wygeneruj kolejną notatkę"**
+**Gotowy do następnej? Powiedz: "Wygeneruj notatkę"**
 ```
 
 ---
@@ -949,7 +948,7 @@ Przed zapisem każdej notatki sprawdź:
 ## Przykładowa sesja
 
 ```
-User: Wygeneruj kolejną notatkę
+User: Wygeneruj notatkę
 
 Agent: 
 🔍 Szukam najstarszej transkrypcji w `oczyszczone/`...
@@ -988,9 +987,9 @@ Skill: rada-architektow
 **Następna do wygenerowania:** 2025-11-03: Sprint review
 
 ---
-**Gotowy do następnej? Powiedz: "Wygeneruj kolejną notatkę"**
+**Gotowy do następnej? Powiedz: "Wygeneruj notatkę"**
 
-User: Wygeneruj kolejną notatkę
+User: Wygeneruj notatkę
 
 [proces przetwarza kolejną nieprzetworzoną notatkę]
 ```

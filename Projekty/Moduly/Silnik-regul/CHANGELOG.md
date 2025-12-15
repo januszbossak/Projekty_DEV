@@ -4,6 +4,24 @@
 
 ---
 
+## 2025-12-05 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
+**Projekt:** [Klienci/LOT/JRWA](../../Klienci/LOT/JRWA/)
+**Kategoria:** #Funkcjonalność #Zadanie
+
+**Dostęp do danych z pola Odnośnik do źródła zewnętrznego:**
+- Sprawdzić czy składnia `[NazwaPola.Źródło.Kolumna]` działa dla źródeł zewnętrznych (JRWA, GUST, TERYT)
+- Obecnie wymaga ręcznego parsowania JSON (funkcja `ParseJSON` wzorowana na GUST)
+- Jeśli składnia nie działa - dodać obsługę w walidatorze/silniku reguł (automatyczne uzupełnianie pól bez ręcznego parsowania JSON)
+
+**Przykład użycia:**
+```
+[KategoriaJRWA.Źródło.Symbol]  → "001"
+[KategoriaJRWA.Źródło.Nazwa]   → "Rada nadzorcza"
+```
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
 **Kategoria:** #Dokumentacja  

@@ -1,5 +1,39 @@
 # CHANGELOG - Edytor formularzy
 
+## 2025-12-05 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
+**Projekt:** [Klienci/LOT/JRWA](../../../Klienci/LOT/JRWA/)
+**Kategoria:** #Funkcjonalność
+
+**Rozbudowa pola Odnośnik do źródła zewnętrznego:**
+- Możliwość wyboru wielu kolumn do wyświetlania (analogicznie do standardowego pola Odnośnik)
+- Okno modalne z wyszukiwarką + drzewem hierarchicznym dla źródeł zewnętrznych (JRWA, GUST, TERYT)
+
+---
+
+## 2025-12-04 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)  
+**Kategoria:** #Funkcjonalność #Design
+
+- **Nowy interfejs listy pól** - ukończony i zaakceptowany:
+  - Plusik po lewej stronie do dodawania pól/sekcji (oddzielony od akcji pola)
+  - Dodawanie "pod spodem" - nowe pole pojawia się bezpośrednio pod polem, z którego kliknięto plus
+  - Dodawanie z poziomu sekcji - plus przy sekcji dodaje pole na końcu sekcji
+  - Podświetlanie miejsca dodania - wizualne wskazanie gdzie pole się pojawi
+  - Obsługa pustej sekcji - placeholder "sekcja jest pusta" z możliwością dodania pierwszego pola
+  - Spójność przycisków w modalach - "Anuluj" po lewej, "Dodaj" po prawej
+- **Feedback:** Przemek i Mateusz (konsultant) - pozytywny, brak uwag, "jest zajebiście"
+- **Okno edycji reguły tabeli** - zmiana z nowej karty na modalne okno (prawie pełnoekranowe)
+- **Nawigacja w górnej belce** - Filip pracuje nad implementacją (powrót do starego sposobu z rozwijaniem)
+
+**Kategoria:** #Zadanie
+
+- **Kamil Dubaniowski:** Dodać search (wyszukiwanie pól) → termin: grudzień
+- **Kamil Dubaniowski:** Dodać zwiń/rozwiń wszystkie sekcje → termin: grudzień
+- **Przemek Rogaś:** Dopracować wygląd panelu ustawień pola (rozpisane w sprincie)
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
 **Kategoria:** #Bug

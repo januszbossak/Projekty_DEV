@@ -4,6 +4,16 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Daily
+**Źródło:** [Notatki/Daily/2025-12-09 Daily.md](../../../Notatki/Daily/2025-12-09%20Daily.md)
+**Kategoria:** #Dokumentacja #Wsparcie
+
+- Zaktualizowanie instrukcji do KSeF Connector (Damian Kamiński).
+- Poprzednia instrukcja wprowadzała w błąd i była blockerem we wdrożeniach.
+- Instrukcja powstała w odpowiedzi na zgłoszenia z kilku wdrożeń.
+
+---
+
 ## 2025-11-27 | Notatka projektowa
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-11-27 Notatka projektowa - Integracja z KSeF Connectorem.md]
 **Kategoria:** #Architektura #Funkcjonalność #Decyzja

@@ -4,6 +4,29 @@ Historia zmian i ustaleń dla projektu.
 
 ---
 
+## 2025-12-04 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)  
+**Kategoria:** #Decyzja
+
+**Plan wydania grudniowego:**
+- ✅ Zakres: Edytor formularzy (lista pół) - ukończony z drobnymi usprawnieniami (search, zwiń/rozwiń)
+- ❌ Poza zakresem 2025: Edytor diagramu, Edytor reguł
+- Cel: Zamknięcie edytora formularzy jako pierwszej dużej części edytora procesów w nowej technologii
+- Po wydaniu: zbieranie feedbacku od konsultantów z wdrożeń produkcyjnych
+
+**Roadmapa długoterminowa:**
+1. ✅ Edytor formularzy - ukończony (grudzień 2025)
+2. 🔜 Edytor diagramu - do realizacji
+3. 🔜 Edytor reguł - do realizacji
+4. 🔜 Powiązania między komponentami (po ukończeniu wszystkich trzech):
+   - Z formularza → widok reguł dotyczących pól
+   - Z reguły → przejście do pól
+   - Cross-referencje między diagramem, formularzem i regułami
+
+**Uzasadnienie strategii:** Edytor formularzy jako kluczowa część systemu teraz w nowej technologii i z nowym UX. Skupienie na dopracowaniu jednej dużej funkcjonalności zamiast robienia wszystkiego na raz.
+
+---
+
 ## 2025-12-01 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
 **Kategoria:** #Design #Funkcjonalność #Bug

@@ -1,5 +1,18 @@
 # CHANGELOG - Dokumentacja organizacyjna
 
+## 2025-12-05 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
+**Kategoria:** #Decyzja #Metodyka
+
+**Wyznaczanie celów sprintu przez management:**
+- Janusz i Przemek wyznaczają cele sprintu dla zespołu
+- Zespół następnie organizuje się, rozpisuje zadania i realizuje cele zgodnie z roadmapą
+- Cel: zapobiec sytuacjom, gdy zespół wybiera cele kwestionowane później przez management
+- Typowa sytuacja: 2 cele na sprint (np. repozytorium + JRWA)
+- Management ma przegląd całości i może lepiej określić priorytety zgodne z roadmapą
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
 **Kategoria:** #Procedury #Organizacja #Decyzja

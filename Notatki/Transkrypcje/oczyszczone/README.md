@@ -34,7 +34,6 @@ Podczas generowania notatki, wszystkie części są automatycznie wczytywane i �
 ## Co dalej?
 
 Aby wygenerować notatkę z oczyszczonej transkrypcji:
-- **Pojedyncza:** `"Wygeneruj kolejną notatkę"` (wywołuje `note-maker`)
-- **Batch (4 na raz):** `"Wygeneruj notatki z pozostałych transkrypcji"` (wywołuje `batch-note-maker`)
+- **Pojedyncza:** `"Wygeneruj notatkę"` (wywołuje `note-maker`)
 - **Cały pipeline:** `"Przetwórz nowe"` (wywołuje `pipeline-runner`)
 

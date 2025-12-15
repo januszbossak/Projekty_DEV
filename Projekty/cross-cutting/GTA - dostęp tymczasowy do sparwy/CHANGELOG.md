@@ -2,6 +2,15 @@
 
 ---
 
+## 2025-12-12 | Status update
+**Kategoria:** #Status
+
+- **Status:** Temat nadal w stanie "investigate" - brak dalszych informacji
+- **Zadanie:** Kamil Dubaniowski - przegląd zaplanowany w najbliższym sprincie (Sprint 51)
+- **Kontekst:** Dotyczy problemu z nieprawidłową widocznością komentarzy dla użytkowników GTA (Neuca)
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
 **Kategoria:** #Bug  

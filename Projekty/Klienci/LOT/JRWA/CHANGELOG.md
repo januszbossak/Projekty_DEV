@@ -2,6 +2,32 @@
 
 ---
 
+## 2025-12-05 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
+**Kategoria:** #Funkcjonalność #Design
+
+**UX/UI pola Odnośnik do źródła zewnętrznego (JRWA):**
+- Wyświetlanie symbolu + nazwy po wyborze kategorii JRWA (zamiast placeholdera "Znajdź kategorię archiwalną")
+- Wyświetlanie ścieżki hierarchicznej w wynikach wyszukiwania (pozycje nadrzędne na szaro, np. "Zarządzanie → Gremia kolegialne → Walne zgromadzenie")
+- Dodanie brakującego pola "Elektroniczne/Papierowe" do źródła JRWA (struktura danych, wyszukiwanie, drzewo)
+
+**Wyszukiwanie zaawansowane:**
+- Okno modalne z wyszukiwarką + drzewem hierarchicznym (wzorowane na polu Odnośnik do procesu)
+- Wyszukiwarka na górze (dla użytkowników znających symbole/nazwy)
+- Drzewo domyślnie zwinięte (900+ pozycji) - użytkownik rozwija tylko interesujące gałęzie
+- Radio button na najniższym poziomie (wybór liścia)
+- Kolumny: symbol, nazwa, opis, kategoria archiwalna, elektroniczne/papierowe
+
+**Kategoria:** #Architektura
+
+- Mechanizm dedykowany dla JRWA (dedykowana tabela, specyficzne kolumny)
+- Uniwersalizacja dla innych źródeł drzewiastych odroczona (przyszłościowy rozwój - np. wybór działu)
+
+**Przyszłe usprawnienia:**
+- Podpowiadanie 5 ostatnio używanych kategorii JRWA (kolejny sprint)
+
+---
+
 ## 2025-12-02 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
 **Kategoria:** #Zadanie #Sprint

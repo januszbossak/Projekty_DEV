@@ -130,7 +130,7 @@ Gemini adoptuje model pracy oparty na **Agentach** i **Umiejętnościach (Skills
 ---
 
 #### 📝 Agent: `note-maker` (Zielony)
-**Trigger:** "Wygeneruj kolejną notatkę"
+**Trigger:** "Wygeneruj notatkę", "Utwórz notatkę", "Zrób notatkę"
 **Co robi:**
 1. Pobiera najstarszą oczyszczoną transkrypcję
 2. Rozpoznaje typ spotkania (6 typów)
@@ -146,21 +146,8 @@ Gemini adoptuje model pracy oparty na **Agentach** i **Umiejętnościach (Skills
 
 ---
 
-#### 📝📝📝📝 Agent: `batch-note-maker` (Fioletowy)
-**Trigger:** "Wygeneruj notatki z pozostałych transkrypcji"
-**Co robi:**
-Dokładnie to samo co `note-maker`, ale:
-- 4 notatki sekwencyjnie w jednej sesji
-- Automatyczna kontynuacja bez czekania
-- Raportuje postęp po każdej
-- Podsumowanie batcha na końcu
-**Tryb:** Batch 4 notatek, automatyczny flow.
-**Definicja:** `.claude/agents/batch-note-maker.md`
-
----
-
 #### 🚀 Agent: `pipeline-runner` (Fioletowy)
-**Trigger:** "Przetwórz nowe", "Przetwórz dzisiejsze", "Przetwórz z [data]"
+**Trigger:** "Przetwórz nowe", "Przetwórz dzisiejsze", "Przetwórz z [data]", "Pipeline [nazwa pliku]"
 **Co robi - PEŁNY PIPELINE:**
 1. Wykrywa nowe surowe pliki (transkrypcje + gotowe notatki)
 2. Rozpoznaje typ: transkrypcja vs gotowa notatka
@@ -191,7 +178,7 @@ Dokładnie to samo co `note-maker`, ale:
 ---
 
 #### 🛡️ Agent: `note-reviewer` (Fioletowy) - PRZEJŚCIOWY
-**Trigger:** "Przetwórz kolejną notatkę", "Zrób review notatki"
+**Trigger:** "Zrób review", "Review notatki"
 **Co robi - QA + MAPOWANIE:**
 1. Pobiera najstarszą notatkę z `Gotowe-notatki/`
 2. Przenosi do `Gotowe-notatki-w-trakcie/` (blokada)
@@ -217,7 +204,6 @@ Dokładnie to samo co `note-maker`, ale:
 
 **Wariant B - Manualny (kontrolowany):**
 `transcript-cleaner` → `note-maker` → `project-mapper` → CHANGELOG.md
-(lub `batch-note-maker`)
 
 **Wariant C - Stare notatki:**
 `note-reviewer` → weryfikacja + mapowanie → CHANGELOG.md

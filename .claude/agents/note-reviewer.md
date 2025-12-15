@@ -5,7 +5,7 @@ description: |
   Weryfikuje treść, formatowanie i przypisanie projektów, a następnie przekazuje do project-mapper.
   
   Activation triggers:
-  1. "Zrób review notatki", "Przejrzyj kolejną notatkę"
+  1. "Zrób review", "Review notatki"
   2. "Zweryfikuj notatkę [nazwa]"
   
   Output: Zweryfikowana notatka gotowa do mapowania + delegacja do project-mapper

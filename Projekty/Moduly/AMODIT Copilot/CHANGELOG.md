@@ -1,5 +1,36 @@
 # CHANGELOG - AMODIT Copilot
 
+## 2025-12-04 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - AMODIT AI.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20AMODIT%20AI.md)
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- **Generowanie dokumentacji procesów (PoC)** - funkcja automatycznego generowania dokumentacji dla konsultantów wdrożeniowych:
+  - Wartość biznesowa: ~60 dni oszczędności działu wdrożeń rocznie (dokumentacja jest powtarzalna, często tworzona przez konsultantów i klientów)
+  - Funkcjonalność: generuje opis procesu na podstawie konfiguracji (nazwy, pola, diagram etapów, sposób powstawania sprawy, reguły biznesowe)
+  - Działanie: czat Copilot ze świadomością URL (np. procedury numer 821) - "wygeneruj dokumentację tej procedury"
+  - Zakres MVP: PoC w grudniowej wersji (wydanie na początku stycznia 2026), feedback od konsultantów w styczniu
+  - Szczegóły techniczne: diagram generowany w backendzie (poprawione proporcje), reguły biznesowe z numeracją globalną, restrykcje pól na etapach
+
+**💭 Pomysł Przemka (propozycja):**
+- Zakładka "Dokumentacja" w lewej zakładce procesu (zamiast tylko czatu)
+- Możliwość generowania + wgrywania własnych plików dokumentacji
+- Dokumentacja załączana do szablonu procesu (przenosi się między środowiskami)
+
+**Wersjonowanie:**
+- PBI oznaczane jako "AMODIT AI" (w nazwie zgłoszenia)
+- Release Version: grudniowa (suggest version)
+- Automatyczne przypisanie wersji przy Waiting for Release
+
+**Zadania:**
+- **Mateusz Kisiel:** Wysłać przykładową dokumentację do konsultantów (Mateusz Kołakowski, Daniel Reszka) na feedback
+- **Damian Kamiński:** Wymusić na konsultantach używanie narzędzia i zgłaszanie uzupełnień
+
+**Punkty otwarte:**
+- Jak oznaczyć funkcje AI w changelogu? (automatyczny changelog z PBI)
+- Czy tworzyć osobne środowisko "dokumentacja AI" (robocze)?
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Spotkanie projektowe - Błędy formularzy i procedury aktualizacji.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-03%20Spotkanie%20projektowe%20-%20Błędy%20formularzy%20i%20procedury%20aktualizacji.md)  
 **Kategoria:** #Problem #Funkcjonalność  

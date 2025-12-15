@@ -1,5 +1,13 @@
 # CHANGELOG - Matryca uprawnień
 
+## 2025-12-04 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)  
+**Kategoria:** #Funkcjonalność
+
+- Matryca uprawnień działa i jest funkcjonalna
+- Plany rozwoju: search (przejście do pola), zwiń/rozwiń wszystkie elementy (ułatwienie skupienia się na ustawieniach sekcji)
+- Brak rozwoju poza drobnymi usprawnieniami w grudniowym wydaniu
+
 ---
 
 ## 2025-11-27 | Planowanie Sprintu

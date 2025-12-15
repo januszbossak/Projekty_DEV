@@ -13,10 +13,9 @@ Ten katalog zawiera definicje agentów Claude do automatyzacji przepływu pracy 
 **Cel:** Batchowe przetwarzanie surowych transkrypcji ze spotkań R&D AMODIT.
 
 **Aktywacja:**
-- "Oczyść transkrypcje"
-- "Przetwórz transkrypcję"
-- "Oczyść oczekujące"
-- References to files in `Notatki/Transkrypcje/surowe/`
+- "Oczyść transkrypcję"
+- "Czyszczenie transkrypcji"
+- "Oczyść [nazwa pliku]"
 
 **Workflow:**
 ```
@@ -45,10 +44,9 @@ surowe/ → [korekta fonetyczna, redukcja szumu] → oczyszczone/
 **Cel:** Generowanie strukturalnych notatek ze spotkań na podstawie oczyszczonych transkrypcji (pojedyncza notatka).
 
 **Aktywacja:**
-- "Wygeneruj kolejną notatkę"
 - "Wygeneruj notatkę"
+- "Utwórz notatkę"
 - "Zrób notatkę"
-- "Przetwórz następną transkrypcję na notatkę"
 
 **Workflow:**
 ```
@@ -81,56 +79,7 @@ oczyszczone/ → [wyspecjalizowane skills] → Notatki/{typ spotkania}/
 
 ---
 
-### 3. `batch-note-maker` 📝📝📝📝
-**Kolor:** Fioletowy
-**Model:** Sonnet
-
-**Cel:** Batch processing - generowanie 4 strukturalnych notatek sekwencyjnie w jednej sesji.
-
-**Aktywacja:**
-- "Wygeneruj notatki z pozostałych transkrypcji"
-- "Przetwórz 4 kolejne transkrypcje na notatki"
-- "Batch generowanie notatek"
-
-**Workflow:**
-```
-oczyszczone/ → [wyspecjalizowane skills] → Notatki/{typ spotkania}/
-(4 transkrypcje sekwencyjnie w jednej sesji)
-```
-
-**Funkcje:**
-- Automatyczne rozpoznanie typu spotkania (dla każdej z 4 transkrypcji)
-- Wybór odpowiedniego skilla (5 typów spotkań)
-- **Automatyczne wykrywanie i wczytywanie części transkrypcji** (jeśli rozbite na część 1, 2, ... N)
-- Generowanie strukturalnych notatek z pełną szczegółowością
-- Identyfikacja powiązanych projektów
-- Zachowanie niuansów i alternatyw decyzyjnych
-- Aktualizacja bazy SQLite (statusy przetwarzania, archiwizacja)
-- Przetwarzanie chronologiczne (najstarsze najpierw)
-- **Tryb batch** - 4 notatki sekwencyjnie, automatyczna kontynuacja bez czekania na potwierdzenie
-- **Blokada współbieżna** - SQLite zapobiega duplikatom przy wielu agentach
-- Raportowanie postępu po każdej notatce
-- Podsumowanie batcha po zakończeniu
-
-**Typy spotkań i skills:**
-- Rada architektów → `rada-architektow`
-- Sprint review → `sprint-review`
-- Planowanie sprintu → `planowanie-sprintu`
-- Spotkania projektowe → `spotkanie-projektowe`
-- Tematy organizacyjne → `organizacyjne`
-
-**Zasoby:**
-- Skills: `.claude/skills/note-types/*/SKILL.md`
-- Baza danych: `Notatki/rejestr_transkrypcji.db` (SQLite)
-- Helper: `.claude/scripts/transkrypcje_db.py`
-
-**Różnica vs `note-maker`:**
-- `note-maker`: 1 notatka na sesję, czeka na potwierdzenie
-- `batch-note-maker`: 4 notatki sekwencyjnie, automatyczna kontynuacja
-
----
-
-### 4. `pipeline-runner` 🚀
+### 3. `pipeline-runner` 🚀
 **Kolor:** Fioletowy
 **Model:** Sonnet
 
@@ -140,6 +89,7 @@ oczyszczone/ → [wyspecjalizowane skills] → Notatki/{typ spotkania}/
 - "Przetwórz nowe", "Przetwórz nowe transkrypcje"
 - "Przetwórz dzisiejsze", "Przetwórz z dzisiaj"
 - "Przetwórz z [data]", "Przetwórz wczorajsze"
+- "Pipeline [nazwa pliku]"
 
 **Workflow:**
 ```
@@ -160,7 +110,7 @@ surowe/ → [czyszczenie + generowanie notatki] → Notatki/{typ}/
 
 ---
 
-### 5. `project-mapper` 🗺️
+### 4. `project-mapper` 🗺️
 **Kolor:** Pomarańczowy
 **Model:** Sonnet
 
@@ -188,7 +138,7 @@ Notatki/{typ}/ → [ekstrakcja ustaleń] → Projekty/*/CHANGELOG.md
 
 ---
 
-### 6. `overview-sync` 📊
+### 5. `overview-sync` 📊
 **Kolor:** Zielony
 **Model:** Sonnet
 
@@ -227,6 +177,59 @@ CHANGELOG.md → [analiza kontekstu + inteligentna kategoryzacja] → PROJEKT.md
 
 ---
 
+### 6. `note-reviewer` 🔍
+**Kolor:** Fioletowy
+**Model:** Sonnet
+
+**Cel:** Audytor jakości dla starych/gotowych notatek. Weryfikuje treść, formatowanie i przypisanie projektów.
+
+**Aktywacja:**
+- "Zrób review"
+- "Review notatki"
+- "Zweryfikuj notatkę [nazwa]"
+
+**Workflow:**
+```
+Gotowe-notatki/ → [weryfikacja + korekta] → Gotowe-notatki-w-trakcie/ → [przekazanie do project-mapper]
+```
+
+**Funkcje:**
+- Przenosi plik z `Gotowe-notatki/` do `Gotowe-notatki-w-trakcie/` (blokada)
+- Weryfikuje zgodność z transkrypcją źródłową (jeśli dostępna)
+- Mapowanie projektów wyłącznie ze słownika `_SLOWNIK_PROJEKTOW.md`
+- Ignoruje projekty wpisane w starej notatce jeśli nie ma ich w słowniku
+- Przekazuje zweryfikowaną notatkę do `project-mapper`
+
+**Zasoby:**
+- Słownik projektów: `.claude/skills/_SLOWNIK_PROJEKTOW.md`
+- Zasady: `Projekty/ZASADY.md`, `Projekty/STYL.md`
+
+---
+
+### 7. `roadmap-mapper` 🗓️
+**Kolor:** Niebieski
+**Model:** Sonnet
+
+**Cel:** Specjalistyczny mapper do aktualizacji Roadmapy AMODIT na podstawie notatek z planowania.
+
+**Aktywacja:**
+- Wywoływany automatycznie przez `note-maker` dla notatek typu 'Roadmapa'
+
+**Workflow:**
+```
+Notatki/Roadmapa/ → [ekstrakcja ustaleń strategicznych] → Projekty/Roadmapa-AMODIT/CHANGELOG.md
+```
+
+**Funkcje:**
+- Przenoszenie ustaleń strategicznych z notatek do CHANGELOG Roadmapy
+- Zachowanie kontekstu kwartałów i MVP
+- Dedykowany dla notatek typu 'Roadmapa' / 'Strategia'
+
+**Zasoby:**
+- Folder: `Projekty/Roadmapa-AMODIT/`
+
+---
+
 ## Przepływ pracy (pipeline)
 
 ### Wariant A: Automatyczny pipeline (zalecany dla codziennej pracy)
@@ -251,14 +254,16 @@ CHANGELOG.md → [analiza kontekstu + inteligentna kategoryzacja] → PROJEKT.md
 └─────────────────────────────────────────────────────────────────┘
                            ↓
 ┌─────────────────────────────────────────────────────────────────┐
-│ PROJECT-MAPPER (Etap 3 - osobno, z kontrolą)                   │
-│ Trigger: "Przetwórz następną notatkę"                          │
+│ NOTE-REVIEWER + PROJECT-MAPPER (Etap 3 - stare notatki)        │
+│ Trigger: "Zrób review notatki"                                 │
 ├─────────────────────────────────────────────────────────────────┤
-│ Notatki/Rada architektów/                                       │
+│ Gotowe-notatki/                                                 │
 │   └─ 2025-11-28 Rada architektów.md                            │
-│        ↓ [ekstrakcja ustaleń + auto-kategoryzacja]             │
+│        ↓ [weryfikacja + mapowanie projektów]                   │
 │ Projekty/moduly/Trust-Center/                                   │
 │   └─ CHANGELOG.md (surowa historia)                            │
+│        ↓                                                        │
+│ Gotowe-notatki-archiwum/                                        │
 └─────────────────────────────────────────────────────────────────┘
                            ↓
 ┌─────────────────────────────────────────────────────────────────┐
@@ -286,7 +291,7 @@ CHANGELOG.md → [analiza kontekstu + inteligentna kategoryzacja] → PROJEKT.md
                            ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ Etap 2: Generowanie notatek strukturalnych                 │
-│ Agent: note-maker / batch-note-maker                       │
+│ Agent: note-maker                                          │
 ├─────────────────────────────────────────────────────────────┤
 │ oczyszczone/ → [rozpoznanie typu + skill] → Notatki/{typ}/ │
 └─────────────────────────────────────────────────────────────┘
@@ -331,60 +336,72 @@ User: Przetwórz z 2025-11-27
 ```
 Agent przetworzy transkrypcje z konkretnej daty.
 
+**Konkretny plik:**
+```
+User: Pipeline 2025-12-12 Rada architektów.md
+```
+Agent przetworzy wskazany plik przez cały pipeline.
+
 ---
 
 ### Czyszczenie transkrypcji (Etap 1)
 
-**Tryb batch (zalecany):**
+**Automatyczny wybór z kolejki (zalecany):**
 ```
-User: Oczyść oczekujące transkrypcje
+User: Oczyść transkrypcję
 ```
-Agent przetworzy maksymalnie 5 plików i zapyta czy kontynuować.
+lub
+```
+User: Czyszczenie transkrypcji
+```
+Agent automatycznie wybierze najstarszy plik z kolejki.
 
-**Tryb pojedynczy:**
+**Konkretny plik:**
 ```
 User: Oczyść 2025-11-25 Design.md
 ```
 
 ### Generowanie notatek (Etap 2)
 
-**Pojedyncza notatka (kontrolowany postęp):**
+**Automatyczny wybór z kolejki:**
 ```
-User: Wygeneruj kolejną notatkę
+User: Wygeneruj notatkę
+```
+lub
+```
+User: Utwórz notatkę
 ```
 Agent automatycznie wybierze najstarszą nieprzetworzoną transkrypcję i wygeneruje notatkę.
 
 **Kontynuacja:**
-Po każdej notatce agent poinformuje o postępie. Aby kontynuować:
+Po każdej notatce agent poinformuje o postępie. Aby kontynuować, użyj tej samej komendy ponownie.
+
+### Przetwarzanie starych notatek (note-reviewer)
+
+**Automatyczny wybór z kolejki:**
 ```
-User: Wygeneruj kolejną notatkę
+User: Zrób review
+```
+lub
+```
+User: Review notatki
+```
+Agent pobierze kolejną notatkę z `Gotowe-notatki/`, zweryfikuje ją i przekaże do `project-mapper`.
+
+**Konkretna notatka:**
+```
+User: Zweryfikuj notatkę 2025-12-04 Spotkanie projektowe.md
 ```
 
-**Batch processing (4 notatki sekwencyjnie):**
-```
-User: Wygeneruj notatki z pozostałych transkrypcji
-```
-Agent automatycznie wybierze 4 najstarsze nieprzetworzone transkrypcje i przetworzy je sekwencyjnie w jednej sesji. Raportuje postęp po każdej notatce i podsumowuje batch po zakończeniu.
+### Ręczne mapowanie na projekty (project-mapper)
 
-### Mapowanie na projekty (Etap 3)
+**Dodanie notatki do changelog konkretnego projektu:**
+```
+User: Dodaj notatkę z 2025-12-01 do changelog Repozytorium
+```
+Agent wyekstrahuje ustalenia z notatki i doda je do CHANGELOG.md wskazanego projektu.
 
-**Pojedyncza notatka (z zatwierdzeniem planu):**
-```
-User: Przetwórz następną notatkę
-```
-Agent przedstawi plan zmian do zatwierdzenia, po akceptacji zaktualizuje Project Canvas.
-
-**Synchronizacja rejestru:**
-```
-User: Sync notes
-```
-Agent zsynchronizuje rejestr notatek z plikami w katalogach.
-
-**Reprocesing od zera:**
-```
-User: Reprocesing od zera
-```
-Agent zresetuje rejestr i przetworzy wszystkie notatki chronologicznie od najstarszej.
+**Uwaga:** Zazwyczaj `project-mapper` jest wywoływany automatycznie przez `note-reviewer` lub `note-maker`.
 
 ---
 
@@ -448,8 +465,11 @@ Planowane przyszłe agenty:
 │   ├── README.md                    ← ten plik
 │   ├── transcript-cleaner.md
 │   ├── note-maker.md
-│   ├── batch-note-maker.md
-│   └── project-mapper.md            ← NOWY
+│   ├── project-mapper.md
+│   ├── note-reviewer.md
+│   ├── overview-sync.md
+│   ├── pipeline-runner.md
+│   └── roadmap-mapper.md
 ├── skills/
 │   ├── transcript-cleaning/
 │   │   └── SKILL.md

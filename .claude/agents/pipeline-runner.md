@@ -252,8 +252,8 @@ END FOR
 
 ---
 
-**Następny krok:** Wywołaj `project-mapper` aby zmapować notatki na projekty:
-> "Przetwórz następną notatkę"
+**Następny krok:** Aby zmapować notatki na projekty:
+> "Zrób review" (wywołuje `note-reviewer` → `project-mapper`)
 ```
 
 ---
@@ -519,7 +519,7 @@ Agent:
 
 ---
 
-**Następny krok:** Wywołaj `project-mapper`:
-> "Przetwórz następną notatkę"
+**Następny krok:** Aby zmapować notatki na projekty:
+> "Zrób review" (wywołuje `note-reviewer` → `project-mapper`)
 ```
 

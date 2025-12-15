@@ -104,19 +104,12 @@ Rezultat: Podlega czyszczeniu (jak transkrypcja), potem generowanie notatki
 
 **a) Pojedyncza notatka:**
 ```
-Wywołaj: "Wygeneruj kolejną notatkę"
+Wywołaj: "Wygeneruj notatkę"
 Agent: note-maker
 Rezultat: Jedna notatka strukturalna, czeka na potwierdzenie przed następną
 ```
 
-**b) Batch 4 notatek:**
-```
-Wywołaj: "Wygeneruj notatki z pozostałych transkrypcji"
-Agent: batch-note-maker
-Rezultat: 4 notatki sekwencyjnie, automatyczna kontynuacja
-```
-
-**c) Pipeline (czyszczenie + notatka):**
+**b) Pipeline (czyszczenie + notatka):**
 ```
 Wywołaj: "Przetwórz nowe"
 Agent: pipeline-runner
@@ -125,21 +118,22 @@ Rezultat: Pełny pipeline dla wszystkich nowych plików
 
 ---
 
-### UC-005: Mapowanie notatek na projekty
+### UC-005: Przetwarzanie starych notatek
 
-**Scenariusz:** Masz gotowe notatki strukturalne i chcesz zaktualizować dokumentację projektów.
+**Scenariusz:** Masz stare notatki w `Gotowe-notatki/` i chcesz je zweryfikować i zmapować na projekty.
 
-**Lokalizacja notatek:** `Notatki/[Typ]/` (np. `Notatki/Rada architektów/`)
+**Lokalizacja notatek:** `Notatki/Gotowe-notatki/`
 
 **Przetwarzanie:**
 ```
-Wywołaj: "Przetwórz następną notatkę"
-Agent: project-mapper
+Wywołaj: "Zrób review"
+Agent: note-reviewer + project-mapper
 Rezultat: 
-1. Analiza notatki i identyfikacja projektów
-2. Propozycja planu zmian (do zatwierdzenia)
-3. Aktualizacja Project Canvas zgodnie z planem
-4. Aktualizacja rejestru przetworzonych
+1. Weryfikacja i korekta notatki
+2. Mapowanie projektów ze słownika
+3. Przekazanie do project-mapper
+4. Aktualizacja CHANGELOG.md projektów
+5. Archiwizacja do Gotowe-notatki-archiwum/
 ```
 
 **Workflow:**
@@ -186,43 +180,6 @@ Rezultat: Utworzenie notatki organizacyjnej z linkiem do źródła
 
 ---
 
-### UC-007: Synchronizacja rejestru notatek
-
-**Scenariusz:** Chcesz upewnić się, że wszystkie pliki w katalogach notatek są uwzględnione w rejestrze.
-
-**Wywołanie:**
-```
-Wywołaj: "Synchronizuj rejestr notatek" lub "Sync notes"
-Agent: project-mapper (tryb sync-notes)
-Rezultat: 
-1. Skanuje katalogi: Planowanie sprintu/, Rada architektów/, Spotkania projektowe/, Sprint review/, Daily/
-2. Porównuje z rejestrem _rejestr_przetworzonych.md
-3. Dodaje brakujące notatki do kolejki "Notatki oczekujące"
-4. Raportuje ile notatek dodano
-```
-
-**Uwaga:** To zadanie **nie czyta treści notatek**, jedynie listuje pliki i porównuje z rejestrem.
-
----
-
-### UC-008: Reprocesing od zera
-
-**Scenariusz:** Zmieniono szablon Project Canvas lub chcesz "czystą" historię projektów.
-
-**Wywołanie:**
-```
-Wywołaj: "Reprocesing od zera" lub "Reset dokumentacji projektów"
-Agent: project-mapper (tryb reprocess-all)
-Rezultat:
-1. Reset rejestru (wszystkie notatki → nieprzetworzone)
-2. Przetwarzanie chronologicznie od najstarszej
-3. Budowanie historii projektów od początku
-```
-
-**Uwaga:** Przy reprocesingu treść sekcji 1-4 Project Canvas jest nadpisywana. Historia (sekcja 5) rośnie chronologicznie.
-
----
-
 ## Szybka referencja: Agenty i ich zastosowanie
 
 | Agent | Kiedy użyć | Co robi |
@@ -230,8 +187,10 @@ Rezultat:
 | `pipeline-runner` | Codzienna praca, przetwarzanie nowych plików | Pełny pipeline: surowe → oczyszczone → notatka |
 | `transcript-cleaner` | Tylko czyszczenie pojedynczej transkrypcji | Korekta ASR, redukcja szumu, formatowanie |
 | `note-maker` | Generowanie jednej notatki z oczyszczonej transkrypcji | Strukturalna notatka, czeka na potwierdzenie |
-| `batch-note-maker` | Generowanie wielu notatek naraz | 4 notatki sekwencyjnie, automatyczna kontynuacja |
-| `project-mapper` | Aktualizacja dokumentacji projektów | Mapowanie notatek na Project Canvas |
+| `note-reviewer` | Przetwarzanie starych notatek z Gotowe-notatki/ | Weryfikacja + mapowanie na projekty |
+| `project-mapper` | Wywoływany automatycznie | Dodawanie wpisów do CHANGELOG.md projektów |
+| `overview-sync` | Synchronizacja dokumentacji projektów | Aktualizacja PROJEKT.md, ARCHITEKTURA.md, ROADMAPA.md |
+| `roadmap-mapper` | Wywoływany automatycznie dla notatek roadmapowych | Aktualizacja Roadmapy AMODIT |
 
 ---
 
@@ -249,6 +208,7 @@ Rezultat:
 
 ## Workflow: Od surowego pliku do projektu
 
+**Nowe pliki (automatyczny pipeline):**
 ```
 1. Dodaj plik do surowe/ lub surowe/notatki/
    ↓
@@ -259,13 +219,22 @@ Rezultat:
    ↓
 4. Generowanie notatki strukturalnej → Notatki/[Typ]/
    ↓
-5. Wywołaj: "Przetwórz następną notatkę" (project-mapper)
+   GOTOWE - notatka w odpowiednim folderze typu
+```
+
+**Stare notatki (ręczne przetwarzanie):**
+```
+1. Notatki w Gotowe-notatki/
    ↓
-6. Analiza i propozycja planu zmian
+2. Wywołaj: "Zrób review" (note-reviewer)
    ↓
-7. Zatwierdzenie → Aktualizacja Project Canvas
+3. Weryfikacja → Gotowe-notatki-w-trakcie/
    ↓
-8. Notatka oznaczona jako przetworzona
+4. Mapowanie na projekty (automatyczne przez project-mapper)
+   ↓
+5. Aktualizacja CHANGELOG.md projektów
+   ↓
+6. Archiwizacja → Gotowe-notatki-archiwum/
 ```
 
 ---
@@ -303,8 +272,7 @@ Rezultat:
 ```
 1. Dodaj transkrypcje do surowe/
 2. Wywołaj: "Przetwórz dzisiejsze"
-3. Sprawdź wygenerowane notatki
-4. Wywołaj: "Przetwórz następną notatkę" (kilka razy)
+3. Sprawdź wygenerowane notatki w Notatki/[Typ]/
 ```
 
 ### Scenariusz 2: Dodanie gotowego dokumentu
@@ -312,7 +280,14 @@ Rezultat:
 1. Dodaj dokument do surowe/notatki/
 2. Wywołaj: "Przetwórz nowe"
 3. Notatka wygenerowana bez czyszczenia
-4. Wywołaj: "Przetwórz następną notatkę"
+```
+
+### Scenariusz 3: Przetwarzanie starych notatek
+```
+1. Sprawdź kolejkę w Gotowe-notatki/
+2. Wywołaj: "Zrób review"
+3. Notatka zweryfikowana i zmapowana na projekty
+4. Powtórz dla kolejnych notatek
 ```
 
 ### Scenariusz 3: Wyłapanie tematu organizacyjnego

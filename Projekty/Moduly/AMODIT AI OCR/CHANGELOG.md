@@ -4,6 +4,20 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-04 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - AMODIT AI.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20AMODIT%20AI.md)
+**Kategoria:** #Architektura
+**Projekt:** [Klienci/Vasco/Integracja-Google-OCR](../../Klienci/Vasco/Integracja-Google-OCR/)
+
+- **Alternatywny model OCR - Google Gemini:**
+  - Integracja z Google Gemini jako alternatywa dla Azure Document Intelligence
+  - Model: Gemini 1.5 / Flash (bardziej uniwersalny, tańszy niż Document AI)
+  - Wysyłanie całego PDF-a do LLM (dostęp do struktury dokumentu i układu graficznego)
+  - PoC dla klienta Vasco (pełne informacje w projekcie klienckim powyżej)
+  - Jeśli się sprawdzi - możliwość globalnego przejścia z Azure na Google
+
+---
+
 ## 2025-12-02 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
 **Kategoria:** #Funkcjonalność #Integracja

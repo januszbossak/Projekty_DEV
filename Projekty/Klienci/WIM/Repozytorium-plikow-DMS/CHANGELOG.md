@@ -4,6 +4,19 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-05 | Planowanie sprintu
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
+**Kategoria:** #Zadanie #Wdrożenie
+
+**Status testowania:**
+- Testowanie repozytorium przez Janusza i Kamila - feedback dla Marka
+- Technicznie działa, teraz faza UX-owa (dopracowanie interfejsu użytkownika)
+
+**Cel sprintu:**
+- Oddanie do użytku repozytorium plików u klienta (zainstalowane u klienta WIM)
+
+---
+
 ## 2025-12-04 | Rada developerów
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Rada developerów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Rada%20developerów.md)  
 **Kategoria:** #Design #Funkcjonalność
