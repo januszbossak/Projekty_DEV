@@ -1,5 +1,25 @@
 # CHANGELOG - AMODIT Copilot
 
+## 2025-12-09 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
+**Kategoria:** #Dokumentacja #Zadanie
+
+- **Generowanie dokumentacji:** MVP gotowe, potrzebne ustalenie wzoru dokumentacji z Mateuszem Kołakowskim (obecny wzór od Piotrka Pawłowskiego sprzed roku/1,5 roku), kolejność: proces → raport → ustawienia systemowe → integracje
+
+**Kategoria:** #Architektura #Decyzja
+
+- **MCP - Autentykacja i OAuth:** PoC zrobiony, wymagana autentykacja (tokeny, OAuth), OAuth będzie robione przy okazji integracji CallRest dla Neuca i wykorzystane również dla MCP
+
+**Kategoria:** #Architektura #Decyzja #Ryzyko
+
+- **MCP serwer - bezpieczeństwo i uprawnienia:** Dostarczenie w Q1, kluczowe wyzwanie: bezpieczeństwo (autentykacja, uprawnienia, kontrola dostępu), mechanizm checkbox "Pozwól AI dostawać się do tego procesu", rejestrowanie działań AI, możliwość kont systemowych z określonymi uprawnieniami
+
+**Kategoria:** #Funkcjonalność #Propozycja
+
+- **💭 Pomysł Przemka - ASK dostęp do Internetu:** Dostęp do wyszukiwarki (Bing lub inna), włączane świadomie przez użytkownika, wymaga rozważenia (koszty API, szczegóły implementacji)
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - AMODIT AI.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20AMODIT%20AI.md)
 **Kategoria:** #Funkcjonalność #Decyzja

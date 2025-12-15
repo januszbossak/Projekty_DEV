@@ -2,6 +2,16 @@
 
 ---
 
+## 2025-12-10 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-10 Omówienie wyceny dla Neuca.md](../../../../../Notatki/Gotowe-notatki-archiwum/2025-12-10%20Omówienie%20wyceny%20dla%20Neuca.md)
+**Kategoria:** #Funkcjonalność #Decyzja
+
+- **Przedstawienie koncepcji historii biznesowej dla Neuca:** Temat bardzo się klientowi podobał - mówią że to jest coś czego potrzebują, szansa na wciągnięcie klienta w analizę i pozyskanie większego budżetu
+- **Dalsze kroki:** Spotkanie z klientem - pokazanie co mamy, co kombinujemy, ustalenie jakie oni widzą sensowne zastosowania (potrzeby), możliwość współpracy z Rossmannem (szersza perspektywa)
+- **Powiązanie z teczkami sprawy:** Może być powiązana z JRWA i teczkami sprawy (koncepcja teczki klienta)
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Omówienie zmian Amodit - Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Omówienie%20zmian%20Amodit%20-%20Neuca.md)  
 **Kategoria:** #Funkcjonalność

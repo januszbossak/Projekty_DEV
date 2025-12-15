@@ -16,3 +16,4 @@ Historia ustaleń i zmian dla projektu.
 - Rozważenie dodania sprawdzania do check config w AMODITDatabaseAdmin dla błędnych wpisów Newtonsoft
 - Mariusz Piotrzkowski napisze artykuł jak znajdować i wykrywać takie problemy (użycie resmon.exe)
 
+

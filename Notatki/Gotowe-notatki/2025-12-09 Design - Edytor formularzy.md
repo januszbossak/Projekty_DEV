@@ -248,3 +248,4 @@ Rossmann eskaluje problem z synchronizacją kartoteki. Istnieje kartoteka w syst
 - Jaka jest dokładna przyczyna błędnej odpowiedzi systemu?
 - Czy to problem po stronie integracji czy logiki biznesowej?
 
+

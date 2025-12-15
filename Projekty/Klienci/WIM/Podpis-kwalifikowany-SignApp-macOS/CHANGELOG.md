@@ -4,6 +4,14 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
+**Kategoria:** #Wydanie #Zadanie
+
+- **Certyfikacja Apple:** Prace deweloperskie zakończone, czekamy na certyfikację Apple (Przemysław Sołdacki wysłał dokumenty), możliwe testy bez certyfikacji jeśli WIM się zgodzi
+
+---
+
 ## 2025-12-01 | Planowanie sprintu (Szczegóły)
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-01 Planowanie sprintu.md]
 **Kategoria:** #Wydanie

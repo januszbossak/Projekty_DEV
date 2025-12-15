@@ -4,6 +4,16 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
+**Kategoria:** #Decyzja #Ryzyko
+
+- **Status MVP i ryzyka akceptacji:** MVP będzie dostarczone w założonym zakresie do końca roku, background przygotowany na łatwą rozbudowę, ryzyko że WIM nie zaakceptuje rozwiązania (wymagania wyższe niż MVP)
+- **Uprawnienia MVP:** Wersja uproszczona - uprawnienia do całej przestrzeni (najwyższa gałązka), zaawansowane uprawnienia (dziedziczenie i przerywanie) przesunięte na później
+- **Funkcjonalności MVP:** Tworzenie folderów, dodawanie plików, masowe dodawanie plików, organizowanie repozytorium, nadawanie uprawnień na poziomie najwyższej gałązki/gałązek
+
+---
+
 ## 2025-12-05 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
 **Kategoria:** #Zadanie #Wdrożenie

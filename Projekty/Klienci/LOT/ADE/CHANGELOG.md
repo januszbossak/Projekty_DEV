@@ -4,6 +4,16 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
+**Kategoria:** #Decyzja #Zadanie
+
+- **Eksport archiwów państwowych - przesunięcie na Q1:** Eksport dla LOT-u wejdzie w Q1, MVP 2 zamykane w tym sprincie (gotowe do przekazania), MVP 3 prawdopodobnie przyszły sprint (udogodnienia, nie kluczowe)
+- **Status prac:** Marek rozwija strukturę drzewa w tym tygodniu, pierwsza wersja będzie walidacją
+- **Ograniczenia:** Dział rozwoju nie jest potrzebny do integracji (publiczne endpointy), problem: brak danych do wygenerowania paczki (wdrożenie nie jest na tyle posunięte)
+
+---
+
 ## 2025-12-02 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-02 Spotkanie projektowe - AMODIT UI.md]
 **Kategoria:** #Funkcjonalność #Zadanie

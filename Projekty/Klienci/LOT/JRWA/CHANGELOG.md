@@ -2,6 +2,14 @@
 
 ---
 
+## 2025-12-10 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-10 Omówienie wyceny dla Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-10%20Omówienie%20wyceny%20dla%20Neuca.md)
+**Kategoria:** #Koncepcja
+
+- **Koncepcja teczki sprawy:** Podczas rozmowy o JRWA pojawiła się koncepcja "teczki sprawy" - podobna do teczki e-Sądowej, która łączy wiele elementów, kierunek na którym powinniśmy myśleć - patrzenie na klienta (Klient 360), sprawy związane z polisami, roszczeniami, różnymi rzeczami, może być powiązana z historią biznesową, pytania: czy potrzebujemy czegoś specjalnego od AMODIT żeby ułatwić robienie takiej teczki, jakie elementy mogą być w teczce, czy to jest w roadmapie
+
+---
+
 ## 2025-12-05 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
 **Kategoria:** #Funkcjonalność #Design

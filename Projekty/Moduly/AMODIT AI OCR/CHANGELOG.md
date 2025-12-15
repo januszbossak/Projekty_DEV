@@ -4,6 +4,19 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
+**Kategoria:** #Architektura
+
+- **Kolejkowanie dokumentów OCR:** Wprowadzenie lokalnej kolejki dokumentów przechowywanych przez 24h po wysłaniu, mechanizm pingowania do potwierdzenia przetworzenia - rozwiązanie problemu dokumentów przepadających przy zacięciach Azure
+
+**Kategoria:** #Funkcjonalność #Wydanie
+**Projekt:** [Klienci/Vasco/Integracja-Google-OCR](../../Klienci/Vasco/Integracja-Google-OCR/)
+
+- **Vasco - dostęp do AI OCR:** Vasco ma dostęp do AI OCR na obu środowiskach, Google OCR podpięty przez Mateusza, na razie tylko OCR (nie ASK), mikroserwis podpisany na weekendzie
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - AMODIT AI.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20AMODIT%20AI.md)
 **Kategoria:** #Architektura

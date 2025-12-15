@@ -4,6 +4,14 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
+**Kategoria:** #Funkcjonalność #Wydanie
+
+- **Dostęp do AI OCR:** Vasco ma dostęp do AI OCR na obu środowiskach, Google OCR podpięty przez Mateusza, mikroserwis podpisany na weekendzie, na razie tylko OCR (nie ASK), jest o krok od włączenia ASK
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - AMODIT AI.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20AMODIT%20AI.md)
 **Kategoria:** #Funkcjonalność #Architektura #Decyzja

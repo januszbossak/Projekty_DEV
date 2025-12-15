@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## 2025-12-10 | Spotkanie projektowe
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-10 Omówienie wyceny dla Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-10%20Omówienie%20wyceny%20dla%20Neuca.md)
+**Kategoria:** #Design #Funkcjonalność
+
+- **Rozdzielenie wizualne folderów i procesów:** Wprowadzenie wyraźnego podziału - kafelki folderów w jednej linii, kafelki procesów od nowej linii, dotyczy zakładek Procesy i Raporty
+- **Skracanie długich nazw procesów:** Zwiększenie z 2 do 5 linii, ucinanie od środka (początek + wielokropek + koniec) - algorytm jak na załącznikach, dzielenie po połowie pełnymi wyrazami
+- **Tooltips - pozycjonowanie i logika:** Tooltip w dół dla pierwszego rzędu (nie zasłania przycisków), tylko dla skróconych nazw, opóźnienie wyświetlania
+- **Pola wymagane - walidacja na starcie:** Jeśli ustawienie systemowe wyłączone, od razu po wejściu w sprawę wyświetlamy walidację (belka + komunikaty pod polami)
+- **Przycisk "Zapisz" - możliwość ukrycia:** Neuca ma wystawić CR z przypadkiem biznesowym, opcja w ustawieniach procesu do ukrycia przycisku
+- **Przycisk "Usuń" dla administratora:** Czerwone "Usuń" w 3 kropkach dla administratora, na pierwszym etapie dodatkowo normalne "Usuń" z roli użytkownika
+- **Pogrubienie czcionki folderów:** Odrzucone - rozdzielenie sekcji już wystarczająco wyróżnia, różnica prawie niewyczuwalna
+- **Skalowanie kolumn:** Już zrobione w grudniowej wersji - odblokowanie limitu 6 kolumn, kafelki skalują się do szerokości ekranu
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Omówienie zmian Amodit - Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Omówienie%20zmian%20Amodit%20-%20Neuca.md)  
 **Kategoria:** #Design #Funkcjonalność

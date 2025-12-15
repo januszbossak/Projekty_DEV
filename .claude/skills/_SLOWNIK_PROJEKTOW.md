@@ -268,7 +268,7 @@ Kompleksowy projekt obejmujący wszystkie aspekty formularza sprawy. Wygląd i e
 
 Widok historii zmian w prawym panelu sprawy. Wyświetla timeline wydarzeń, zmiany statusów, edycje pól formularza, przekazywania sprawy. Projekt obejmuje poprawę czytelności - wyświetlanie przyjaznych nazw pól (DisplayValue) zamiast nazw technicznych (FieldName), z nazwą techniczną dostępną w tooltipie. Historia zmian na sprawie, audyt wszystkich modyfikacji.
 
-#### `cross-cutting/Interfejs-sprawy/Historia-biznesowa`
+#### `zcross-cutting/Interfejs-sprawy/Historia-biznesowa`
 
 Widok historii biznesowej opartej o zdarzenia zapisywane z poziomu reguł.
 

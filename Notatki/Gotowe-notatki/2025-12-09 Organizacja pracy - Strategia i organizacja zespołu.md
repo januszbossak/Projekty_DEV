@@ -114,3 +114,4 @@ Dyskusja o przejściu na React - czy przejście zakładki "Do wykonania" na Reac
 - Które widoki powinny być priorytetem do przejścia na React?
 - Jak systematycznie mierzyć częstotliwość użycia widoków?
 
+
