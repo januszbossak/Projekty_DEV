@@ -1,5 +1,33 @@
 # CHANGELOG - Edytor formularzy
 
+## 2025-12-09 | Spotkanie projektowe
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Design - Edytor formularzy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Design%20-%20Edytor%20formularzy.md)
+
+**Kategoria:** #Design #Funkcjonalność
+
+**Prawy panel edytora - wyróżnienie wizualne:**
+- Usunięcie zakładek - wszystkie sekcje wyświetlane od razu rozwinięte z nagłówkami
+- Dodanie cienia wokół prawego panelu (box-shadow) - wyróżnia panel od formularza
+- Dodanie linii pod nagłówkiem sekcji w kolorze typu pola
+- Zachowanie mechanizmu zwijania/rozwijania sekcji z pamięcią w local storage (30 dni)
+- Wartość domyślna przeniesiona do właściwości na koniec
+
+**Puste pola - numeracja i reguły:**
+- Wyświetlanie tekstu "puste 1", "puste 2" w edytorze graficznym
+- Możliwość edycji ustawień pola pustego z poziomu edytora graficznego
+- Zmiana numeracji - nowe puste pole otrzymuje auto-increment numer (bez renumeracji istniejących)
+- Status: 🔍 Do weryfikacji z Piotrem Buczkowskim
+
+**Kategoria:** #Decyzja
+
+**Układ formularza przy otwartym prawym panelu:**
+- Propozycja: prawy panel nie powinien wpływać na zmianę układu kolumn formularza
+- Jeśli formularz ma układ 3-kolumnowy, przy otwarciu panelu kolumny pozostają 3 (tylko węższe)
+- Priorytet: edytor służy do pracy nad formularzem, nie jako formularz dla użytkownika końcowego
+
+---
+
 ## 2025-12-05 | Planowanie sprintu
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Planowanie sprintu.md]
 **Projekt:** [Klienci/LOT/JRWA](../../../Klienci/LOT/JRWA/)

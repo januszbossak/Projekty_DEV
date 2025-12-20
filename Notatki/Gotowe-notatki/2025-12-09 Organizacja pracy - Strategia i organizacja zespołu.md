@@ -115,3 +115,6 @@ Dyskusja o przejściu na React - czy przejście zakładki "Do wykonania" na Reac
 - Jak systematycznie mierzyć częstotliwość użycia widoków?
 
 
+
+
+

@@ -17,3 +17,6 @@ Historia ustaleń i zmian dla projektu.
 - Mariusz Piotrzkowski napisze artykuł jak znajdować i wykrywać takie problemy (użycie resmon.exe)
 
 
+
+
+

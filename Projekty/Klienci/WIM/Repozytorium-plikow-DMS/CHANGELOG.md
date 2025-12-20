@@ -4,6 +4,34 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-09 | Spotkanie projektowe - Design
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Design - Edytor formularzy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Design%20-%20Edytor%20formularzy.md)
+
+**Kategoria:** #Funkcjonalność #Wydanie
+
+- Finalizacja uprawnień w module Repozytorium (dzisiaj/jutro rano)
+- Dokumentacja przygotowana przez Adriana, baza danych i metody przygotowane pod przyszłe rozbudowy
+- Obecnie realizowany MVP - tylko najwyższy poziom uprawnień
+- Filip pokazywał już działające uprawnienia
+- Planowane wydanie na środowisko developerskie i rozpoczęcie pełnych testów
+- Planowane wdrożenie u klienta w tym tygodniu
+
+---
+
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Wydanie #Roadmap
+
+- Repozytorium plików (DMS) potwierdzone jako ukończone w Q4 2025
+- Wychodzi w wersji grudniowej 2025
+- Funkcjonalności: zarządzanie strukturą folderów i przestrzeni, wgrywanie/pobieranie/podgląd plików, uprawnienia
+- Projekt realizowany dla klienta WIM, rozwija produkt (funkcjonalności ogólne)
+
+---
+
 ## 2025-12-09 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
 **Kategoria:** #Decyzja #Ryzyko

@@ -21,3 +21,6 @@
 **Tomasz Kalinowski:** Piotr Buczkowski, jednak jest to samo, już nie wiem o co tu chodzi. [Zrzut ekranu] Cały czas wywala błędy Newtonsoftu. [Zrzut ekranu]
 
 
+
+
+

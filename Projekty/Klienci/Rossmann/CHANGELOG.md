@@ -4,6 +4,36 @@ Historia ustaleń i zmian dla klienta Rossmann.
 
 ---
 
+## 2025-12-19 | Compliance AI Act
+
+**Źródło:** [Notatki/Gotowe-notatki/2025-12-19 Odpowiedz-do-Rossman-w-sprawie-AI-Act](../../../Notatki/Gotowe-notatki/2025-12-19%20Odpowiedz-do-Rossman-w-sprawie-AI-Act)
+
+**Kategoria:** #Bezpieczeństwo #Legislacja #AI
+
+- Przygotowanie kompleksowej odpowiedzi na 12 pytań AI Compliance Officera Rossmann.
+- Potwierdzenie statusu Astrafox jako **dostawcy (provider)** oraz Rossmann jako **wdrażającego (deployer)** w rozumieniu AI Act.
+- Deklaracja braku wykorzystania danych klienta do trenowania modeli bazowych (Azure OpenAI).
+- Potwierdzenie przetwarzania danych wewnątrz UE (regiony Microsoft Azure).
+- Zaklasyfikowanie systemu AMODIT w standardowym użyciu jako system niewchodzący w kategorię wysokiego ryzyka (High-Risk).
+
+---
+
+## 2025-12-09 | Spotkanie projektowe - Design
+
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Design - Edytor formularzy.md](../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Design%20-%20Edytor%20formularzy.md)
+
+**Kategoria:** #Problem #Integracje
+
+- Problem z synchronizacją kartoteki - eskalacja od Rossmann
+- Kartoteka istnieje w systemie, ale odpowiedź AMODIT wskazuje "nie można utworzyć sprawy"
+- Powinna być informacja "nie można zaktualizować"
+- Przyczyna pośrednio nieznana - kartoteka istnieje, duplikat nie istnieje, ale system odpowiada błędnie
+- Wymaga analizy przez Adriana po powrocie ze szkolenia
+- Status: 🔍 Do weryfikacji
+
+---
+
 ## 2025-12-03 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-03 Notatka projektowa - Historia biznesowa.md]
 **Kategoria:** #Funkcjonalność #Design

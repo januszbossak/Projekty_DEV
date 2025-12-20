@@ -249,3 +249,5 @@ Rossmann eskaluje problem z synchronizacją kartoteki. Istnieje kartoteka w syst
 - Czy to problem po stronie integracji czy logiki biznesowej?
 
 
+
+

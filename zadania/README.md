@@ -51,6 +51,14 @@ Ten plik śledzi zadania przypisane konkretnym osobom, wyekstrahowane z notatek 
 ### Podgląd plików
 - [ ] Przetestować `getAttachmentContent` i utworzyć zgłoszenie błędu jeśli problem się potwierdzi *(2025-09-09)*
 
+### AI Act Compliance - Dokumentacja
+- [ ] Przygotować dokumentację techniczną modułów AI (AMODIT Copilot, AMODIT AI OCR) zgodną z wymogami AI Act *(2025-12-19)*
+  - Zasady działania modułów AI
+  - Opis ograniczeń systemowych (halucynacje LLM)
+  - Zalecane środki kontroli (human-in-the-loop)
+  - Instrukcje bezpiecznego użytkowania
+- [ ] Umieścić dokumentację w Wiki AMODIT i materiałach onboardingowych *(2025-12-19)*
+
 ---
 
 ## Kamil

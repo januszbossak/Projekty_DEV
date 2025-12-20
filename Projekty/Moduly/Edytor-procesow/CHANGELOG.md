@@ -4,6 +4,26 @@ Historia zmian i ustaleń dla projektu.
 
 ---
 
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Planowanie #Roadmap
+
+**Kompletny edytor procesów - Q1 2026:**
+- Nowy edytor diagramów (priorytet: High)
+- Nowy edytor reguł (priorytet: High)
+- Lista szablonów - przeprojektowanie (obecnie brzydka, wymaga przeróbki)
+- Ustawienia procesu - dostosowanie do nowego interfejsu
+- Joby - aktualizacja interfejsu
+- Cel: Całość obszaru edycji procesów w nowym interfejsie React
+
+**Wydanie kompletnego edytora procesów - Q2 2026:**
+- Wszystkie komponenty z Q1 muszą być wydane i stabilne
+- Termin: Koniec Q2 2026
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)  
 **Kategoria:** #Decyzja

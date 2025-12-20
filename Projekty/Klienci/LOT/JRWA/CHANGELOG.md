@@ -2,6 +2,19 @@
 
 ---
 
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Planowanie #Roadmap
+
+- JRWA (Jednolity Rzeczowy Wykaz Akt) zaplanowane na Q1 2026
+- Obsługa JRWA dla sektora publicznego
+- Dostosowanie do wymogów organizacji mających obowiązek stosowania JRWA
+- Projekt realizowany dla klienta LOT, rozwija produkt (sektor publiczny)
+
+---
+
 ## 2025-12-10 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-10 Omówienie wyceny dla Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-10%20Omówienie%20wyceny%20dla%20Neuca.md)
 **Kategoria:** #Koncepcja

@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## 2025-12-09 | Spotkanie projektowe - Design
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Design - Edytor formularzy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Design%20-%20Edytor%20formularzy.md)
+
+**Kategoria:** #Funkcjonalność #Problem
+
+**Profil użytkownika - brakujące informacje:**
+- Neuca zgłasza brak historii aktywności zmian na koncie (np. dodanie do grupy, usunięcie z grupy)
+- Informacje dostępne w module administracyjnym (Activity Log), ale nie w profilu użytkownika
+- Zgłoszenie leży od połowy roku
+- Perspektywa pół roku do przejścia na React
+- Tymczasowe rozwiązanie: raport bazujący na źródle danych (Damian przygotował zapytanie SQL)
+- Problem z zapytaniem SQL - arithmetic overflow na środowisku developerskim
+
+**Moduł Mikołaja - zastrzeżenia:**
+- Główne zastrzeżenia: lista procesów, lista raportów, pola wymagane na formularzu sprawy
+- Ustalenia ze spotkania z Neucą zapisane przez Janusza (nagranie dostępne)
+- Wymaga poprawy zgodnie z ustaleniami
+
+---
+
 ## 2025-12-10 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-10 Omówienie wyceny dla Neuca.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-10%20Omówienie%20wyceny%20dla%20Neuca.md)
 **Kategoria:** #Design #Funkcjonalność

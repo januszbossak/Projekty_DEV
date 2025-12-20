@@ -4,6 +4,18 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Planowanie #Roadmap
+
+- Eksport do archiwów państwowych zaplanowany na Q1 2026
+- Obsługa przekazywania elektronicznych paczek archiwalnych do archiwum państwowego
+- Projekt realizowany dla klienta LOT, rozwija produkt (sektor publiczny)
+
+---
+
 ## 2025-12-09 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
 **Kategoria:** #Decyzja #Zadanie

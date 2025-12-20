@@ -93,7 +93,15 @@
     "Sprint": 79,
     "Urlopy": 80,
     "Procedury": 81,
-    "Wsparcie": 82
+    "Wsparcie": 82,
+    "Propozycja": 83,
+    "setDefaults": 84,
+    "FF0000": 85,
+    "all": 86,
+    "object-keys": 87,
+    "typescript": 88,
+    "Integracje": 89,
+    "Legislacja": 90
   },
   "_version": 3
 }

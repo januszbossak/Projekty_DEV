@@ -103,3 +103,6 @@
 **Piotr Buczkowski:** Błąd jest w kontrolerze przy wypełnianiu JObject. Taki mechanizm jest wykorzystywany w wielu miejscach i nie da się tego zmienić.
 
 
+
+
+

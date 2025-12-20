@@ -2,6 +2,19 @@
 
 ---
 
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Wydanie #Roadmap
+
+- Komunikator (AMODIT Talk) potwierdzony jako ukończony w Q4 2025
+- Wychodzi w wersji grudniowej 2025
+- Wewnętrzny komunikator dla WIM
+- Projekt rozwija produkt (funkcjonalności ogólne)
+
+---
+
 ## 2025-11-27 | Planowanie Sprintu
 **Źródło:** [Notatki/Gotowe-notatki-w-trakcie/2025-11-27 Planowanie sprintu.md]
 **Kategoria:** #Status #Funkcjonalność

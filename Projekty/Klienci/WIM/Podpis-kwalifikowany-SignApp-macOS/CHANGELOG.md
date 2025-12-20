@@ -4,6 +4,19 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Wydanie #Roadmap
+
+- Podpisy kwalifikowane na macOS potwierdzone jako ukończone w Q4 2025
+- Wejdzie w wersji grudniowej 2025
+- Obsługa podpisów kwalifikowanych na systemie macOS
+- Potencjalnie blisko obsługi iOS (iPady)
+
+---
+
 ## 2025-12-09 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
 **Kategoria:** #Wydanie #Zadanie

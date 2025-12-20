@@ -4,6 +4,19 @@ Historia ustaleń i zmian dla projektu.
 
 ---
 
+## 2025-12-05 | Roadmapa Update
+
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-05 Roadmapa.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-05%20Roadmapa.md)
+
+**Kategoria:** #Wydanie #Roadmap
+
+- Integracja Google LLM potwierdzona jako ukończona w Q4 2025
+- Zrealizowane wczoraj (4 grudnia), można wyrzucić z roadmapy
+- Rozszerzenie integracji z modelami LLM o rozwiązania Google
+- Projekt zrealizowany dla klienta Vasco, rozwija produkt
+
+---
+
 ## 2025-12-09 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-09 Postęp roadmapy.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-09%20Postęp%20roadmapy.md)
 **Kategoria:** #Funkcjonalność #Wydanie
