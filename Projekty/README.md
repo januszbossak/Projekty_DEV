@@ -40,6 +40,7 @@ Ten plik stanowi centralny spis treści i indeks dla wszystkich projektów zarz�
 
 ## Integracje (`integracje`)
 *   `Integracje-REST-multipart`
+*   `Podpisy-jednorazowe` - Integracja z systemem podpisów jednorazowych (SIGNIUS / EuroCert)
 *   `SharePoint-OAuth`
 *   `System-mailowy`
 

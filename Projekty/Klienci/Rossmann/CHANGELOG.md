@@ -4,9 +4,21 @@ Historia ustaleń i zmian dla klienta Rossmann.
 
 ---
 
+## 2025-12-22 | Projekt: Historia Biznesowa - Uszczegółowienie designu
+**Źródło:** [Notatki/Gotowe-notatki/2025-12-22 Historia biznesowa dla Rossmann](../../../Notatki/Gotowe-notatki/2025-12-22%20Historia%20biznesowa%20dla%20Rossmann)
+**Kategoria:** #Design #Funkcjonalność #Moduł
+
+- Definicja interaktywnego timeline'u z kolorowym kodowaniem procesów.
+- Projekt "Kafelków zdarzeń" z możliwością rozwijania szczegółów.
+- Wprowadzenie wyszukiwarki pełnotekstowej oraz zaawansowanych filtrów w panelu bocznym.
+- Określenie modelu konfiguracji opartego na *Amodit Script* i relacjach `connectedCase`.
+- Link do projektu: [Historia-biznesowa/README.md](Historia-biznesowa/README.md)
+
+---
+
 ## 2025-12-19 | Compliance AI Act
 
-**Źródło:** [Notatki/Gotowe-notatki/2025-12-19 Odpowiedz-do-Rossman-w-sprawie-AI-Act](../../../Notatki/Gotowe-notatki/2025-12-19%20Odpowiedz-do-Rossman-w-sprawie-AI-Act)
+**Źródło:** [Notatki/Gotowe-notatki/2025-12-19 Odpowiedz-do-Rossman-w-sprawie-AI-Act](2025-12-22%20Odpowiedz-do-Rossman-w-sprawie-AI-Act.md)
 
 **Kategoria:** #Bezpieczeństwo #Legislacja #AI
 

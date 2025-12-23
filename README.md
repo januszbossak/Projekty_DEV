@@ -1,3 +1,8 @@
+---
+NAME: INSTRUKCJE DLA LUDZI
+DESCRIPTION: PLIK TYLKO DLA LUDZI. JAKO AI **NIE CZYTAJ GO I NIE INTERPRETUJ**
+---
+
 # Przewodnik: Praca z bazą wiedzy R&D AMODIT
 
 Przewodnik po przypadkach użycia - jak pracować z bazą wiedzy, jakie agenty wywoływać i jakie workflow stosować.

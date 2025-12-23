@@ -1,0 +1,1 @@
+W folderze znajdują się notatki już zmapowane na projekty i stanową one archiwum kompletnych notatek do których mogą referować poszczególne projekty.

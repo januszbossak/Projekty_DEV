@@ -101,7 +101,14 @@
     "object-keys": 87,
     "typescript": 88,
     "Integracje": 89,
-    "Legislacja": 90
+    "Legislacja": 90,
+    "Moduł": 91,
+    "Wymagania": 92,
+    "Konfiguracja": 93,
+    "Zlecenie": 94,
+    "Narzędzie": 95,
+    "Cel-biznesowy": 96,
+    "Sprint-review": 97
   },
   "_version": 3
 }

@@ -1,5 +1,18 @@
 # CHANGELOG - Matryca uprawnień
 
+## 2025-12-22 | Zlecenie (LPP): Rozszerzenie opcji dostępu dla przełożonego
+**Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-22 zlecenie LPP - Wykluczenie procesu z zakładki mój zespół .md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-22%20zlecenie%20LPP%20-%20Wykluczenie%20procesu%20z%20zak%C5%82adki%20m%C3%B3j%20zesp%C3%B3%C5%82%20.md)
+**Kategoria:** #Funkcjonalność #Uprawnienia
+
+- **Nowe ustawienia procesu:** Dodanie opcji "Dostęp dla przełożonego" w konfiguracji uprawnień procesu (pod opcją ukrywania przed administratorami).
+- **Tryby blokady:**
+  - Zablokuj dostęp dla przełożonego twórcy sprawy (na wszystkich etapach).
+  - Zablokuj dostęp dla przełożonego wszystkich właścicieli sprawy (na wszystkich etapach).
+- **Logika uprawnień:** Modyfikacja funkcji `SynchronizeReadersPermissionsNew` oraz `CheckCasePermissions` w celu respektowania nowych flag blokady dostępu dla przełożonych.
+- **Kontekst:** Ochrona prywatności pracowników w procesach "self-service" (ZUS, PIT-2, zaświadczenia) w ramach Portalu Pracownika LPP.
+
+---
+
 ## 2025-12-04 | Spotkanie projektowe
 **Źródło:** [Notatki/Gotowe-notatki-archiwum/2025-12-04 Spotkanie projektowe - Edytor procesów.md](../../../../Notatki/Gotowe-notatki-archiwum/2025-12-04%20Spotkanie%20projektowe%20-%20Edytor%20procesów.md)  
 **Kategoria:** #Funkcjonalność
